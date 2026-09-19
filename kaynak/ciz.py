@@ -377,55 +377,77 @@ def kat_plani(kat):
 # ----------------------------------------------------------------- vaziyet planı
 def vaziyet_plani():
     P, B = PARSEL, BINA
-    w = int(P["en"]*S + 2*M + 260)
-    h = int(P["boy"]*S + 2*M + BASLIK_YUK)
+    w = int(P["en"]*S + 2*M + 300)
+    h = int(P["boy"]*S + 2*M + BASLIK_YUK + 90)
     cerceve, ty = cerceve_svg(w, h, "VAZİYET PLANI",
         "Parsel %.0f m² · TAKS %.2f (%.0f m²) · KAKS %.2f (%.0f m²) · %s" % (
             P["alan"], P["taks"], P["alan"]*P["taks"], P["kaks"], P["alan"]*P["kaks"], P["nizam"]),
-        "Çekme mesafeleri: ön %.1f m · yan %.1f m · arka %.1f m (imar durumu belgesiyle teyit edilecektir)" % (
+        "Çekme mesafeleri: ön (yol tarafı) %.1f m · yan %.1f m · arka %.1f m — imar durumu belgesiyle teyit edilecektir" % (
             P["cekme_on"], P["cekme_yan"], P["cekme_arka"]))
     o = [cerceve]
-    px, py = M, M
+    px, py = M, M + 80
+    # imar yolu (kuzeyde, parselin üstünde)
+    o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="#e5e7eb" stroke="%s" stroke-width="2"/>' % (
+        px, py - 72, P["en"]*S, 72, CIZGI))
+    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">İMAR YOLU</text>' % (
+        px + P["en"]*S/2, py - 28))
+    # parsel
     o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="url(#cim)" stroke="%s" stroke-width="3"/>' % (
         px, py, P["en"]*S, P["boy"]*S, DUVAR))
-    # çekme mesafeleri
+    # yapı yaklaşma (çekme) sınırı
     o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="none" stroke="#b45309" '
              'stroke-width="2" stroke-dasharray="12 8"/>' % (
         px + P["cekme_yan"]*S, py + P["cekme_on"]*S,
         (P["en"]-2*P["cekme_yan"])*S, (P["boy"]-P["cekme_on"]-P["cekme_arka"])*S))
-    # bina
+    o.append('<text x="%.1f" y="%.1f" class="kucuk" fill="#b45309">yapı yaklaşma sınırı</text>' % (
+        px + P["cekme_yan"]*S + 10, py + P["cekme_on"]*S + 26))
+    # bina (ön çekme mesafesine oturur, yanlardan 3 m)
     bx = px + P["cekme_yan"]*S
     by = py + P["cekme_on"]*S
     o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="#dbe7f6" stroke="%s" stroke-width="4"/>' % (
         bx, by, B["en"]*S, B["boy"]*S, DUVAR))
-    o.append('<text x="%.1f" y="%.1f" class="altb" text-anchor="middle">VİLLA</text>' % (bx + B["en"]*S/2, by + B["boy"]*S/2 - 16))
-    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">20,00 × 15,00 m = 300 m² oturum</text>' % (
-        bx + B["en"]*S/2, by + B["boy"]*S/2 + 14))
-    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">Bodrum + Zemin + 1. Kat + Çatı arası</text>' % (
-        bx + B["en"]*S/2, by + B["boy"]*S/2 + 40))
-    # yol, giriş, otopark, havuz
-    o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="#e5e7eb" stroke="%s" stroke-width="2"/>' % (
-        px, py + P["boy"]*S, P["en"]*S, 70, CIZGI))
-    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">İMAR YOLU</text>' % (px + P["en"]*S/2, py + P["boy"]*S + 45))
+    oy = by + B["boy"]*S/2
+    o.append('<text x="%.1f" y="%.1f" class="altb" text-anchor="middle">VİLLA</text>' % (bx + B["en"]*S/2, oy - 26))
+    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">20,00 × 15,00 m = 300 m² oturum</text>' % (bx + B["en"]*S/2, oy + 4))
+    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">Bodrum + Zemin + 1. Kat + çatı arası</text>' % (bx + B["en"]*S/2, oy + 30))
+    # giriş ve garaj okları (kuzey cephe)
+    for etiket, orta in [("GİRİŞ", bx + 10.3*S), ("GARAJ", bx + 4.3*S)]:
+        o.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="#b45309" stroke-width="4" marker-end="url(#ok)"/>' % (
+            orta, by - 1.6*S, orta, by - 0.15*S))
+        o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle" fill="#b45309">%s</text>' % (
+            orta, by - 1.75*S, etiket))
+    # otopark + rampa (ön bahçe)
     o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="#f1f5f9" stroke="%s" stroke-width="2"/>' % (
-        bx + 2.0*S, py + P["boy"]*S - P["cekme_arka"]*S + 10, 6.0*S, 5.5*S, CIZGI))
-    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">Açık otopark (2 araç) + rampa</text>' % (
-        bx + 5.0*S, py + P["boy"]*S - P["cekme_arka"]*S + 10 + 2.9*S))
+        bx + 13.5*S, py + 0.4*S, 5.0*S, 4.2*S, CIZGI))
+    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">Açık otopark (2 araç)</text>' % (
+        bx + 16.0*S, py + 2.6*S))
+    o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" fill="#eceff3" stroke="%s" stroke-width="2"/>' % (
+        bx + 1.8*S, py + 0.4*S, 5.0*S, 4.2*S, CIZGI))
+    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">Garaj rampası</text>' % (
+        bx + 4.3*S, py + 2.6*S))
+    # havuz ve teras (arka bahçe)
     o.append('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="16" fill="#cfe9f5" stroke="%s" stroke-width="2"/>' % (
-        bx + B["en"]*S - 8.0*S, py + 0.6*S, 8.0*S, 3.4*S, CIZGI))
-    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">Havuz 8,00 × 3,40 (opsiyon)</text>' % (
-        bx + B["en"]*S - 4.0*S, py + 2.5*S))
+        bx + 1.0*S, by + B["boy"]*S + 2.2*S, 9.0*S, 4.0*S, CIZGI))
+    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">Havuz 9,00 × 4,00 m (opsiyon)</text>' % (
+        bx + 5.5*S, by + B["boy"]*S + 4.4*S))
+    o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">Arka bahçe — peyzaj, oturma ve barbekü alanı</text>' % (
+        bx + B["en"]*S/2, by + B["boy"]*S + 8.4*S))
     # ölçüler
-    o.append(olcu_cizgisi(px, py - 46, px + P["en"]*S, py - 46, "%.2f" % P["en"]))
-    o.append(olcu_cizgisi(px - 46, py, px - 46, py + P["boy"]*S, "%.2f" % P["boy"]))
-    o.append(olcu_cizgisi(px, by - 22, bx, by - 22, "%.2f" % P["cekme_yan"]))
-    o.append(olcu_cizgisi(bx + B["en"]*S, by - 22, px + P["en"]*S, by - 22, "%.2f" % P["cekme_yan"]))
-    o.append(olcu_cizgisi(bx - 22, py, bx - 22, by, "%.2f" % P["cekme_on"]))
-    o.append(olcu_cizgisi(bx - 22, by + B["boy"]*S, bx - 22, py + P["boy"]*S, "%.2f" % P["cekme_arka"]))
-    nx, ny = px + P["en"]*S + 120, py + 50
+    o.append(olcu_cizgisi(px, py - 96, px + P["en"]*S, py - 96, "%.2f" % P["en"]))
+    o.append(olcu_cizgisi(px - 52, py, px - 52, py + P["boy"]*S, "%.2f" % P["boy"]))
+    o.append(olcu_cizgisi(px, by - 26, bx, by - 26, "%.2f" % P["cekme_yan"]))
+    o.append(olcu_cizgisi(bx + B["en"]*S, by - 26, px + P["en"]*S, by - 26, "%.2f" % P["cekme_yan"]))
+    o.append(olcu_cizgisi(bx - 26, py, bx - 26, by, "%.2f" % P["cekme_on"]))
+    o.append(olcu_cizgisi(bx - 26, by + B["boy"]*S, bx - 26, py + P["boy"]*S,
+                          "%.2f" % (P["boy"] - P["cekme_on"] - B["boy"])))
+    nx, ny = px + P["en"]*S + 150, py + 60
     o.append('<circle cx="%.1f" cy="%.1f" r="34" fill="none" stroke="%s" stroke-width="2"/>' % (nx, ny, CIZGI))
     o.append('<path d="M %.1f %.1f L %.1f %.1f L %.1f %.1f Z" fill="%s"/>' % (nx, ny-30, nx-11, ny+16, nx+11, ny+16, DUVAR))
     o.append('<text x="%.1f" y="%.1f" class="kucuk" text-anchor="middle">K</text>' % (nx, ny + 52))
+    for i, t in enumerate(["Parsel: %.0f m²" % P["alan"], "Oturum: 300 m²",
+                           "TAKS: %.2f" % P["taks"], "KAKS: %.2f" % P["kaks"],
+                           "Otopark: 3 kapalı + 2 açık"]):
+        o.append('<text x="%.1f" y="%.1f" class="lej">%s</text>' % (nx - 36, ny + 110 + i*28, t))
     return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" width="%d" height="%d">%s%s</svg>'
             % (w, h, w, h, STIL, "\n".join(o)))
 
