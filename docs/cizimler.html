@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Çizimler — Durunday Villa</title>
+<meta name="description" content="Vaziyet planı, bodrum/zemin/1. kat planları, çatı planı ve kesit.">
+<link rel="stylesheet" href="varlik/stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head><body>
+<header class="ust">
+  <div class="sarmal ust-ic">
+    <a class="marka" href="index.html"><span class="nokta"></span> Durunday Villa</a>
+    <nav><a href="index.html">Proje</a>
+<a href="cizimler.html" class="aktif">Çizimler</a>
+<a href="mahal-listesi.html">Mahal Listesi</a>
+<a href="imalat.html">İmalat ve Markalar</a>
+<a href="yonetmelik.html">Yönetmelik Uygunluk</a>
+<a href="dosyalar.html">Dosyalar</a></nav>
+    <button class="tema" onclick="temaDegistir()" title="Açık / koyu tema">◐</button>
+  </div>
+</header>
+<main class="sarmal">
+<h1>Çizimler</h1>
+<p class="giris">Ölçek 1:100 · ölçülendirilmiş · duvar kalınlıkları dış 35 cm, iç 15 cm. Her çizim SVG’dir; büyütmek için üzerine tıklayabilirsiniz.</p>
+<figure id="01-vaziyet-plani"><a href="varlik/01-vaziyet-plani.svg" target="_blank" rel="noopener"><img src="varlik/01-vaziyet-plani.svg" alt="Vaziyet Planı" loading="lazy"></a><figcaption><strong>Vaziyet Planı</strong><a href="varlik/01-vaziyet-plani.svg" target="_blank" rel="noopener">SVG olarak aç ↗</a></figcaption></figure>
+<figure id="02-bodrum-kat"><a href="varlik/02-bodrum-kat.svg" target="_blank" rel="noopener"><img src="varlik/02-bodrum-kat.svg" alt="Bodrum Kat Planı" loading="lazy"></a><figcaption><strong>Bodrum Kat Planı</strong><a href="varlik/02-bodrum-kat.svg" target="_blank" rel="noopener">SVG olarak aç ↗</a></figcaption></figure>
+<figure id="03-zemin-kat"><a href="varlik/03-zemin-kat.svg" target="_blank" rel="noopener"><img src="varlik/03-zemin-kat.svg" alt="Zemin Kat Planı" loading="lazy"></a><figcaption><strong>Zemin Kat Planı</strong><a href="varlik/03-zemin-kat.svg" target="_blank" rel="noopener">SVG olarak aç ↗</a></figcaption></figure>
+<figure id="04-birinci-kat"><a href="varlik/04-birinci-kat.svg" target="_blank" rel="noopener"><img src="varlik/04-birinci-kat.svg" alt="1. Normal Kat Planı" loading="lazy"></a><figcaption><strong>1. Normal Kat Planı</strong><a href="varlik/04-birinci-kat.svg" target="_blank" rel="noopener">SVG olarak aç ↗</a></figcaption></figure>
+<figure id="05-cati-plani"><a href="varlik/05-cati-plani.svg" target="_blank" rel="noopener"><img src="varlik/05-cati-plani.svg" alt="Çatı Planı" loading="lazy"></a><figcaption><strong>Çatı Planı</strong><a href="varlik/05-cati-plani.svg" target="_blank" rel="noopener">SVG olarak aç ↗</a></figcaption></figure>
+<figure id="06-kesit-aa"><a href="varlik/06-kesit-aa.svg" target="_blank" rel="noopener"><img src="varlik/06-kesit-aa.svg" alt="A–A Kesiti" loading="lazy"></a><figcaption><strong>A–A Kesiti</strong><a href="varlik/06-kesit-aa.svg" target="_blank" rel="noopener">SVG olarak aç ↗</a></figcaption></figure>
+</main>
+<footer class="alt"><div class="sarmal">
+  <p><strong>Durunday Villa</strong> — Konya / Meram / Durunday · 300 m² oturumlu bodrumlu dubleks villa</p>
+  <p class="kucuk">Ön tasarım (avan) dokümanı · 19.09.2026 · Uygulama ve ruhsat için yetkili proje müellifi onayı gerekir.</p>
+</div></footer>
+<script>
+function temaDegistir(){const k=document.documentElement;const y=k.getAttribute('data-tema')==='koyu'?'acik':'koyu';
+ k.setAttribute('data-tema',y);try{localStorage.setItem('tema',y)}catch(e){}}
+(function(){try{const t=localStorage.getItem('tema');if(t)document.documentElement.setAttribute('data-tema',t)}catch(e){}})();
+function tabloAra(girdi, tabloId){const s=girdi.value.toLocaleLowerCase('tr');
+ document.querySelectorAll('#'+tabloId+' tbody tr').forEach(function(tr){
+   tr.style.display = tr.textContent.toLocaleLowerCase('tr').indexOf(s)>-1 ? '' : 'none';});}
+function katFiltre(btn, kat, tabloId){
+ document.querySelectorAll('#'+tabloId+'-sekme .cip').forEach(b=>b.classList.remove('secili'));
+ btn.classList.add('secili');
+ document.querySelectorAll('#'+tabloId+' tbody tr').forEach(function(tr){
+   tr.style.display = (kat==='*'||tr.dataset.kat===kat) ? '' : 'none';});}
+</script>
+</body></html>

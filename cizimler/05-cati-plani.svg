@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2380 2030" width="2380" height="2030">
+<style>
+  text { font-family: "DejaVu Sans", Arial, Helvetica, sans-serif; fill:#111827; }
+  .kod   { font-size: 15px; font-weight: 700; fill:#1d4ed8; letter-spacing:.5px; }
+  .ad    { font-size: 15px; font-weight: 600; }
+  .alan  { font-size: 13px; fill:#4b5563; }
+  .olcu  { font-size: 14px; fill:#374151; }
+  .kucuk { font-size: 15px; fill:#4b5563; }
+  .baslik{ font-size: 34px; font-weight: 700; }
+  .altb  { font-size: 19px; font-weight: 600; fill:#1f2937; }
+  .lej   { font-size: 15px; fill:#374151; }
+</style>
+<defs>
+  <marker id="ok" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+    <path d="M0 0 L9 4.5 L0 9 z" fill="#b45309"/>
+  </marker>
+  <pattern id="cim" width="14" height="14" patternUnits="userSpaceOnUse">
+    <rect width="14" height="14" fill="#eef7ec"/>
+    <path d="M0 14 L7 6 M7 14 L14 6" stroke="#bcd9b6" stroke-width="1.4" fill="none"/>
+  </pattern>
+</defs>
+<rect x="0" y="0" width="2380" height="2030" fill="#ffffff"/>
+<rect x="18" y="18" width="2344" height="1994" fill="none" stroke="#1f2937" stroke-width="3"/>
+<rect x="18" y="1862" width="2344" height="150" fill="#f8fafc" stroke="#1f2937" stroke-width="3"/>
+<text x="46" y="1914" class="baslik">ÇATI PLANI</text>
+<text x="46" y="1950" class="altb">Kırma çatı · 4 yöne eğimli · mahya ve dere çizgileri · alüminyum oluk ve iniş boruları</text>
+<text x="46" y="1982" class="kucuk">Saçak taşması 60 cm · kilitli kiremit · çatı arası havalandırma menfezleri</text>
+<text x="2334" y="1914" class="altb" text-anchor="end">DURUNDAY VİLLA</text>
+<text x="2334" y="1946" class="kucuk" text-anchor="end">Konya / Meram / Durunday — Bodrumlu dubleks villa</text>
+<text x="2334" y="1978" class="kucuk" text-anchor="end">Ölçek 1:100 (A3) · Ön tasarım · 19.09.2026</text>
+<rect x="130.0" y="130.0" width="2120.0" height="1620.0" fill="#f3ece3" stroke="#1f2937" stroke-width="3"/>
+<line x1="130.0" y1="130.0" x2="940.0" y2="940.0" stroke="#4b5563" stroke-width="2.5"/>
+<line x1="2250.0" y1="130.0" x2="1440.0" y2="940.0" stroke="#4b5563" stroke-width="2.5"/>
+<line x1="130.0" y1="1750.0" x2="940.0" y2="940.0" stroke="#4b5563" stroke-width="2.5"/>
+<line x1="2250.0" y1="1750.0" x2="1440.0" y2="940.0" stroke="#4b5563" stroke-width="2.5"/>
+<line x1="940.0" y1="940.0" x2="1440.0" y2="940.0" stroke="#1f2937" stroke-width="5"/>
+<text x="1190.0" y="926.0" class="altb" text-anchor="middle">MAHYA</text>
+<circle cx="310.0" cy="310.0" r="12" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
+<circle cx="2070.0" cy="310.0" r="12" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
+<circle cx="310.0" cy="1570.0" r="12" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
+<circle cx="2070.0" cy="1570.0" r="12" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
+<text x="1190.0" y="1750.0" class="kucuk" text-anchor="middle">○ iniş boruları (4 adet, Ø100)</text>
+<rect x="790.0" y="880.0" width="46" height="30" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
+<rect x="1590.0" y="880.0" width="46" height="30" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
+<text x="1190.0" y="1778.0" class="kucuk" text-anchor="middle">□ baca / havalandırma</text></svg>
