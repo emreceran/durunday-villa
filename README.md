@@ -11,6 +11,7 @@ için hazırlanmış mimari ön tasarım (avan), mahal listesi, imalat tarifi ve
 |---|---|
 | `docs/` | Yayınlanan web sitesi (GitHub Pages kaynağı) |
 | `cizimler/` | Vaziyet planı, bodrum/zemin/1. kat planları, çatı planı ve kesit (SVG, 1:100) |
+| `render/` | 3B render görselleri (giriş, bahçe, kuş bakışı, akşam) |
 | `kaynak/` | **Tasarım dosyaları** — tüm çizim ve tabloları üreten Python kaynakları |
 | `Durunday Villa - Mahal Listesi.xlsx` | 5 sekmeli mahal listesi (künye, mahal programı, mahal listesi, imalat + markalar, yönetmelik) |
 | `Durunday Villa - Mahal Listesi.pdf` | Excel’in baskıya hazır çıktısı |
@@ -28,6 +29,7 @@ Her şey tek bir veri kaynağından üretilir; bir mahalin ölçüsü değişti�
 | `ciz.py` | SVG kat planı, vaziyet planı, çatı planı ve kesit üreticisi |
 | `excel_yap.py` | Mahal listesi Excel’ini üretir |
 | `site_yap.py` | `docs/` altındaki statik siteyi üretir |
+| `render_3b.py` | Blender 4.2 betiği — 3B modeli `veri.py` geometrisinden kurar ve Cycles ile render alır |
 
 ```bash
 cd kaynak
@@ -35,6 +37,11 @@ python3 veri.py        # geometri kontrolü
 python3 ciz.py         # çizimleri üret
 python3 excel_yap.py   # Excel'i üret
 python3 site_yap.py    # siteyi üret
+
+# 3B render (Blender 4.2 gerekir)
+~/opt/blender-4.2.23-linux-x64/blender -b -P render_3b.py -- \
+    --kadraj giris --ornek 96 --en 1600 --cikti ../render/giris.jpg
+# kadrajlar: giris · bahce · kus · aksam
 ```
 
 ## Uyarı

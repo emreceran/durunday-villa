@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Görseller — Durunday Villa</title>
+<meta name="description" content="Villanın üç boyutlu görselleri: giriş cephesi, bahçe cephesi, kuş bakışı ve akşam görünümü.">
+<link rel="stylesheet" href="varlik/stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head><body>
+<header class="ust">
+  <div class="sarmal ust-ic">
+    <a class="marka" href="index.html"><span class="nokta"></span> Durunday Villa</a>
+    <nav><a href="index.html">Proje</a>
+<a href="cizimler.html">Çizimler</a>
+<a href="render.html" class="aktif">Görseller</a>
+<a href="mahal-listesi.html">Mahal Listesi</a>
+<a href="imalat.html">İmalat ve Markalar</a>
+<a href="yonetmelik.html">Yönetmelik Uygunluk</a>
+<a href="dosyalar.html">Dosyalar</a></nav>
+    <button class="tema" onclick="temaDegistir()" title="Açık / koyu tema">◐</button>
+  </div>
+</header>
+<main class="sarmal">
+<h1>Görseller</h1>
+<p class="giris">Üç boyutlu model, kat planlarının geometrisinden (<code>veri.py</code>) otomatik kurulur: duvarlar, pencere ve kapı boşlukları, loggialar, kırma çatı ve arazi. Blender / Cycles ile hesaplanmıştır. Görseller kütle, oran ve cephe düzenini gösterir; malzeme dokuları temsilidir.</p>
+<figure><a href="varlik/render/giris.jpg" target="_blank" rel="noopener"><img src="varlik/render/giris.jpg" alt="Giriş cephesi (kuzey-batı)" loading="lazy"></a><figcaption><strong>Giriş cephesi (kuzey-batı)</strong><span class="kucuk">İmar yoluna bakan giriş cephesi: üstü örtülü giriş sahanlığı, sol tarafta bodrum garajına inen rampa, sağda açık otopark.</span></figcaption></figure>
+<figure><a href="varlik/render/bahce.jpg" target="_blank" rel="noopener"><img src="varlik/render/bahce.jpg" alt="Bahçe cephesi (güney-doğu)" loading="lazy"></a><figcaption><strong>Bahçe cephesi (güney-doğu)</strong><span class="kucuk">Arka bahçeden görünüş: zemin katta kapalı veranda ve üstü örtülü teras, birinci katta ebeveyn balkonu — hepsi cam korkuluklu, kütleye gömülü loggia olarak çözülmüştür.</span></figcaption></figure>
+<figure><a href="varlik/render/kus.jpg" target="_blank" rel="noopener"><img src="varlik/render/kus.jpg" alt="Kuş bakışı" loading="lazy"></a><figcaption><strong>Kuş bakışı</strong><span class="kucuk">Yerleşimin bütünü: 20 × 15 m kütle, kırma çatı, arka bahçede 9,00 × 4,00 m havuz, ön bahçede otopark ve garaj rampası.</span></figcaption></figure>
+<figure><a href="varlik/render/aksam.jpg" target="_blank" rel="noopener"><img src="varlik/render/aksam.jpg" alt="Akşam görünümü" loading="lazy"></a><figcaption><strong>Akşam görünümü</strong><span class="kucuk">Alçak güneşte giriş cephesi; iç aydınlatma açık, cam yüzeylerin oranı ve loggia derinliği okunuyor.</span></figcaption></figure>
+<div class="uyari-kutu">Görseller ön tasarım kütlesini anlatır; cephe kaplaması, doğrama bölümleri ve peyzaj uygulamada detaylandırılacaktır.</div>
+</main>
+<footer class="alt"><div class="sarmal">
+  <p><strong>Durunday Villa</strong> — Konya / Meram / Durunday · 300 m² oturumlu bodrumlu dubleks villa</p>
+  <p class="kucuk">Ön tasarım (avan) dokümanı · 19.09.2026 · Uygulama ve ruhsat için yetkili proje müellifi onayı gerekir.</p>
+</div></footer>
+<script>
+function temaDegistir(){const k=document.documentElement;const y=k.getAttribute('data-tema')==='koyu'?'acik':'koyu';
+ k.setAttribute('data-tema',y);try{localStorage.setItem('tema',y)}catch(e){}}
+(function(){try{const t=localStorage.getItem('tema');if(t)document.documentElement.setAttribute('data-tema',t)}catch(e){}})();
+function tabloAra(girdi, tabloId){const s=girdi.value.toLocaleLowerCase('tr');
+ document.querySelectorAll('#'+tabloId+' tbody tr').forEach(function(tr){
+   tr.style.display = tr.textContent.toLocaleLowerCase('tr').indexOf(s)>-1 ? '' : 'none';});}
+function katFiltre(btn, kat, tabloId){
+ document.querySelectorAll('#'+tabloId+'-sekme .cip').forEach(b=>b.classList.remove('secili'));
+ btn.classList.add('secili');
+ document.querySelectorAll('#'+tabloId+' tbody tr').forEach(function(tr){
+   tr.style.display = (kat==='*'||tr.dataset.kat===kat) ? '' : 'none';});}
+</script>
+</body></html>

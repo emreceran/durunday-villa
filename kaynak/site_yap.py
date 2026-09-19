@@ -10,7 +10,18 @@ KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(KOK, "docs")
 E = lambda t: html.escape(str(t))
 
-SAYFALAR = [("index.html", "Proje"), ("cizimler.html", "Çizimler"),
+RENDERLAR = [
+    ("giris",  "Giriş cephesi (kuzey-batı)",
+     "İmar yoluna bakan giriş cephesi: üstü örtülü giriş sahanlığı, sol tarafta bodrum garajına inen rampa, sağda açık otopark."),
+    ("bahce",  "Bahçe cephesi (güney-doğu)",
+     "Arka bahçeden görünüş: zemin katta kapalı veranda ve üstü örtülü teras, birinci katta ebeveyn balkonu — hepsi cam korkuluklu, kütleye gömülü loggia olarak çözülmüştür."),
+    ("kus",    "Kuş bakışı",
+     "Yerleşimin bütünü: 20 × 15 m kütle, kırma çatı, arka bahçede 9,00 × 4,00 m havuz, ön bahçede otopark ve garaj rampası."),
+    ("aksam",  "Akşam görünümü",
+     "Alçak güneşte giriş cephesi; iç aydınlatma açık, cam yüzeylerin oranı ve loggia derinliği okunuyor."),
+]
+
+SAYFALAR = [("index.html", "Proje"), ("cizimler.html", "Çizimler"), ("render.html", "Görseller"),
             ("mahal-listesi.html", "Mahal Listesi"), ("imalat.html", "İmalat ve Markalar"),
             ("yonetmelik.html", "Yönetmelik Uygunluk"), ("dosyalar.html", "Dosyalar")]
 
@@ -134,6 +145,10 @@ def index():
     ozet = kat_ozeti()
     kapali = sum(v[0] for v in ozet.values()); acik = sum(v[1] for v in ozet.values())
     mahal_sayisi = sum(len(v) for v in KATLAR.values())
+    hero = ''
+    if os.path.exists(os.path.join(SITE, "varlik", "render", "giris.jpg")):
+        hero = ('<figure style="margin:18px 0 6px"><img src="varlik/render/giris.jpg" '
+                'alt="Durunday Villa giriş cephesi"></figure>')
     g = ['<h1>Durunday Villa — ön tasarım dosyası</h1>',
          '<p class="giris">Konya / Meram / Durunday’da 1.001 m² parsel üzerinde, 300 m² oturumlu, '
          'bodrumlu dubleks villa için hazırlanmış mimari ön tasarım, mahal listesi, imalat tarifi ve '
@@ -144,9 +159,11 @@ def index():
                          (str(mahal_sayisi), "Mahal"), ("7", "Yatak odası")]:
         g.append('<div class="kart"><div class="sayi">%s</div><div class="etiket">%s</div></div>' % (E(sayi), E(etiket)))
     g.append('</div>')
+    g.append(hero)
     g.append('<h2>Doküman seti</h2><div class="kartlar">')
     for dosya, ad, ack in [
         ("cizimler.html", "Çizimler", "Vaziyet planı, üç kat planı, çatı planı ve kesit — ölçülendirilmiş, 1:100."),
+        ("render.html", "Görseller", "Kat planı geometrisinden kurulan 3B modelin dört render'ı."),
         ("mahal-listesi.html", "Mahal Listesi", "55 mahal için döşeme, duvar, tavan, kapı, doğrama, elektrik, mekanik ve tesisat tarifi."),
         ("imalat.html", "İmalat ve Markalar", "68 poz için teknik şartname ve üst segment marka/ürün seçimi."),
         ("yonetmelik.html", "Yönetmelik Uygunluk", "Planlı Alanlar İmar Yönetmeliği ve ilgili mevzuata göre kontrol tablosu."),
@@ -188,6 +205,24 @@ def cizimler_sayfa():
                  % (dosya, dosya, dosya, E(ad), E(ad), dosya))
     return kabuk("cizimler.html", "Çizimler", "\n".join(g),
                  "Vaziyet planı, bodrum/zemin/1. kat planları, çatı planı ve kesit.")
+
+def render_sayfa(mevcut):
+    g = ['<h1>Görseller</h1>',
+         '<p class="giris">Üç boyutlu model, kat planlarının geometrisinden (<code>veri.py</code>) '
+         'otomatik kurulur: duvarlar, pencere ve kapı boşlukları, loggialar, kırma çatı ve arazi. '
+         'Blender / Cycles ile hesaplanmıştır. Görseller kütle, oran ve cephe düzenini gösterir; '
+         'malzeme dokuları temsilidir.</p>']
+    for ad, baslik, ack in RENDERLAR:
+        if ad not in mevcut:
+            continue
+        g.append('<figure><a href="varlik/render/%s.jpg" target="_blank" rel="noopener">'
+                 '<img src="varlik/render/%s.jpg" alt="%s" loading="lazy"></a>'
+                 '<figcaption><strong>%s</strong><span class="kucuk">%s</span></figcaption></figure>'
+                 % (ad, ad, E(baslik), E(baslik), E(ack)))
+    g.append('<div class="uyari-kutu">Görseller ön tasarım kütlesini anlatır; cephe kaplaması, doğrama '
+             'bölümleri ve peyzaj uygulamada detaylandırılacaktır.</div>')
+    return kabuk("render.html", "Görseller", "\n".join(g),
+                 "Villanın üç boyutlu görselleri: giriş cephesi, bahçe cephesi, kuş bakışı ve akşam görünümü.")
 
 def mahal_sayfa():
     satirlar = mahal_satirlari()
@@ -282,6 +317,14 @@ def uret():
     for dosya, ad, _ in CIZIMLER:
         shutil.copy(os.path.join(KOK, "cizimler", dosya + ".svg"),
                     os.path.join(SITE, "varlik", dosya + ".svg"))
+    mevcut = []
+    rdizin = os.path.join(SITE, "varlik", "render")
+    os.makedirs(rdizin, exist_ok=True)
+    for ad, _b, _a in RENDERLAR:
+        kaynak_jpg = os.path.join(KOK, "render", ad + ".jpg")
+        if os.path.exists(kaynak_jpg):
+            shutil.copy(kaynak_jpg, os.path.join(rdizin, ad + ".jpg"))
+            mevcut.append(ad)
     dosyalar = []
     xlsx = "Durunday Villa - Mahal Listesi.xlsx"
     if os.path.exists(os.path.join(KOK, xlsx)):
@@ -296,7 +339,11 @@ def uret():
             dosyalar.append((ad, "dosyalar/" + yerel, ack))
     for dosya, ad, _ in CIZIMLER:
         dosyalar.append((ad + " (SVG)", "varlik/%s.svg" % dosya, "Vektörel çizim, 1:100"))
+    for ad, baslik, _a in RENDERLAR:
+        if ad in mevcut:
+            dosyalar.append((baslik + " (JPG)", "varlik/render/%s.jpg" % ad, "3B render, 1600 × 900"))
     sayfalar = {"index.html": index(), "cizimler.html": cizimler_sayfa(),
+                "render.html": render_sayfa(mevcut),
                 "mahal-listesi.html": mahal_sayfa(), "imalat.html": imalat_sayfa(),
                 "yonetmelik.html": yonetmelik_sayfa(), "dosyalar.html": dosyalar_sayfa(dosyalar)}
     for ad, icerik in sayfalar.items():
