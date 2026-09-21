@@ -1,45 +1,351 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2380 2030" width="2380" height="2030">
-<style>
-  text { font-family: "DejaVu Sans", Arial, Helvetica, sans-serif; fill:#111827; }
-  .kod   { font-size: 15px; font-weight: 700; fill:#1d4ed8; letter-spacing:.5px; }
-  .ad    { font-size: 15px; font-weight: 600; }
-  .alan  { font-size: 13px; fill:#4b5563; }
-  .olcu  { font-size: 14px; fill:#374151; }
-  .kucuk { font-size: 15px; fill:#4b5563; }
-  .baslik{ font-size: 34px; font-weight: 700; }
-  .altb  { font-size: 19px; font-weight: 600; fill:#1f2937; }
-  .lej   { font-size: 15px; fill:#374151; }
-</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" width="420mm" height="297mm" font-family="'Arial Narrow','Liberation Sans Narrow','Roboto Condensed',Arial,Helvetica,sans-serif">
 <defs>
-  <marker id="ok" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
-    <path d="M0 0 L9 4.5 L0 9 z" fill="#b45309"/>
-  </marker>
-  <pattern id="cim" width="14" height="14" patternUnits="userSpaceOnUse">
-    <rect width="14" height="14" fill="#eef7ec"/>
-    <path d="M0 14 L7 6 M7 14 L14 6" stroke="#bcd9b6" stroke-width="1.4" fill="none"/>
-  </pattern>
+ <pattern id="p-fayans" patternUnits="userSpaceOnUse" width="3" height="3"><path d="M0 0H3M0 0V3" stroke="#c7ccd4" stroke-width="0.1"/></pattern>
+ <pattern id="p-tas" patternUnits="userSpaceOnUse" width="6" height="6"><path d="M0 0H6M0 0V6" stroke="#d3d7de" stroke-width="0.1"/></pattern>
+ <pattern id="p-parke" patternUnits="userSpaceOnUse" width="12" height="1.8"><path d="M0 0H12M0 0V1.8" stroke="#e6e1d6" stroke-width="0.08"/></pattern>
+ <pattern id="p-dis-tas" patternUnits="userSpaceOnUse" width="6" height="3"><path d="M0 0H6M0 0V3" stroke="#c9cdd3" stroke-width="0.1"/></pattern>
+ <pattern id="p-duvar" patternUnits="userSpaceOnUse" width="1.5" height="1.5" patternTransform="rotate(45)"><path d="M0 0V1.5" stroke="#3f444c" stroke-width="0.22"/></pattern>
+ <pattern id="p-yalitim" patternUnits="userSpaceOnUse" width="2.0" height="2.0"><rect width="2" height="2" fill="#f4f1e8"/><path d="M0 2L1 0L2 2" fill="none" stroke="#6b7280" stroke-width="0.08"/></pattern>
+ <pattern id="p-saft" patternUnits="userSpaceOnUse" width="1.6" height="1.6" patternTransform="rotate(45)"><path d="M0 0V1.6" stroke="#9ca3af" stroke-width="0.12"/></pattern>
+ <pattern id="p-toprak" patternUnits="userSpaceOnUse" width="4" height="4" patternTransform="rotate(45)"><path d="M0 0V4M2 0V1.2" stroke="#8b7355" stroke-width="0.15"/></pattern>
+ <pattern id="p-beton" patternUnits="userSpaceOnUse" width="2.4" height="2.4"><circle cx="0.6" cy="0.7" r="0.18" fill="#555"/><circle cx="1.7" cy="1.8" r="0.12" fill="#555"/><path d="M1.4 0.4l0.4 0.3l-0.5 0.1z" fill="#555"/></pattern>
+ <pattern id="p-cim" patternUnits="userSpaceOnUse" width="4" height="4"><path d="M0.5 1.2l0.3-0.8l0.3 0.8M2.6 3.2l0.3-0.8l0.3 0.8" fill="none" stroke="#86a877" stroke-width="0.12"/></pattern>
+ <pattern id="p-kiremit" patternUnits="userSpaceOnUse" width="2.5" height="2.5"><path d="M0 2.5H2.5" stroke="#9ca3af" stroke-width="0.1"/></pattern>
+ <pattern id="p-izgara" patternUnits="userSpaceOnUse" width="1.2" height="1.2"><path d="M0 0H1.2M0 0V1.2" stroke="#6b7280" stroke-width="0.1"/></pattern>
+ <pattern id="p-su" patternUnits="userSpaceOnUse" width="6" height="3"><path d="M0 1.5q1.5-0.8 3 0t3 0" fill="none" stroke="#93c5fd" stroke-width="0.15"/></pattern>
+ <pattern id="p-sille" patternUnits="userSpaceOnUse" width="9" height="3.0"><rect width="9" height="3" fill="#efe6d4"/><path d="M0 3H9M0 0V1.5M4.5 1.5V3M0 1.5H9" stroke="#b9ab8e" stroke-width="0.12"/></pattern>
+ <pattern id="p-siva" patternUnits="userSpaceOnUse" width="5" height="5"><rect width="5" height="5" fill="#fbfbf9"/></pattern>
+ <pattern id="p-ahsap" patternUnits="userSpaceOnUse" width="1.2" height="5"><rect width="1.2" height="5" fill="#c89b6d"/><path d="M0 0V5" stroke="#8a643f" stroke-width="0.12"/></pattern>
+ <pattern id="p-kiremit-g" patternUnits="userSpaceOnUse" width="3" height="2"><rect width="3" height="2" fill="#4b5058"/><path d="M0 2H3M1.5 0V2" stroke="#2f3338" stroke-width="0.12"/></pattern>
+ <marker id="ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+ <marker id="ok-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b45309"/></marker>
 </defs>
-<rect x="0" y="0" width="2380" height="2030" fill="#ffffff"/>
-<rect x="18" y="18" width="2344" height="1994" fill="none" stroke="#1f2937" stroke-width="3"/>
-<rect x="18" y="1862" width="2344" height="150" fill="#f8fafc" stroke="#1f2937" stroke-width="3"/>
-<text x="46" y="1914" class="baslik">ÇATI PLANI</text>
-<text x="46" y="1950" class="altb">Kırma çatı · 4 yöne eğimli · mahya ve dere çizgileri · alüminyum oluk ve iniş boruları</text>
-<text x="46" y="1982" class="kucuk">Saçak taşması 60 cm · kilitli kiremit · çatı arası havalandırma menfezleri</text>
-<text x="2334" y="1914" class="altb" text-anchor="end">DURUNDAY VİLLA</text>
-<text x="2334" y="1946" class="kucuk" text-anchor="end">Konya / Meram / Durunday — Bodrumlu dubleks villa</text>
-<text x="2334" y="1978" class="kucuk" text-anchor="end">Ölçek 1:100 (A3) · Ön tasarım · 19.09.2026</text>
-<rect x="130.0" y="130.0" width="2120.0" height="1620.0" fill="#f3ece3" stroke="#1f2937" stroke-width="3"/>
-<line x1="130.0" y1="130.0" x2="940.0" y2="940.0" stroke="#4b5563" stroke-width="2.5"/>
-<line x1="2250.0" y1="130.0" x2="1440.0" y2="940.0" stroke="#4b5563" stroke-width="2.5"/>
-<line x1="130.0" y1="1750.0" x2="940.0" y2="940.0" stroke="#4b5563" stroke-width="2.5"/>
-<line x1="2250.0" y1="1750.0" x2="1440.0" y2="940.0" stroke="#4b5563" stroke-width="2.5"/>
-<line x1="940.0" y1="940.0" x2="1440.0" y2="940.0" stroke="#1f2937" stroke-width="5"/>
-<text x="1190.0" y="926.0" class="altb" text-anchor="middle">MAHYA</text>
-<circle cx="310.0" cy="310.0" r="12" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
-<circle cx="2070.0" cy="310.0" r="12" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
-<circle cx="310.0" cy="1570.0" r="12" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
-<circle cx="2070.0" cy="1570.0" r="12" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
-<text x="1190.0" y="1750.0" class="kucuk" text-anchor="middle">○ iniş boruları (4 adet, Ø100)</text>
-<rect x="790.0" y="880.0" width="46" height="30" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
-<rect x="1590.0" y="880.0" width="46" height="30" fill="#ffffff" stroke="#4b5563" stroke-width="2"/>
-<text x="1190.0" y="1778.0" class="kucuk" text-anchor="middle">□ baca / havalandırma</text></svg>
+<rect x="0.00" y="0.00" width="420.00" height="297.00" fill="#ffffff" stroke="none" stroke-width="0.18" />
+<rect x="10.00" y="10.00" width="400.00" height="277.00" fill="none" stroke="#111" stroke-width="0.70" />
+<rect x="78.00" y="234.00" width="66.00" height="15.00" fill="none" stroke="#6b7280" stroke-width="0.20" stroke-dasharray="1,0.6" />
+<rect x="204.00" y="234.00" width="62.00" height="15.00" fill="none" stroke="#6b7280" stroke-width="0.20" stroke-dasharray="1,0.6" />
+<rect x="198.00" y="234.00" width="74.00" height="40.00" fill="#fff" stroke="#111" stroke-width="0.30" />
+<line x1="199.00" y1="236.00" x2="271.00" y2="236.00" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="237.33" x2="271.00" y2="237.33" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="238.67" x2="271.00" y2="238.67" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="240.00" x2="271.00" y2="240.00" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="241.33" x2="271.00" y2="241.33" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="242.67" x2="271.00" y2="242.67" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="244.00" x2="271.00" y2="244.00" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="245.33" x2="271.00" y2="245.33" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="246.67" x2="271.00" y2="246.67" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="248.00" x2="271.00" y2="248.00" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="249.33" x2="271.00" y2="249.33" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="250.67" x2="271.00" y2="250.67" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="252.00" x2="271.00" y2="252.00" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="253.33" x2="271.00" y2="253.33" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="254.67" x2="271.00" y2="254.67" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="256.00" x2="271.00" y2="256.00" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="257.33" x2="271.00" y2="257.33" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="258.67" x2="271.00" y2="258.67" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="260.00" x2="271.00" y2="260.00" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="261.33" x2="271.00" y2="261.33" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="262.67" x2="271.00" y2="262.67" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="264.00" x2="271.00" y2="264.00" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="265.33" x2="271.00" y2="265.33" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="266.67" x2="271.00" y2="266.67" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="268.00" x2="271.00" y2="268.00" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="269.33" x2="271.00" y2="269.33" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="270.67" x2="271.00" y2="270.67" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="199.00" y1="272.00" x2="271.00" y2="272.00" stroke="#6b7280" stroke-width="0.12" stroke-linecap="butt"/>
+<text x="235.00" y="268.00" font-size="1.60" text-anchor="middle" font-weight="400" fill="#111">biyoklimatik pergola (döner alüminyum lameller) +2.85</text>
+<path d="M72.00 234.00V274.00M78.00 234.00V274.00M84.00 234.00V274.00M90.00 234.00V274.00M96.00 234.00V274.00M102.00 234.00V274.00M108.00 234.00V274.00M114.00 234.00V274.00M120.00 234.00V274.00M126.00 234.00V274.00M132.00 234.00V274.00M138.00 234.00V274.00M144.00 234.00V274.00M150.00 234.00V274.00M156.00 234.00V274.00M162.00 234.00V274.00M168.00 234.00V274.00M174.00 234.00V274.00M180.00 234.00V274.00M186.00 234.00V274.00M192.00 234.00V274.00M72.00 234.00H198.00M72.00 237.00H198.00M72.00 240.00H198.00M72.00 243.00H198.00M72.00 246.00H198.00M72.00 249.00H198.00M72.00 252.00H198.00M72.00 255.00H198.00M72.00 258.00H198.00M72.00 261.00H198.00M72.00 264.00H198.00M72.00 267.00H198.00M72.00 270.00H198.00M72.00 273.00H198.00" fill="none" stroke="#c9cdd3" stroke-width="0.10"/>
+<rect x="72.00" y="234.00" width="126.00" height="40.00" fill="none" stroke="#111" stroke-width="0.20" />
+<rect x="151.00" y="66.00" width="45.00" height="18.00" fill="#e8efe0" stroke="#111" stroke-width="0.30" />
+<text x="173.50" y="75.70" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111">giriş saçağı: yeşil çatı %2 → süzgeç</text>
+<polygon points="64.00,76.00 280.00,76.00 197.00,159.00 147.00,159.00" fill="#f3f4f6" stroke="#111" stroke-width="0.50" stroke-linejoin="miter"/>
+<polygon points="64.00,242.00 280.00,242.00 197.00,159.00 147.00,159.00" fill="#f3f4f6" stroke="#111" stroke-width="0.50" stroke-linejoin="miter"/>
+<polygon points="64.00,76.00 64.00,242.00 147.00,159.00" fill="#f3f4f6" stroke="#111" stroke-width="0.50" stroke-linejoin="miter"/>
+<polygon points="280.00,76.00 280.00,242.00 197.00,159.00" fill="#f3f4f6" stroke="#111" stroke-width="0.50" stroke-linejoin="miter"/>
+<line x1="66.80" y1="78.80" x2="277.20" y2="78.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="66.80" y1="239.20" x2="277.20" y2="239.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="66.80" y1="78.80" x2="66.80" y2="239.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="277.20" y1="78.80" x2="277.20" y2="239.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="69.60" y1="81.60" x2="274.40" y2="81.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="69.60" y1="236.40" x2="274.40" y2="236.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="69.60" y1="81.60" x2="69.60" y2="236.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="274.40" y1="81.60" x2="274.40" y2="236.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="72.40" y1="84.40" x2="271.60" y2="84.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="72.40" y1="233.60" x2="271.60" y2="233.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="72.40" y1="84.40" x2="72.40" y2="233.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="271.60" y1="84.40" x2="271.60" y2="233.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="75.20" y1="87.20" x2="268.80" y2="87.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="75.20" y1="230.80" x2="268.80" y2="230.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="75.20" y1="87.20" x2="75.20" y2="230.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="268.80" y1="87.20" x2="268.80" y2="230.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="78.00" y1="90.00" x2="266.00" y2="90.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="78.00" y1="228.00" x2="266.00" y2="228.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="78.00" y1="90.00" x2="78.00" y2="228.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="266.00" y1="90.00" x2="266.00" y2="228.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="80.80" y1="92.80" x2="263.20" y2="92.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="80.80" y1="225.20" x2="263.20" y2="225.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="80.80" y1="92.80" x2="80.80" y2="225.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="263.20" y1="92.80" x2="263.20" y2="225.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="83.60" y1="95.60" x2="260.40" y2="95.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="83.60" y1="222.40" x2="260.40" y2="222.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="83.60" y1="95.60" x2="83.60" y2="222.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="260.40" y1="95.60" x2="260.40" y2="222.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="86.40" y1="98.40" x2="257.60" y2="98.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="86.40" y1="219.60" x2="257.60" y2="219.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="86.40" y1="98.40" x2="86.40" y2="219.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="257.60" y1="98.40" x2="257.60" y2="219.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="89.20" y1="101.20" x2="254.80" y2="101.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="89.20" y1="216.80" x2="254.80" y2="216.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="89.20" y1="101.20" x2="89.20" y2="216.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="254.80" y1="101.20" x2="254.80" y2="216.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="92.00" y1="104.00" x2="252.00" y2="104.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="92.00" y1="214.00" x2="252.00" y2="214.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="92.00" y1="104.00" x2="92.00" y2="214.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="252.00" y1="104.00" x2="252.00" y2="214.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="94.80" y1="106.80" x2="249.20" y2="106.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="94.80" y1="211.20" x2="249.20" y2="211.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="94.80" y1="106.80" x2="94.80" y2="211.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="249.20" y1="106.80" x2="249.20" y2="211.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="97.60" y1="109.60" x2="246.40" y2="109.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="97.60" y1="208.40" x2="246.40" y2="208.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="97.60" y1="109.60" x2="97.60" y2="208.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="246.40" y1="109.60" x2="246.40" y2="208.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="100.40" y1="112.40" x2="243.60" y2="112.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="100.40" y1="205.60" x2="243.60" y2="205.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="100.40" y1="112.40" x2="100.40" y2="205.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="243.60" y1="112.40" x2="243.60" y2="205.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="103.20" y1="115.20" x2="240.80" y2="115.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="103.20" y1="202.80" x2="240.80" y2="202.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="103.20" y1="115.20" x2="103.20" y2="202.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="240.80" y1="115.20" x2="240.80" y2="202.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="106.00" y1="118.00" x2="238.00" y2="118.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="106.00" y1="200.00" x2="238.00" y2="200.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="106.00" y1="118.00" x2="106.00" y2="200.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="238.00" y1="118.00" x2="238.00" y2="200.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="108.80" y1="120.80" x2="235.20" y2="120.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="108.80" y1="197.20" x2="235.20" y2="197.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="108.80" y1="120.80" x2="108.80" y2="197.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="235.20" y1="120.80" x2="235.20" y2="197.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="111.60" y1="123.60" x2="232.40" y2="123.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="111.60" y1="194.40" x2="232.40" y2="194.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="111.60" y1="123.60" x2="111.60" y2="194.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="232.40" y1="123.60" x2="232.40" y2="194.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="114.40" y1="126.40" x2="229.60" y2="126.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="114.40" y1="191.60" x2="229.60" y2="191.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="114.40" y1="126.40" x2="114.40" y2="191.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="229.60" y1="126.40" x2="229.60" y2="191.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="117.20" y1="129.20" x2="226.80" y2="129.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="117.20" y1="188.80" x2="226.80" y2="188.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="117.20" y1="129.20" x2="117.20" y2="188.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="226.80" y1="129.20" x2="226.80" y2="188.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="120.00" y1="132.00" x2="224.00" y2="132.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="120.00" y1="186.00" x2="224.00" y2="186.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="120.00" y1="132.00" x2="120.00" y2="186.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="224.00" y1="132.00" x2="224.00" y2="186.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="122.80" y1="134.80" x2="221.20" y2="134.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="122.80" y1="183.20" x2="221.20" y2="183.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="122.80" y1="134.80" x2="122.80" y2="183.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="221.20" y1="134.80" x2="221.20" y2="183.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="125.60" y1="137.60" x2="218.40" y2="137.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="125.60" y1="180.40" x2="218.40" y2="180.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="125.60" y1="137.60" x2="125.60" y2="180.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="218.40" y1="137.60" x2="218.40" y2="180.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="128.40" y1="140.40" x2="215.60" y2="140.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="128.40" y1="177.60" x2="215.60" y2="177.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="128.40" y1="140.40" x2="128.40" y2="177.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="215.60" y1="140.40" x2="215.60" y2="177.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="131.20" y1="143.20" x2="212.80" y2="143.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="131.20" y1="174.80" x2="212.80" y2="174.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="131.20" y1="143.20" x2="131.20" y2="174.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="212.80" y1="143.20" x2="212.80" y2="174.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="134.00" y1="146.00" x2="210.00" y2="146.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="134.00" y1="172.00" x2="210.00" y2="172.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="134.00" y1="146.00" x2="134.00" y2="172.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="210.00" y1="146.00" x2="210.00" y2="172.00" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="136.80" y1="148.80" x2="207.20" y2="148.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="136.80" y1="169.20" x2="207.20" y2="169.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="136.80" y1="148.80" x2="136.80" y2="169.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="207.20" y1="148.80" x2="207.20" y2="169.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="139.60" y1="151.60" x2="204.40" y2="151.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="139.60" y1="166.40" x2="204.40" y2="166.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="139.60" y1="151.60" x2="139.60" y2="166.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="204.40" y1="151.60" x2="204.40" y2="166.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="142.40" y1="154.40" x2="201.60" y2="154.40" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="142.40" y1="163.60" x2="201.60" y2="163.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="142.40" y1="154.40" x2="142.40" y2="163.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="201.60" y1="154.40" x2="201.60" y2="163.60" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="145.20" y1="157.20" x2="198.80" y2="157.20" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="145.20" y1="160.80" x2="198.80" y2="160.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="145.20" y1="157.20" x2="145.20" y2="160.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="198.80" y1="157.20" x2="198.80" y2="160.80" stroke="#9ca3af" stroke-width="0.06" stroke-linecap="butt"/>
+<line x1="147.00" y1="159.00" x2="197.00" y2="159.00" stroke="#111" stroke-width="0.60" stroke-linecap="butt"/>
+<line x1="64.00" y1="76.00" x2="147.00" y2="159.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<line x1="280.00" y1="76.00" x2="197.00" y2="159.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<line x1="64.00" y1="242.00" x2="147.00" y2="159.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<line x1="280.00" y1="242.00" x2="197.00" y2="159.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<rect x="64.00" y="76.00" width="216.00" height="166.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="65.50" y="77.50" width="213.00" height="163.00" fill="none" stroke="#111" stroke-width="0.12" />
+<circle cx="67.00" cy="79.00" r="0.90" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<circle cx="67.00" cy="79.00" r="0.35" fill="#111" stroke="none" stroke-width="0.18"/>
+<circle cx="277.00" cy="79.00" r="0.90" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<circle cx="277.00" cy="79.00" r="0.35" fill="#111" stroke="none" stroke-width="0.18"/>
+<circle cx="67.00" cy="239.00" r="0.90" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<circle cx="67.00" cy="239.00" r="0.35" fill="#111" stroke="none" stroke-width="0.18"/>
+<circle cx="277.00" cy="239.00" r="0.90" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<circle cx="277.00" cy="239.00" r="0.35" fill="#111" stroke="none" stroke-width="0.18"/>
+<circle cx="172.00" cy="239.00" r="0.90" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<circle cx="172.00" cy="239.00" r="0.35" fill="#111" stroke="none" stroke-width="0.18"/>
+<circle cx="132.00" cy="79.00" r="0.90" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<circle cx="132.00" cy="79.00" r="0.35" fill="#111" stroke="none" stroke-width="0.18"/>
+<line x1="172.00" y1="134.00" x2="172.00" y2="96.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<polygon points="172.00,96.00 171.20,98.20 172.80,98.20" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="174.20" y="115.00" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">%30</text>
+<line x1="172.00" y1="184.00" x2="172.00" y2="222.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<polygon points="172.00,222.00 172.80,219.80 171.20,219.80" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="174.20" y="203.00" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">%30</text>
+<line x1="102.00" y1="159.00" x2="74.00" y2="159.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<polygon points="74.00,159.00 76.20,159.80 76.20,158.20" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="88.00" y="157.80" font-size="1.90" text-anchor="middle" font-weight="700" fill="#111">%30</text>
+<line x1="242.00" y1="159.00" x2="270.00" y2="159.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<polygon points="270.00,159.00 267.80,158.20 267.80,159.80" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="256.00" y="157.80" font-size="1.90" text-anchor="middle" font-weight="700" fill="#111">%30</text>
+<path d="M66.00 180.07L66.07 180.00M66.00 182.19L68.19 180.00M66.00 184.32L70.32 180.00M66.00 186.44L72.00 180.44M66.00 188.56L72.00 182.56M66.68 190.00L72.00 184.68M68.80 190.00L72.00 186.80M70.92 190.00L72.00 188.92" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="66.00" y="180.00" width="6.00" height="10.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="67.50" y="182.00" width="3.00" height="6.00" fill="#fff" stroke="#111" stroke-width="0.20" />
+<text x="69.00" y="196.00" font-size="1.60" text-anchor="middle" font-weight="400" fill="#111">baca +8.40</text>
+<rect x="120.00" y="140.00" width="4.00" height="2.50" fill="#fff" stroke="#111" stroke-width="0.20" />
+<rect x="220.00" y="140.00" width="4.00" height="2.50" fill="#fff" stroke="#111" stroke-width="0.20" />
+<text x="222.00" y="137.00" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280">çatı arası havalandırma kiremidi</text>
+<rect x="72.00" y="84.00" width="200.00" height="150.00" fill="none" stroke="#111" stroke-width="0.25" stroke-dasharray="2,1" />
+<polygon points="170.90,154.10 173.10,154.10 172.00,156.00" fill="#fff" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<polygon points="170.90,154.10 172.00,154.10 172.00,156.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="173.80" y="155.60" font-size="1.80" text-anchor="start" font-weight="700" fill="#111">mahya +8.94</text>
+<polygon points="100.90,80.10 103.10,80.10 102.00,82.00" fill="#fff" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<polygon points="100.90,80.10 102.00,80.10 102.00,82.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="103.80" y="81.60" font-size="1.80" text-anchor="start" font-weight="700" fill="#111">saçak +6.45</text>
+<line x1="62.50" y1="54.00" x2="281.50" y2="54.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="64.00" y1="52.80" x2="64.00" y2="55.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="63.20" y1="54.80" x2="64.80" y2="53.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="64.00" y1="75.00" x2="64.00" y2="55.20" stroke="#888" stroke-width="0.08" stroke-linecap="butt"/>
+<line x1="72.00" y1="52.80" x2="72.00" y2="55.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="71.20" y1="54.80" x2="72.80" y2="53.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="72.00" y1="75.00" x2="72.00" y2="55.20" stroke="#888" stroke-width="0.08" stroke-linecap="butt"/>
+<line x1="147.00" y1="52.80" x2="147.00" y2="55.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="146.20" y1="54.80" x2="147.80" y2="53.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="147.00" y1="75.00" x2="147.00" y2="55.20" stroke="#888" stroke-width="0.08" stroke-linecap="butt"/>
+<line x1="197.00" y1="52.80" x2="197.00" y2="55.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="196.20" y1="54.80" x2="197.80" y2="53.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="197.00" y1="75.00" x2="197.00" y2="55.20" stroke="#888" stroke-width="0.08" stroke-linecap="butt"/>
+<line x1="272.00" y1="52.80" x2="272.00" y2="55.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="271.20" y1="54.80" x2="272.80" y2="53.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="272.00" y1="75.00" x2="272.00" y2="55.20" stroke="#888" stroke-width="0.08" stroke-linecap="butt"/>
+<line x1="280.00" y1="52.80" x2="280.00" y2="55.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="279.20" y1="54.80" x2="280.80" y2="53.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="280.00" y1="75.00" x2="280.00" y2="55.20" stroke="#888" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="68.00" y="53.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">80</text>
+<text x="109.50" y="53.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">750</text>
+<text x="172.00" y="53.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">500</text>
+<text x="234.50" y="53.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">750</text>
+<text x="276.00" y="53.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">80</text>
+<line x1="62.50" y1="48.00" x2="281.50" y2="48.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="64.00" y1="46.80" x2="64.00" y2="49.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="63.20" y1="48.80" x2="64.80" y2="47.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="280.00" y1="46.80" x2="280.00" y2="49.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="279.20" y1="48.80" x2="280.80" y2="47.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="172.00" y="47.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">2160</text>
+<line x1="56.00" y1="74.50" x2="56.00" y2="243.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="54.80" y1="76.00" x2="57.20" y2="76.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="55.20" y1="76.80" x2="56.80" y2="75.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="54.80" y1="84.00" x2="57.20" y2="84.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="55.20" y1="84.80" x2="56.80" y2="83.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="54.80" y1="159.00" x2="57.20" y2="159.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="55.20" y1="159.80" x2="56.80" y2="158.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="54.80" y1="234.00" x2="57.20" y2="234.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="55.20" y1="234.80" x2="56.80" y2="233.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="54.80" y1="242.00" x2="57.20" y2="242.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="55.20" y1="242.80" x2="56.80" y2="241.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="55.20" y="80.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 55.20 80.00)">80</text>
+<text x="55.20" y="121.50" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 55.20 121.50)">750</text>
+<text x="55.20" y="196.50" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 55.20 196.50)">750</text>
+<text x="55.20" y="238.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 55.20 238.00)">80</text>
+<line x1="50.00" y1="74.50" x2="50.00" y2="243.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="48.80" y1="76.00" x2="51.20" y2="76.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="49.20" y1="76.80" x2="50.80" y2="75.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="48.80" y1="242.00" x2="51.20" y2="242.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="49.20" y1="242.80" x2="50.80" y2="241.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="49.20" y="159.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 49.20 159.00)">1660</text>
+<circle cx="72.00" cy="40.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="72.00" y="41.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">1</text>
+<line x1="72.00" y1="43.20" x2="72.00" y2="75.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="150.00" cy="40.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="150.00" y="41.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">2</text>
+<line x1="150.00" y1="43.20" x2="150.00" y2="75.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="198.00" cy="40.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="198.00" y="41.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">3</text>
+<line x1="198.00" y1="43.20" x2="198.00" y2="75.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="272.00" cy="40.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="272.00" y="41.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">4</text>
+<line x1="272.00" y1="43.20" x2="272.00" y2="75.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<text x="24.00" y="279.00" font-size="3.80" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">ÇATI PLANI · Ö: 1/100</text>
+<text x="24.00" y="284.00" font-size="2.30" text-anchor="start" font-weight="400" fill="#6b7280">Kırma çatı %30 · saçak 80 cm · mahya +8.94</text>
+<rect x="318.00" y="10.00" width="92.00" height="277.00" fill="#ffffff" stroke="#111" stroke-width="0.50" />
+<text x="322.00" y="19.00" font-size="5.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.40">DURUNDAY VİLLA</text>
+<text x="322.00" y="24.50" font-size="2.60" text-anchor="start" font-weight="400" fill="#6b7280">Konya · Meram · Durunday</text>
+<text x="322.00" y="29.00" font-size="2.30" text-anchor="start" font-weight="400" fill="#6b7280">Bodrumlu dubleks müstakil konut · 300 m² oturum</text>
+<line x1="318.00" y1="33.00" x2="410.00" y2="33.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="38.50" font-size="2.80" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">MİMARİ ÖN PROJE (AVAN)</text>
+<text x="322.00" y="42.80" font-size="2.10" text-anchor="start" font-weight="400" fill="#6b7280" font-style="italic">Ruhsat ve uygulamaya esas değildir</text>
+<line x1="318.00" y1="46.00" x2="410.00" y2="46.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="51.00" font-size="2.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">LEJANT</text>
+<rect x="322.00" y="52.00" width="9.00" height="2.60" fill="#4b5058"/>
+<path d="M322.00 52.00H331.00M324.00 52.00V54.00M327.00 52.00V54.00M330.00 52.00V54.00M322.00 54.00H331.00M322.50 54.00V54.60M325.50 54.00V54.60M328.50 54.00V54.60" fill="none" stroke="#2f3338" stroke-width="0.12"/>
+<rect x="322.00" y="52.00" width="9.00" height="2.60" fill="none" stroke="#111" stroke-width="0.15" />
+<text x="333.00" y="54.20" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Kil kiremit</text>
+<path d="M322.00 57.72L324.12 55.60M323.64 58.20L326.24 55.60M325.76 58.20L328.36 55.60M327.88 58.20L330.48 55.60M330.00 58.20L331.00 57.20" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="322.00" y="55.60" width="9.00" height="2.60" fill="none" stroke="#111" stroke-width="0.25" />
+<text x="333.00" y="57.80" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Baca (taş kaplı)</text>
+<text x="322.00" y="62.90" font-size="2.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">NOTLAR</text>
+<text x="322.00" y="66.30" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">1. Çatı konstrüksiyonu ahşaptır; betonarme çatı döşemesi</text>
+<text x="322.00" y="69.00" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    üzerinde 14 cm taşyünü ısı yalıtımı vardır.</text>
+<text x="322.00" y="72.30" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">2. Oluk ve yağmur inişleri antrasit alüminyum; inişler bahçe</text>
+<text x="322.00" y="75.00" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    drenajına ve yağmur suyu deposuna bağlanır.</text>
+<text x="322.00" y="78.30" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">3. Çatı arası havalandırılır (saçak altı menfez + mahya</text>
+<text x="322.00" y="81.00" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    havalandırması).</text>
+<text x="322.00" y="84.30" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">4. Giriş saçağı ekstansif yeşil çatıdır; pergola biyoklimatik</text>
+<text x="322.00" y="87.00" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    (açılır lamelli) alüminyumdur.</text>
+<circle cx="398.00" cy="182.00" r="6.50" fill="none" stroke="#111" stroke-width="0.30"/>
+<polygon points="398.00,174.00 400.20,184.50 398.00,183.20 395.80,184.50" fill="#111" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<text x="398.00" y="172.70" font-size="3.00" text-anchor="middle" font-weight="700" fill="#111">K</text>
+<line x1="318.00" y1="195.00" x2="410.00" y2="195.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<text x="322.00" y="200.00" font-size="2.00" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">REVİZYONLAR</text>
+<text x="322.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">R0</text>
+<text x="328.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">19.09.2026</text>
+<text x="345.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">İlk yayın</text>
+<text x="322.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">R1</text>
+<text x="328.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">21.09.2026</text>
+<text x="345.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Plan kurgusu yeniden düzenlendi; kesit,</text>
+<text x="345.00" y="210.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">görünüş, detay ve doğrama listesi eklendi</text>
+<line x1="318.00" y1="221.00" x2="410.00" y2="221.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="226.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">İŞ SAHİBİ</text>
+<text x="322.00" y="230.50" font-size="2.40" text-anchor="start" font-weight="400" fill="#111">—</text>
+<text x="366.00" y="226.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">HAZIRLAYAN</text>
+<text x="366.00" y="230.50" font-size="2.40" text-anchor="start" font-weight="400" fill="#111">E. Ceran</text>
+<line x1="363.00" y1="221.00" x2="363.00" y2="235.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="318.00" y1="235.00" x2="410.00" y2="235.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="240.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">MÜELLİF MİMAR</text>
+<text x="322.00" y="245.00" font-size="2.00" text-anchor="start" font-weight="400" fill="#6b7280" font-style="italic">(ruhsat aşamasında atanacak)</text>
+<text x="366.00" y="240.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">İMZA</text>
+<line x1="363.00" y1="235.00" x2="363.00" y2="249.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="318.00" y1="249.00" x2="410.00" y2="249.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<text x="322.00" y="255.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">PAFTA ADI</text>
+<text x="322.00" y="262.00" font-size="5.00" text-anchor="start" font-weight="700" fill="#111">ÇATI PLANI</text>
+<line x1="318.00" y1="273.00" x2="410.00" y2="273.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">ÖLÇEK</text>
+<text x="322.00" y="283.50" font-size="3.60" text-anchor="start" font-weight="700" fill="#111">1/100</text>
+<text x="350.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">TARİH</text>
+<text x="350.00" y="283.50" font-size="3.00" text-anchor="start" font-weight="400" fill="#111">21.09.2026</text>
+<text x="380.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">PAFTA NO</text>
+<text x="380.00" y="284.00" font-size="5.20" text-anchor="start" font-weight="700" fill="#111">A-05</text>
+<line x1="347.00" y1="273.00" x2="347.00" y2="287.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="377.00" y1="273.00" x2="377.00" y2="287.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+</svg>

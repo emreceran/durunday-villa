@@ -1,386 +1,982 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2710 2030" width="2710" height="2030">
-<style>
-  text { font-family: "DejaVu Sans", Arial, Helvetica, sans-serif; fill:#111827; }
-  .kod   { font-size: 15px; font-weight: 700; fill:#1d4ed8; letter-spacing:.5px; }
-  .ad    { font-size: 15px; font-weight: 600; }
-  .alan  { font-size: 13px; fill:#4b5563; }
-  .olcu  { font-size: 14px; fill:#374151; }
-  .kucuk { font-size: 15px; fill:#4b5563; }
-  .baslik{ font-size: 34px; font-weight: 700; }
-  .altb  { font-size: 19px; font-weight: 600; fill:#1f2937; }
-  .lej   { font-size: 15px; fill:#374151; }
-</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" width="420mm" height="297mm" font-family="'Arial Narrow','Liberation Sans Narrow','Roboto Condensed',Arial,Helvetica,sans-serif">
 <defs>
-  <marker id="ok" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
-    <path d="M0 0 L9 4.5 L0 9 z" fill="#b45309"/>
-  </marker>
-  <pattern id="cim" width="14" height="14" patternUnits="userSpaceOnUse">
-    <rect width="14" height="14" fill="#eef7ec"/>
-    <path d="M0 14 L7 6 M7 14 L14 6" stroke="#bcd9b6" stroke-width="1.4" fill="none"/>
-  </pattern>
+ <pattern id="p-fayans" patternUnits="userSpaceOnUse" width="3" height="3"><path d="M0 0H3M0 0V3" stroke="#c7ccd4" stroke-width="0.1"/></pattern>
+ <pattern id="p-tas" patternUnits="userSpaceOnUse" width="6" height="6"><path d="M0 0H6M0 0V6" stroke="#d3d7de" stroke-width="0.1"/></pattern>
+ <pattern id="p-parke" patternUnits="userSpaceOnUse" width="12" height="1.8"><path d="M0 0H12M0 0V1.8" stroke="#e6e1d6" stroke-width="0.08"/></pattern>
+ <pattern id="p-dis-tas" patternUnits="userSpaceOnUse" width="6" height="3"><path d="M0 0H6M0 0V3" stroke="#c9cdd3" stroke-width="0.1"/></pattern>
+ <pattern id="p-duvar" patternUnits="userSpaceOnUse" width="1.5" height="1.5" patternTransform="rotate(45)"><path d="M0 0V1.5" stroke="#3f444c" stroke-width="0.22"/></pattern>
+ <pattern id="p-yalitim" patternUnits="userSpaceOnUse" width="2.0" height="2.0"><rect width="2" height="2" fill="#f4f1e8"/><path d="M0 2L1 0L2 2" fill="none" stroke="#6b7280" stroke-width="0.08"/></pattern>
+ <pattern id="p-saft" patternUnits="userSpaceOnUse" width="1.6" height="1.6" patternTransform="rotate(45)"><path d="M0 0V1.6" stroke="#9ca3af" stroke-width="0.12"/></pattern>
+ <pattern id="p-toprak" patternUnits="userSpaceOnUse" width="4" height="4" patternTransform="rotate(45)"><path d="M0 0V4M2 0V1.2" stroke="#8b7355" stroke-width="0.15"/></pattern>
+ <pattern id="p-beton" patternUnits="userSpaceOnUse" width="2.4" height="2.4"><circle cx="0.6" cy="0.7" r="0.18" fill="#555"/><circle cx="1.7" cy="1.8" r="0.12" fill="#555"/><path d="M1.4 0.4l0.4 0.3l-0.5 0.1z" fill="#555"/></pattern>
+ <pattern id="p-cim" patternUnits="userSpaceOnUse" width="4" height="4"><path d="M0.5 1.2l0.3-0.8l0.3 0.8M2.6 3.2l0.3-0.8l0.3 0.8" fill="none" stroke="#86a877" stroke-width="0.12"/></pattern>
+ <pattern id="p-kiremit" patternUnits="userSpaceOnUse" width="2.5" height="2.5"><path d="M0 2.5H2.5" stroke="#9ca3af" stroke-width="0.1"/></pattern>
+ <pattern id="p-izgara" patternUnits="userSpaceOnUse" width="1.2" height="1.2"><path d="M0 0H1.2M0 0V1.2" stroke="#6b7280" stroke-width="0.1"/></pattern>
+ <pattern id="p-su" patternUnits="userSpaceOnUse" width="6" height="3"><path d="M0 1.5q1.5-0.8 3 0t3 0" fill="none" stroke="#93c5fd" stroke-width="0.15"/></pattern>
+ <pattern id="p-sille" patternUnits="userSpaceOnUse" width="9" height="3.0"><rect width="9" height="3" fill="#efe6d4"/><path d="M0 3H9M0 0V1.5M4.5 1.5V3M0 1.5H9" stroke="#b9ab8e" stroke-width="0.12"/></pattern>
+ <pattern id="p-siva" patternUnits="userSpaceOnUse" width="5" height="5"><rect width="5" height="5" fill="#fbfbf9"/></pattern>
+ <pattern id="p-ahsap" patternUnits="userSpaceOnUse" width="1.2" height="5"><rect width="1.2" height="5" fill="#c89b6d"/><path d="M0 0V5" stroke="#8a643f" stroke-width="0.12"/></pattern>
+ <pattern id="p-kiremit-g" patternUnits="userSpaceOnUse" width="3" height="2"><rect width="3" height="2" fill="#4b5058"/><path d="M0 2H3M1.5 0V2" stroke="#2f3338" stroke-width="0.12"/></pattern>
+ <marker id="ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+ <marker id="ok-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b45309"/></marker>
 </defs>
-<rect x="0" y="0" width="2710" height="2030" fill="#ffffff"/>
-<rect x="18" y="18" width="2674" height="1994" fill="none" stroke="#1f2937" stroke-width="3"/>
-<rect x="18" y="1862" width="2674" height="150" fill="#f8fafc" stroke="#1f2937" stroke-width="3"/>
-<text x="46" y="1914" class="baslik">BODRUM PLANI</text>
-<text x="46" y="1950" class="altb">Net kapalı alan 253.9 m²  ·  açık alan 17.3 m²  ·  brüt kat alanı 300,0 m²</text>
-<text x="46" y="1982" class="kucuk">Kat yüksekliği 2.90 m · net tavan yüksekliği 2.55 m · duvarlar: dış 35 cm (19 tuğla + 8 XPS + kaplama), iç 15 cm</text>
-<text x="2664" y="1914" class="altb" text-anchor="end">DURUNDAY VİLLA</text>
-<text x="2664" y="1946" class="kucuk" text-anchor="end">Konya / Meram / Durunday — Bodrumlu dubleks villa</text>
-<text x="2664" y="1978" class="kucuk" text-anchor="end">Ölçek 1:100 (A3) · Ön tasarım · 19.09.2026</text>
-<rect x="190.0" y="190.0" width="860.0" height="600.0" fill="#f0f0f2"/>
-<rect x="190.0" y="790.0" width="860.0" height="540.0" fill="#eaf2fb"/>
-<rect x="190.0" y="1330.0" width="860.0" height="360.0" fill="#eaf2fb"/>
-<rect x="1050.0" y="190.0" width="340.0" height="380.0" fill="#f0f0f2"/>
-<rect x="1050.0" y="570.0" width="340.0" height="560.0" fill="#f4f2ee"/>
-<rect x="1050.0" y="1130.0" width="340.0" height="200.0" fill="#e6f3f4"/>
-<rect x="1050.0" y="1330.0" width="340.0" height="160.0" fill="#f0f0f2"/>
-<rect x="1050.0" y="1490.0" width="340.0" height="200.0" fill="#f0f0f2"/>
-<rect x="1390.0" y="190.0" width="260.0" height="260.0" fill="#f0f0f2"/>
-<rect x="1390.0" y="450.0" width="260.0" height="120.0" fill="#f0f0f2"/>
-<rect x="1390.0" y="570.0" width="260.0" height="220.0" fill="#f0f0f2"/>
-<rect x="1390.0" y="790.0" width="260.0" height="180.0" fill="#e6f3f4"/>
-<rect x="1390.0" y="970.0" width="260.0" height="160.0" fill="#f4f2ee"/>
-<rect x="1390.0" y="1130.0" width="260.0" height="560.0" fill="#eef4fb"/>
-<rect x="1650.0" y="190.0" width="540.0" height="380.0" fill="#eaf2fb"/>
-<rect x="1650.0" y="570.0" width="300.0" height="380.0" fill="#e6f3f4"/>
-<rect x="1950.0" y="570.0" width="240.0" height="380.0" fill="#e6f3f4"/>
-<rect x="1650.0" y="950.0" width="300.0" height="380.0" fill="#f2f6ec"/>
-<rect x="1950.0" y="950.0" width="240.0" height="240.0" fill="#e6f3f4"/>
-<rect x="1950.0" y="1190.0" width="240.0" height="140.0" fill="#f0f0f2"/>
-<rect x="1650.0" y="1330.0" width="540.0" height="360.0" fill="#edf6ec"/>
-<rect x="1650.0" y="1330.0" width="540.0" height="360.0" fill="url(#cim)" opacity=".45"/>
-<path d="M 172.5 172.5 H 2207.5 V 1707.5 H 172.5 Z M 207.5 207.5 H 2172.5 V 1672.5 H 207.5 Z" fill="#1f2937" fill-rule="evenodd"/>
-<rect x="190.0" y="782.5" width="860.0" height="15.0" fill="#1f2937"/>
-<rect x="1042.5" y="190.0" width="15.0" height="380.0" fill="#1f2937"/>
-<rect x="1042.5" y="570.0" width="15.0" height="220.0" fill="#1f2937"/>
-<rect x="190.0" y="1322.5" width="860.0" height="15.0" fill="#1f2937"/>
-<rect x="1042.5" y="790.0" width="15.0" height="340.0" fill="#1f2937"/>
-<rect x="1042.5" y="1130.0" width="15.0" height="200.0" fill="#1f2937"/>
-<rect x="1042.5" y="1330.0" width="15.0" height="160.0" fill="#1f2937"/>
-<rect x="1042.5" y="1490.0" width="15.0" height="200.0" fill="#1f2937"/>
-<rect x="1050.0" y="562.5" width="340.0" height="15.0" fill="#1f2937"/>
-<rect x="1382.5" y="190.0" width="15.0" height="260.0" fill="#1f2937"/>
-<rect x="1382.5" y="450.0" width="15.0" height="120.0" fill="#1f2937"/>
-<rect x="1050.0" y="1122.5" width="340.0" height="15.0" fill="#1f2937"/>
-<rect x="1382.5" y="570.0" width="15.0" height="220.0" fill="#1f2937"/>
-<rect x="1382.5" y="790.0" width="15.0" height="180.0" fill="#1f2937"/>
-<rect x="1382.5" y="970.0" width="15.0" height="160.0" fill="#1f2937"/>
-<rect x="1050.0" y="1322.5" width="340.0" height="15.0" fill="#1f2937"/>
-<rect x="1382.5" y="1130.0" width="15.0" height="200.0" fill="#1f2937"/>
-<rect x="1050.0" y="1482.5" width="340.0" height="15.0" fill="#1f2937"/>
-<rect x="1382.5" y="1330.0" width="15.0" height="160.0" fill="#1f2937"/>
-<rect x="1382.5" y="1490.0" width="15.0" height="200.0" fill="#1f2937"/>
-<rect x="1390.0" y="442.5" width="260.0" height="15.0" fill="#1f2937"/>
-<rect x="1642.5" y="190.0" width="15.0" height="260.0" fill="#1f2937"/>
-<rect x="1390.0" y="562.5" width="260.0" height="15.0" fill="#1f2937"/>
-<rect x="1642.5" y="450.0" width="15.0" height="120.0" fill="#1f2937"/>
-<rect x="1390.0" y="782.5" width="260.0" height="15.0" fill="#1f2937"/>
-<rect x="1642.5" y="570.0" width="15.0" height="220.0" fill="#1f2937"/>
-<rect x="1390.0" y="962.5" width="260.0" height="15.0" fill="#1f2937"/>
-<rect x="1642.5" y="790.0" width="15.0" height="160.0" fill="#1f2937"/>
-<rect x="1390.0" y="1122.5" width="260.0" height="15.0" fill="#1f2937"/>
-<rect x="1642.5" y="970.0" width="15.0" height="160.0" fill="#1f2937"/>
-<rect x="1642.5" y="1130.0" width="15.0" height="200.0" fill="#1f2937"/>
-<rect x="1642.5" y="1330.0" width="15.0" height="360.0" fill="#1f2937"/>
-<rect x="1650.0" y="562.5" width="300.0" height="15.0" fill="#1f2937"/>
-<rect x="1950.0" y="562.5" width="240.0" height="15.0" fill="#1f2937"/>
-<rect x="1942.5" y="570.0" width="15.0" height="380.0" fill="#1f2937"/>
-<rect x="1650.0" y="942.5" width="300.0" height="15.0" fill="#1f2937"/>
-<rect x="1950.0" y="942.5" width="240.0" height="15.0" fill="#1f2937"/>
-<rect x="1942.5" y="950.0" width="15.0" height="240.0" fill="#1f2937"/>
-<rect x="1942.5" y="1190.0" width="15.0" height="140.0" fill="#1f2937"/>
-<rect x="1650.0" y="1322.5" width="300.0" height="15.0" fill="#1f2937"/>
-<rect x="1950.0" y="1182.5" width="240.0" height="15.0" fill="#1f2937"/>
-<rect x="1950.0" y="1322.5" width="240.0" height="15.0" fill="#1f2937"/>
-<rect x="1040.5" y="810.0" width="19.0" height="300.0" fill="#ffffff"/>
-<rect x="1040.5" y="635.0" width="19.0" height="90.0" fill="#ffffff"/>
-<path d="M 1050.0 635.0 L 1140.0 635.0 A 90.0 90.0 0 0 1 1050.0 725.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1050.0" y1="635.0" x2="1140.0" y2="635.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1040.5" y="915.0" width="19.0" height="90.0" fill="#ffffff"/>
-<path d="M 1050.0 915.0 L 1140.0 915.0 A 90.0 90.0 0 0 1 1050.0 1005.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1050.0" y1="915.0" x2="1140.0" y2="915.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="575.0" y="1320.5" width="90.0" height="19.0" fill="#ffffff"/>
-<path d="M 575.0 1330.0 L 575.0 1420.0 A 90.0 90.0 0 0 1 665.0 1330.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="575.0" y1="1330.0" x2="575.0" y2="1420.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1175.0" y="560.5" width="90.0" height="19.0" fill="#ffffff"/>
-<path d="M 1175.0 570.0 L 1175.0 660.0 A 90.0 90.0 0 0 1 1265.0 570.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1175.0" y1="570.0" x2="1175.0" y2="660.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1380.5" y="1005.0" width="19.0" height="90.0" fill="#ffffff"/>
-<path d="M 1390.0 1005.0 L 1480.0 1005.0 A 90.0 90.0 0 0 1 1390.0 1095.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1390.0" y1="1005.0" x2="1480.0" y2="1005.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1175.0" y="1120.5" width="90.0" height="19.0" fill="#ffffff"/>
-<path d="M 1175.0 1130.0 L 1175.0 1220.0 A 90.0 90.0 0 0 1 1265.0 1130.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1175.0" y1="1130.0" x2="1175.0" y2="1220.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1175.0" y="1320.5" width="90.0" height="19.0" fill="#ffffff"/>
-<path d="M 1175.0 1330.0 L 1175.0 1420.0 A 90.0 90.0 0 0 1 1265.0 1330.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1175.0" y1="1330.0" x2="1175.0" y2="1420.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1175.0" y="1480.5" width="90.0" height="19.0" fill="#ffffff"/>
-<path d="M 1175.0 1490.0 L 1175.0 1580.0 A 90.0 90.0 0 0 1 1265.0 1490.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1175.0" y1="1490.0" x2="1175.0" y2="1580.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1380.5" y="275.0" width="19.0" height="90.0" fill="#ffffff"/>
-<path d="M 1390.0 275.0 L 1480.0 275.0 A 90.0 90.0 0 0 1 1390.0 365.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1390.0" y1="275.0" x2="1480.0" y2="275.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1475.0" y="440.5" width="90.0" height="19.0" fill="#ffffff"/>
-<path d="M 1475.0 450.0 L 1475.0 540.0 A 90.0 90.0 0 0 1 1565.0 450.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1475.0" y1="450.0" x2="1475.0" y2="540.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1475.0" y="960.5" width="90.0" height="19.0" fill="#ffffff"/>
-<path d="M 1475.0 970.0 L 1475.0 1060.0 A 90.0 90.0 0 0 1 1565.0 970.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1475.0" y1="970.0" x2="1475.0" y2="1060.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1475.0" y="1120.5" width="90.0" height="19.0" fill="#ffffff"/>
-<path d="M 1475.0 1130.0 L 1475.0 1220.0 A 90.0 90.0 0 0 1 1565.0 1130.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1475.0" y1="1130.0" x2="1475.0" y2="1220.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1755.0" y="560.5" width="90.0" height="19.0" fill="#ffffff"/>
-<path d="M 1755.0 570.0 L 1755.0 660.0 A 90.0 90.0 0 0 1 1845.0 570.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1755.0" y1="570.0" x2="1755.0" y2="660.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1940.5" y="715.0" width="19.0" height="90.0" fill="#ffffff"/>
-<path d="M 1950.0 715.0 L 2040.0 715.0 A 90.0 90.0 0 0 1 1950.0 805.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1950.0" y1="715.0" x2="2040.0" y2="715.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1640.5" y="1005.0" width="19.0" height="90.0" fill="#ffffff"/>
-<path d="M 1650.0 1005.0 L 1740.0 1005.0 A 90.0 90.0 0 0 1 1650.0 1095.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1650.0" y1="1005.0" x2="1740.0" y2="1005.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1940.5" y="1025.0" width="19.0" height="90.0" fill="#ffffff"/>
-<path d="M 1950.0 1025.0 L 2040.0 1025.0 A 90.0 90.0 0 0 1 1950.0 1115.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1950.0" y1="1025.0" x2="2040.0" y2="1025.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="2025.0" y="1180.5" width="90.0" height="19.0" fill="#ffffff"/>
-<path d="M 2025.0 1190.0 L 2025.0 1280.0 A 90.0 90.0 0 0 1 2115.0 1190.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="2025.0" y1="1190.0" x2="2025.0" y2="1280.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="1640.5" y="1380.0" width="19.0" height="260.0" fill="#ffffff"/>
-<line x1="1645.0" y1="1380.0" x2="1645.0" y2="1523.0" stroke="#4b5563" stroke-width="4"/>
-<line x1="1655.0" y1="1497.0" x2="1655.0" y2="1640.0" stroke="#4b5563" stroke-width="4"/>
-<rect x="370.0" y="170.5" width="500.0" height="39.0" fill="#ffffff"/>
-<line x1="370.0" y1="190.0" x2="870.0" y2="190.0" stroke="#4b5563" stroke-width="5"/>
-<line x1="453.3" y1="176.0" x2="453.3" y2="204.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="536.7" y1="176.0" x2="536.7" y2="204.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="620.0" y1="176.0" x2="620.0" y2="204.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="703.3" y1="176.0" x2="703.3" y2="204.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="786.7" y1="176.0" x2="786.7" y2="204.0" stroke="#4b5563" stroke-width="2"/>
-<rect x="170.5" y="911.5" width="39.0" height="297.0" fill="#ffffff"/>
-<line x1="172.5" y1="911.5" x2="172.5" y2="1208.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="184.2" y1="911.5" x2="184.2" y2="1208.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="195.8" y1="911.5" x2="195.8" y2="1208.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="207.5" y1="911.5" x2="207.5" y2="1208.5" stroke="#4b5563" stroke-width="2"/>
-<rect x="470.0" y="1670.5" width="300.0" height="39.0" fill="#ffffff"/>
-<line x1="470.0" y1="1672.5" x2="770.0" y2="1672.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="470.0" y1="1684.2" x2="770.0" y2="1684.2" stroke="#4b5563" stroke-width="2"/>
-<line x1="470.0" y1="1695.8" x2="770.0" y2="1695.8" stroke="#4b5563" stroke-width="2"/>
-<line x1="470.0" y1="1707.5" x2="770.0" y2="1707.5" stroke="#4b5563" stroke-width="2"/>
-<rect x="170.5" y="1411.0" width="39.0" height="198.0" fill="#ffffff"/>
-<line x1="172.5" y1="1411.0" x2="172.5" y2="1609.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="184.2" y1="1411.0" x2="184.2" y2="1609.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="195.8" y1="1411.0" x2="195.8" y2="1609.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="207.5" y1="1411.0" x2="207.5" y2="1609.0" stroke="#4b5563" stroke-width="2"/>
-<rect x="1126.5" y="170.5" width="187.0" height="39.0" fill="#ffffff"/>
-<line x1="1126.5" y1="172.5" x2="1313.5" y2="172.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="1126.5" y1="184.2" x2="1313.5" y2="184.2" stroke="#4b5563" stroke-width="2"/>
-<line x1="1126.5" y1="195.8" x2="1313.5" y2="195.8" stroke="#4b5563" stroke-width="2"/>
-<line x1="1126.5" y1="207.5" x2="1313.5" y2="207.5" stroke="#4b5563" stroke-width="2"/>
-<rect x="1126.5" y="1670.5" width="187.0" height="39.0" fill="#ffffff"/>
-<line x1="1126.5" y1="1672.5" x2="1313.5" y2="1672.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="1126.5" y1="1684.2" x2="1313.5" y2="1684.2" stroke="#4b5563" stroke-width="2"/>
-<line x1="1126.5" y1="1695.8" x2="1313.5" y2="1695.8" stroke="#4b5563" stroke-width="2"/>
-<line x1="1126.5" y1="1707.5" x2="1313.5" y2="1707.5" stroke="#4b5563" stroke-width="2"/>
-<rect x="1448.5" y="170.5" width="143.0" height="39.0" fill="#ffffff"/>
-<line x1="1448.5" y1="172.5" x2="1591.5" y2="172.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="1448.5" y1="184.2" x2="1591.5" y2="184.2" stroke="#4b5563" stroke-width="2"/>
-<line x1="1448.5" y1="195.8" x2="1591.5" y2="195.8" stroke="#4b5563" stroke-width="2"/>
-<line x1="1448.5" y1="207.5" x2="1591.5" y2="207.5" stroke="#4b5563" stroke-width="2"/>
-<rect x="1448.5" y="1670.5" width="143.0" height="39.0" fill="#ffffff"/>
-<line x1="1448.5" y1="1672.5" x2="1591.5" y2="1672.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="1448.5" y1="1684.2" x2="1591.5" y2="1684.2" stroke="#4b5563" stroke-width="2"/>
-<line x1="1448.5" y1="1695.8" x2="1591.5" y2="1695.8" stroke="#4b5563" stroke-width="2"/>
-<line x1="1448.5" y1="1707.5" x2="1591.5" y2="1707.5" stroke="#4b5563" stroke-width="2"/>
-<rect x="1771.5" y="170.5" width="297.0" height="39.0" fill="#ffffff"/>
-<line x1="1771.5" y1="172.5" x2="2068.5" y2="172.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="1771.5" y1="184.2" x2="2068.5" y2="184.2" stroke="#4b5563" stroke-width="2"/>
-<line x1="1771.5" y1="195.8" x2="2068.5" y2="195.8" stroke="#4b5563" stroke-width="2"/>
-<line x1="1771.5" y1="207.5" x2="2068.5" y2="207.5" stroke="#4b5563" stroke-width="2"/>
-<rect x="2170.5" y="275.5" width="39.0" height="209.0" fill="#ffffff"/>
-<line x1="2172.5" y1="275.5" x2="2172.5" y2="484.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="2184.2" y1="275.5" x2="2184.2" y2="484.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="2195.8" y1="275.5" x2="2195.8" y2="484.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="2207.5" y1="275.5" x2="2207.5" y2="484.5" stroke="#4b5563" stroke-width="2"/>
-<rect x="2170.5" y="655.5" width="39.0" height="209.0" fill="#ffffff"/>
-<line x1="2172.5" y1="655.5" x2="2172.5" y2="864.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="2184.2" y1="655.5" x2="2184.2" y2="864.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="2195.8" y1="655.5" x2="2195.8" y2="864.5" stroke="#4b5563" stroke-width="2"/>
-<line x1="2207.5" y1="655.5" x2="2207.5" y2="864.5" stroke="#4b5563" stroke-width="2"/>
-<rect x="2170.5" y="1004.0" width="39.0" height="132.0" fill="#ffffff"/>
-<line x1="2172.5" y1="1004.0" x2="2172.5" y2="1136.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="2184.2" y1="1004.0" x2="2184.2" y2="1136.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="2195.8" y1="1004.0" x2="2195.8" y2="1136.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="2207.5" y1="1004.0" x2="2207.5" y2="1136.0" stroke="#4b5563" stroke-width="2"/>
-<text x="620.0" y="476.0" class="kod" text-anchor="middle">B-01</text>
-<text x="620.0" y="494.0" class="ad" text-anchor="middle">Garaj (3 araçlık)</text>
-<text x="620.0" y="510.0" class="alan" text-anchor="middle">48.0 m²</text>
-<text x="620.0" y="1046.0" class="kod" text-anchor="middle">B-02</text>
-<text x="620.0" y="1064.0" class="ad" text-anchor="middle">Hobi ve oyun salonu</text>
-<text x="620.0" y="1080.0" class="alan" text-anchor="middle">43.8 m²</text>
-<text x="620.0" y="1496.0" class="kod" text-anchor="middle">B-03</text>
-<text x="620.0" y="1514.0" class="ad" text-anchor="middle">Ev sineması</text>
-<text x="620.0" y="1530.0" class="alan" text-anchor="middle">28.0 m²</text>
-<text x="1220.0" y="366.0" class="kod" text-anchor="middle">B-04</text>
-<text x="1220.0" y="384.0" class="ad" text-anchor="middle">Kazan dairesi / teknik hacim</text>
-<text x="1220.0" y="400.0" class="alan" text-anchor="middle">11.5 m²</text>
-<line x1="1085.0" y1="640.0" x2="1205.0" y2="640.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="1085.0" y1="682.0" x2="1205.0" y2="682.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="1085.0" y1="724.0" x2="1205.0" y2="724.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="1085.0" y1="766.0" x2="1205.0" y2="766.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="1085.0" y1="808.0" x2="1205.0" y2="808.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="1085.0" y1="850.0" x2="1205.0" y2="850.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="1085.0" y1="892.0" x2="1205.0" y2="892.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="1085.0" y1="934.0" x2="1205.0" y2="934.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="1085.0" y1="976.0" x2="1205.0" y2="976.0" stroke="#4b5563" stroke-width="2"/>
-<line x1="1085.0" y1="1018.0" x2="1205.0" y2="1018.0" stroke="#4b5563" stroke-width="2"/>
-<rect x="1085.0" y="640.0" width="120.0" height="420.0" fill="none" stroke="#4b5563" stroke-width="2"/>
-<line x1="1145.0" y1="1070.0" x2="1145.0" y2="630.0" stroke="#b45309" stroke-width="3" marker-end="url(#ok)"/>
-<text x="1220.0" y="700.0" class="kucuk" text-anchor="middle">ÇIKIŞ</text>
-<text x="1220.0" y="1041.0" class="kod" text-anchor="middle">B-05</text>
-<text x="1220.0" y="1059.0" class="ad" text-anchor="middle">Merdiven ve hol</text>
-<text x="1220.0" y="1075.0" class="alan" text-anchor="middle">17.7 m²</text>
-<text x="1220.0" y="1216.0" class="kod" text-anchor="middle">B-06</text>
-<text x="1220.0" y="1234.0" class="ad" text-anchor="middle">Çamaşırhane ve ütü odası</text>
-<text x="1220.0" y="1250.0" class="alan" text-anchor="middle">6.0 m²</text>
-<text x="1220.0" y="1396.0" class="kod" text-anchor="middle">B-07</text>
-<text x="1220.0" y="1414.0" class="ad" text-anchor="middle">Depo</text>
-<text x="1220.0" y="1430.0" class="alan" text-anchor="middle">4.7 m²</text>
-<text x="1220.0" y="1576.0" class="kod" text-anchor="middle">B-08</text>
-<text x="1220.0" y="1594.0" class="ad" text-anchor="middle">Kiler / soğuk oda</text>
-<text x="1220.0" y="1610.0" class="alan" text-anchor="middle">5.7 m²</text>
-<text x="1520.0" y="306.0" class="kod" text-anchor="middle">B-09</text>
-<text x="1520.0" y="324.0" class="ad" text-anchor="middle">Su deposu ve hidrofor</text>
-<text x="1520.0" y="340.0" class="alan" text-anchor="middle">5.8 m²</text>
-<text x="1520.0" y="496.0" class="kod" text-anchor="middle">B-10</text>
-<text x="1520.0" y="514.0" class="ad" text-anchor="middle">Elektrik panosu / depo</text>
-<text x="1520.0" y="530.0" class="alan" text-anchor="middle">2.6 m²</text>
-<rect x="1415.0" y="595.0" width="210.0" height="170.0" fill="none" stroke="#4b5563" stroke-width="2"/><line x1="1415.0" y1="595.0" x2="1625.0" y2="765.0" stroke="#4b5563" stroke-width="2"/><line x1="1625.0" y1="595.0" x2="1415.0" y2="765.0" stroke="#4b5563" stroke-width="2"/>
-<text x="1520.0" y="746.0" class="kod" text-anchor="middle">B-11</text>
-<text x="1520.0" y="764.0" class="ad" text-anchor="middle">Asansör ve tesisat şaftı</text>
-<text x="1520.0" y="780.0" class="alan" text-anchor="middle">5.0 m²</text>
-<text x="1520.0" y="866.0" class="kod" text-anchor="middle">B-12</text>
-<text x="1520.0" y="884.0" class="ad" text-anchor="middle">WC + duş</text>
-<text x="1520.0" y="900.0" class="alan" text-anchor="middle">4.0 m²</text>
-<text x="1520.0" y="1036.0" class="kod" text-anchor="middle">B-13</text>
-<text x="1520.0" y="1054.0" class="ad" text-anchor="middle">Koridor</text>
-<text x="1520.0" y="1070.0" class="alan" text-anchor="middle">3.6 m²</text>
-<text x="1520.0" y="1396.0" class="kod" text-anchor="middle">B-14</text>
-<text x="1520.0" y="1414.0" class="ad" text-anchor="middle">Şarap mahzeni ve bar</text>
-<text x="1520.0" y="1430.0" class="alan" text-anchor="middle">13.1 m²</text>
-<text x="1920.0" y="366.0" class="kod" text-anchor="middle">B-15</text>
-<text x="1920.0" y="384.0" class="ad" text-anchor="middle">Spor salonu (fitness)</text>
-<text x="1920.0" y="400.0" class="alan" text-anchor="middle">18.3 m²</text>
-<text x="1800.0" y="746.0" class="kod" text-anchor="middle">B-16</text>
-<text x="1800.0" y="764.0" class="ad" text-anchor="middle">Sauna ve dinlenme</text>
-<text x="1800.0" y="780.0" class="alan" text-anchor="middle">10.4 m²</text>
-<text x="2070.0" y="746.0" class="kod" text-anchor="middle">B-17</text>
-<text x="2070.0" y="764.0" class="ad" text-anchor="middle">Soyunma ve duş</text>
-<text x="2070.0" y="780.0" class="alan" text-anchor="middle">7.8 m²</text>
-<text x="1800.0" y="1126.0" class="kod" text-anchor="middle">B-18</text>
-<text x="1800.0" y="1144.0" class="ad" text-anchor="middle">Hizmet / misafir odası</text>
-<text x="1800.0" y="1160.0" class="alan" text-anchor="middle">10.4 m²</text>
-<text x="2070.0" y="1056.0" class="kod" text-anchor="middle">B-19</text>
-<text x="2070.0" y="1074.0" class="ad" text-anchor="middle">Hizmet banyosu</text>
-<text x="2070.0" y="1090.0" class="alan" text-anchor="middle">4.8 m²</text>
-<text x="2070.0" y="1246.0" class="kod" text-anchor="middle">B-20</text>
-<text x="2070.0" y="1264.0" class="ad" text-anchor="middle">Temizlik deposu</text>
-<text x="2070.0" y="1280.0" class="alan" text-anchor="middle">2.7 m²</text>
-<text x="1920.0" y="1496.0" class="kod" text-anchor="middle">B-21</text>
-<text x="1920.0" y="1514.0" class="ad" text-anchor="middle">Işıklık / İngiliz bahçesi</text>
-<text x="1920.0" y="1530.0" class="alan" text-anchor="middle">17.3 m²</text>
-<line x1="190.0" y1="130.0" x2="1050.0" y2="130.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="190.0" y1="124.0" x2="190.0" y2="136.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="1050.0" y1="124.0" x2="1050.0" y2="136.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="620.0" y="122.0" class="olcu" text-anchor="middle">8.60</text>
-<line x1="1050.0" y1="130.0" x2="1390.0" y2="130.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="1050.0" y1="124.0" x2="1050.0" y2="136.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="1390.0" y1="124.0" x2="1390.0" y2="136.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="1220.0" y="122.0" class="olcu" text-anchor="middle">3.40</text>
-<line x1="1390.0" y1="130.0" x2="1650.0" y2="130.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="1390.0" y1="124.0" x2="1390.0" y2="136.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="1650.0" y1="124.0" x2="1650.0" y2="136.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="1520.0" y="122.0" class="olcu" text-anchor="middle">2.60</text>
-<line x1="1650.0" y1="130.0" x2="1950.0" y2="130.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="1650.0" y1="124.0" x2="1650.0" y2="136.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="1950.0" y1="124.0" x2="1950.0" y2="136.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="1800.0" y="122.0" class="olcu" text-anchor="middle">3.00</text>
-<line x1="1950.0" y1="130.0" x2="2190.0" y2="130.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="1950.0" y1="124.0" x2="1950.0" y2="136.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="2190.0" y1="124.0" x2="2190.0" y2="136.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="2070.0" y="122.0" class="olcu" text-anchor="middle">2.40</text>
-<line x1="190.0" y1="78.0" x2="2190.0" y2="78.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="190.0" y1="72.0" x2="190.0" y2="84.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="2190.0" y1="72.0" x2="2190.0" y2="84.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="1190.0" y="70.0" class="olcu" text-anchor="middle">20.00</text>
-<line x1="128.0" y1="190.0" x2="128.0" y2="450.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="190.0" x2="134.0" y2="190.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="450.0" x2="134.0" y2="450.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="120.0" y="320.0" class="olcu" text-anchor="middle" transform="rotate(-90 120.0 320.0)">2.60</text>
-<line x1="128.0" y1="450.0" x2="128.0" y2="570.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="450.0" x2="134.0" y2="450.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="570.0" x2="134.0" y2="570.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="120.0" y="510.0" class="olcu" text-anchor="middle" transform="rotate(-90 120.0 510.0)">1.20</text>
-<line x1="128.0" y1="570.0" x2="128.0" y2="790.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="570.0" x2="134.0" y2="570.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="790.0" x2="134.0" y2="790.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="120.0" y="680.0" class="olcu" text-anchor="middle" transform="rotate(-90 120.0 680.0)">2.20</text>
-<line x1="128.0" y1="790.0" x2="128.0" y2="950.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="790.0" x2="134.0" y2="790.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="950.0" x2="134.0" y2="950.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="120.0" y="870.0" class="olcu" text-anchor="middle" transform="rotate(-90 120.0 870.0)">1.60</text>
-<line x1="128.0" y1="950.0" x2="128.0" y2="970.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="950.0" x2="134.0" y2="950.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="970.0" x2="134.0" y2="970.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="120.0" y="960.0" class="olcu" text-anchor="middle" transform="rotate(-90 120.0 960.0)">0.20</text>
-<line x1="128.0" y1="970.0" x2="128.0" y2="1130.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="970.0" x2="134.0" y2="970.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="1130.0" x2="134.0" y2="1130.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="120.0" y="1050.0" class="olcu" text-anchor="middle" transform="rotate(-90 120.0 1050.0)">1.60</text>
-<line x1="128.0" y1="1130.0" x2="128.0" y2="1190.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="1130.0" x2="134.0" y2="1130.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="1190.0" x2="134.0" y2="1190.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="120.0" y="1160.0" class="olcu" text-anchor="middle" transform="rotate(-90 120.0 1160.0)">0.60</text>
-<line x1="128.0" y1="1190.0" x2="128.0" y2="1330.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="1190.0" x2="134.0" y2="1190.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="1330.0" x2="134.0" y2="1330.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="120.0" y="1260.0" class="olcu" text-anchor="middle" transform="rotate(-90 120.0 1260.0)">1.40</text>
-<line x1="128.0" y1="1330.0" x2="128.0" y2="1490.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="1330.0" x2="134.0" y2="1330.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="1490.0" x2="134.0" y2="1490.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="120.0" y="1410.0" class="olcu" text-anchor="middle" transform="rotate(-90 120.0 1410.0)">1.60</text>
-<line x1="128.0" y1="1490.0" x2="128.0" y2="1690.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="1490.0" x2="134.0" y2="1490.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="122.0" y1="1690.0" x2="134.0" y2="1690.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="120.0" y="1590.0" class="olcu" text-anchor="middle" transform="rotate(-90 120.0 1590.0)">2.00</text>
-<line x1="74.0" y1="190.0" x2="74.0" y2="1690.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="68.0" y1="190.0" x2="80.0" y2="190.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="68.0" y1="1690.0" x2="80.0" y2="1690.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="66.0" y="940.0" class="olcu" text-anchor="middle" transform="rotate(-90 66.0 940.0)">15.00</text>
-<circle cx="2282.0" cy="230.0" r="34" fill="none" stroke="#4b5563" stroke-width="2"/>
-<path d="M 2282.0 200.0 L 2271.0 246.0 L 2293.0 246.0 Z" fill="#1f2937"/>
-<text x="2282.0" y="282.0" class="kucuk" text-anchor="middle">K</text>
-<rect x="2248.0" y="310.0" width="26" height="18" fill="#eaf2fb" stroke="#4b5563" stroke-width="1"/>
-<text x="2282.0" y="324.0" class="lej">Yaşam alanı</text>
-<rect x="2248.0" y="338.0" width="26" height="18" fill="#f2f6ec" stroke="#4b5563" stroke-width="1"/>
-<text x="2282.0" y="352.0" class="lej">Yatak odası</text>
-<rect x="2248.0" y="366.0" width="26" height="18" fill="#e6f3f4" stroke="#4b5563" stroke-width="1"/>
-<text x="2282.0" y="380.0" class="lej">Islak hacim</text>
-<rect x="2248.0" y="394.0" width="26" height="18" fill="#fdf3e4" stroke="#4b5563" stroke-width="1"/>
-<text x="2282.0" y="408.0" class="lej">Mutfak</text>
-<rect x="2248.0" y="422.0" width="26" height="18" fill="#f4f2ee" stroke="#4b5563" stroke-width="1"/>
-<text x="2282.0" y="436.0" class="lej">Sirkülasyon</text>
-<rect x="2248.0" y="450.0" width="26" height="18" fill="#f0f0f2" stroke="#4b5563" stroke-width="1"/>
-<text x="2282.0" y="464.0" class="lej">Teknik / depo</text>
-<rect x="2248.0" y="478.0" width="26" height="18" fill="#edf6ec" stroke="#4b5563" stroke-width="1"/>
-<text x="2282.0" y="492.0" class="lej">Açık alan</text>
-<text x="186.0" y="1806.0" class="kucuk">0</text>
-<rect x="190.0" y="1816.0" width="100.0" height="12" fill="#1f2937"/>
-<rect x="190.0" y="1816.0" width="100.0" height="12" fill="none" stroke="#1f2937" stroke-width="1"/>
-<rect x="290.0" y="1816.0" width="100.0" height="12" fill="#ffffff"/>
-<rect x="290.0" y="1816.0" width="100.0" height="12" fill="none" stroke="#1f2937" stroke-width="1"/>
-<rect x="390.0" y="1816.0" width="100.0" height="12" fill="#1f2937"/>
-<rect x="390.0" y="1816.0" width="100.0" height="12" fill="none" stroke="#1f2937" stroke-width="1"/>
-<rect x="490.0" y="1816.0" width="100.0" height="12" fill="#ffffff"/>
-<rect x="490.0" y="1816.0" width="100.0" height="12" fill="none" stroke="#1f2937" stroke-width="1"/>
-<rect x="590.0" y="1816.0" width="100.0" height="12" fill="#1f2937"/>
-<rect x="590.0" y="1816.0" width="100.0" height="12" fill="none" stroke="#1f2937" stroke-width="1"/>
-<text x="698.0" y="1828.0" class="kucuk">5 m</text></svg>
+<rect x="0.00" y="0.00" width="420.00" height="297.00" fill="#ffffff" stroke="none" stroke-width="0.18" />
+<rect x="10.00" y="10.00" width="400.00" height="277.00" fill="none" stroke="#111" stroke-width="0.70" />
+<rect x="45.50" y="127.50" width="2.50" height="45.00" fill="#111" stroke="none" stroke-width="0.18" />
+<rect x="48.00" y="127.50" width="14.00" height="2.50" fill="#111" stroke="none" stroke-width="0.18" />
+<rect x="48.00" y="170.00" width="14.00" height="2.50" fill="#111" stroke="none" stroke-width="0.18" />
+<path d="M48.00 130.00V170.00M54.00 130.00V170.00M60.00 130.00V170.00M48.00 132.00H62.00M48.00 135.00H62.00M48.00 138.00H62.00M48.00 141.00H62.00M48.00 144.00H62.00M48.00 147.00H62.00M48.00 150.00H62.00M48.00 153.00H62.00M48.00 156.00H62.00M48.00 159.00H62.00M48.00 162.00H62.00M48.00 165.00H62.00M48.00 168.00H62.00" fill="none" stroke="#c9cdd3" stroke-width="0.10"/>
+<text x="55.00" y="150.00" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" transform="rotate(-90.0 55.00 150.00)">ışıklık −3.16 · süzgeçli</text>
+<rect x="45.50" y="177.50" width="2.50" height="45.00" fill="#111" stroke="none" stroke-width="0.18" />
+<rect x="48.00" y="177.50" width="14.00" height="2.50" fill="#111" stroke="none" stroke-width="0.18" />
+<rect x="48.00" y="220.00" width="14.00" height="2.50" fill="#111" stroke="none" stroke-width="0.18" />
+<path d="M48.00 180.00V220.00M54.00 180.00V220.00M60.00 180.00V220.00M48.00 180.00H62.00M48.00 183.00H62.00M48.00 186.00H62.00M48.00 189.00H62.00M48.00 192.00H62.00M48.00 195.00H62.00M48.00 198.00H62.00M48.00 201.00H62.00M48.00 204.00H62.00M48.00 207.00H62.00M48.00 210.00H62.00M48.00 213.00H62.00M48.00 216.00H62.00M48.00 219.00H62.00" fill="none" stroke="#c9cdd3" stroke-width="0.10"/>
+<text x="55.00" y="200.00" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" transform="rotate(-90.0 55.00 200.00)">ışıklık −3.16 · süzgeçli</text>
+<line x1="49.00" y1="217.50" x2="53.00" y2="217.50" stroke="#111" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="49.00" y1="216.30" x2="53.00" y2="216.30" stroke="#111" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="49.00" y1="215.10" x2="53.00" y2="215.10" stroke="#111" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="49.00" y1="213.90" x2="53.00" y2="213.90" stroke="#111" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="49.00" y1="212.70" x2="53.00" y2="212.70" stroke="#111" stroke-width="0.12" stroke-linecap="butt"/>
+<line x1="49.00" y1="211.50" x2="53.00" y2="211.50" stroke="#111" stroke-width="0.12" stroke-linecap="butt"/>
+<text x="49.00" y="208.00" font-size="1.30" text-anchor="start" font-weight="400" fill="#6b7280" transform="rotate(-90.0 49.00 208.00)">kaçış</text>
+<rect x="276.00" y="175.50" width="2.50" height="47.00" fill="#111" stroke="none" stroke-width="0.18" />
+<rect x="262.00" y="175.50" width="14.00" height="2.50" fill="#111" stroke="none" stroke-width="0.18" />
+<rect x="262.00" y="220.00" width="14.00" height="2.50" fill="#111" stroke="none" stroke-width="0.18" />
+<path d="M264.00 178.00V220.00M270.00 178.00V220.00M262.00 180.00H276.00M262.00 183.00H276.00M262.00 186.00H276.00M262.00 189.00H276.00M262.00 192.00H276.00M262.00 195.00H276.00M262.00 198.00H276.00M262.00 201.00H276.00M262.00 204.00H276.00M262.00 207.00H276.00M262.00 210.00H276.00M262.00 213.00H276.00M262.00 216.00H276.00M262.00 219.00H276.00" fill="none" stroke="#c9cdd3" stroke-width="0.10"/>
+<text x="269.00" y="199.00" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" transform="rotate(-90.0 269.00 199.00)">ışıklık −3.16 · süzgeçli</text>
+<rect x="59.50" y="71.50" width="205.00" height="155.00" fill="none" stroke="#8b7355" stroke-width="0.18" stroke-dasharray="1.5,0.8" />
+<path d="M114.00 174.75V199.25M120.00 174.75V199.25M126.00 174.75V199.25M132.00 174.75V199.25M138.00 174.75V199.25M112.75 180.00H139.25M112.75 186.00H139.25M112.75 192.00H139.25M112.75 198.00H139.25" fill="none" stroke="#d3d7de" stroke-width="0.10"/>
+<path d="M114.00 200.75V220.50M117.00 200.75V220.50M120.00 200.75V220.50M123.00 200.75V220.50M126.00 200.75V220.50M129.00 200.75V220.50M132.00 200.75V220.50M135.00 200.75V220.50M138.00 200.75V220.50M112.75 201.00H139.25M112.75 204.00H139.25M112.75 207.00H139.25M112.75 210.00H139.25M112.75 213.00H139.25M112.75 216.00H139.25M112.75 219.00H139.25" fill="none" stroke="#c7ccd4" stroke-width="0.10"/>
+<path d="M144.00 106.75V199.25M150.00 106.75V199.25M156.00 106.75V199.25M140.75 108.00H161.25M140.75 114.00H161.25M140.75 120.00H161.25M140.75 126.00H161.25M140.75 132.00H161.25M140.75 138.00H161.25M140.75 144.00H161.25M140.75 150.00H161.25M140.75 156.00H161.25M140.75 162.00H161.25M140.75 168.00H161.25M140.75 174.00H161.25M140.75 180.00H161.25M140.75 186.00H161.25M140.75 192.00H161.25M140.75 198.00H161.25" fill="none" stroke="#d3d7de" stroke-width="0.10"/>
+<path d="M182.75 156.66L184.66 154.75M182.75 158.92L186.92 154.75M182.75 161.19L187.25 156.69M182.75 163.45L187.25 158.95M182.75 165.71L187.25 161.21M182.75 167.97L187.25 163.47M182.75 170.24L187.25 165.74M182.75 172.50L187.25 168.00M182.75 174.76L187.25 170.26M184.53 175.25L187.25 172.53M186.79 175.25L187.25 174.79" fill="none" stroke="#9ca3af" stroke-width="0.12"/>
+<path d="M192.00 106.75V171.25M198.00 106.75V171.25M188.75 108.00H201.25M188.75 114.00H201.25M188.75 120.00H201.25M188.75 126.00H201.25M188.75 132.00H201.25M188.75 138.00H201.25M188.75 144.00H201.25M188.75 150.00H201.25M188.75 156.00H201.25M188.75 162.00H201.25M188.75 168.00H201.25" fill="none" stroke="#d3d7de" stroke-width="0.10"/>
+<path d="M189.00 172.75V197.25M192.00 172.75V197.25M195.00 172.75V197.25M198.00 172.75V197.25M201.00 172.75V197.25M204.00 172.75V197.25M207.00 172.75V197.25M210.00 172.75V197.25M213.00 172.75V197.25M188.75 174.00H215.25M188.75 177.00H215.25M188.75 180.00H215.25M188.75 183.00H215.25M188.75 186.00H215.25M188.75 189.00H215.25M188.75 192.00H215.25M188.75 195.00H215.25" fill="none" stroke="#c7ccd4" stroke-width="0.10"/>
+<path d="M189.00 198.75V220.50M192.00 198.75V220.50M195.00 198.75V220.50M198.00 198.75V220.50M201.00 198.75V220.50M204.00 198.75V220.50M207.00 198.75V220.50M210.00 198.75V220.50M213.00 198.75V220.50M188.75 201.00H215.25M188.75 204.00H215.25M188.75 207.00H215.25M188.75 210.00H215.25M188.75 213.00H215.25M188.75 216.00H215.25M188.75 219.00H215.25" fill="none" stroke="#c7ccd4" stroke-width="0.10"/>
+<g transform="translate(101.00 79.50) rotate(0.0)"><rect x="-18.00" y="-0.50" width="36.00" height="1.00" fill="#374151" stroke="#7b8494" stroke-width="0.13" /></g>
+<g transform="translate(101.00 100.00) rotate(180.0)"><rect x="-13.95" y="-4.75" width="8.90" height="9.50" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.80" />
+<rect x="-13.95" y="-4.75" width="8.90" height="2.20" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="0.60" />
+<rect x="-4.45" y="-4.75" width="8.90" height="9.50" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.80" />
+<rect x="-4.45" y="-4.75" width="8.90" height="2.20" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="0.60" />
+<rect x="5.05" y="-4.75" width="8.90" height="9.50" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.80" />
+<rect x="5.05" y="-4.75" width="8.90" height="2.20" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="0.60" /></g>
+<g transform="translate(101.00 113.00) rotate(180.0)"><rect x="-13.95" y="-4.75" width="8.90" height="9.50" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.80" />
+<rect x="-13.95" y="-4.75" width="8.90" height="2.20" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="0.60" />
+<rect x="-4.45" y="-4.75" width="8.90" height="9.50" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.80" />
+<rect x="-4.45" y="-4.75" width="8.90" height="2.20" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="0.60" />
+<rect x="5.05" y="-4.75" width="8.90" height="9.50" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.80" />
+<rect x="5.05" y="-4.75" width="8.90" height="2.20" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="0.60" /></g>
+<g transform="translate(83.00 130.00) rotate(0.0)"><rect x="-15.00" y="-3.25" width="30.00" height="6.50" fill="#fafafa" stroke="#7b8494" stroke-width="0.13" />
+<circle cx="-12.00" cy="5.75" r="1.70" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-6.00" cy="5.75" r="1.70" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="0.00" cy="5.75" r="1.70" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="6.00" cy="5.75" r="1.70" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="12.00" cy="5.75" r="1.70" fill="#fff" stroke="#7b8494" stroke-width="0.12"/></g>
+<g transform="translate(94.00 153.00) rotate(0.0)"><rect x="-13.50" y="-7.50" width="27.00" height="15.00" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.60" />
+<rect x="-12.50" y="-6.50" width="25.00" height="13.00" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" />
+<circle cx="-12.30" cy="-6.30" r="0.50" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-12.30" cy="6.30" r="0.50" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="0.00" cy="-6.30" r="0.50" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="0.00" cy="6.30" r="0.50" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="12.30" cy="-6.30" r="0.50" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="12.30" cy="6.30" r="0.50" fill="#fff" stroke="#7b8494" stroke-width="0.12"/></g>
+<g transform="translate(124.00 168.50) rotate(180.0)"><rect x="-11.00" y="-4.75" width="22.00" height="9.50" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.80" />
+<rect x="-11.00" y="-4.75" width="22.00" height="2.20" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="0.50" />
+<line x1="0.00" y1="-2.55" x2="0.00" y2="4.75" stroke="#7b8494" stroke-width="0.10" stroke-linecap="butt"/>
+<rect x="-11.00" y="-4.75" width="1.80" height="9.50" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="0.50" />
+<rect x="9.20" y="-4.75" width="1.80" height="9.50" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="0.50" /></g>
+<g transform="translate(85.00 185.30) rotate(0.0)"><rect x="-8.00" y="-10.50" width="16.00" height="21.00" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.30" />
+<rect x="-8.00" y="-10.50" width="16.00" height="1.00" fill="#e5e7eb" stroke="#7b8494" stroke-width="0.13" />
+<rect x="-7.40" y="-8.70" width="7.00" height="3.70" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.60" />
+<rect x="0.40" y="-8.70" width="7.00" height="3.70" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.60" />
+<line x1="-8.00" y1="-3.00" x2="8.00" y2="-3.00" stroke="#7b8494" stroke-width="0.10" stroke-linecap="butt"/>
+<line x1="-8.00" y1="-3.00" x2="-5.50" y2="-1.00" stroke="#7b8494" stroke-width="0.10" stroke-linecap="butt"/>
+<rect x="-13.00" y="-10.50" width="4.50" height="4.20" fill="#fff" stroke="#7b8494" stroke-width="0.13" />
+<circle cx="-10.75" cy="-8.40" r="1.00" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<rect x="8.50" y="-10.50" width="4.50" height="4.20" fill="#fff" stroke="#7b8494" stroke-width="0.13" />
+<circle cx="10.75" cy="-8.40" r="1.00" fill="#fff" stroke="#7b8494" stroke-width="0.12"/></g>
+<g transform="translate(108.15 206.00) rotate(90.0)"><rect x="-9.00" y="-3.10" width="18.00" height="6.20" fill="#fff" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-4.50" y1="-3.10" x2="-4.50" y2="3.10" stroke="#7b8494" stroke-width="0.10" stroke-linecap="butt"/>
+<line x1="0.00" y1="-3.10" x2="0.00" y2="3.10" stroke="#7b8494" stroke-width="0.10" stroke-linecap="butt"/>
+<line x1="4.50" y1="-3.10" x2="4.50" y2="3.10" stroke="#7b8494" stroke-width="0.10" stroke-linecap="butt"/>
+<line x1="-9.00" y1="-3.10" x2="9.00" y2="3.10" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/></g>
+<g transform="translate(74.00 214.50) rotate(180.0)"><rect x="-6.00" y="-6.00" width="12.00" height="7.00" fill="#fff" stroke="#7b8494" stroke-width="0.13" />
+<rect x="-2.40" y="1.50" width="4.80" height="4.30" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.70" /></g>
+<g transform="translate(121.00 177.85) rotate(0.0)"><rect x="-8.00" y="-3.10" width="16.00" height="6.20" fill="#fff" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-2.67" y1="-3.10" x2="-2.67" y2="3.10" stroke="#7b8494" stroke-width="0.10" stroke-linecap="butt"/>
+<line x1="2.67" y1="-3.10" x2="2.67" y2="3.10" stroke="#7b8494" stroke-width="0.10" stroke-linecap="butt"/>
+<line x1="-8.00" y1="-3.10" x2="8.00" y2="3.10" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/></g>
+<g transform="translate(134.00 217.25) rotate(180.0)"><rect x="-2.00" y="-3.25" width="4.00" height="1.80" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.30" />
+<path d="M-1.80 -1.45 Q-2.00 3.25 0.00 3.25 Q2.00 3.25 1.80 -1.45 Z" fill="#fff" stroke="#7b8494" stroke-width="0.13"/></g>
+<g transform="translate(121.00 218.00) rotate(180.0)"><rect x="-4.50" y="-2.50" width="9.00" height="5.00" fill="#fafafa" stroke="#7b8494" stroke-width="0.13" />
+<path d="M-2.00 0.50 a2.00 1.50 0 1 0 0.01 0" fill="#fff" stroke="#7b8494" stroke-width="0.12"/></g>
+<g transform="translate(133.50 207.50) rotate(0.0)"><rect x="-5.00" y="-5.00" width="10.00" height="10.00" fill="#fff" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-5.00" y1="-5.00" x2="5.00" y2="5.00" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="-5.00" y1="5.00" x2="5.00" y2="-5.00" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<circle cx="0.00" cy="0.00" r="0.50" fill="#fff" stroke="#7b8494" stroke-width="0.12"/></g>
+<g transform="translate(164.00 79.75) rotate(0.0)"><rect x="-21.00" y="-2.25" width="42.00" height="4.50" fill="#fafafa" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-12.60" y1="-2.25" x2="-12.60" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="-4.20" y1="-2.25" x2="-4.20" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="4.20" y1="-2.25" x2="4.20" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="12.60" y1="-2.25" x2="12.60" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/></g>
+<g transform="translate(195.00 79.00) rotate(0.0)"><rect x="-6.00" y="-1.50" width="12.00" height="3.00" fill="#e5e7eb" stroke="#7b8494" stroke-width="0.13" /></g>
+<g transform="translate(212.00 80.00) rotate(0.0)"><rect x="-3.00" y="-2.50" width="6.00" height="5.00" fill="#e5e7eb" stroke="#7b8494" stroke-width="0.13" />
+<circle cx="0.00" cy="0.00" r="1.20" fill="#fff" stroke="#7b8494" stroke-width="0.12"/></g>
+<g transform="translate(225.00 81.00) rotate(0.0)"><circle cx="0.00" cy="0.00" r="3.50" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="0.00" cy="0.00" r="3.00" fill="#fff" stroke="#7b8494" stroke-width="0.12"/></g>
+<g transform="translate(251.00 107.00) rotate(90.0)"><rect x="-10.00" y="-7.00" width="10.00" height="14.00" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="1.00" />
+<rect x="0.50" y="-7.00" width="9.50" height="14.00" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" rx="1.00" /></g>
+<g transform="translate(235.50 123.00) rotate(0.0)"><rect x="-22.00" y="-2.25" width="44.00" height="4.50" fill="#fafafa" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-13.20" y1="-2.25" x2="-13.20" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="-4.40" y1="-2.25" x2="-4.40" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="4.40" y1="-2.25" x2="4.40" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="13.20" y1="-2.25" x2="13.20" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/></g>
+<g transform="translate(235.50 143.00) rotate(180.0)"><rect x="-22.00" y="-2.25" width="44.00" height="4.50" fill="#fafafa" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-13.20" y1="-2.25" x2="-13.20" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="-4.40" y1="-2.25" x2="-4.40" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="4.40" y1="-2.25" x2="4.40" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="13.20" y1="-2.25" x2="13.20" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/></g>
+<g transform="translate(232.00 159.00) rotate(0.0)"><circle cx="-4.00" cy="0.00" r="3.00" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.12"/>
+<rect x="0.00" y="-3.00" width="7.00" height="6.00" fill="#e5e7eb" stroke="#7b8494" stroke-width="0.13" /></g>
+<g transform="translate(207.50 175.85) rotate(0.0)"><rect x="-7.00" y="-3.10" width="14.00" height="6.20" fill="#fff" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-2.33" y1="-3.10" x2="-2.33" y2="3.10" stroke="#7b8494" stroke-width="0.10" stroke-linecap="butt"/>
+<line x1="2.33" y1="-3.10" x2="2.33" y2="3.10" stroke="#7b8494" stroke-width="0.10" stroke-linecap="butt"/>
+<line x1="-7.00" y1="-3.10" x2="7.00" y2="3.10" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/></g>
+<g transform="translate(191.00 189.50) rotate(270.0)"><rect x="-7.00" y="-2.25" width="14.00" height="4.50" fill="#f5efe6" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-5.80" y1="-2.25" x2="-5.80" y2="2.25" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-4.60" y1="-2.25" x2="-4.60" y2="2.25" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-3.40" y1="-2.25" x2="-3.40" y2="2.25" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-2.20" y1="-2.25" x2="-2.20" y2="2.25" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-1.00" y1="-2.25" x2="-1.00" y2="2.25" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="0.20" y1="-2.25" x2="0.20" y2="2.25" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="1.40" y1="-2.25" x2="1.40" y2="2.25" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="2.60" y1="-2.25" x2="2.60" y2="2.25" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="3.80" y1="-2.25" x2="3.80" y2="2.25" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="5.00" y1="-2.25" x2="5.00" y2="2.25" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/></g>
+<g transform="translate(210.00 192.00) rotate(0.0)"><rect x="-5.00" y="-5.00" width="10.00" height="10.00" fill="#fff" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-5.00" y1="-5.00" x2="5.00" y2="5.00" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="-5.00" y1="5.00" x2="5.00" y2="-5.00" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<circle cx="0.00" cy="0.00" r="0.50" fill="#fff" stroke="#7b8494" stroke-width="0.12"/></g>
+<g transform="translate(202.00 216.00) rotate(180.0)"><rect x="-12.00" y="-4.50" width="24.00" height="9.00" fill="#f5efe6" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-10.80" y1="-4.50" x2="-10.80" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-9.60" y1="-4.50" x2="-9.60" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-8.40" y1="-4.50" x2="-8.40" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-7.20" y1="-4.50" x2="-7.20" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-6.00" y1="-4.50" x2="-6.00" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-4.80" y1="-4.50" x2="-4.80" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-3.60" y1="-4.50" x2="-3.60" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-2.40" y1="-4.50" x2="-2.40" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-1.20" y1="-4.50" x2="-1.20" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="0.00" y1="-4.50" x2="0.00" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="1.20" y1="-4.50" x2="1.20" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="2.40" y1="-4.50" x2="2.40" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="3.60" y1="-4.50" x2="3.60" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="4.80" y1="-4.50" x2="4.80" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="6.00" y1="-4.50" x2="6.00" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="7.20" y1="-4.50" x2="7.20" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="8.40" y1="-4.50" x2="8.40" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="9.60" y1="-4.50" x2="9.60" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="10.80" y1="-4.50" x2="10.80" y2="4.50" stroke="#7b8494" stroke-width="0.05" stroke-linecap="butt"/>
+<line x1="-12.00" y1="0.00" x2="12.00" y2="0.00" stroke="#7b8494" stroke-width="0.12" stroke-linecap="butt"/></g>
+<g transform="translate(227.00 198.00) rotate(0.0)"><rect x="-4.25" y="-10.00" width="8.50" height="20.00" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.80" />
+<rect x="-3.25" y="-7.00" width="6.50" height="16.00" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" /></g>
+<g transform="translate(239.00 198.00) rotate(0.0)"><rect x="-4.25" y="-10.00" width="8.50" height="20.00" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.80" />
+<rect x="-3.25" y="-7.00" width="6.50" height="16.00" fill="#f3f4f6" stroke="#7b8494" stroke-width="0.13" /></g>
+<g transform="translate(252.00 184.00) rotate(0.0)"><rect x="-6.00" y="-6.00" width="12.00" height="12.00" fill="#fff" stroke="#7b8494" stroke-width="0.13" rx="0.50" />
+<rect x="-1.00" y="-5.00" width="2.00" height="10.00" fill="#e5e7eb" stroke="#7b8494" stroke-width="0.13" /></g>
+<g transform="translate(250.00 212.00) rotate(0.0)"><rect x="-3.00" y="-9.00" width="6.00" height="18.00" fill="none" stroke="#7b8494" stroke-width="0.08" rx="0.50" /></g>
+<g transform="translate(175.00 197.00) rotate(180.0)"><rect x="-11.50" y="-2.25" width="23.00" height="4.50" fill="#fafafa" stroke="#7b8494" stroke-width="0.13" />
+<line x1="0.00" y1="-2.25" x2="0.00" y2="2.25" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/></g>
+<g transform="translate(164.00 218.50) rotate(180.0)"><rect x="-22.50" y="-2.00" width="45.00" height="4.00" fill="#fafafa" stroke="#7b8494" stroke-width="0.13" />
+<line x1="-13.50" y1="-2.00" x2="-13.50" y2="2.00" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="-4.50" y1="-2.00" x2="-4.50" y2="2.00" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="4.50" y1="-2.00" x2="4.50" y2="2.00" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<line x1="13.50" y1="-2.00" x2="13.50" y2="2.00" stroke="#7b8494" stroke-width="0.07" stroke-linecap="butt"/>
+<circle cx="-21.90" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-20.70" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-19.50" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-18.30" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-17.10" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-15.90" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-14.70" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-13.50" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-12.30" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-11.10" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-9.90" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-8.70" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-7.50" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-6.30" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-5.10" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-3.90" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-2.70" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-1.50" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-0.30" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="0.90" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="2.10" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="3.30" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="4.50" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="5.70" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="6.90" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="8.10" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="9.30" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="10.50" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="11.70" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="12.90" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="14.10" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="15.30" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="16.50" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="17.70" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="18.90" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="20.10" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="21.30" cy="0.00" r="0.35" fill="#fff" stroke="#7b8494" stroke-width="0.12"/></g>
+<g transform="translate(174.00 208.50) rotate(0.0)"><circle cx="0.00" cy="0.00" r="3.00" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="3.68" cy="3.68" r="2.00" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-3.68" cy="3.68" r="2.00" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="-3.68" cy="-3.68" r="2.00" fill="#fff" stroke="#7b8494" stroke-width="0.12"/>
+<circle cx="3.68" cy="-3.68" r="2.00" fill="#fff" stroke="#7b8494" stroke-width="0.12"/></g>
+<path d="M168.00 140.75V153.25M174.00 140.75V153.25M180.00 140.75V153.25M186.00 140.75V153.25M162.50 144.00H187.25M162.50 150.00H187.25" fill="none" stroke="#d3d7de" stroke-width="0.10"/>
+<rect x="162.50" y="140.75" width="24.75" height="12.50" fill="none" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" />
+<line x1="162.50" y1="118.35" x2="174.50" y2="118.35" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="162.50" y1="121.15" x2="174.50" y2="121.15" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="162.50" y1="123.95" x2="174.50" y2="123.95" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="162.50" y1="126.75" x2="174.50" y2="126.75" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="162.50" y1="129.55" x2="174.50" y2="129.55" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="162.50" y1="132.35" x2="174.50" y2="132.35" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="162.50" y1="135.15" x2="174.50" y2="135.15" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="162.50" y1="137.95" x2="174.50" y2="137.95" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="162.50" y1="140.75" x2="174.50" y2="140.75" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<polyline points="162.50,142.85 167.00,142.85 168.50,140.85 169.70,143.85 174.50,136.85" fill="none" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<line x1="162.50" y1="118.35" x2="162.50" y2="140.75" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="174.50" y1="118.35" x2="174.50" y2="140.75" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<circle cx="168.50" cy="116.55" r="0.50" fill="#111" stroke="none" stroke-width="0.18"/>
+<line x1="168.50" y1="116.55" x2="168.50" y2="138.35" stroke="#111" stroke-width="0.25" stroke-linecap="butt"/>
+<polygon points="167.30,135.85 169.70,135.85 168.50,138.85" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="168.50" y="113.85" font-size="1.45" text-anchor="middle" font-weight="700" fill="#111">ÇIKIŞ</text>
+<text x="168.70" y="148.35" font-size="1.30" text-anchor="middle" font-weight="400" fill="#6b7280" transform="rotate(-90.0 168.70 148.35)">18×17,0/28</text>
+<line x1="175.50" y1="140.75" x2="187.25" y2="140.75" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="175.50" y1="137.95" x2="187.25" y2="137.95" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="175.50" y1="135.15" x2="187.25" y2="135.15" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="175.50" y1="132.35" x2="187.25" y2="132.35" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="175.50" y1="129.55" x2="187.25" y2="129.55" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="175.50" y1="126.75" x2="187.25" y2="126.75" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="175.50" y1="123.95" x2="187.25" y2="123.95" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="175.50" y1="121.15" x2="187.25" y2="121.15" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="175.50" y1="118.35" x2="187.25" y2="118.35" stroke="#111" stroke-width="0.15" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="174.50" y1="118.00" x2="174.50" y2="140.75" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="175.50" y1="118.00" x2="175.50" y2="140.75" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<rect x="163.95" y="159.50" width="14.00" height="11.00" fill="#fff" stroke="#111" stroke-width="0.20" />
+<line x1="163.95" y1="159.50" x2="177.95" y2="170.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="163.95" y1="170.50" x2="177.95" y2="159.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<rect x="179.05" y="157.25" width="1.50" height="15.50" fill="#d1d5db" stroke="#111" stroke-width="0.13" />
+<text x="172.00" y="174.05" font-size="1.30" text-anchor="middle" font-weight="700" fill="#111">ASANSÖR 630 kg</text>
+<rect x="111.25" y="173.25" width="1.50" height="8.25" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="111.25" y="190.50" width="1.50" height="34.25" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="139.25" y="73.25" width="1.50" height="36.25" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="139.25" y="118.50" width="1.50" height="13.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="139.25" y="148.00" width="1.50" height="32.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="139.25" y="189.50" width="1.50" height="35.25" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="161.25" y="169.50" width="1.50" height="14.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="161.25" y="192.50" width="1.50" height="8.25" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="187.25" y="73.25" width="1.50" height="34.25" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="187.25" y="117.50" width="1.50" height="40.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="187.25" y="164.00" width="1.50" height="60.75" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="201.25" y="73.25" width="1.50" height="36.25" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="201.25" y="118.50" width="1.50" height="9.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="201.25" y="137.00" width="1.50" height="17.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="201.25" y="163.00" width="1.50" height="9.75" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="215.25" y="171.25" width="1.50" height="6.75" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="215.25" y="187.00" width="1.50" height="37.75" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="235.25" y="73.25" width="1.50" height="12.75" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="235.25" y="95.00" width="1.50" height="25.75" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="139.25" y="105.25" width="6.75" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="155.00" y="105.25" width="35.50" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="199.50" y="105.25" width="3.25" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="201.25" y="119.25" width="61.50" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="61.25" y="125.25" width="79.50" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="201.25" y="145.25" width="61.50" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="187.25" y="171.25" width="3.25" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="199.50" y="171.25" width="63.25" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="61.25" y="173.25" width="79.50" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="187.25" y="197.25" width="8.75" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="204.00" y="197.25" width="12.75" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="111.25" y="199.25" width="5.75" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="125.00" y="199.25" width="21.00" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="155.00" y="199.25" width="33.75" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="62.00" y="74.00" width="3.50" height="59.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="62.00" y="167.00" width="3.50" height="17.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="62.00" y="218.00" width="3.50" height="6.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="161.25" y="153.25" width="1.50" height="6.25" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="181.25" y="153.25" width="1.50" height="23.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="258.50" y="74.00" width="3.50" height="108.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="258.50" y="216.00" width="3.50" height="8.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="62.00" y="74.00" width="200.00" height="3.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="161.25" y="153.25" width="27.50" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="161.25" y="175.25" width="27.50" height="1.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="62.00" y="220.50" width="200.00" height="3.50" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="62.00" y="74.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="62.00" y="124.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="62.00" y="172.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="62.00" y="220.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="138.00" y="74.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="138.00" y="124.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="138.00" y="172.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="138.00" y="220.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="186.00" y="74.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="186.00" y="124.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="186.00" y="172.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="186.00" y="220.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="258.00" y="74.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="258.00" y="124.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="258.00" y="172.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="258.00" y="220.00" width="4.00" height="4.00" fill="none" stroke="#111" stroke-width="0.50" />
+<rect x="111.25" y="173.25" width="1.50" height="8.25" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M111.25 175.13L112.75 173.63M111.25 177.25L112.75 175.75M111.25 179.37L112.75 177.87M111.25 181.49L112.75 179.99" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="111.25" y="190.50" width="1.50" height="34.25" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M111.25 192.10L112.75 190.60M111.25 194.22L112.75 192.72M111.25 196.34L112.75 194.84M111.25 198.46L112.75 196.96M111.25 200.58L112.75 199.08M111.25 202.71L112.75 201.21M111.25 204.83L112.75 203.33M111.25 206.95L112.75 205.45M111.25 209.07L112.75 207.57M111.25 211.19L112.75 209.69M111.25 213.31L112.75 211.81M111.25 215.43L112.75 213.93M111.25 217.55L112.75 216.05M111.25 219.68L112.75 218.18M111.25 221.80L112.75 220.30M111.25 223.92L112.75 222.42M112.54 224.75L112.75 224.54" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="139.25" y="73.25" width="1.50" height="36.25" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M139.25 75.00L140.75 73.50M139.25 77.12L140.75 75.62M139.25 79.25L140.75 77.75M139.25 81.37L140.75 79.87M139.25 83.49L140.75 81.99M139.25 85.61L140.75 84.11M139.25 87.73L140.75 86.23M139.25 89.85L140.75 88.35M139.25 91.97L140.75 90.47M139.25 94.10L140.75 92.60M139.25 96.22L140.75 94.72M139.25 98.34L140.75 96.84M139.25 100.46L140.75 98.96M139.25 102.58L140.75 101.08M139.25 104.70L140.75 103.20M139.25 106.82L140.75 105.32M139.25 108.94L140.75 107.44" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="139.25" y="118.50" width="1.50" height="13.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M139.25 119.55L140.30 118.50M139.25 121.67L140.75 120.17M139.25 123.79L140.75 122.29M139.25 125.92L140.75 124.42M139.25 128.04L140.75 126.54M139.25 130.16L140.75 128.66M139.53 132.00L140.75 130.78" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="139.25" y="148.00" width="1.50" height="32.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M139.25 149.25L140.50 148.00M139.25 151.37L140.75 149.87M139.25 153.49L140.75 151.99M139.25 155.61L140.75 154.11M139.25 157.73L140.75 156.23M139.25 159.86L140.75 158.36M139.25 161.98L140.75 160.48M139.25 164.10L140.75 162.60M139.25 166.22L140.75 164.72M139.25 168.34L140.75 166.84M139.25 170.46L140.75 168.96M139.25 172.58L140.75 171.08M139.25 174.71L140.75 173.21M139.25 176.83L140.75 175.33M139.25 178.95L140.75 177.45M139.82 180.50L140.75 179.57" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="139.25" y="189.50" width="1.50" height="35.25" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M139.25 189.55L139.30 189.50M139.25 191.68L140.75 190.18M139.25 193.80L140.75 192.30M139.25 195.92L140.75 194.42M139.25 198.04L140.75 196.54M139.25 200.16L140.75 198.66M139.25 202.28L140.75 200.78M139.25 204.40L140.75 202.90M139.25 206.53L140.75 205.03M139.25 208.65L140.75 207.15M139.25 210.77L140.75 209.27M139.25 212.89L140.75 211.39M139.25 215.01L140.75 213.51M139.25 217.13L140.75 215.63M139.25 219.25L140.75 217.75M139.25 221.37L140.75 219.87M139.25 223.50L140.75 222.00M140.12 224.75L140.75 224.12" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="161.25" y="169.50" width="1.50" height="14.00" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M161.25 169.68L161.43 169.50M161.25 171.80L162.75 170.30M161.25 173.92L162.75 172.42M161.25 176.04L162.75 174.54M161.25 178.16L162.75 176.66M161.25 180.28L162.75 178.78M161.25 182.40L162.75 180.90M162.28 183.50L162.75 183.03" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="161.25" y="192.50" width="1.50" height="8.25" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M161.25 193.01L161.76 192.50M161.25 195.13L162.75 193.63M161.25 197.25L162.75 195.75M161.25 199.37L162.75 197.87M162.00 200.75L162.75 200.00" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="187.25" y="73.25" width="1.50" height="34.25" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M187.25 73.67L187.67 73.25M187.25 75.79L188.75 74.29M187.25 77.92L188.75 76.42M187.25 80.04L188.75 78.54M187.25 82.16L188.75 80.66M187.25 84.28L188.75 82.78M187.25 86.40L188.75 84.90M187.25 88.52L188.75 87.02M187.25 90.64L188.75 89.14M187.25 92.76L188.75 91.26M187.25 94.89L188.75 93.39M187.25 97.01L188.75 95.51M187.25 99.13L188.75 97.63M187.25 101.25L188.75 99.75M187.25 103.37L188.75 101.87M187.25 105.49L188.75 103.99M187.36 107.50L188.75 106.11" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="187.25" y="117.50" width="1.50" height="40.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M187.25 118.22L187.97 117.50M187.25 120.34L188.75 118.84M187.25 122.46L188.75 120.96M187.25 124.58L188.75 123.08M187.25 126.71L188.75 125.21M187.25 128.83L188.75 127.33M187.25 130.95L188.75 129.45M187.25 133.07L188.75 131.57M187.25 135.19L188.75 133.69M187.25 137.31L188.75 135.81M187.25 139.43L188.75 137.93M187.25 141.55L188.75 140.05M187.25 143.68L188.75 142.18M187.25 145.80L188.75 144.30M187.25 147.92L188.75 146.42M187.25 150.04L188.75 148.54M187.25 152.16L188.75 150.66M187.25 154.28L188.75 152.78M187.25 156.40L188.75 154.90M187.78 158.00L188.75 157.03" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="187.25" y="164.00" width="1.50" height="60.75" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M187.25 164.89L188.14 164.00M187.25 167.01L188.75 165.51M187.25 169.13L188.75 167.63M187.25 171.25L188.75 169.75M187.25 173.37L188.75 171.87M187.25 175.50L188.75 174.00M187.25 177.62L188.75 176.12M187.25 179.74L188.75 178.24M187.25 181.86L188.75 180.36M187.25 183.98L188.75 182.48M187.25 186.10L188.75 184.60M187.25 188.22L188.75 186.72M187.25 190.35L188.75 188.85M187.25 192.47L188.75 190.97M187.25 194.59L188.75 193.09M187.25 196.71L188.75 195.21M187.25 198.83L188.75 197.33M187.25 200.95L188.75 199.45M187.25 203.07L188.75 201.57M187.25 205.19L188.75 203.69M187.25 207.32L188.75 205.82M187.25 209.44L188.75 207.94M187.25 211.56L188.75 210.06M187.25 213.68L188.75 212.18M187.25 215.80L188.75 214.30M187.25 217.92L188.75 216.42M187.25 220.04L188.75 218.54M187.25 222.16L188.75 220.66M187.25 224.29L188.75 222.79" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="201.25" y="73.25" width="1.50" height="36.25" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M201.25 74.52L202.52 73.25M201.25 76.64L202.75 75.14M201.25 78.76L202.75 77.26M201.25 80.89L202.75 79.39M201.25 83.01L202.75 81.51M201.25 85.13L202.75 83.63M201.25 87.25L202.75 85.75M201.25 89.37L202.75 87.87M201.25 91.49L202.75 89.99M201.25 93.61L202.75 92.11M201.25 95.73L202.75 94.23M201.25 97.86L202.75 96.36M201.25 99.98L202.75 98.48M201.25 102.10L202.75 100.60M201.25 104.22L202.75 102.72M201.25 106.34L202.75 104.84M201.25 108.46L202.75 106.96M202.33 109.50L202.75 109.08" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="201.25" y="118.50" width="1.50" height="9.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M201.25 119.07L201.82 118.50M201.25 121.19L202.75 119.69M201.25 123.31L202.75 121.81M201.25 125.43L202.75 123.93M201.25 127.55L202.75 126.05" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="201.25" y="137.00" width="1.50" height="17.00" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M201.25 138.16L202.41 137.00M201.25 140.28L202.75 138.78M201.25 142.40L202.75 140.90M201.25 144.53L202.75 143.03M201.25 146.65L202.75 145.15M201.25 148.77L202.75 147.27M201.25 150.89L202.75 149.39M201.25 153.01L202.75 151.51M202.38 154.00L202.75 153.63" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="201.25" y="163.00" width="1.50" height="9.75" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M201.25 163.62L201.87 163.00M201.25 165.74L202.75 164.24M201.25 167.86L202.75 166.36M201.25 169.98L202.75 168.48M201.25 172.10L202.75 170.60M202.72 172.75L202.75 172.72" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="215.25" y="171.25" width="1.50" height="6.75" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M215.25 172.95L216.75 171.45M215.25 175.07L216.75 173.57M215.25 177.19L216.75 175.69M216.57 178.00L216.75 177.82" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="215.25" y="187.00" width="1.50" height="37.75" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M215.25 187.80L216.05 187.00M215.25 189.92L216.75 188.42M215.25 192.04L216.75 190.54M215.25 194.16L216.75 192.66M215.25 196.29L216.75 194.79M215.25 198.41L216.75 196.91M215.25 200.53L216.75 199.03M215.25 202.65L216.75 201.15M215.25 204.77L216.75 203.27M215.25 206.89L216.75 205.39M215.25 209.01L216.75 207.51M215.25 211.14L216.75 209.64M215.25 213.26L216.75 211.76M215.25 215.38L216.75 213.88M215.25 217.50L216.75 216.00M215.25 219.62L216.75 218.12M215.25 221.74L216.75 220.24M215.25 223.86L216.75 222.36M216.48 224.75L216.75 224.48" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="235.25" y="73.25" width="1.50" height="12.75" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M235.25 74.46L236.46 73.25M235.25 76.58L236.75 75.08M235.25 78.71L236.75 77.21M235.25 80.83L236.75 79.33M235.25 82.95L236.75 81.45M235.25 85.07L236.75 83.57M236.44 86.00L236.75 85.69" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="235.25" y="95.00" width="1.50" height="25.75" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M235.25 95.68L235.93 95.00M235.25 97.80L236.75 96.30M235.25 99.92L236.75 98.42M235.25 102.04L236.75 100.54M235.25 104.16L236.75 102.66M235.25 106.28L236.75 104.78M235.25 108.40L236.75 106.90M235.25 110.53L236.75 109.03M235.25 112.65L236.75 111.15M235.25 114.77L236.75 113.27M235.25 116.89L236.75 115.39M235.25 119.01L236.75 117.51M235.63 120.75L236.75 119.63" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="139.25" y="105.25" width="6.75" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M139.32 106.75L140.82 105.25M141.44 106.75L142.94 105.25M143.57 106.75L145.07 105.25M145.69 106.75L146.00 106.44" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="155.00" y="105.25" width="35.50" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M155.00 105.92L155.67 105.25M156.29 106.75L157.79 105.25M158.42 106.75L159.92 105.25M160.54 106.75L162.04 105.25M162.66 106.75L164.16 105.25M164.78 106.75L166.28 105.25M166.90 106.75L168.40 105.25M169.02 106.75L170.52 105.25M171.14 106.75L172.64 105.25M173.26 106.75L174.76 105.25M175.39 106.75L176.89 105.25M177.51 106.75L179.01 105.25M179.63 106.75L181.13 105.25M181.75 106.75L183.25 105.25M183.87 106.75L185.37 105.25M185.99 106.75L187.49 105.25M188.11 106.75L189.61 105.25M190.23 106.75L190.50 106.48" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="199.50" y="105.25" width="3.25" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M199.50 105.97L200.22 105.25M200.84 106.75L202.34 105.25" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="201.25" y="119.25" width="61.50" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M201.69 120.75L203.19 119.25M203.81 120.75L205.31 119.25M205.93 120.75L207.43 119.25M208.05 120.75L209.55 119.25M210.18 120.75L211.68 119.25M212.30 120.75L213.80 119.25M214.42 120.75L215.92 119.25M216.54 120.75L218.04 119.25M218.66 120.75L220.16 119.25M220.78 120.75L222.28 119.25M222.90 120.75L224.40 119.25M225.03 120.75L226.53 119.25M227.15 120.75L228.65 119.25M229.27 120.75L230.77 119.25M231.39 120.75L232.89 119.25M233.51 120.75L235.01 119.25M235.63 120.75L237.13 119.25M237.75 120.75L239.25 119.25M239.87 120.75L241.37 119.25M242.00 120.75L243.50 119.25M244.12 120.75L245.62 119.25M246.24 120.75L247.74 119.25M248.36 120.75L249.86 119.25M250.48 120.75L251.98 119.25M252.60 120.75L254.10 119.25M254.72 120.75L256.22 119.25M256.85 120.75L258.35 119.25M258.97 120.75L260.47 119.25M261.09 120.75L262.59 119.25" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="61.25" y="125.25" width="79.50" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M61.25 125.43L61.43 125.25M62.05 126.75L63.55 125.25M64.17 126.75L65.67 125.25M66.29 126.75L67.79 125.25M68.41 126.75L69.91 125.25M70.53 126.75L72.03 125.25M72.65 126.75L74.15 125.25M74.78 126.75L76.28 125.25M76.90 126.75L78.40 125.25M79.02 126.75L80.52 125.25M81.14 126.75L82.64 125.25M83.26 126.75L84.76 125.25M85.38 126.75L86.88 125.25M87.50 126.75L89.00 125.25M89.62 126.75L91.12 125.25M91.75 126.75L93.25 125.25M93.87 126.75L95.37 125.25M95.99 126.75L97.49 125.25M98.11 126.75L99.61 125.25M100.23 126.75L101.73 125.25M102.35 126.75L103.85 125.25M104.47 126.75L105.97 125.25M106.60 126.75L108.10 125.25M108.72 126.75L110.22 125.25M110.84 126.75L112.34 125.25M112.96 126.75L114.46 125.25M115.08 126.75L116.58 125.25M117.20 126.75L118.70 125.25M119.32 126.75L120.82 125.25M121.44 126.75L122.94 125.25M123.57 126.75L125.07 125.25M125.69 126.75L127.19 125.25M127.81 126.75L129.31 125.25M129.93 126.75L131.43 125.25M132.05 126.75L133.55 125.25M134.17 126.75L135.67 125.25M136.29 126.75L137.79 125.25M138.42 126.75L139.92 125.25M140.54 126.75L140.75 126.54" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="201.25" y="145.25" width="61.50" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M201.25 146.65L202.65 145.25M203.27 146.75L204.77 145.25M205.39 146.75L206.89 145.25M207.51 146.75L209.01 145.25M209.63 146.75L211.13 145.25M211.75 146.75L213.25 145.25M213.87 146.75L215.37 145.25M216.00 146.75L217.50 145.25M218.12 146.75L219.62 145.25M220.24 146.75L221.74 145.25M222.36 146.75L223.86 145.25M224.48 146.75L225.98 145.25M226.60 146.75L228.10 145.25M228.72 146.75L230.22 145.25M230.85 146.75L232.35 145.25M232.97 146.75L234.47 145.25M235.09 146.75L236.59 145.25M237.21 146.75L238.71 145.25M239.33 146.75L240.83 145.25M241.45 146.75L242.95 145.25M243.57 146.75L245.07 145.25M245.69 146.75L247.19 145.25M247.82 146.75L249.32 145.25M249.94 146.75L251.44 145.25M252.06 146.75L253.56 145.25M254.18 146.75L255.68 145.25M256.30 146.75L257.80 145.25M258.42 146.75L259.92 145.25M260.54 146.75L262.04 145.25M262.66 146.75L262.75 146.66" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="187.25" y="171.25" width="3.25" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M187.25 171.25L187.25 171.25M187.87 172.75L189.37 171.25M190.00 172.75L190.50 172.25" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="199.50" y="171.25" width="63.25" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M199.50 171.73L199.98 171.25M200.60 172.75L202.10 171.25M202.72 172.75L204.22 171.25M204.85 172.75L206.35 171.25M206.97 172.75L208.47 171.25M209.09 172.75L210.59 171.25M211.21 172.75L212.71 171.25M213.33 172.75L214.83 171.25M215.45 172.75L216.95 171.25M217.57 172.75L219.07 171.25M219.69 172.75L221.19 171.25M221.82 172.75L223.32 171.25M223.94 172.75L225.44 171.25M226.06 172.75L227.56 171.25M228.18 172.75L229.68 171.25M230.30 172.75L231.80 171.25M232.42 172.75L233.92 171.25M234.54 172.75L236.04 171.25M236.66 172.75L238.16 171.25M238.79 172.75L240.29 171.25M240.91 172.75L242.41 171.25M243.03 172.75L244.53 171.25M245.15 172.75L246.65 171.25M247.27 172.75L248.77 171.25M249.39 172.75L250.89 171.25M251.51 172.75L253.01 171.25M253.64 172.75L255.14 171.25M255.76 172.75L257.26 171.25M257.88 172.75L259.38 171.25M260.00 172.75L261.50 171.25M262.12 172.75L262.75 172.12" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="61.25" y="173.25" width="79.50" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M61.25 174.22L62.22 173.25M62.84 174.75L64.34 173.25M64.96 174.75L66.46 173.25M67.08 174.75L68.58 173.25M69.20 174.75L70.70 173.25M71.32 174.75L72.82 173.25M73.44 174.75L74.94 173.25M75.57 174.75L77.07 173.25M77.69 174.75L79.19 173.25M79.81 174.75L81.31 173.25M81.93 174.75L83.43 173.25M84.05 174.75L85.55 173.25M86.17 174.75L87.67 173.25M88.29 174.75L89.79 173.25M90.42 174.75L91.92 173.25M92.54 174.75L94.04 173.25M94.66 174.75L96.16 173.25M96.78 174.75L98.28 173.25M98.90 174.75L100.40 173.25M101.02 174.75L102.52 173.25M103.14 174.75L104.64 173.25M105.26 174.75L106.76 173.25M107.39 174.75L108.89 173.25M109.51 174.75L111.01 173.25M111.63 174.75L113.13 173.25M113.75 174.75L115.25 173.25M115.87 174.75L117.37 173.25M117.99 174.75L119.49 173.25M120.11 174.75L121.61 173.25M122.23 174.75L123.73 173.25M124.36 174.75L125.86 173.25M126.48 174.75L127.98 173.25M128.60 174.75L130.10 173.25M130.72 174.75L132.22 173.25M132.84 174.75L134.34 173.25M134.96 174.75L136.46 173.25M137.08 174.75L138.58 173.25M139.21 174.75L140.71 173.25" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="187.25" y="197.25" width="8.75" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M187.33 198.75L188.83 197.25M189.45 198.75L190.95 197.25M191.57 198.75L193.07 197.25M193.69 198.75L195.19 197.25M195.82 198.75L196.00 198.57" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="204.00" y="197.25" width="12.75" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M204.30 198.75L205.80 197.25M206.42 198.75L207.92 197.25M208.54 198.75L210.04 197.25M210.66 198.75L212.16 197.25M212.79 198.75L214.29 197.25M214.91 198.75L216.41 197.25" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="111.25" y="199.25" width="5.75" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M111.25 200.58L112.58 199.25M113.21 200.75L114.71 199.25M115.33 200.75L116.83 199.25" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="125.00" y="199.25" width="21.00" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M125.00 199.56L125.31 199.25M125.93 200.75L127.43 199.25M128.05 200.75L129.55 199.25M130.18 200.75L131.68 199.25M132.30 200.75L133.80 199.25M134.42 200.75L135.92 199.25M136.54 200.75L138.04 199.25M138.66 200.75L140.16 199.25M140.78 200.75L142.28 199.25M142.90 200.75L144.40 199.25M145.03 200.75L146.00 199.78" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="155.00" y="199.25" width="33.75" height="1.50" fill="#e5e7eb" stroke="none" stroke-width="0.00" />
+<path d="M155.00 199.26L155.01 199.25M155.63 200.75L157.13 199.25M157.75 200.75L159.25 199.25M159.87 200.75L161.37 199.25M162.00 200.75L163.50 199.25M164.12 200.75L165.62 199.25M166.24 200.75L167.74 199.25M168.36 200.75L169.86 199.25M170.48 200.75L171.98 199.25M172.60 200.75L174.10 199.25M174.72 200.75L176.22 199.25M176.85 200.75L178.35 199.25M178.97 200.75L180.47 199.25M181.09 200.75L182.59 199.25M183.21 200.75L184.71 199.25M185.33 200.75L186.83 199.25M187.45 200.75L188.75 199.45" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="62.00" y="74.00" width="3.50" height="59.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="62.00" y="167.00" width="3.50" height="17.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="62.00" y="218.00" width="3.50" height="6.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="161.25" y="153.25" width="1.50" height="6.25" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="181.25" y="153.25" width="1.50" height="23.50" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="258.50" y="74.00" width="3.50" height="108.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="258.50" y="216.00" width="3.50" height="8.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="62.00" y="74.00" width="200.00" height="3.50" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="161.25" y="153.25" width="27.50" height="1.50" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="161.25" y="175.25" width="27.50" height="1.50" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="62.00" y="220.50" width="200.00" height="3.50" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="62.00" y="74.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="62.00" y="124.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="62.00" y="172.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="62.00" y="220.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="138.00" y="74.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="138.00" y="124.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="138.00" y="172.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="138.00" y="220.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="186.00" y="74.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="186.00" y="124.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="186.00" y="172.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="186.00" y="220.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="258.00" y="74.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="258.00" y="124.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="258.00" y="172.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="258.00" y="220.00" width="4.00" height="4.00" fill="#111" stroke="none" stroke-width="0.00" />
+<rect x="62.00" y="74.00" width="0.80" height="59.00" fill="#f4f1e8" stroke="none" stroke-width="0.18" />
+<line x1="62.80" y1="74.00" x2="62.80" y2="133.00" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<rect x="62.00" y="167.00" width="0.80" height="17.00" fill="#f4f1e8" stroke="none" stroke-width="0.18" />
+<line x1="62.80" y1="167.00" x2="62.80" y2="184.00" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<rect x="62.00" y="218.00" width="0.80" height="6.00" fill="#f4f1e8" stroke="none" stroke-width="0.18" />
+<line x1="62.80" y1="218.00" x2="62.80" y2="224.00" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<rect x="261.20" y="74.00" width="0.80" height="108.00" fill="#f4f1e8" stroke="none" stroke-width="0.18" />
+<line x1="261.20" y1="74.00" x2="261.20" y2="182.00" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<rect x="261.20" y="216.00" width="0.80" height="8.00" fill="#f4f1e8" stroke="none" stroke-width="0.18" />
+<line x1="261.20" y1="216.00" x2="261.20" y2="224.00" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<rect x="62.00" y="74.00" width="200.00" height="0.80" fill="#f4f1e8" stroke="none" stroke-width="0.18" />
+<line x1="62.00" y1="74.80" x2="262.00" y2="74.80" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<rect x="62.00" y="223.20" width="200.00" height="0.80" fill="#f4f1e8" stroke="none" stroke-width="0.18" />
+<line x1="62.00" y1="223.20" x2="262.00" y2="223.20" stroke="#111" stroke-width="0.15" stroke-linecap="butt"/>
+<rect x="161.65" y="118.35" width="0.70" height="34.90" fill="#fff" stroke="#111" stroke-width="0.18" />
+<line x1="139.25" y1="109.50" x2="130.25" y2="109.50" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M130.25 109.50 A9.00 9.00 0 0 0 139.25 118.50" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="139.25" y1="109.50" x2="140.75" y2="109.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="139.25" y1="118.50" x2="140.75" y2="118.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="139.25" y1="132.00" x2="131.25" y2="132.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M131.25 132.00 A8.00 8.00 0 0 0 139.25 140.00" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="139.25" y1="148.00" x2="131.25" y2="148.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M131.25 148.00 A8.00 8.00 0 0 1 139.25 140.00" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="139.25" y1="132.00" x2="140.75" y2="132.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="139.25" y1="148.00" x2="140.75" y2="148.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="139.25" y1="189.50" x2="130.25" y2="189.50" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M130.25 189.50 A9.00 9.00 0 0 1 139.25 180.50" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="139.25" y1="180.50" x2="140.75" y2="180.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="139.25" y1="189.50" x2="140.75" y2="189.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="111.25" y1="181.50" x2="102.25" y2="181.50" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M102.25 181.50 A9.00 9.00 0 0 0 111.25 190.50" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="111.25" y1="181.50" x2="112.75" y2="181.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="111.25" y1="190.50" x2="112.75" y2="190.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="125.00" y1="200.75" x2="125.00" y2="208.75" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M125.00 208.75 A8.00 8.00 0 0 1 117.00 200.75" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="117.00" y1="199.25" x2="117.00" y2="200.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="125.00" y1="199.25" x2="125.00" y2="200.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="155.00" y1="105.25" x2="155.00" y2="96.25" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M155.00 96.25 A9.00 9.00 0 0 0 146.00 105.25" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="146.00" y1="105.25" x2="146.00" y2="106.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="155.00" y1="105.25" x2="155.00" y2="106.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="187.25" y1="107.50" x2="187.25" y2="117.50" stroke="#111" stroke-width="0.12" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="188.75" y1="107.50" x2="188.75" y2="117.50" stroke="#111" stroke-width="0.12" stroke-dasharray="0.9,0.6" stroke-linecap="butt"/>
+<line x1="190.50" y1="105.25" x2="190.50" y2="96.25" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M190.50 96.25 A9.00 9.00 0 0 1 199.50 105.25" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="190.50" y1="105.25" x2="190.50" y2="106.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="199.50" y1="105.25" x2="199.50" y2="106.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="202.75" y1="118.50" x2="211.75" y2="118.50" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M211.75 118.50 A9.00 9.00 0 0 0 202.75 109.50" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="201.25" y1="109.50" x2="202.75" y2="109.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="201.25" y1="118.50" x2="202.75" y2="118.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<text x="205.75" y="116.10" font-size="1.30" text-anchor="middle" font-weight="700" fill="#b91c1c">EI30</text>
+<line x1="236.75" y1="86.00" x2="245.75" y2="86.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M245.75 86.00 A9.00 9.00 0 0 1 236.75 95.00" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="235.25" y1="86.00" x2="236.75" y2="86.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="235.25" y1="95.00" x2="236.75" y2="95.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="202.75" y1="128.00" x2="211.75" y2="128.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M211.75 128.00 A9.00 9.00 0 0 1 202.75 137.00" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="201.25" y1="128.00" x2="202.75" y2="128.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="201.25" y1="137.00" x2="202.75" y2="137.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="202.75" y1="154.00" x2="211.75" y2="154.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M211.75 154.00 A9.00 9.00 0 0 1 202.75 163.00" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="201.25" y1="154.00" x2="202.75" y2="154.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="201.25" y1="163.00" x2="202.75" y2="163.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="199.50" y1="172.75" x2="199.50" y2="181.75" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M199.50 181.75 A9.00 9.00 0 0 1 190.50 172.75" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="190.50" y1="171.25" x2="190.50" y2="172.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="199.50" y1="171.25" x2="199.50" y2="172.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<rect x="196.00" y="197.55" width="4.50" height="0.40" fill="#fff" stroke="#111" stroke-width="0.20" />
+<rect x="199.50" y="198.05" width="4.50" height="0.40" fill="#fff" stroke="#111" stroke-width="0.20" />
+<line x1="196.00" y1="197.25" x2="196.00" y2="198.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="204.00" y1="197.25" x2="204.00" y2="198.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="216.75" y1="178.00" x2="225.75" y2="178.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M225.75 178.00 A9.00 9.00 0 0 1 216.75 187.00" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="215.25" y1="178.00" x2="216.75" y2="178.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="215.25" y1="187.00" x2="216.75" y2="187.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="162.75" y1="183.50" x2="171.75" y2="183.50" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M171.75 183.50 A9.00 9.00 0 0 1 162.75 192.50" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="161.25" y1="183.50" x2="162.75" y2="183.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="161.25" y1="192.50" x2="162.75" y2="192.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="146.00" y1="200.75" x2="146.00" y2="209.75" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<path d="M146.00 209.75 A9.00 9.00 0 0 0 155.00 200.75" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="146.00" y1="199.25" x2="146.00" y2="200.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="155.00" y1="199.25" x2="155.00" y2="200.75" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="162.55" y1="160.00" x2="162.55" y2="169.00" stroke="#111" stroke-width="0.35" stroke-linecap="butt"/>
+<line x1="162.15" y1="160.00" x2="162.15" y2="165.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="188.75" y1="158.00" x2="194.75" y2="158.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<path d="M194.75 158.00 A6.00 6.00 0 0 1 188.75 164.00" fill="none" stroke="#111" stroke-width="0.13"/>
+<line x1="187.25" y1="158.00" x2="188.75" y2="158.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="187.25" y1="164.00" x2="188.75" y2="164.00" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<rect x="62.00" y="133.00" width="3.50" height="34.00" fill="#fff" stroke="#111" stroke-width="0.00" />
+<line x1="62.00" y1="133.00" x2="62.00" y2="167.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="65.50" y1="133.00" x2="65.50" y2="167.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<rect x="63.20" y="133.00" width="0.80" height="34.00" fill="#dbeafe" stroke="#111" stroke-width="0.20" />
+<line x1="61.60" y1="133.00" x2="61.60" y2="167.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="61.60" y1="133.00" x2="61.60" y2="167.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="62.00" y1="133.00" x2="65.50" y2="133.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="62.00" y1="167.00" x2="65.50" y2="167.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<rect x="62.00" y="184.00" width="3.50" height="34.00" fill="#fff" stroke="#111" stroke-width="0.00" />
+<line x1="62.00" y1="184.00" x2="62.00" y2="218.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="65.50" y1="184.00" x2="65.50" y2="218.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<rect x="63.20" y="184.00" width="0.80" height="34.00" fill="#dbeafe" stroke="#111" stroke-width="0.20" />
+<line x1="61.60" y1="184.00" x2="61.60" y2="218.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="61.60" y1="184.00" x2="61.60" y2="218.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="62.00" y1="184.00" x2="65.50" y2="184.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="62.00" y1="218.00" x2="65.50" y2="218.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<rect x="258.50" y="182.00" width="3.50" height="34.00" fill="#fff" stroke="#111" stroke-width="0.00" />
+<line x1="262.00" y1="182.00" x2="262.00" y2="216.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="258.50" y1="182.00" x2="258.50" y2="216.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<rect x="260.00" y="182.00" width="0.80" height="34.00" fill="#dbeafe" stroke="#111" stroke-width="0.20" />
+<line x1="262.40" y1="182.00" x2="262.40" y2="216.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="262.40" y1="182.00" x2="262.40" y2="216.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="258.50" y1="182.00" x2="262.00" y2="182.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="258.50" y1="216.00" x2="262.00" y2="216.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<polygon points="55.44,150.00 56.04,148.95 59.56,148.95 60.16,150.00 59.56,151.05 56.04,151.05" fill="#fff" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
+<text x="57.80" y="150.50" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">P13</text>
+<polygon points="55.44,201.00 56.04,199.95 59.56,199.95 60.16,201.00 59.56,202.05 56.04,202.05" fill="#fff" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
+<text x="57.80" y="201.50" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">P13</text>
+<polygon points="263.84,199.00 264.44,197.95 267.96,197.95 268.56,199.00 267.96,200.05 264.44,200.05" fill="#fff" stroke="#111" stroke-width="0.13" stroke-linejoin="miter"/>
+<text x="266.20" y="199.50" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">P13</text>
+<rect x="134.29" y="112.95" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="136.05" y="114.50" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="134.29" y="138.95" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="136.05" y="140.50" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K04</text>
+<rect x="134.29" y="183.95" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="136.05" y="185.50" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="106.29" y="184.95" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="108.05" y="186.50" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="119.24" y="202.90" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="121.00" y="204.45" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K06</text>
+<rect x="148.74" y="101.00" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="150.50" y="102.55" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="193.24" y="101.00" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="195.00" y="102.55" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="204.19" y="112.95" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="205.95" y="114.50" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K07</text>
+<rect x="238.19" y="89.45" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="239.95" y="91.00" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="204.19" y="131.45" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="205.95" y="133.00" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="204.19" y="157.45" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="205.95" y="159.00" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="193.24" y="174.90" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="195.00" y="176.45" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="198.24" y="193.00" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="200.00" y="194.55" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K09</text>
+<rect x="218.19" y="181.45" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="219.95" y="183.00" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="164.19" y="186.95" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="165.95" y="188.50" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="148.74" y="202.90" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="150.50" y="204.45" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K05</text>
+<rect x="156.29" y="163.45" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="158.05" y="165.00" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K10</text>
+<rect x="190.19" y="159.95" width="3.51" height="2.10" fill="#fff" stroke="#111" stroke-width="0.13" rx="1.00" />
+<text x="191.95" y="161.50" font-size="1.35" text-anchor="middle" font-weight="700" fill="#111">K11</text>
+<text x="101.00" y="118.50" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">EV SINEMASI</text>
+<text x="101.00" y="120.85" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-01 · 35,20 m²</text>
+<text x="101.00" y="122.95" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">halı / akustik</text>
+<text x="118.00" y="147.00" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">OYUN VE BAR SALONU</text>
+<text x="118.00" y="149.35" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-02 · 34,30 m²</text>
+<text x="118.00" y="151.45" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">meşe parke</text>
+<text x="85.00" y="201.87" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">MISAFIR / HIZMETLI</text>
+<text x="85.00" y="204.03" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">ODASI</text>
+<text x="85.00" y="206.38" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-03 · 20,90 m²</text>
+<text x="85.00" y="208.48" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">meşe parke</text>
+<text x="126.00" y="189.50" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">ODA HOLÜ VE DOLAP</text>
+<text x="126.00" y="191.85" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-04 · 6,50 m²</text>
+<text x="126.00" y="193.95" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">traverten</text>
+<text x="122.00" y="206.00" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">ODA BANYOSU</text>
+<text x="122.00" y="208.35" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-05 · 5,20 m²</text>
+<text x="122.00" y="210.45" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">porselen R10</text>
+<text x="151.00" y="138.00" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">BODRUM HOLÜ</text>
+<text x="151.00" y="140.35" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-06 · 19,00 m²</text>
+<text x="151.00" y="142.45" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">traverten</text>
+<text x="185.00" y="165.00" font-size="1.40" text-anchor="middle" font-weight="700" fill="#111" transform="rotate(-90.0 185.00 165.00)">ŞAFT</text>
+<text x="164.00" y="94.00" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">GENEL DEPO</text>
+<text x="164.00" y="96.35" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-10 · 12,90 m²</text>
+<text x="164.00" y="98.45" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">epoksi / seramik</text>
+<text x="195.00" y="89.08" font-size="1.75" text-anchor="middle" font-weight="700" fill="#111">ELEKTRIK VE</text>
+<text x="195.00" y="90.91" font-size="1.75" text-anchor="middle" font-weight="700" fill="#111">ZAYIF AKIM</text>
+<text x="195.00" y="92.75" font-size="1.75" text-anchor="middle" font-weight="700" fill="#111">ODASI</text>
+<text x="195.00" y="94.79" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-11 · 3,50 m²</text>
+<text x="195.00" y="96.89" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">epoksi / seramik</text>
+<text x="195.00" y="136.00" font-size="1.60" text-anchor="middle" font-weight="700" fill="#111" transform="rotate(-90.0 195.00 136.00)">KORIDOR · 8,10 m²</text>
+<text x="219.00" y="98.87" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">ISI MERKEZI (KAZAN /</text>
+<text x="219.00" y="101.03" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">ISI POMPASI)</text>
+<text x="219.00" y="103.38" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-13 · 13,60 m²</text>
+<text x="219.00" y="105.48" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">epoksi / seramik</text>
+<text x="248.00" y="85.87" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">SU DEPOSU VE</text>
+<text x="248.00" y="88.03" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">HIDROFOR</text>
+<text x="248.00" y="90.38" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-14 · 9,10 m²</text>
+<text x="248.00" y="92.48" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">epoksi / seramik</text>
+<text x="232.00" y="133.00" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">KILER VE SOĞUK DEPO</text>
+<text x="232.00" y="135.35" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-15 · 13,70 m²</text>
+<text x="232.00" y="137.45" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">epoksi / seramik</text>
+<text x="235.00" y="167.50" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">HAVUZ MAKINE DAIRESI</text>
+<text x="235.00" y="169.85" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-16 · 13,70 m²</text>
+<text x="235.00" y="171.95" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">epoksi / seramik</text>
+<text x="199.00" y="184.00" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">SOYUNMA VE DUŞ</text>
+<text x="199.00" y="186.35" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-17 · 6,50 m²</text>
+<text x="199.00" y="188.45" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">porselen R10</text>
+<text x="202.00" y="206.00" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">SAUNA</text>
+<text x="202.00" y="208.35" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-18 · 5,80 m²</text>
+<text x="202.00" y="210.45" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">sedir ızgara</text>
+<text x="238.00" y="182.00" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">FITNESS SALONU</text>
+<text x="238.00" y="184.35" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-19 · 19,90 m²</text>
+<text x="238.00" y="186.45" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">kauçuk spor zemin</text>
+<text x="175.00" y="187.00" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">DEPO</text>
+<text x="175.00" y="189.35" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-20 · 5,50 m²</text>
+<text x="175.00" y="191.45" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">epoksi / seramik</text>
+<text x="157.00" y="209.50" font-size="2.05" text-anchor="middle" font-weight="700" fill="#111">ŞARAP MAHZENI</text>
+<text x="157.00" y="211.85" font-size="1.55" text-anchor="middle" font-weight="400" fill="#1f2937">B-21 · 9,20 m²</text>
+<text x="157.00" y="213.95" font-size="1.40" text-anchor="middle" font-weight="400" fill="#6b7280" font-style="italic">doğal taş</text>
+<polygon points="153.90,169.10 156.10,169.10 155.00,171.00" fill="#fff" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<polygon points="153.90,169.10 155.00,169.10 155.00,171.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="156.80" y="170.60" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">−3.06</text>
+<line x1="60.50" y1="67.00" x2="263.50" y2="67.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="62.00" y1="65.80" x2="62.00" y2="68.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="61.20" y1="67.80" x2="62.80" y2="66.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="62.00" y1="73.00" x2="62.00" y2="68.20" stroke="#888" stroke-width="0.08" stroke-linecap="butt"/>
+<line x1="262.00" y1="65.80" x2="262.00" y2="68.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="261.20" y1="67.80" x2="262.80" y2="66.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="262.00" y1="73.00" x2="262.00" y2="68.20" stroke="#888" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="162.00" y="66.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">2000</text>
+<line x1="60.50" y1="61.00" x2="263.50" y2="61.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="62.00" y1="59.80" x2="62.00" y2="62.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="61.20" y1="61.80" x2="62.80" y2="60.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="140.00" y1="59.80" x2="140.00" y2="62.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="139.20" y1="61.80" x2="140.80" y2="60.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="188.00" y1="59.80" x2="188.00" y2="62.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="187.20" y1="61.80" x2="188.80" y2="60.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="262.00" y1="59.80" x2="262.00" y2="62.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="261.20" y1="61.80" x2="262.80" y2="60.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="101.00" y="60.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">780</text>
+<text x="164.00" y="60.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">480</text>
+<text x="225.00" y="60.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">740</text>
+<line x1="60.50" y1="55.00" x2="263.50" y2="55.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="62.00" y1="53.80" x2="62.00" y2="56.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="61.20" y1="55.80" x2="62.80" y2="54.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="262.00" y1="53.80" x2="262.00" y2="56.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="261.20" y1="55.80" x2="262.80" y2="54.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="162.00" y="54.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">2000</text>
+<line x1="62.00" y1="53.00" x2="62.00" y2="245.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="62.00" cy="49.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="62.00" y="50.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">1</text>
+<line x1="140.00" y1="53.00" x2="140.00" y2="245.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="140.00" cy="49.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="140.00" y="50.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">2</text>
+<line x1="188.00" y1="53.00" x2="188.00" y2="245.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="188.00" cy="49.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="188.00" y="50.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">3</text>
+<line x1="262.00" y1="53.00" x2="262.00" y2="245.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="262.00" cy="49.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="262.00" y="50.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">4</text>
+<line x1="60.50" y1="231.00" x2="263.50" y2="231.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="62.00" y1="229.80" x2="62.00" y2="232.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="61.20" y1="231.80" x2="62.80" y2="230.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="262.00" y1="229.80" x2="262.00" y2="232.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="261.20" y1="231.80" x2="262.80" y2="230.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="162.00" y="233.40" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">2000</text>
+<line x1="60.50" y1="237.00" x2="263.50" y2="237.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="62.00" y1="235.80" x2="62.00" y2="238.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="61.20" y1="237.80" x2="62.80" y2="236.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="140.00" y1="235.80" x2="140.00" y2="238.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="139.20" y1="237.80" x2="140.80" y2="236.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="188.00" y1="235.80" x2="188.00" y2="238.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="187.20" y1="237.80" x2="188.80" y2="236.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="262.00" y1="235.80" x2="262.00" y2="238.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="261.20" y1="237.80" x2="262.80" y2="236.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="101.00" y="239.40" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">780</text>
+<text x="164.00" y="239.40" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">480</text>
+<text x="225.00" y="239.40" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">740</text>
+<line x1="60.50" y1="243.00" x2="263.50" y2="243.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="62.00" y1="241.80" x2="62.00" y2="244.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="61.20" y1="243.80" x2="62.80" y2="242.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="262.00" y1="241.80" x2="262.00" y2="244.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="261.20" y1="243.80" x2="262.80" y2="242.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="162.00" y="245.40" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">2000</text>
+<circle cx="62.00" cy="249.50" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="62.00" y="250.70" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">1</text>
+<circle cx="140.00" cy="249.50" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="140.00" y="250.70" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">2</text>
+<circle cx="188.00" cy="249.50" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="188.00" y="250.70" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">3</text>
+<circle cx="262.00" cy="249.50" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="262.00" y="250.70" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">4</text>
+<line x1="41.00" y1="72.50" x2="41.00" y2="225.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="39.80" y1="74.00" x2="42.20" y2="74.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="40.20" y1="74.80" x2="41.80" y2="73.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="39.80" y1="133.00" x2="42.20" y2="133.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="40.20" y1="133.80" x2="41.80" y2="132.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="39.80" y1="167.00" x2="42.20" y2="167.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="40.20" y1="167.80" x2="41.80" y2="166.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="39.80" y1="184.00" x2="42.20" y2="184.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="40.20" y1="184.80" x2="41.80" y2="183.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="39.80" y1="218.00" x2="42.20" y2="218.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="40.20" y1="218.80" x2="41.80" y2="217.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="39.80" y1="224.00" x2="42.20" y2="224.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="40.20" y1="224.80" x2="41.80" y2="223.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="40.20" y="103.50" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 40.20 103.50)">590</text>
+<text x="40.20" y="150.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 40.20 150.00)">340</text>
+<text x="40.20" y="175.50" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 40.20 175.50)">170</text>
+<text x="40.20" y="201.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 40.20 201.00)">340</text>
+<text x="40.20" y="221.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 40.20 221.00)">60</text>
+<line x1="35.00" y1="72.50" x2="35.00" y2="225.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="33.80" y1="74.00" x2="36.20" y2="74.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="34.20" y1="74.80" x2="35.80" y2="73.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="33.80" y1="126.00" x2="36.20" y2="126.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="34.20" y1="126.80" x2="35.80" y2="125.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="33.80" y1="174.00" x2="36.20" y2="174.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="34.20" y1="174.80" x2="35.80" y2="173.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="33.80" y1="224.00" x2="36.20" y2="224.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="34.20" y1="224.80" x2="35.80" y2="223.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="34.20" y="100.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 34.20 100.00)">520</text>
+<text x="34.20" y="150.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 34.20 150.00)">480</text>
+<text x="34.20" y="199.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 34.20 199.00)">500</text>
+<line x1="29.00" y1="72.50" x2="29.00" y2="225.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="27.80" y1="74.00" x2="30.20" y2="74.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="28.20" y1="74.80" x2="29.80" y2="73.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="27.80" y1="224.00" x2="30.20" y2="224.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="28.20" y1="224.80" x2="29.80" y2="223.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="28.20" y="149.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 28.20 149.00)">1500</text>
+<line x1="27.00" y1="74.00" x2="297.00" y2="74.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="23.00" cy="74.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="23.00" y="75.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">A</text>
+<line x1="27.00" y1="126.00" x2="297.00" y2="126.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="23.00" cy="126.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="23.00" y="127.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">B</text>
+<line x1="27.00" y1="174.00" x2="297.00" y2="174.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="23.00" cy="174.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="23.00" y="175.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">C</text>
+<line x1="27.00" y1="224.00" x2="297.00" y2="224.00" stroke="#9ca3af" stroke-width="0.08" stroke-dasharray="3,1,0.5,1" stroke-linecap="butt"/>
+<circle cx="23.00" cy="224.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="23.00" y="225.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">D</text>
+<line x1="283.00" y1="72.50" x2="283.00" y2="225.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="281.80" y1="74.00" x2="284.20" y2="74.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="282.20" y1="74.80" x2="283.80" y2="73.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="281.80" y1="182.00" x2="284.20" y2="182.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="282.20" y1="182.80" x2="283.80" y2="181.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="281.80" y1="216.00" x2="284.20" y2="216.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="282.20" y1="216.80" x2="283.80" y2="215.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="281.80" y1="224.00" x2="284.20" y2="224.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="282.20" y1="224.80" x2="283.80" y2="223.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="285.40" y="128.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 285.40 128.00)">1080</text>
+<text x="285.40" y="199.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 285.40 199.00)">340</text>
+<text x="285.40" y="220.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 285.40 220.00)">80</text>
+<line x1="289.00" y1="72.50" x2="289.00" y2="225.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="287.80" y1="74.00" x2="290.20" y2="74.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="288.20" y1="74.80" x2="289.80" y2="73.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="287.80" y1="126.00" x2="290.20" y2="126.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="288.20" y1="126.80" x2="289.80" y2="125.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="287.80" y1="174.00" x2="290.20" y2="174.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="288.20" y1="174.80" x2="289.80" y2="173.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="287.80" y1="224.00" x2="290.20" y2="224.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="288.20" y1="224.80" x2="289.80" y2="223.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="291.40" y="100.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 291.40 100.00)">520</text>
+<text x="291.40" y="150.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 291.40 150.00)">480</text>
+<text x="291.40" y="199.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 291.40 199.00)">500</text>
+<line x1="295.00" y1="72.50" x2="295.00" y2="225.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="293.80" y1="74.00" x2="296.20" y2="74.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="294.20" y1="74.80" x2="295.80" y2="73.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="293.80" y1="224.00" x2="296.20" y2="224.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="294.20" y1="224.80" x2="295.80" y2="223.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="297.40" y="149.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 297.40 149.00)">1500</text>
+<circle cx="301.50" cy="74.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="301.50" y="75.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">A</text>
+<circle cx="301.50" cy="126.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="301.50" y="127.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">B</text>
+<circle cx="301.50" cy="174.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="301.50" y="175.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">C</text>
+<circle cx="301.50" cy="224.00" r="3.20" fill="#fff" stroke="#111" stroke-width="0.30"/>
+<text x="301.50" y="225.20" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">D</text>
+<line x1="60.50" y1="186.00" x2="263.50" y2="186.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="62.00" y1="184.80" x2="62.00" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="61.20" y1="186.80" x2="62.80" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="65.50" y1="184.80" x2="65.50" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="64.70" y1="186.80" x2="66.30" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="111.25" y1="184.80" x2="111.25" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="110.45" y1="186.80" x2="112.05" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="112.75" y1="184.80" x2="112.75" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="111.95" y1="186.80" x2="113.55" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="139.25" y1="184.80" x2="139.25" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="138.45" y1="186.80" x2="140.05" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="140.75" y1="184.80" x2="140.75" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="139.95" y1="186.80" x2="141.55" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="161.25" y1="184.80" x2="161.25" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="160.45" y1="186.80" x2="162.05" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="162.75" y1="184.80" x2="162.75" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="161.95" y1="186.80" x2="163.55" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="187.25" y1="184.80" x2="187.25" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="186.45" y1="186.80" x2="188.05" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="188.75" y1="184.80" x2="188.75" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="187.95" y1="186.80" x2="189.55" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="215.25" y1="184.80" x2="215.25" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="214.45" y1="186.80" x2="216.05" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="216.75" y1="184.80" x2="216.75" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="215.95" y1="186.80" x2="217.55" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="258.50" y1="184.80" x2="258.50" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="257.70" y1="186.80" x2="259.30" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="262.00" y1="184.80" x2="262.00" y2="187.20" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="261.20" y1="186.80" x2="262.80" y2="185.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="63.75" y="185.20" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111">35</text>
+<text x="88.38" y="185.20" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111">458</text>
+<text x="112.00" y="185.20" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111">15</text>
+<text x="126.00" y="185.20" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111">265</text>
+<text x="140.00" y="185.20" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111">15</text>
+<text x="151.00" y="185.20" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111">205</text>
+<text x="162.00" y="185.20" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111">15</text>
+<text x="175.00" y="185.20" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111">245</text>
+<text x="188.00" y="185.20" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111">15</text>
+<text x="202.00" y="185.20" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111">265</text>
+<text x="216.00" y="185.20" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111">15</text>
+<text x="237.62" y="185.20" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111">417</text>
+<text x="260.25" y="185.20" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111">35</text>
+<line x1="128.00" y1="72.50" x2="128.00" y2="225.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="126.80" y1="74.00" x2="129.20" y2="74.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="127.20" y1="74.80" x2="128.80" y2="73.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="126.80" y1="77.50" x2="129.20" y2="77.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="127.20" y1="78.30" x2="128.80" y2="76.70" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="126.80" y1="125.25" x2="129.20" y2="125.25" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="127.20" y1="126.05" x2="128.80" y2="124.45" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="126.80" y1="126.75" x2="129.20" y2="126.75" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="127.20" y1="127.55" x2="128.80" y2="125.95" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="126.80" y1="173.25" x2="129.20" y2="173.25" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="127.20" y1="174.05" x2="128.80" y2="172.45" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="126.80" y1="174.75" x2="129.20" y2="174.75" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="127.20" y1="175.55" x2="128.80" y2="173.95" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="126.80" y1="199.25" x2="129.20" y2="199.25" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="127.20" y1="200.05" x2="128.80" y2="198.45" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="126.80" y1="200.75" x2="129.20" y2="200.75" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="127.20" y1="201.55" x2="128.80" y2="199.95" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="126.80" y1="220.50" x2="129.20" y2="220.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="127.20" y1="221.30" x2="128.80" y2="219.70" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="126.80" y1="224.00" x2="129.20" y2="224.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="127.20" y1="224.80" x2="128.80" y2="223.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="127.20" y="75.75" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 127.20 75.75)">35</text>
+<text x="127.20" y="101.38" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 127.20 101.38)">478</text>
+<text x="127.20" y="126.00" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 127.20 126.00)">15</text>
+<text x="127.20" y="150.00" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 127.20 150.00)">465</text>
+<text x="127.20" y="174.00" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 127.20 174.00)">15</text>
+<text x="127.20" y="187.00" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 127.20 187.00)">245</text>
+<text x="127.20" y="200.00" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 127.20 200.00)">15</text>
+<text x="127.20" y="210.62" font-size="1.50" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 127.20 210.62)">197</text>
+<text x="127.20" y="222.25" font-size="1.20" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 127.20 222.25)">35</text>
+<line x1="154.00" y1="38.00" x2="154.00" y2="47.00" stroke="#111" stroke-width="0.60" stroke-linecap="butt"/>
+<line x1="154.00" y1="252.00" x2="154.00" y2="261.00" stroke="#111" stroke-width="0.60" stroke-linecap="butt"/>
+<line x1="154.00" y1="47.00" x2="154.00" y2="252.00" stroke="#111" stroke-width="0.10" stroke-dasharray="4,1.5,0.6,1.5" stroke-linecap="butt"/>
+<polygon points="154.00,36.20 158.50,38.00 154.00,39.80" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="152.20" y="39.20" font-size="3.60" text-anchor="end" font-weight="700" fill="#111">A</text>
+<polygon points="154.00,259.20 158.50,261.00 154.00,262.80" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="152.20" y="262.20" font-size="3.60" text-anchor="end" font-weight="700" fill="#111">A</text>
+<line x1="12.00" y1="197.00" x2="21.00" y2="197.00" stroke="#111" stroke-width="0.60" stroke-linecap="butt"/>
+<line x1="303.00" y1="197.00" x2="312.00" y2="197.00" stroke="#111" stroke-width="0.60" stroke-linecap="butt"/>
+<line x1="21.00" y1="197.00" x2="303.00" y2="197.00" stroke="#111" stroke-width="0.10" stroke-dasharray="4,1.5,0.6,1.5" stroke-linecap="butt"/>
+<polygon points="10.20,197.00 12.00,192.50 13.80,197.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="13.20" y="201.20" font-size="3.60" text-anchor="middle" font-weight="700" fill="#111">B</text>
+<polygon points="310.20,197.00 312.00,192.50 313.80,197.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="313.20" y="201.20" font-size="3.60" text-anchor="middle" font-weight="700" fill="#111">B</text>
+<text x="24.00" y="279.00" font-size="3.80" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">BODRUM KAT PLANI · Ö: 1/100</text>
+<text x="24.00" y="284.00" font-size="2.30" text-anchor="start" font-weight="400" fill="#6b7280">Döşeme kotu −3.06 · Net kullanım alanı 242,60 m² · Brüt 300,00 m²</text>
+<rect x="230.00" y="278.80" width="10.00" height="1.20" fill="#111" stroke="#111" stroke-width="0.15" />
+<text x="230.00" y="282.60" font-size="1.70" text-anchor="middle" font-weight="400" fill="#111">0</text>
+<rect x="240.00" y="278.80" width="10.00" height="1.20" fill="#fff" stroke="#111" stroke-width="0.15" />
+<text x="240.00" y="282.60" font-size="1.70" text-anchor="middle" font-weight="400" fill="#111">1</text>
+<rect x="250.00" y="278.80" width="10.00" height="1.20" fill="#111" stroke="#111" stroke-width="0.15" />
+<text x="250.00" y="282.60" font-size="1.70" text-anchor="middle" font-weight="400" fill="#111">2</text>
+<rect x="260.00" y="278.80" width="10.00" height="1.20" fill="#fff" stroke="#111" stroke-width="0.15" />
+<text x="260.00" y="282.60" font-size="1.70" text-anchor="middle" font-weight="400" fill="#111">3</text>
+<rect x="270.00" y="278.80" width="10.00" height="1.20" fill="#111" stroke="#111" stroke-width="0.15" />
+<text x="270.00" y="282.60" font-size="1.70" text-anchor="middle" font-weight="400" fill="#111">4</text>
+<text x="280.00" y="282.60" font-size="1.70" text-anchor="middle" font-weight="400" fill="#111">5 m</text>
+<rect x="318.00" y="10.00" width="92.00" height="277.00" fill="#ffffff" stroke="#111" stroke-width="0.50" />
+<text x="322.00" y="19.00" font-size="5.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.40">DURUNDAY VİLLA</text>
+<text x="322.00" y="24.50" font-size="2.60" text-anchor="start" font-weight="400" fill="#6b7280">Konya · Meram · Durunday</text>
+<text x="322.00" y="29.00" font-size="2.30" text-anchor="start" font-weight="400" fill="#6b7280">Bodrumlu dubleks müstakil konut · 300 m² oturum</text>
+<line x1="318.00" y1="33.00" x2="410.00" y2="33.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="38.50" font-size="2.80" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">MİMARİ ÖN PROJE (AVAN)</text>
+<text x="322.00" y="42.80" font-size="2.10" text-anchor="start" font-weight="400" fill="#6b7280" font-style="italic">Ruhsat ve uygulamaya esas değildir</text>
+<line x1="318.00" y1="46.00" x2="410.00" y2="46.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="51.00" font-size="2.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">LEJANT</text>
+<rect x="322.00" y="52.00" width="9.00" height="2.60" fill="#111" stroke="none" stroke-width="0.18" />
+<text x="333.00" y="54.20" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Betonarme kolon / perde</text>
+<path d="M322.00 57.72L324.12 55.60M323.64 58.20L326.24 55.60M325.76 58.20L328.36 55.60M327.88 58.20L330.48 55.60M330.00 58.20L331.00 57.20" fill="none" stroke="#3f444c" stroke-width="0.22"/>
+<rect x="322.00" y="55.60" width="9.00" height="2.60" fill="none" stroke="#111" stroke-width="0.25" />
+<text x="333.00" y="57.80" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Duvar (gazbeton, 25 / 13,5 cm)</text>
+<rect x="322.00" y="59.20" width="9.00" height="2.60" fill="#f4f1e8"/>
+<path d="M322.00 60.40L323.20 59.20M322.87 61.80L325.47 59.20M325.13 61.80L327.73 59.20M327.39 61.80L329.99 59.20M329.65 61.80L331.00 60.45" fill="none" stroke="#6b7280" stroke-width="0.08"/>
+<rect x="322.00" y="59.20" width="9.00" height="2.60" fill="none" stroke="#111" stroke-width="0.20" />
+<text x="333.00" y="61.40" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Isı yalıtımı (taşyünü, 8 cm)</text>
+<line x1="322.00" y1="63.70" x2="331.00" y2="63.70" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<line x1="322.00" y1="64.50" x2="331.00" y2="64.50" stroke="#111" stroke-width="0.18" stroke-linecap="butt"/>
+<text x="333.00" y="65.00" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Cam korkuluk h=110 cm</text>
+<path d="M324.00 66.40V69.00M327.00 66.40V69.00M330.00 66.40V69.00" fill="none" stroke="#c7ccd4" stroke-width="0.10"/>
+<rect x="322.00" y="66.40" width="9.00" height="2.60" fill="none" stroke="#999" stroke-width="0.15" />
+<text x="333.00" y="68.60" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Porselen / fayans kaplama</text>
+<path d="M324.00 70.00V72.60M330.00 70.00V72.60M322.00 72.00H331.00" fill="none" stroke="#d3d7de" stroke-width="0.10"/>
+<rect x="322.00" y="70.00" width="9.00" height="2.60" fill="none" stroke="#999" stroke-width="0.15" />
+<text x="333.00" y="72.20" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Doğal taş (traverten)</text>
+<path d="M322.00 73.98L322.38 73.60M322.04 76.20L324.64 73.60M324.31 76.20L326.91 73.60M326.57 76.20L329.17 73.60M328.83 76.20L331.00 74.03" fill="none" stroke="#9ca3af" stroke-width="0.12"/>
+<rect x="322.00" y="73.60" width="9.00" height="2.60" fill="none" stroke="#111" stroke-width="0.20" />
+<text x="333.00" y="75.80" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Tesisat şaftı</text>
+<polygon points="323.90,77.60 326.10,77.60 325.00,79.50" fill="#fff" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<polygon points="323.90,77.60 325.00,77.60 325.00,79.50" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="333.00" y="79.40" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Döşeme kotu (m)</text>
+<circle cx="326.50" cy="82.10" r="1.60" fill="none" stroke="#111" stroke-width="0.20"/>
+<text x="326.50" y="82.80" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">1</text>
+<text x="333.00" y="83.00" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Aks balonu</text>
+<text x="322.00" y="88.10" font-size="2.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">NOTLAR</text>
+<text x="322.00" y="91.50" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">1. Bodrum çevre duvarları 30 cm betonarme perdedir; dıştan 2</text>
+<text x="322.00" y="94.20" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    kat bitümlü membran + 5 cm XPS + drenaj levhası ve perde</text>
+<text x="322.00" y="96.90" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    dibinde drenaj borusu uygulanır.</text>
+<text x="322.00" y="100.20" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">2. Oyun salonu ve misafir odası gün ışığını batı</text>
+<text x="322.00" y="102.90" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    ışıklıklarından, fitness salonu doğu ışıklığından alır.</text>
+<text x="322.00" y="105.60" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    Işıklık tabanı −3.16, süzgeçli; üstü galvaniz ızgara + cam</text>
+<text x="322.00" y="108.30" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    korkuluk.</text>
+<text x="322.00" y="111.60" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">3. Misafir odası ışıklığında dikme kaçış merdiveni vardır</text>
+<text x="322.00" y="114.30" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    (acil çıkış).</text>
+<text x="322.00" y="117.60" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">4. Isı merkezi: yoğuşmalı hermetik kazan veya hava kaynaklı</text>
+<text x="322.00" y="120.30" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    ısı pompası iç ünitesi; baca / hava kanalı tesisat</text>
+<text x="322.00" y="123.00" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    şaftından çatıya çıkar. Kapı EI30.</text>
+<text x="322.00" y="126.30" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">5. Sauna, soyunma ve penceresiz depolar mekanik</text>
+<text x="322.00" y="129.00" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    havalandırmalıdır (şafta bağlı sessiz fan).</text>
+<circle cx="398.00" cy="182.00" r="6.50" fill="none" stroke="#111" stroke-width="0.30"/>
+<polygon points="398.00,174.00 400.20,184.50 398.00,183.20 395.80,184.50" fill="#111" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<text x="398.00" y="172.70" font-size="3.00" text-anchor="middle" font-weight="700" fill="#111">K</text>
+<line x1="318.00" y1="195.00" x2="410.00" y2="195.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<text x="322.00" y="200.00" font-size="2.00" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">REVİZYONLAR</text>
+<text x="322.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">R0</text>
+<text x="328.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">19.09.2026</text>
+<text x="345.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">İlk yayın</text>
+<text x="322.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">R1</text>
+<text x="328.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">21.09.2026</text>
+<text x="345.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Plan kurgusu yeniden düzenlendi; kesit,</text>
+<text x="345.00" y="210.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">görünüş, detay ve doğrama listesi eklendi</text>
+<line x1="318.00" y1="221.00" x2="410.00" y2="221.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="226.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">İŞ SAHİBİ</text>
+<text x="322.00" y="230.50" font-size="2.40" text-anchor="start" font-weight="400" fill="#111">—</text>
+<text x="366.00" y="226.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">HAZIRLAYAN</text>
+<text x="366.00" y="230.50" font-size="2.40" text-anchor="start" font-weight="400" fill="#111">E. Ceran</text>
+<line x1="363.00" y1="221.00" x2="363.00" y2="235.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="318.00" y1="235.00" x2="410.00" y2="235.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="240.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">MÜELLİF MİMAR</text>
+<text x="322.00" y="245.00" font-size="2.00" text-anchor="start" font-weight="400" fill="#6b7280" font-style="italic">(ruhsat aşamasında atanacak)</text>
+<text x="366.00" y="240.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">İMZA</text>
+<line x1="363.00" y1="235.00" x2="363.00" y2="249.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="318.00" y1="249.00" x2="410.00" y2="249.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<text x="322.00" y="255.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">PAFTA ADI</text>
+<text x="322.00" y="262.00" font-size="5.00" text-anchor="start" font-weight="700" fill="#111">BODRUM KAT PLANI</text>
+<line x1="318.00" y1="273.00" x2="410.00" y2="273.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">ÖLÇEK</text>
+<text x="322.00" y="283.50" font-size="3.60" text-anchor="start" font-weight="700" fill="#111">1/100</text>
+<text x="350.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">TARİH</text>
+<text x="350.00" y="283.50" font-size="3.00" text-anchor="start" font-weight="400" fill="#111">21.09.2026</text>
+<text x="380.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">PAFTA NO</text>
+<text x="380.00" y="284.00" font-size="5.20" text-anchor="start" font-weight="700" fill="#111">A-02</text>
+<line x1="347.00" y1="273.00" x2="347.00" y2="287.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="377.00" y1="273.00" x2="377.00" y2="287.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+</svg>

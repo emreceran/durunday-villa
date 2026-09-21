@@ -10,38 +10,45 @@ için hazırlanmış mimari ön tasarım (avan), mahal listesi, imalat tarifi ve
 | Klasör / dosya | Açıklama |
 |---|---|
 | `docs/` | Yayınlanan web sitesi (GitHub Pages kaynağı) |
-| `cizimler/` | Vaziyet planı, bodrum/zemin/1. kat planları, çatı planı ve kesit (SVG, 1:100) |
-| `render/` | 3B render görselleri (giriş, bahçe, kuş bakışı, akşam) |
+| `cizimler/` | 13 A3 antetli pafta (SVG): kapak, vaziyet 1/200, bodrum/zemin/1. kat planları, çatı, A–A ve B–B kesitleri, 4 görünüş, sistem kesiti 1/50, merdiven detayı 1/50, doğrama listesi |
+| `render/` | 3B render görselleri (giriş, bahçe, kuş bakışı, akşam, salon iç mekan) |
 | `kaynak/` | **Tasarım dosyaları** — tüm çizim ve tabloları üreten Python kaynakları |
-| `Durunday Villa - Mahal Listesi.xlsx` | 5 sekmeli mahal listesi (künye, mahal programı, mahal listesi, imalat + markalar, yönetmelik) |
+| `Durunday Villa - Mahal Listesi.xlsx` | 6 sekme: künye, mahal programı, mahal listesi, imalat + markalar, yönetmelik, tasarım kontrolü |
 | `Durunday Villa - Mahal Listesi.pdf` | Excel’in baskıya hazır çıktısı |
-| `Durunday Villa - Cizimler.pdf` | Altı çizimin A3 yatay seti |
+| `Durunday Villa - Cizimler.pdf` | 13 paftalık A3 yatay çizim seti |
 
 ## Tasarım dosyaları (`kaynak/`)
 
-Her şey tek bir veri kaynağından üretilir; bir mahalin ölçüsü değiştiğinde çizim, Excel ve site birlikte güncellenir.
+Her şey tek bir veri kaynağından üretilir; bir mahalin, kapının veya pencerenin ölçüsü değiştiğinde
+çizim, kontrol, Excel, site ve 3B model birlikte güncellenir.
 
 | Dosya | Görevi |
 |---|---|
-| `veri.py` | Parsel/imar verisi, kat geometrisi ve mahaller (tek doğru kaynak). Çalıştırıldığında kapsama testi yapar. |
-| `imalat.py` | 68 poz için teknik şartname, marka seçimleri ve mahal-poz ataması |
-| `yonetmelik.py` | Planlı Alanlar İmar Yönetmeliği ve ilgili mevzuata göre uygunluk kontrolleri (geometriden hesaplanır) |
-| `ciz.py` | SVG kat planı, vaziyet planı, çatı planı ve kesit üreticisi |
-| `excel_yap.py` | Mahal listesi Excel’ini üretir |
-| `site_yap.py` | `docs/` altındaki statik siteyi üretir |
+| `veri.py` | Parsel/imar, kotlar, aks-kolon ızgarası, mahaller, kapılar, pencereler, merdiven, dış elemanlar, mobilya (tek doğru kaynak) |
+| `geometri.py` | Duvar parçaları, açıklıklar ve kapı kanatlarının geometrisi (çizim, kontrol ve 3B model ortak kullanır) |
+| `kontrol.py` | Otomatik tasarım mantık kontrolü: erişim, mahremiyet, gün ışığı, kapı kanadı ve mobilya çakışması, kolon, merdiven, Hmax |
+| `yonetmelik.py` | Planlı Alanlar İmar Yönetmeliği ve ilgili mevzuata göre uygunluk tablosu |
+| `imalat.py` | Poz bazında teknik şartname, marka seçimleri ve mahal-poz ataması |
+| `ciz.py` | Pafta çerçevesi + antet, kat planları (ölçü zincirleri, akslar, kotlar, mobilya, kapı/pencere kodları) |
+| `paftalar.py` | Kapak, vaziyet, çatı, kesitler, görünüşler, sistem kesiti, merdiven detayı, doğrama listesi; tam seti yazar |
+| `dograma.py`, `mobilya.py` | Kapı/pencere tip kodları; mobilya ölçüleri ve plan sembolleri |
+| `excel_yap.py` · `pdf_yap.py` · `site_yap.py` | Excel, PDF (çizim seti + mahal listesi) ve `docs/` sitesi |
 | `render_3b.py` | Blender 4.2 betiği — 3B modeli `veri.py` geometrisinden kurar ve Cycles ile render alır |
 
 ```bash
 cd kaynak
-python3 veri.py        # geometri kontrolü
-python3 ciz.py         # çizimleri üret
-python3 excel_yap.py   # Excel'i üret
-python3 site_yap.py    # siteyi üret
+python3 veri.py        # geometri / merdiven özeti
+python3 kontrol.py     # tasarım mantık kontrolü (hata varsa çıkış kodu 1)
+python3 paftalar.py    # 13 paftayı üret (../cizimler)
+python3 excel_yap.py   # Excel
+python3 pdf_yap.py     # PDF'ler (Chrome + LibreOffice)
+python3 site_yap.py    # site
 
-# 3B render (Blender 4.2 gerekir)
-~/opt/blender-4.2.23-linux-x64/blender -b -P render_3b.py -- \
-    --kadraj giris --ornek 96 --en 1600 --cikti ../render/giris.jpg
-# kadrajlar: giris · bahce · kus · aksam
+# 3B render (Blender 4.2 gerekir; proje kökünden çalıştırın)
+~/opt/blender-4.2.23-linux-x64/blender -b -P kaynak/render_3b.py -- \
+    --kadraj giris --ornek 64 --en 1920 --cikti render/giris.jpg
+# kadrajlar: giris · bahce · kus · aksam (ornek 96) · salon (iç mekan, ornek 128)
+# hızlı ön izleme: --ornek 8 --en 800 ; çimsiz: CIMSIZ=1 ortam değişkeni
 ```
 
 ## Uyarı

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tasarım Kontrolü — Durunday Villa</title>
+<meta name="description" content="Plan geometrisinin otomatik mantık denetimi: erişim, mahremiyet, gün ışığı, kapı açılımları, merdiven.">
+<link rel="stylesheet" href="varlik/stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head><body>
+<header class="ust">
+  <div class="sarmal ust-ic">
+    <a class="marka" href="index.html"><span class="nokta"></span> Durunday Villa</a>
+    <nav><a href="index.html">Proje</a>
+<a href="cizimler.html">Çizimler</a>
+<a href="render.html">Görseller</a>
+<a href="mahal-listesi.html">Mahal Listesi</a>
+<a href="imalat.html">İmalat ve Markalar</a>
+<a href="yonetmelik.html">Yönetmelik Uygunluk</a>
+<a href="kontrol.html" class="aktif">Tasarım Kontrolü</a>
+<a href="dosyalar.html">Dosyalar</a></nav>
+    <button class="tema" onclick="temaDegistir()" title="Açık / koyu tema">◐</button>
+  </div>
+</header>
+<main class="sarmal">
+<h1>Tasarım Kontrolü</h1>
+<p class="giris">Plan geometrisi her üretimde otomatik denetlenir (<code>kontrol.py</code>): mahallerin boşluksuz yerleşimi, kapıların doğru duvarda ve kolonlardan uzak olması, kapı kanatlarının duvar, merdiven, mobilya ve birbirine çarpmaması, girişten her mahale ulaşılması, yatak odalarına yalnız hol veya giyinme üzerinden girilmesi, yaşama mahallerinde gün ışığı, pencerelerin kolona ve iç duvara denk gelmemesi, merdiven ölçüleri, bina yüksekliği ve ıslak hacimlerin üst üste gelmesi.</p>
+<div class="kartlar">
+<div class="kart"><div class="sayi">35</div><div class="etiket">Uygun</div></div>
+<div class="kart"><div class="sayi">2</div><div class="etiket">Uyarı</div></div>
+<div class="kart"><div class="sayi">0</div><div class="etiket">Hata</div></div>
+</div><div class="kaydir"><table><thead><tr><th>Grup</th><th>Kontrol</th><th>Durum</th><th>Ayrıntı</th></tr></thead><tbody>
+<tr><td>Geometri</td><td><strong>Bodrum: mahaller 20×15 alanı boşluksuz doldurur</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">aks toplamı 300.00 m², çakışma yok</td></tr>
+<tr><td>Geometri</td><td><strong>Zemin: mahaller 20×15 alanı boşluksuz doldurur</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">aks toplamı 300.00 m², çakışma yok</td></tr>
+<tr><td>Geometri</td><td><strong>1. Kat: mahaller 20×15 alanı boşluksuz doldurur</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">aks toplamı 300.00 m², çakışma yok</td></tr>
+<tr><td>Geometri</td><td><strong>Merdiven tüm katlarda aynı yerde</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">Bodrum [(10.0, 3.2, 12.6, 8.0)]; Zemin [(10.0, 3.2, 12.6, 8.0)]; 1. Kat [(10.0, 3.2, 12.6, 8.0)]</td></tr>
+<tr><td>Geometri</td><td><strong>Asansor tüm katlarda aynı yerde</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">Bodrum [(10.0, 8.0, 12.0, 10.2)]; Zemin [(10.0, 8.0, 12.0, 10.2)]; 1. Kat [(10.0, 8.0, 12.0, 10.2)]</td></tr>
+<tr><td>Geometri</td><td><strong>Saft tüm katlarda aynı yerde</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">Bodrum [(12.0, 8.0, 12.6, 10.2)]; Zemin [(12.0, 8.0, 12.6, 10.2)]; 1. Kat [(12.0, 8.0, 12.6, 10.2)]</td></tr>
+<tr><td>Kapılar</td><td><strong>Bodrum: kapılar doğru duvarda, köşelere ve kolonlara çarpmıyor</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">19 kapı/açıklık</td></tr>
+<tr><td>Kapılar</td><td><strong>Zemin: kapılar doğru duvarda, köşelere ve kolonlara çarpmıyor</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">16 kapı/açıklık</td></tr>
+<tr><td>Kapılar</td><td><strong>1. Kat: kapılar doğru duvarda, köşelere ve kolonlara çarpmıyor</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">17 kapı/açıklık</td></tr>
+<tr><td>Kapılar</td><td><strong>Bodrum: kapı kanatları serbest açılıyor (duvar, merdiven, mobilya, diğer kapı)</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">15 kanat</td></tr>
+<tr><td>Kapılar</td><td><strong>Zemin: kapı kanatları serbest açılıyor (duvar, merdiven, mobilya, diğer kapı)</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">10 kanat</td></tr>
+<tr><td>Kapılar</td><td><strong>1. Kat: kapı kanatları serbest açılıyor (duvar, merdiven, mobilya, diğer kapı)</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">15 kanat</td></tr>
+<tr><td>Erişim</td><td><strong>Her mahale giriş kapısından ulaşılır</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">tüm mahaller bağlı</td></tr>
+<tr><td>Erişim</td><td><strong>Asansör her katta hole açılır (3 durak)</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk"></td></tr>
+<tr><td>Erişim</td><td><strong>Mahremiyet: yatak odaları hol/giyinme üzerinden, banyolar odadan veya holden</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">tüm kapı ilişkileri uygun</td></tr>
+<tr><td>Gün ışığı</td><td><strong>Yaşama mahalleri (yatak, oturma, mutfak) doğrudan gün ışığı alır; cam ≥ döşeme/10</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">tüm yaşama mahallerinde pencere var</td></tr>
+<tr><td>Gün ışığı</td><td><strong>Cam oranı 1/8&#x27;in altında kalan mahaller</strong></td><td><span class="rozet uyari">UYARI</span></td><td class="kucuk">B-02 Oyun ve bar salonu: cam/döşeme 1/10</td></tr>
+<tr><td>Gün ışığı</td><td><strong>Penceresiz ıslak hacimler mekanik havalandırma (şafta bağlı aspiratör) ile çözülür</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">B-05, B-17, B-18, Z-14, K-13, K-18</td></tr>
+<tr><td>Cephe</td><td><strong>Pencereler kolona, iç duvara ve birbirine çarpmıyor</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">tüm pencereler serbest</td></tr>
+<tr><td>Cephe</td><td><strong>Üst kattaki kapı boyu camlar balkona açılır; pencere denizlikleri ≥ 0,85 m</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk"></td></tr>
+<tr><td>Taşıyıcı</td><td><strong>Bodrum: kolonlar duvar içinde / duvar ucunda</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">16 kolon</td></tr>
+<tr><td>Taşıyıcı</td><td><strong>Zemin: kolonlar duvar içinde / duvar ucunda</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">16 kolon</td></tr>
+<tr><td>Taşıyıcı</td><td><strong>1. Kat: kolonlar duvar içinde / duvar ucunda</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">16 kolon</td></tr>
+<tr><td>Taşıyıcı</td><td><strong>En büyük kiriş açıklığı ≤ 8,0 m</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">x yönünde 7.60 m · y yönünde 5.00 m (asansör kuyusu betonarme perde)</td></tr>
+<tr><td>Merdiven</td><td><strong>Bodrum → Zemin: rıht 17.0 cm · basamak 28 cm · 2r+b 62.0 · kol 1.18 m · sahanlık 1.25 m</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">18 rıht (9 + 9)</td></tr>
+<tr><td>Merdiven</td><td><strong>Zemin → 1. Kat: rıht 16.8 cm · basamak 28 cm · 2r+b 61.7 · kol 1.18 m · sahanlık 1.25 m</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">19 rıht (10 + 9)</td></tr>
+<tr><td>Merdiven</td><td><strong>Kollar kutuya sığar, kuzeyde ≥ 0,90 m varış/çıkış sahanlığı kalır</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">varış bandı y 3,20–4.15</td></tr>
+<tr><td>Merdiven</td><td><strong>Baş yüksekliği ≥ 2,10 m</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">üst kol altı ile alt basamak arası ≈ 2.64 m (merdivenler üst üste, aynı kutuda)</td></tr>
+<tr><td>İmar</td><td><strong>Bina yüksekliği (tabii zeminden saçak döşemesine) ≤ Hmax 6.50 m</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">6.50 m</td></tr>
+<tr><td>İmar</td><td><strong>Ebeveyn balkonu konsol derinliği ≤ 1,50 m (açık çıkma)</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">1.50 m</td></tr>
+<tr><td>İmar</td><td><strong>Aile balkonu konsol derinliği ≤ 1,50 m (açık çıkma)</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">1.50 m</td></tr>
+<tr><td>İmar</td><td><strong>Giriş kapısı saçak altında</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">saçak 7.90–12.40 · kapı 8.55–9.65</td></tr>
+<tr><td>İmar</td><td><strong>Garaj 2 araç için yeterli (net ≥ 5,40 × 5,50 m, kapı ≥ 4,60 m)</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">net 5.57 × 5.58 m · kapı 4.80 m</td></tr>
+<tr><td>Yerleşim</td><td><strong>Bodrum: mobilyalar duvar, merdiven ve birbirleriyle çakışmıyor</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">32 donatı</td></tr>
+<tr><td>Yerleşim</td><td><strong>Zemin: mobilyalar duvar, merdiven ve birbirleriyle çakışmıyor</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">31 donatı</td></tr>
+<tr><td>Yerleşim</td><td><strong>1. Kat: mobilyalar duvar, merdiven ve birbirleriyle çakışmıyor</strong></td><td><span class="rozet iyi">UYGUN</span></td><td class="kucuk">47 donatı</td></tr>
+<tr><td>Tesisat</td><td><strong>Islak hacimler yaşama mahallerinin üstüne gelmiyor (gelenler asma tavanda şafta bağlanır)</strong></td><td><span class="rozet uyari">UYARI</span></td><td class="kucuk">K-09 Ebeveyn banyosu → altında Z-09 Salon (şömineli); K-13 Yatak odası 4 banyosu → altında Z-10 Yemek alanı; K-19 Aile WC → altında Z-16 Arka mutfak / servis girişi</td></tr>
+</tbody></table></div>
+<div class="uyari-kutu">Uyarılar bilinçli tasarım kararlarıdır: ebeveyn banyosu salonun üstündedir (tesisat asma tavanda şafta bağlanır); bodrum oyun salonunun cam oranı ışıklık nedeniyle 1/10 düzeyindedir.</div>
+</main>
+<footer class="alt"><div class="sarmal">
+  <p><strong>Durunday Villa</strong> — Konya / Meram / Durunday · 300 m² oturumlu bodrumlu dubleks villa</p>
+  <p class="kucuk">Ön tasarım (avan) dokümanı · 21.09.2026 · Uygulama ve ruhsat için yetkili proje müellifi onayı gerekir.</p>
+</div></footer>
+<script>
+function temaDegistir(){const k=document.documentElement;const y=k.getAttribute('data-tema')==='koyu'?'acik':'koyu';
+ k.setAttribute('data-tema',y);try{localStorage.setItem('tema',y)}catch(e){}}
+(function(){try{const t=localStorage.getItem('tema');if(t)document.documentElement.setAttribute('data-tema',t)}catch(e){}})();
+function tabloAra(girdi, tabloId){const s=girdi.value.toLocaleLowerCase('tr');
+ document.querySelectorAll('#'+tabloId+' tbody tr').forEach(function(tr){
+   tr.style.display = tr.textContent.toLocaleLowerCase('tr').indexOf(s)>-1 ? '' : 'none';});}
+function katFiltre(btn, kat, tabloId){
+ document.querySelectorAll('#'+tabloId+'-sekme .cip').forEach(b=>b.classList.remove('secili'));
+ btn.classList.add('secili');
+ document.querySelectorAll('#'+tabloId+' tbody tr').forEach(function(tr){
+   tr.style.display = (kat==='*'||tr.dataset.kat===kat) ? '' : 'none';});}
+</script>
+</body></html>

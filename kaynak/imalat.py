@@ -36,14 +36,15 @@ POZ = {
 "TV-05": ("Boyalı brüt beton tavan", "Tesisat görünür, astar + plastik boya; garaj, teknik hacim ve depo.", "DYO plastik boya"),
 "TV-06": ("Akustik asma tavan", "Delikli alçı levha / akustik kaset + taşyünü dolgu; ev sineması.", "Knauf Cleaneo Akustik · dolgu İzocam"),
 # ---- kapı
-"KP-01": ("Villa giriş kapısı", "Çelik iskelet, dış cephe uyumlu kompozit/ahşap kaplama, 110×220 cm, ısı-ses yalıtımlı, akıllı kilit.", "Kale Çelik Kapı Villa serisi veya Sur Kapı · kilit Yale Linus ya da Kale Kilit Akıllı"),
-"KP-02": ("Lake iç kapı 90×220", "Amerikan panel gövde üzeri akrilik lake, gizli menteşe, manyetik dil, MDF lake kasa ve pervaz.", "Özel üretim lake kapı · menteşe/kilit Häfele veya Hoppe · lake AkzoNobel"),
+"KP-01": ("Villa giriş kapısı", "Çelik iskelet, dış cephe uyumlu kompozit/ahşap kaplama, 110×240 cm, ısı-ses yalıtımlı, akıllı kilit.", "Kale Çelik Kapı Villa serisi veya Sur Kapı · kilit Yale Linus ya da Kale Kilit Akıllı"),
+"KP-02": ("Lake iç kapı 90×210", "Amerikan panel gövde üzeri akrilik lake, gizli menteşe, manyetik dil, MDF lake kasa ve pervaz.", "Özel üretim lake kapı · menteşe/kilit Häfele veya Hoppe · lake AkzoNobel"),
 "KP-03": ("Islak hacim kapısı", "Nem dayanımlı gövde, alt havalandırma, paslanmaz aksesuar, iç kilit.", "Özel üretim nem dayanımlı kapı · aksesuar Häfele"),
 "KP-04": ("Sürgülü / gizli kasa kapı", "Duvar içine gömülü ray sistemli sürgülü kapı.", "Eclisse veya Häfele Slido gizli kasa sistemi"),
 "KP-05": ("Yangın kapısı EI30", "Kazan dairesi ve teknik hacim girişi, kendiliğinden kapanır, duman sızdırmaz fitilli, sertifikalı.", "Hörmann H3-D veya Kale EI30 sertifikalı yangın kapısı"),
 "KP-06": ("Otomatik seksiyonel garaj kapısı", "Yalıtımlı panel, motorlu, uzaktan kumanda + akıllı ev entegrasyonu, fotosel güvenlik.", "Hörmann LPU 42 + ProMatic motor (alternatif: Sarıcalar)"),
 "KP-07": ("Cam kapı / cam bölme", "8–10 mm temperli cam, alüminyum çerçeve veya çerçevesiz menteşe; sauna ve duş bölmeleri.", "Şişecam temperli cam · aksesuar Häfele veya Sarayli"),
 "KP-08": ("Depo / teknik kapı", "Boyalı çelik veya laminat kapı, kilitli.", "Standart çelik kapı · kilit Kale Kilit"),
+"KP-09": ("Servis dış kapısı", "Isı yalıtımlı alüminyum kapı 90×210, antrasit, yarım buzlu cam, çok noktalı kilit.", "Schüco ADS 75 veya Asaş kapı serisi · kilit Kale / Roto"),
 # ---- doğrama
 "DG-01": ("Alüminyum pencere (ısı yalıtımlı)", "Poliamid bariyerli alüminyum profil, antrasit elektrostatik boya, 4+16Ar+4 Low-E ısıcam, çift açılım.", "Schüco AWS 75 veya Çuhadaroğlu / Asaş yalıtımlı seri · cam Şişecam Isıcam Konfor + argon"),
 "DG-02": ("Lift & slide sürme cam sistem", "Sürme kanatlı, geniş açıklıklı, alçak eşikli; salon-teras ve veranda geçişi.", "Schüco ASS 70 HI veya Çuhadaroğlu sürme sistem"),
@@ -68,7 +69,7 @@ POZ = {
 "MK-03": ("VRF / multi-split iç ünite", "Gizli tavan tipi veya duvar tipi iç ünite, drenaj hattı, kablolu kumanda.", "Daikin VRV 5 veya Mitsubishi Electric City Multi (alternatif: Toshiba)"),
 "MK-04": ("Mekanik havalandırma", "Kanal tipi sessiz aspiratör, çatıya/cepheye atış, anahtar veya nem sensörüyle otomatik.", "Vortice veya Systemair kanal tipi fan"),
 "MK-05": ("Davlumbaz ve mutfak havalandırması", "Ankastre davlumbaz + paslanmaz kanalla çatıya atış, geri akış klapesi.", "Falmec veya Siemens iQ700 ada tipi davlumbaz"),
-"MK-06": ("Kazan dairesi ekipmanı", "Yoğuşmalı kazan, 300 lt boyler, genleşme tankı, sirkülasyon pompaları, gaz dedektörü + selenoid vana, taze hava menfezi.", "Kazan Vaillant ecoTEC plus veya Buderus Logamax · boyler Vaillant uniSTOR · pompa Grundfos Alpha"),
+"MK-06": ("Kazan dairesi ekipmanı", "Hermetik yoğuşmalı kazan (baca şafttan çatıya) veya hava kaynaklı ısı pompası, 300 lt boyler, genleşme tankı, pompalar, gaz dedektörü + selenoid vana.", "Kazan Vaillant ecoTEC plus veya Buderus Logamax · boyler Vaillant uniSTOR · pompa Grundfos Alpha"),
 "MK-07": ("Sauna ünitesi", "Elektrikli sauna sobası (hacme göre kW), kumanda paneli, hava giriş-çıkış menfezleri, ısıya dayanıklı armatür.", "Harvia Cilindro + Xenio kumanda (alternatif: Tylö)"),
 "MK-08": ("Isıtma yok / temperli", "Isıtma tesisatı yapılmaz; komşu hacimden temperlenir. Donmaya karşı tesisat izolasyonu.", "—"),
 "MK-09": ("Isı geri kazanımlı havalandırma (opsiyon)", "Merkezi ısı geri kazanım cihazı, kanal dağıtımı, F7 filtre.", "Systemair SAVE veya Zehnder ComfoAir"),
@@ -87,109 +88,103 @@ POZ = {
 GENEL = [
  ("Taşıyıcı sistem", "Radye temel + betonarme perde/kolon-kiriş; TBDY-2018'e göre tasarım, C30/37 beton, B420C donatı.", "Hazır beton: Konya bölgesi TSE belgeli tesis · donatı İçdaş / Kardemir"),
  ("Bodrum su yalıtımı", "Bitümlü membran (çift kat) + drenaj levhası + çakıl dolgulu Ø150 drenaj borusu, temel altı 10 cm grobeton üzeri yalıtım.", "Membran Sika veya BTM · drenaj levhası Onduline / Izobu"),
- ("Dış duvar", "19 cm gaz beton veya tuğla + 8 cm XPS mantolama (λ ≤ 0,033) + kaplama. TS 825 3. bölge şartını sağlar.", "XPS Dow Styrofoam veya Austrotherm · sistem Baumit openSystem ya da Weber therm"),
- ("Dış cephe kaplaması", "Doğal taş (traverten/andezit) + ısı yalıtım sıvası, antrasit alüminyum denizlik ve damlalık profilleri.", "Taş: bölge ocakları (Afyon/Burdur/Nevşehir) · profil Asaş"),
+ ("Dış duvar", "25 cm gazbeton (G2/04) + 8 cm taşyünü mantolama (λ ≤ 0,035) + zemin katta doğal taş, 1. katta ince silikon sıva. TS 825 3. bölge şartını sağlar.", "Gazbeton Akg / Türk Ytong · taşyünü İzocam veya Knauf Insulation · sistem Baumit ya da Weber therm"),
+ ("Dış cephe kaplaması", "Zemin kat ve baca: 3 cm bej doğal taş (Sille taşı / traverten) mekanik ankrajlı; 1. kat: ince silikon sıva; kat silmesi beyaz GRC; antrasit alüminyum denizlik ve damlalık.", "Taş: Sille (Konya) veya Afyon/Burdur ocakları · ankraj Halfen · sıva Baumit SilikonTop"),
  ("Çatı", "Kırma çatı, ahşap karkas; 14 cm taşyünü, su yalıtım örtüsü, nefes alan membran, kilitli kiremit, alüminyum oluk.", "Kiremit Kılıçoğlu veya Toprak Seramik · taşyünü İzocam · membran Dörken Delta"),
  ("Teras / balkon su yalıtımı", "Çift kat poliüretan esaslı su yalıtımı + ısı yalıtımı + şap, don dayanımlı kaplama, çizgisel drenaj.", "Sika Sikalastic veya BASF MasterSeal · drenaj ACO"),
  ("Islak hacim su yalıtımı", "Duvarda 200 cm, döşemede tam alan çimento esaslı çift bileşenli yalıtım, köşelerde bandaj.", "Kalekim Su Yalıtım 2K veya Weber Tec 822 · bandaj Kalekim"),
- ("Asansör", "4 duraklı (bodrum-zemin-1.kat-çatı arası), 4–6 kişilik, makine dairesiz, kuyu su yalıtımlı.", "Schindler 3300 veya Kone MonoSpace 500"),
+ ("Asansör", "3 duraklı (bodrum-zemin-1. kat), 630 kg / 8 kişi, makine dairesiz; kuyu betonarme perde, su yalıtımlı.", "Schindler 3300 veya Kone MonoSpace 500"),
  ("Peyzaj / dış alanlar", "Otomatik damlama + rotorlu sulama, bahçe aydınlatması, doğal taş yürüme yolu, çim ve bitkilendirme, otomatik bahçe kapısı.", "Sulama Hunter / Rain Bird · kapı otomasyonu Nice veya Came"),
  ("Güvenlik", "Alarm, çevre ve iç mekan IP kamera, görüntülü diyafon, bahçe kapısı otomasyonu.", "Alarm Paradox · kamera Hikvision · diyafon Comelit"),
 ]
 
 # ---- mahal-poz ataması: tipe göre varsayılan
+# sütunlar: Döşeme, Süpürgelik, Duvar, Tavan, Kapı, Doğrama, Elektrik, Mekanik, Sıhhi tesisat
 VARSAYILAN = {
  "yasam":       ("DK-03","SP-01","DV-01 + DV-04","TV-01","KP-02","DG-01","EL-04","MK-01 + MK-03","ST-01"),
- "ikincil":     ("DK-07","SP-01","DV-01 + DV-04","TV-01","KP-02","DG-03","EL-01","MK-01 + MK-03","ST-01"),
+ "ikincil":     ("DK-07","SP-01","DV-01","TV-01","KP-02","DG-07","EL-01","MK-01 + MK-04","ST-01"),
  "yatak":       ("DK-03","SP-01","DV-01 + DV-04","TV-01","KP-02","DG-01 + DG-05 + DG-06","EL-01","MK-01 + MK-03","ST-01"),
+ "giyinme":     ("DK-03","SP-01","DV-01","TV-01","KP-02","DG-07","EL-01","MK-01 + MK-04","ST-01"),
  "islak":       ("DK-04","SP-05","DV-02","TV-03","KP-03","DG-01","EL-02","MK-02 + MK-04","ST-02"),
  "mutfak":      ("DK-01","SP-04","DV-02 + DV-01","TV-01","KP-04","DG-01","EL-03","MK-01 + MK-05","ST-05"),
- "sirkulasyon": ("DK-02","SP-02","DV-01","TV-01","—","DG-01","EL-04","MK-01","ST-01"),
+ "sirkulasyon": ("DK-02","SP-02","DV-01","TV-01","—","DG-07","EL-04","MK-01","ST-01"),
  "teknik":      ("DK-08","SP-04","DV-01","TV-05","KP-08","DG-07","EL-05","MK-08","ST-01"),
- "acik":        ("DK-05","SP-02","—","TV-04","—","DG-02","EL-06","—","ST-08"),
+ "garaj":       ("DK-06","SP-04","DV-06","TV-05","KP-06","DG-01","EL-08","MK-08","ST-07"),
+ "merdiven":    ("DK-02","SP-02","DV-01","TV-02","—","—","EL-04","—","ST-01"),
+ "asansor":     ("—","—","DV-06","TV-05","Asansör kat kapısı","DG-07","EL-05","—","ST-01"),
+ "saft":        ("—","—","DV-06","—","Servis kapağı","DG-07","—","—","Düşey tesisat"),
+ "bosluk":      ("—","—","DV-01","TV-01","—","DG-01","EL-04","—","ST-01"),
 }
 
-# mahal koduna özel değişiklikler: {kod: {sütun_index: değer}} + not
+# mahal koduna özel değişiklikler: {kod: ({sütun_index: değer}, not)}
 OZEL = {
- "B-01": ({0:"DK-06",2:"DV-06",3:"TV-05",4:"KP-06",5:"DG-03",6:"EL-08",8:"ST-07"},
-          "Zemin süzgece eğimli; elektrikli araç şarjı için 3 faz 11 kW hat. Kapı 5,00 m seksiyonel."),
- "B-02": ({}, "Mini bar için su/atık altyapısı bırakılacak (opsiyon); hol ile geniş açık geçiş."),
- "B-03": ({0:"DK-07",2:"DV-07",3:"TV-06",4:"KP-02 (ses yalıtımlı)",5:"DG-07",6:"EL-07",7:"MK-01 + MK-04"},
-          "Duvar ve tavanda akustik dolgu; kapı çift contalı ve eşik fitilli."),
- "B-04": ({2:"DV-06",4:"KP-05",5:"DG-03",7:"MK-06",8:"ST-07"},
-          "Doğalgaz dedektörü + selenoid vana; taze hava menfezi yönetmelik ölçüsünde, yangın kapısı EI30."),
- "B-06": ({2:"DV-02 (h=150 cm)",5:"DG-03",7:"MK-04",8:"ST-06"},
-          "Taşma koruma sensörü ve yer süzgeci zorunlu; tezgah altı makine yerleşimi."),
- "B-07": ({5:"DG-07"}, "Duvar boyu raf altyapısı."),
- "B-08": ({5:"DG-07",7:"MK-04"}, "Soğuk oda bölümü ayrı yalıtımlı, sabit havalandırmalı."),
- "B-09": ({2:"DV-06",5:"DG-07",8:"ST-07"}, "Paslanmaz veya polyester depo, taşma-boşaltma hattı, hidrofor titreşim takozu."),
- "B-10": ({2:"DV-06",5:"DG-07",6:"EL-09"}, "Ana dağıtım panosu ve zayıf akım panosu; akıllı ev ana kabini."),
- "B-11": ({0:"—",1:"—",2:"DV-06",3:"TV-05",4:"Asansör kabin kapısı",5:"DG-07"}, "4 duraklı makine dairesiz asansör; kuyu su yalıtımı ve süzgeci."),
- "B-12": ({5:"DG-07"}, "Spor ve sauna bölümüne hizmet eder."),
- "B-13": ({0:"DK-01",5:"DG-07"}, "Net genişlik 1,45 m (yönetmelik asgarisi 1,20 m)."),
- "B-14": ({0:"DK-02",5:"DG-07",7:"MK-04"}, "Sabit 14–16 °C için ayrı klima/nem kontrolü; ahşap şarap rafı."),
- "B-15": ({2:"DV-01 + ayna duvar",7:"MK-01 + MK-03 + MK-04",5:"DG-03"}, "8 mm kauçuk şok emici alt katman, tam boy ayna ve bale barı."),
- "B-16": ({2:"DV-02 + DV-08",4:"KP-07",5:"DG-07",7:"MK-07 + MK-04"}, "Sauna iç hacmi sedir kaplama; dinlenme alanı duştan ayrık."),
- "B-17": ({4:"KP-07",5:"DG-03"}, "Soyunma dolapları ve duş kabinleri."),
- "B-18": ({5:"DG-03"}, "Hizmet personeli veya uzun süreli misafir için; ensuite banyolu."),
- "B-19": ({5:"DG-03"}, "Duş kabinli."),
- "B-20": ({5:"DG-07"}, "Temizlik malzemesi ve süpürge dolabı, eviye bağlantısı."),
- "B-21": ({3:"—",5:"DG-03",8:"ST-08"}, "Işıklık tabanında drenaj, üstte galvaniz ızgara; bodruma doğal ışık ve havalandırma sağlar."),
-
- "Z-01": ({0:"DK-02",1:"SP-03",2:"DV-01 + DV-03 (TV duvarı)",4:"—",5:"DG-01 + DG-02"},
-          "Galeri boşluğu; şömine için baca/tesisat opsiyonu. Yemek alanıyla açık geçiş."),
- "Z-02": ({0:"DK-02",1:"SP-03",4:"—"}, "Avize için tavanda taşıyıcı ankraj; mutfak ve salonla açık geçiş."),
- "Z-03": ({0:"DK-05",1:"SP-02",2:"DV-01 (dış cephe kaplaması)",3:"TV-04",4:"KP-07",5:"DG-02",6:"EL-06",7:"MK-08",8:"ST-08"},
-          "Katlanır/sürme cam sistemle dört mevsim kullanım; tavanda ısıtıcı opsiyonu."),
- "Z-04": ({0:"DK-02",1:"SP-02",4:"KP-01",6:"EL-09"}, "Görüntülü diyafon, akıllı ev ana paneli, gömme paspas nişi."),
- "Z-05": ({0:"DK-02",1:"SP-02",4:"—"}, "Doğal taş basamak + rıht, 10 mm temperli cam korkuluk (h=110 cm), paslanmaz küpeşte."),
- "Z-06": ({}, "Ada tezgah; kuvars tezgah (Çimstone/Belenco), tezgah altı LED, çekmece içi priz."),
- "Z-07": ({3:"TV-03",4:"KP-02",7:"MK-04"}, "Arka mutfak: bulaşık ve hazırlık alanı, derin raflı kiler."),
- "Z-08": ({2:"DV-03",5:"DG-07",8:"ST-04"}, "Tezgah üstü çanak lavabo, ankastre batarya, dekoratif aydınlatma."),
- "Z-09": ({4:"KP-04",5:"DG-07",7:"MK-01"}, "Tavana kadar gardırop, havalandırma menfezi."),
- "Z-10": ({0:"—",1:"—",2:"DV-06",3:"TV-05",4:"Asansör kabin kapısı",5:"DG-07"}, "Asansör kuyusu ve tesisat şaftı; şaft yangın durdurucu ile katlarda kesilir."),
- "Z-11": ({0:"DK-02",5:"DG-07"}, "Misafir süitine ve ofise erişim; net genişlik 2,45 m."),
- "Z-12": ({}, "Giyinme nişi ve ensuite banyo ile süit kurgusu."),
- "Z-13": ({}, "Duş nişi gizli süzgeçli, cam duş kabini."),
- "Z-14": ({4:"KP-04",5:"DG-07",7:"MK-01 + MK-04"}, "Misafir süiti giyinme odası; sensörlü dolap içi aydınlatma."),
- "Z-15": ({0:"DK-03",6:"EL-01"}, "CAT6 data ve ayrı sigortalı priz hattı; kitaplık ankrajı."),
- "Z-16": ({}, "Yaz mutfağı ve barbekü; su-atık hattı, dış priz, üstü örtülü."),
-
- "K-01": ({}, "Giyinme ve banyo ile süit kurgusu; yatak başı çift yönlü anahtar."),
- "K-02": ({4:"KP-04",5:"DG-01",7:"MK-01 + MK-04"}, "Ada dolap, sensörlü dolap içi aydınlatma, tam boy ayna."),
- "K-03": ({2:"DV-03",8:"ST-03"}, "Çift lavabo, serbest duran küvet, yağmurlama duş, ayna ısıtıcı."),
- "K-04": ({4:"—"}, "TV ünitesi için gömme kanal; senaryolu aydınlatma. Balkona sürme kapı."),
- "K-05": ({4:"KP-04"}, "Kitaplık ankrajı, okuma aydınlatması, data hattı."),
- "K-06": ({}, "Ebeveyn ve aile oturma odasına açılan balkon; cam korkuluk, gizli drenaj."),
- "K-07": ({0:"DK-02",4:"—"}, "Galeri boşluğu çevresinde temperli cam korkuluk h=110 cm."),
- "K-08": ({2:"DV-05",4:"KP-04",5:"DG-07",7:"MK-04",8:"ST-06"}, "Üst kat çamaşır nişi; makine bağlantısı, yer süzgeci, taşma sensörü."),
- "K-09": ({}, "Gömme gardırop; ortak banyoya yakın."),
- "K-10": ({}, "Ensuite banyolu; gömme gardırop."),
- "K-11": ({}, "Duş kabinli, gizli süzgeçli."),
- "K-12": ({0:"—",1:"—",2:"DV-06",3:"TV-05",4:"Asansör kabin kapısı",5:"DG-07"}, "Asansör kuyusu ve tesisat şaftı."),
- "K-13": ({0:"DK-02",5:"DG-07"}, "Net genişlik 2,45 m; ortak banyo ve yatak odalarına erişim."),
- "K-14": ({}, "Küvet + duş; çocuk kullanımına uygun armatür yüksekliği."),
- "K-15": ({}, "Giyinme odası ile birlikte kullanılır."),
- "K-16": ({4:"KP-04",5:"DG-01",7:"MK-01 + MK-04"}, "Gömme dolap sistemi."),
- "K-17": ({}, "Gömme gardırop; çalışma masası için priz + data."),
- "K-18": ({}, "Yatak odası 5'e açılan balkon; korkuluk h=110 cm, tırmanmaya elverişsiz."),
+ # ---------------- bodrum
+ "B-01": ({2:"DV-07",3:"TV-06",4:"KP-02 (ses yalıtımlı)",6:"EL-07"}, "Penceresiz; duvar ve tavanda akustik dolgu, çift contalı kapı, 2 sıra 3'lü sinema koltuğu."),
+ "B-02": ({5:"DG-03",7:"MK-01 + MK-03 + MK-04",8:"ST-05 (bar eviyesi)"}, "Bilardo + bar; batı ışıklığına bakan 340 cm pencere. Hole çift kanatlı kapı."),
+ "B-03": ({5:"DG-03 + DG-06"}, "Misafir veya ev çalışanı için; batı ışıklığında dikme kaçış merdiveni (acil çıkış)."),
+ "B-04": ({0:"DK-03",4:"KP-02"}, "Oda holü ve gömme dolap; oda ile banyoyu bodrum holünden ayırır."),
+ "B-05": ({5:"DG-07"}, "Penceresiz; şafta bağlı mekanik havalandırma. Duş, lavabo, asma klozet."),
+ "B-06": ({}, "Merdiven, asansör, depo ve odalara dağıtım holü; net genişlik 2,05 m."),
+ "B-10": ({4:"KP-08"}, "Genel depo; duvar boyu raf, nem alma cihazı prizi."),
+ "B-11": ({6:"EL-09"}, "Ana dağıtım panosu, zayıf akım kabini, akıllı ev ve NVR."),
+ "B-12": ({0:"DK-01"}, "Teknik ve spa bölümüne servis koridoru; net genişlik 1,25 m."),
+ "B-13": ({4:"KP-05",7:"MK-06",8:"ST-07"}, "EI30 kapı; hermetik kazan veya ısı pompası iç ünitesi, boyler, kollektörler; baca şafttan çatıya."),
+ "B-14": ({2:"DV-06",8:"ST-07"}, "2 × 2,5 ton su deposu, hidrofor, titreşim takozu, taşma-boşaltma hattı."),
+ "B-15": ({7:"MK-04"}, "Soğuk depo bölümü ayrı yalıtımlı, sabit havalandırma; iki yanda raf."),
+ "B-16": ({8:"ST-07"}, "Havuz filtre, pompa, denge deposu ve dozaj ünitesi; havuza en kısa hat."),
+ "B-17": ({4:"KP-03",5:"DG-07"}, "Soyunma dolapları, duş, bank; saunaya cam sürme kapı."),
+ "B-18": ({0:"—",2:"DV-08",3:"DV-08",4:"KP-07",5:"DG-07",7:"MK-07 + MK-04"}, "Sedir kaplama, iki kademeli bank, elektrikli soba."),
+ "B-19": ({0:"DK-07",5:"DG-03",7:"MK-01 + MK-03 + MK-04"}, "Doğu ışıklığına bakan pencere; kauçuk şok emici zemin, ayna duvar."),
+ "B-20": ({}, "Hol deposu (bavul, mevsimlik eşya)."),
+ "B-21": ({0:"DK-02",7:"MK-04 + ayrı klima (14–16 °C)"}, "Şarap rafları ve tadım masası; sabit ısı ve nem."),
+ # ---------------- zemin
+ "Z-01": ({0:"DK-02",4:"KP-01",5:"DG-01 (sabit yan cam)",6:"EL-09"}, "Galeri altında çift yükseklik giriş; gömme vestiyer dolabı, görüntülü diyafon, akıllı ev paneli."),
+ "Z-02": ({0:"DK-02"}, "Girişten bahçeye görsel aks; merdiven, asansör, salon ve misafir süitine dağıtım."),
+ "Z-06": ({}, "Misafir süiti — hol ve banyo ile; 1. kattaki yatak 2 süitiyle aynı aksta."),
+ "Z-07": ({5:"DG-01 (buzlu)",8:"ST-02"}, "Duş, lavabo, asma klozet; kuzeyde yüksek pencere."),
+ "Z-08": ({0:"DK-02"}, "Misafir süiti giriş holü, gömme dolap."),
+ "Z-09": ({0:"DK-02",1:"SP-03",2:"DV-01 + DV-03 (şömine duvarı)",4:"KP-02 (çift kanat)",5:"DG-01 + DG-02"},
+          "Şömine batı duvarında, baca dışta taş kütle; güneyde 540 cm kaldır-sür doğrama ile teras."),
+ "Z-10": ({0:"DK-02",1:"SP-03",4:"—",5:"DG-02"}, "Salon ve mutfakla açık plan; 8 kişilik masa, büfe; güneyde 360 cm kaldır-sür."),
+ "Z-11": ({5:"DG-01 + DG-02"}, "Ada tezgah (ocak + kahvaltı barı), doğu duvarında eviye tezgahı; pergolaya 540 cm kaldır-sür."),
+ "Z-12": ({0:"DK-01"}, "Garaj, WC, kiler ve mutfağa servis koridoru; net 1,25 m."),
+ "Z-13": ({7:"MK-08",5:"DG-01 (yüksek)"}, "2 araç; eve EI30 kapı ile bağlanır; elektrikli araç şarj hattı; seksiyonel kapı 480 × 240."),
+ "Z-14": ({5:"DG-07",8:"ST-04"}, "Misafir WC; servis koridorundan girilir, salondan görünmez."),
+ "Z-15": ({}, "Kiler: derin raflar, mutfağa yakın."),
+ "Z-16": ({4:"KP-02 + KP-09 (dış servis kapısı)"}, "Arka mutfak ve servis girişi: bulaşık, hazırlık, market girişi doğu yan bahçeden."),
+ # ---------------- 1. kat
+ "K-01": ({0:"DK-02"}, "Galeriye bakan okuma köşesi; cam korkuluk h=110."),
+ "K-06": ({}, "Süit: hol + banyo; kuzey ve batı pencereli köşe oda."),
+ "K-07": ({5:"DG-01 (buzlu)"}, "Duş, lavabo, asma klozet (zemin kattaki misafir banyosunun üstünde)."),
+ "K-08": ({0:"DK-03"}, "Yatak 2 holü, gömme dolap."),
+ "K-09": ({2:"DV-03",5:"DG-01 (buzlu, geniş)",8:"ST-03"}, "Serbest küvet, çift lavabo, duş, asma klozet."),
+ "K-10": ({}, "Süit girişi ve giyinme odası; ada dolap, tavana kadar gardırop."),
+ "K-11": ({5:"DG-02 + DG-05"}, "Balkona 420 cm kaldır-sür; batıda pencere, oturma köşesi."),
+ "K-12": ({}, "Güney pencereli; kendi banyosu var."),
+ "K-13": ({5:"DG-07"}, "Duş, lavabo, asma klozet; şafta bitişik, mekanik havalandırma."),
+ "K-14": ({0:"DK-02"}, "Yatak 3, çamaşır odası ve aile salonuna koridor; çatı arası kapağı burada."),
+ "K-15": ({}, "Süit: giyinme odası üzerinden banyo; kuzey ve doğu pencereli."),
+ "K-17": ({8:"ST-02 + küvet"}, "Küvet, lavabo, asma klozet; doğuda yüksek pencere."),
+ "K-18": ({5:"DG-07",8:"ST-06"}, "Çamaşır + kurutma makinesi, ütü, tezgah; yer süzgeci ve taşma sensörü."),
+ "K-19": ({8:"ST-04"}, "Aile salonuna hizmet eden WC."),
+ "K-20": ({5:"DG-01 + DG-02"}, "Aile oturma / TV odası; balkona 540 cm kaldır-sür, doğuda pencere."),
 }
 
 SUTUNLAR = ["Döşeme", "Süpürgelik", "Duvar", "Tavan", "Kapı", "Doğrama / Pencere",
             "Elektrik", "Mekanik", "Sıhhi Tesisat"]
 
 def mahal_satirlari():
-    """[(kat, kod, ad, tip, net_alan, [9 poz], not), ...]"""
+    """[(kat, kod, ad, tip, net_alan, dar, uzun, [9 poz], not), ...]"""
     from veri import net_alan
     cikti = []
     for kat, mahaller in KATLAR.items():
-        for r in mahaller:
-            kod, ad, tip = r[0], r[1], r[6]
+        for m in mahaller:
+            kod, ad, tip = m["kod"], m["ad"], m["tip"]
             degerler = list(VARSAYILAN[tip])
             ozel, aciklama = OZEL.get(kod, ({}, ""))
             for i, v in ozel.items():
                 degerler[i] = v
-            a, dar, uzun = net_alan(r)
+            a, dar, uzun = net_alan(m)
             cikti.append((kat, kod, ad, tip, a, dar, uzun, degerler, aciklama))
     return cikti
 

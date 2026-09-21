@@ -16,6 +16,7 @@
 <a href="mahal-listesi.html">Mahal Listesi</a>
 <a href="imalat.html">İmalat ve Markalar</a>
 <a href="yonetmelik.html">Yönetmelik Uygunluk</a>
+<a href="kontrol.html">Tasarım Kontrolü</a>
 <a href="dosyalar.html">Dosyalar</a></nav>
     <button class="tema" onclick="temaDegistir()" title="Açık / koyu tema">◐</button>
   </div>
@@ -26,18 +27,19 @@
 <div class="kartlar">
 <div class="kart"><div class="sayi">300 m²</div><div class="etiket">Oturum (taban) alanı</div></div>
 <div class="kart"><div class="sayi">900 m²</div><div class="etiket">Brüt inşaat alanı</div></div>
-<div class="kart"><div class="sayi">748 m²</div><div class="etiket">Net kapalı kullanım</div></div>
-<div class="kart"><div class="sayi">68 m²</div><div class="etiket">Teras ve balkon</div></div>
-<div class="kart"><div class="sayi">55</div><div class="etiket">Mahal</div></div>
-<div class="kart"><div class="sayi">7</div><div class="etiket">Yatak odası</div></div>
+<div class="kart"><div class="sayi">726 m²</div><div class="etiket">Net kullanım alanı</div></div>
+<div class="kart"><div class="sayi">80 + 19 m²</div><div class="etiket">Teras + balkon</div></div>
+<div class="kart"><div class="sayi">47</div><div class="etiket">Mahal</div></div>
+<div class="kart"><div class="sayi">6</div><div class="etiket">Yatak odası (hepsi banyolu)</div></div>
 </div>
-<figure style="margin:18px 0 6px"><img src="varlik/render/giris.jpg" alt="Durunday Villa giriş cephesi"></figure>
+<figure style="margin:18px 0 6px"><img src="varlik/render/bahce.jpg" alt="Durunday Villa"></figure>
 <h2>Doküman seti</h2><div class="kartlar">
-<div class="kart"><h3 style="margin-top:0">Çizimler</h3><p class="kucuk">Vaziyet planı, üç kat planı, çatı planı ve kesit — ölçülendirilmiş, 1:100.</p><a href="cizimler.html">Aç →</a></div>
-<div class="kart"><h3 style="margin-top:0">Görseller</h3><p class="kucuk">Kat planı geometrisinden kurulan 3B modelin dört render&#x27;ı.</p><a href="render.html">Aç →</a></div>
-<div class="kart"><h3 style="margin-top:0">Mahal Listesi</h3><p class="kucuk">55 mahal için döşeme, duvar, tavan, kapı, doğrama, elektrik, mekanik ve tesisat tarifi.</p><a href="mahal-listesi.html">Aç →</a></div>
-<div class="kart"><h3 style="margin-top:0">İmalat ve Markalar</h3><p class="kucuk">68 poz için teknik şartname ve üst segment marka/ürün seçimi.</p><a href="imalat.html">Aç →</a></div>
+<div class="kart"><h3 style="margin-top:0">Çizim seti</h3><p class="kucuk">13 pafta A3: vaziyet, 3 kat planı, çatı, 2 kesit, 4 görünüş, sistem kesiti, merdiven detayı, doğrama listesi.</p><a href="cizimler.html">Aç →</a></div>
+<div class="kart"><h3 style="margin-top:0">Görseller</h3><p class="kucuk">Aynı geometriden kurulan 3B modelin fotogerçekçi render&#x27;ları.</p><a href="render.html">Aç →</a></div>
+<div class="kart"><h3 style="margin-top:0">Mahal Listesi</h3><p class="kucuk">47 mahal için döşeme, duvar, tavan, kapı, doğrama, elektrik, mekanik ve tesisat tarifi.</p><a href="mahal-listesi.html">Aç →</a></div>
+<div class="kart"><h3 style="margin-top:0">İmalat ve Markalar</h3><p class="kucuk">69 poz için teknik şartname ve üst segment marka/ürün seçimi.</p><a href="imalat.html">Aç →</a></div>
 <div class="kart"><h3 style="margin-top:0">Yönetmelik Uygunluk</h3><p class="kucuk">Planlı Alanlar İmar Yönetmeliği ve ilgili mevzuata göre kontrol tablosu.</p><a href="yonetmelik.html">Aç →</a></div>
+<div class="kart"><h3 style="margin-top:0">Tasarım Kontrolü</h3><p class="kucuk">Erişim, mahremiyet, gün ışığı, kapı açılımı, kolon, merdiven ve mobilya çakışmalarının otomatik denetimi.</p><a href="kontrol.html">Aç →</a></div>
 <div class="kart"><h3 style="margin-top:0">Dosyalar</h3><p class="kucuk">Excel mahal listesi, PDF çıktılar ve çizim kaynak dosyaları.</p><a href="dosyalar.html">Aç →</a></div>
 </div>
 <h2>Künye</h2><div class="kaydir"><table><tbody>
@@ -46,17 +48,18 @@
 <tr><th style='width:220px'>Parsel</th><td>1001 m² · 26.00 × 38.50 m (varsayım — imar durumu ile teyit edilecek)</td></tr>
 <tr><th style='width:220px'>TAKS / KAKS</th><td>0.30 / 0.60</td></tr>
 <tr><th style='width:220px'>Bina oturumu</th><td>20.00 × 15.00 m</td></tr>
-<tr><th style='width:220px'>Katlar</th><td>Bodrum + Zemin + 1. Normal kat + çatı arası</td></tr>
-<tr><th style='width:220px'>Kat yükseklikleri</th><td>Bodrum 2.90 m (net 2.55 m) · Zemin 3.20 m (net 2.85 m) · 1. Kat 3.10 m (net 2.75 m)</td></tr>
-<tr><th style='width:220px'>Taşıyıcı sistem</th><td>Betonarme perde + çerçeve, radye temel (TBDY-2018)</td></tr>
-<tr><th style='width:220px'>Isıtma / soğutma</th><td>Yoğuşmalı kazan + yerden ısıtma · VRF gizli tavan tipi</td></tr>
+<tr><th style='width:220px'>Katlar</th><td>Bodrum + Zemin + 1. kat (dubleks), kullanılmayan çatı arası · Hmax 6,50 m</td></tr>
+<tr><th style='width:220px'>Kat yükseklikleri</th><td>Bodrum 3.06 m (net 2.66 m) · Zemin 3.20 m (net 2.80 m) · 1. Kat 3.00 m (net 2.60 m)</td></tr>
+<tr><th style='width:220px'>Taşıyıcı sistem</th><td>Betonarme çerçeve (4 × 4 aks, en büyük açıklık 7,80 m) + asansör perdesi, radye temel (TBDY-2018)</td></tr>
+<tr><th style='width:220px'>Isıtma / soğutma</th><td>Hermetik yoğuşmalı kazan veya ısı pompası + yerden ısıtma · VRF gizli tavan tipi</td></tr>
+<tr><th style='width:220px'>Cephe</th><td>Zemin kat doğal taş (Sille taşı), 1. kat beyaz silikon sıva, antrasit alüminyum doğrama, antrasit kil kiremit</td></tr>
 <tr><th style='width:220px'>Kalite segmenti</th><td>Üst segment</td></tr>
 </tbody></table></div>
 <div class="uyari-kutu"><strong>Uyarı.</strong> Bu set ön tasarım (avan) niteliğindedir. Ruhsata esas mimari, statik, mekanik ve elektrik projeleri ile zemin etüdü, yetkili müellifler tarafından hazırlanıp ilgili idarece onaylanmalıdır. Parsel ve imar verileri varsayımdır.</div>
 </main>
 <footer class="alt"><div class="sarmal">
   <p><strong>Durunday Villa</strong> — Konya / Meram / Durunday · 300 m² oturumlu bodrumlu dubleks villa</p>
-  <p class="kucuk">Ön tasarım (avan) dokümanı · 19.09.2026 · Uygulama ve ruhsat için yetkili proje müellifi onayı gerekir.</p>
+  <p class="kucuk">Ön tasarım (avan) dokümanı · 21.09.2026 · Uygulama ve ruhsat için yetkili proje müellifi onayı gerekir.</p>
 </div></footer>
 <script>
 function temaDegistir(){const k=document.documentElement;const y=k.getAttribute('data-tema')==='koyu'?'acik':'koyu';

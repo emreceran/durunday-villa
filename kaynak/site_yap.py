@@ -4,26 +4,29 @@ import os, shutil, html, datetime
 from veri import KATLAR, PARSEL, BINA, KAT_YUKSEKLIK, NET_TAVAN, net_alan, kat_ozeti
 from imalat import POZ, GENEL, SUTUNLAR, mahal_satirlari
 from yonetmelik import KONTROLLER
-from ciz import CIZIMLER
+from kontrol import calistir as tasarim_kontrolu
+from paftalar import CIZIMLER, PAFTALAR
 
 KOK = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(KOK, "docs")
 E = lambda t: html.escape(str(t))
 
 RENDERLAR = [
-    ("giris",  "Giriş cephesi (kuzey-batı)",
-     "İmar yoluna bakan giriş cephesi: üstü örtülü giriş sahanlığı, sol tarafta bodrum garajına inen rampa, sağda açık otopark."),
-    ("bahce",  "Bahçe cephesi (güney-doğu)",
-     "Arka bahçeden görünüş: zemin katta kapalı veranda ve üstü örtülü teras, birinci katta ebeveyn balkonu — hepsi cam korkuluklu, kütleye gömülü loggia olarak çözülmüştür."),
+    ("giris",  "Giriş cephesi",
+     "İmar yoluna bakan kuzey cephesi: çift yükseklikte galeri camı, ahşap kaplı giriş nişi ve saçak, zemin katta garaj ve araç yolu."),
+    ("bahce",  "Bahçe cephesi ve havuz",
+     "Güney cephesi: salon, yemek ve mutfak kaldır-sür doğramalarla terasa açılır; üst katta konsol balkonlar, mutfak önünde pergola."),
     ("kus",    "Kuş bakışı",
-     "Yerleşimin bütünü: 20 × 15 m kütle, kırma çatı, arka bahçede 9,00 × 4,00 m havuz, ön bahçede otopark ve garaj rampası."),
+     "Parselin bütünü: 20 × 15 m kütle, kırma çatı, ön bahçede araç yolu, arka bahçede 10 × 4 m havuz, yan bahçelerde bodrum ışıklıkları."),
     ("aksam",  "Akşam görünümü",
-     "Alçak güneşte giriş cephesi; iç aydınlatma açık, cam yüzeylerin oranı ve loggia derinliği okunuyor."),
+     "Alacakaranlıkta iç mekan ve bahçe aydınlatması yanık hâlde."),
+    ("salon",  "Salon – yemek – mutfak",
+     "Zemin kat açık planı: şömineli salon, yemek alanı ve adalı mutfak; güney camlarından bahçe."),
 ]
 
 SAYFALAR = [("index.html", "Proje"), ("cizimler.html", "Çizimler"), ("render.html", "Görseller"),
             ("mahal-listesi.html", "Mahal Listesi"), ("imalat.html", "İmalat ve Markalar"),
-            ("yonetmelik.html", "Yönetmelik Uygunluk"), ("dosyalar.html", "Dosyalar")]
+            ("yonetmelik.html", "Yönetmelik Uygunluk"), ("kontrol.html", "Tasarım Kontrolü"), ("dosyalar.html", "Dosyalar")]
 
 def kabuk(aktif, baslik, govde, aciklama=""):
     nav = "\n".join(
@@ -125,6 +128,7 @@ input[type=search]{flex:1;min-width:220px;padding:9px 12px;border:1px solid var(
 .rozet{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12.5px;font-weight:600}
 .rozet.iyi{background:rgba(4,120,87,.12);color:var(--iyi)}
 .rozet.uyari{background:rgba(180,83,9,.14);color:var(--uyari)}
+.rozet.hata{background:rgba(185,28,28,.12);color:#b91c1c}
 figure{margin:0 0 26px}
 figure img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--cerceve);border-radius:12px}
 figcaption{font-size:14px;color:var(--yz2);margin-top:8px;display:flex;gap:10px;flex-wrap:wrap}
@@ -143,30 +147,34 @@ figcaption a{color:var(--vurgu)}
 
 def index():
     ozet = kat_ozeti()
-    kapali = sum(v[0] for v in ozet.values()); acik = sum(v[1] for v in ozet.values())
-    mahal_sayisi = sum(len(v) for v in KATLAR.values())
+    kapali = sum(v[0] for v in ozet.values())
+    mahal_sayisi = sum(1 for v in KATLAR.values() for m in v if m["tip"] not in ("saft", "bosluk", "asansor", "merdiven"))
+    yatak = sum(1 for v in KATLAR.values() for m in v if m["tip"] == "yatak")
     hero = ''
-    if os.path.exists(os.path.join(SITE, "varlik", "render", "giris.jpg")):
-        hero = ('<figure style="margin:18px 0 6px"><img src="varlik/render/giris.jpg" '
-                'alt="Durunday Villa giriş cephesi"></figure>')
+    for ad in ("bahce", "giris"):
+        if os.path.exists(os.path.join(KOK, "render", ad + ".jpg")):
+            hero = ('<figure style="margin:18px 0 6px"><img src="varlik/render/%s.jpg" '
+                    'alt="Durunday Villa"></figure>' % ad)
+            break
     g = ['<h1>Durunday Villa — ön tasarım dosyası</h1>',
          '<p class="giris">Konya / Meram / Durunday’da 1.001 m² parsel üzerinde, 300 m² oturumlu, '
          'bodrumlu dubleks villa için hazırlanmış mimari ön tasarım, mahal listesi, imalat tarifi ve '
          'marka seçimlerinden oluşan doküman seti. Tüm çizimler ve tablolar tek bir veri kaynağından üretilmiştir.</p>']
     g.append('<div class="kartlar">')
     for sayi, etiket in [("300 m²", "Oturum (taban) alanı"), ("900 m²", "Brüt inşaat alanı"),
-                         ("%.0f m²" % kapali, "Net kapalı kullanım"), ("%.0f m²" % acik, "Teras ve balkon"),
-                         (str(mahal_sayisi), "Mahal"), ("7", "Yatak odası")]:
+                         ("%.0f m²" % kapali, "Net kullanım alanı"), ("80 + 19 m²", "Teras + balkon"),
+                         (str(mahal_sayisi), "Mahal"), (str(yatak), "Yatak odası (hepsi banyolu)")]:
         g.append('<div class="kart"><div class="sayi">%s</div><div class="etiket">%s</div></div>' % (E(sayi), E(etiket)))
     g.append('</div>')
     g.append(hero)
     g.append('<h2>Doküman seti</h2><div class="kartlar">')
     for dosya, ad, ack in [
-        ("cizimler.html", "Çizimler", "Vaziyet planı, üç kat planı, çatı planı ve kesit — ölçülendirilmiş, 1:100."),
-        ("render.html", "Görseller", "Kat planı geometrisinden kurulan 3B modelin dört render'ı."),
-        ("mahal-listesi.html", "Mahal Listesi", "55 mahal için döşeme, duvar, tavan, kapı, doğrama, elektrik, mekanik ve tesisat tarifi."),
-        ("imalat.html", "İmalat ve Markalar", "68 poz için teknik şartname ve üst segment marka/ürün seçimi."),
+        ("cizimler.html", "Çizim seti", "%d pafta A3: vaziyet, 3 kat planı, çatı, 2 kesit, 4 görünüş, sistem kesiti, merdiven detayı, doğrama listesi." % len(PAFTALAR)),
+        ("render.html", "Görseller", "Aynı geometriden kurulan 3B modelin fotogerçekçi render'ları."),
+        ("mahal-listesi.html", "Mahal Listesi", "%d mahal için döşeme, duvar, tavan, kapı, doğrama, elektrik, mekanik ve tesisat tarifi." % mahal_sayisi),
+        ("imalat.html", "İmalat ve Markalar", "%d poz için teknik şartname ve üst segment marka/ürün seçimi." % len(POZ)),
         ("yonetmelik.html", "Yönetmelik Uygunluk", "Planlı Alanlar İmar Yönetmeliği ve ilgili mevzuata göre kontrol tablosu."),
+        ("kontrol.html", "Tasarım Kontrolü", "Erişim, mahremiyet, gün ışığı, kapı açılımı, kolon, merdiven ve mobilya çakışmalarının otomatik denetimi."),
         ("dosyalar.html", "Dosyalar", "Excel mahal listesi, PDF çıktılar ve çizim kaynak dosyaları."),
     ]:
         g.append('<div class="kart"><h3 style="margin-top:0">%s</h3><p class="kucuk">%s</p>'
@@ -179,10 +187,11 @@ def index():
         ("Parsel", "%.0f m² · %.2f × %.2f m (varsayım — imar durumu ile teyit edilecek)" % (PARSEL["alan"], PARSEL["en"], PARSEL["boy"])),
         ("TAKS / KAKS", "%.2f / %.2f" % (PARSEL["taks"], PARSEL["kaks"])),
         ("Bina oturumu", "%.2f × %.2f m" % (BINA["en"], BINA["boy"])),
-        ("Katlar", "Bodrum + Zemin + 1. Normal kat + çatı arası"),
+        ("Katlar", "Bodrum + Zemin + 1. kat (dubleks), kullanılmayan çatı arası · Hmax 6,50 m"),
         ("Kat yükseklikleri", " · ".join("%s %.2f m (net %.2f m)" % (a, KAT_YUKSEKLIK[a], NET_TAVAN[a]) for a in KAT_YUKSEKLIK)),
-        ("Taşıyıcı sistem", "Betonarme perde + çerçeve, radye temel (TBDY-2018)"),
-        ("Isıtma / soğutma", "Yoğuşmalı kazan + yerden ısıtma · VRF gizli tavan tipi"),
+        ("Taşıyıcı sistem", "Betonarme çerçeve (4 × 4 aks, en büyük açıklık 7,80 m) + asansör perdesi, radye temel (TBDY-2018)"),
+        ("Isıtma / soğutma", "Hermetik yoğuşmalı kazan veya ısı pompası + yerden ısıtma · VRF gizli tavan tipi"),
+        ("Cephe", "Zemin kat doğal taş (Sille taşı), 1. kat beyaz silikon sıva, antrasit alüminyum doğrama, antrasit kil kiremit"),
         ("Kalite segmenti", "Üst segment"),
     ]:
         g.append("<tr><th style='width:220px'>%s</th><td>%s</td></tr>" % (E(k), E(v)))
@@ -195,8 +204,11 @@ def index():
 
 def cizimler_sayfa():
     g = ['<h1>Çizimler</h1>',
-         '<p class="giris">Ölçek 1:100 · ölçülendirilmiş · duvar kalınlıkları dış 35 cm, iç 15 cm. '
-         'Her çizim SVG’dir; büyütmek için üzerine tıklayabilirsiniz.</p>']
+         '<p class="giris">A3 yatay, antetli paftalar: vaziyet 1/200, planlar-kesitler-görünüşler 1/100, '
+         'sistem kesiti ve merdiven 1/50. Ölçüler cm, kotlar m. Planlarda aks sistemi, üç sıralı dış ölçü '
+         'zinciri, iç ölçüler, kotlar, kesit işaretleri, kapı/pencere kodları ve mobilya yerleşimi vardır. '
+         'Her pafta SVG’dir; büyütmek için üzerine tıklayın. Tüm set tek PDF olarak '
+         '<a href="dosyalar.html">Dosyalar</a> sayfasında.</p>']
     for dosya, ad, _ in CIZIMLER:
         g.append('<figure id="%s"><a href="varlik/%s.svg" target="_blank" rel="noopener">'
                  '<img src="varlik/%s.svg" alt="%s" loading="lazy"></a>'
@@ -204,14 +216,13 @@ def cizimler_sayfa():
                  '<a href="varlik/%s.svg" target="_blank" rel="noopener">SVG olarak aç ↗</a></figcaption></figure>'
                  % (dosya, dosya, dosya, E(ad), E(ad), dosya))
     return kabuk("cizimler.html", "Çizimler", "\n".join(g),
-                 "Vaziyet planı, bodrum/zemin/1. kat planları, çatı planı ve kesit.")
+                 "A3 mimari ön proje paftaları: vaziyet, planlar, çatı, kesitler, görünüşler, detaylar, doğrama listesi.")
 
 def render_sayfa(mevcut):
     g = ['<h1>Görseller</h1>',
          '<p class="giris">Üç boyutlu model, kat planlarının geometrisinden (<code>veri.py</code>) '
-         'otomatik kurulur: duvarlar, pencere ve kapı boşlukları, loggialar, kırma çatı ve arazi. '
-         'Blender / Cycles ile hesaplanmıştır. Görseller kütle, oran ve cephe düzenini gösterir; '
-         'malzeme dokuları temsilidir.</p>']
+         'otomatik kurulur: duvarlar, pencere ve kapı boşlukları, balkonlar, saçak, pergola, baca, '
+         'ışıklıklar, kırma çatı ve peyzaj. Blender / Cycles ile hesaplanmıştır; malzeme ve bitkiler temsilidir.</p>']
     for ad, baslik, ack in RENDERLAR:
         if ad not in mevcut:
             continue
@@ -246,7 +257,7 @@ def mahal_sayfa():
                     "".join("<td>%s</td>" % E(d) for d in degerler), E(aciklama)))
     g.append('</tbody></table></div>')
     return kabuk("mahal-listesi.html", "Mahal Listesi", "\n".join(g),
-                 "55 mahal için döşeme, duvar, tavan, kapı, doğrama, elektrik, mekanik ve sıhhi tesisat tarifi.")
+                 "Her mahal için döşeme, duvar, tavan, kapı, doğrama, elektrik, mekanik ve sıhhi tesisat tarifi.")
 
 def imalat_sayfa():
     gruplar = [("Döşeme kaplaması", "DK"), ("Süpürgelik", "SP"), ("Duvar", "DV"), ("Tavan", "TV"),
@@ -273,7 +284,7 @@ def imalat_sayfa():
                  % (E(ad), E(tanim), E(marka)))
     g.append('</tbody></table></div>')
     return kabuk("imalat.html", "İmalat ve Markalar", "\n".join(g),
-                 "68 poz için teknik şartname ve üst segment marka seçimleri.")
+                 "Poz bazında teknik şartname ve üst segment marka seçimleri.")
 
 def yonetmelik_sayfa():
     g = ['<h1>Yönetmelik Uygunluk Kontrolü</h1>',
@@ -292,6 +303,30 @@ def yonetmelik_sayfa():
              'proje müellifi tarafından teyit edilmelidir.</div>')
     return kabuk("yonetmelik.html", "Yönetmelik Uygunluk", "\n".join(g),
                  "Planlı Alanlar İmar Yönetmeliği'ne göre piyes ölçüleri, merdiven, yükseklik ve otopark kontrolü.")
+
+def kontrol_sayfa():
+    sonuc = tasarim_kontrolu()
+    say = {d: sum(1 for r in sonuc if r[2] == d) for d in ("UYGUN", "UYARI", "HATA")}
+    g = ['<h1>Tasarım Kontrolü</h1>',
+         '<p class="giris">Plan geometrisi her üretimde otomatik denetlenir (<code>kontrol.py</code>): '
+         'mahallerin boşluksuz yerleşimi, kapıların doğru duvarda ve kolonlardan uzak olması, kapı kanatlarının '
+         'duvar, merdiven, mobilya ve birbirine çarpmaması, girişten her mahale ulaşılması, yatak odalarına '
+         'yalnız hol veya giyinme üzerinden girilmesi, yaşama mahallerinde gün ışığı, pencerelerin kolona ve iç '
+         'duvara denk gelmemesi, merdiven ölçüleri, bina yüksekliği ve ıslak hacimlerin üst üste gelmesi.</p>',
+         '<div class="kartlar">']
+    for d, et in (("UYGUN", "Uygun"), ("UYARI", "Uyarı"), ("HATA", "Hata")):
+        g.append('<div class="kart"><div class="sayi">%d</div><div class="etiket">%s</div></div>' % (say[d], et))
+    g.append('</div><div class="kaydir"><table><thead><tr><th>Grup</th><th>Kontrol</th><th>Durum</th>'
+             '<th>Ayrıntı</th></tr></thead><tbody>')
+    for grup, ad, durum, ack in sonuc:
+        rozet = {"UYGUN": "iyi", "UYARI": "uyari", "HATA": "hata"}[durum]
+        g.append('<tr><td>%s</td><td><strong>%s</strong></td><td><span class="rozet %s">%s</span></td>'
+                 '<td class="kucuk">%s</td></tr>' % (E(grup), E(ad), rozet, E(durum), E(ack)))
+    g.append('</tbody></table></div>')
+    g.append('<div class="uyari-kutu">Uyarılar bilinçli tasarım kararlarıdır: ebeveyn banyosu salonun üstündedir '
+             '(tesisat asma tavanda şafta bağlanır); bodrum oyun salonunun cam oranı ışıklık nedeniyle 1/10 düzeyindedir.</div>')
+    return kabuk("kontrol.html", "Tasarım Kontrolü", "\n".join(g),
+                 "Plan geometrisinin otomatik mantık denetimi: erişim, mahremiyet, gün ışığı, kapı açılımları, merdiven.")
 
 def dosyalar_sayfa(dosyalar):
     g = ['<h1>Dosyalar</h1>',
@@ -314,6 +349,9 @@ def uret():
     os.makedirs(os.path.join(SITE, "dosyalar"), exist_ok=True)
     with open(os.path.join(SITE, "varlik", "stil.css"), "w", encoding="utf-8") as f:
         f.write(STIL)
+    for eski in os.listdir(os.path.join(SITE, "varlik")):
+        if eski.endswith(".svg"):
+            os.remove(os.path.join(SITE, "varlik", eski))
     for dosya, ad, _ in CIZIMLER:
         shutil.copy(os.path.join(KOK, "cizimler", dosya + ".svg"),
                     os.path.join(SITE, "varlik", dosya + ".svg"))
@@ -330,22 +368,23 @@ def uret():
     if os.path.exists(os.path.join(KOK, xlsx)):
         shutil.copy(os.path.join(KOK, xlsx), os.path.join(SITE, "dosyalar", "durunday-villa-mahal-listesi.xlsx"))
         dosyalar.append(("Mahal listesi (Excel)", "dosyalar/durunday-villa-mahal-listesi.xlsx",
-                         "5 sekme: künye ve genel tanımlar, mahal programı, mahal listesi, imalat tanımları + markalar, yönetmelik kontrolü"))
+                         "6 sekme: künye, mahal programı, mahal listesi, imalat + markalar, yönetmelik kontrolü, tasarım kontrolü"))
     for ad, yerel, ack in [("Mahal listesi (PDF)", "durunday-villa-mahal-listesi.pdf",
                             "Excel’in baskıya hazır PDF çıktısı"),
                            ("Çizim seti (PDF)", "durunday-villa-cizimler.pdf",
-                            "Altı çizimin A3 yatay PDF seti")]:
+                            "%d paftalık A3 yatay mimari ön proje seti" % len(PAFTALAR))]:
         if os.path.exists(os.path.join(SITE, "dosyalar", yerel)):
             dosyalar.append((ad, "dosyalar/" + yerel, ack))
     for dosya, ad, _ in CIZIMLER:
-        dosyalar.append((ad + " (SVG)", "varlik/%s.svg" % dosya, "Vektörel çizim, 1:100"))
+        dosyalar.append((ad + " (SVG)", "varlik/%s.svg" % dosya, "Vektörel A3 pafta"))
     for ad, baslik, _a in RENDERLAR:
         if ad in mevcut:
-            dosyalar.append((baslik + " (JPG)", "varlik/render/%s.jpg" % ad, "3B render, 1600 × 900"))
+            dosyalar.append((baslik + " (JPG)", "varlik/render/%s.jpg" % ad, "3B render, 1920 × 1080"))
     sayfalar = {"index.html": index(), "cizimler.html": cizimler_sayfa(),
                 "render.html": render_sayfa(mevcut),
                 "mahal-listesi.html": mahal_sayfa(), "imalat.html": imalat_sayfa(),
-                "yonetmelik.html": yonetmelik_sayfa(), "dosyalar.html": dosyalar_sayfa(dosyalar)}
+                "yonetmelik.html": yonetmelik_sayfa(), "kontrol.html": kontrol_sayfa(),
+                "dosyalar.html": dosyalar_sayfa(dosyalar)}
     for ad, icerik in sayfalar.items():
         with open(os.path.join(SITE, ad), "w", encoding="utf-8") as f:
             f.write(icerik)

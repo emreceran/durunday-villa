@@ -55,6 +55,7 @@ input[type=search]{flex:1;min-width:220px;padding:9px 12px;border:1px solid var(
 .rozet{display:inline-block;padding:2px 9px;border-radius:999px;font-size:12.5px;font-weight:600}
 .rozet.iyi{background:rgba(4,120,87,.12);color:var(--iyi)}
 .rozet.uyari{background:rgba(180,83,9,.14);color:var(--uyari)}
+.rozet.hata{background:rgba(185,28,28,.12);color:#b91c1c}
 figure{margin:0 0 26px}
 figure img{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--cerceve);border-radius:12px}
 figcaption{font-size:14px;color:var(--yz2);margin-top:8px;display:flex;gap:10px;flex-wrap:wrap}

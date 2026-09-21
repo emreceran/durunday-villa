@@ -1,82 +1,228 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3280 4470" width="3280" height="4470">
-<style>
-  text { font-family: "DejaVu Sans", Arial, Helvetica, sans-serif; fill:#111827; }
-  .kod   { font-size: 15px; font-weight: 700; fill:#1d4ed8; letter-spacing:.5px; }
-  .ad    { font-size: 15px; font-weight: 600; }
-  .alan  { font-size: 13px; fill:#4b5563; }
-  .olcu  { font-size: 14px; fill:#374151; }
-  .kucuk { font-size: 15px; fill:#4b5563; }
-  .baslik{ font-size: 34px; font-weight: 700; }
-  .altb  { font-size: 19px; font-weight: 600; fill:#1f2937; }
-  .lej   { font-size: 15px; fill:#374151; }
-</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" width="420mm" height="297mm" font-family="'Arial Narrow','Liberation Sans Narrow','Roboto Condensed',Arial,Helvetica,sans-serif">
 <defs>
-  <marker id="ok" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
-    <path d="M0 0 L9 4.5 L0 9 z" fill="#b45309"/>
-  </marker>
-  <pattern id="cim" width="14" height="14" patternUnits="userSpaceOnUse">
-    <rect width="14" height="14" fill="#eef7ec"/>
-    <path d="M0 14 L7 6 M7 14 L14 6" stroke="#bcd9b6" stroke-width="1.4" fill="none"/>
-  </pattern>
+ <pattern id="p-fayans" patternUnits="userSpaceOnUse" width="3" height="3"><path d="M0 0H3M0 0V3" stroke="#c7ccd4" stroke-width="0.1"/></pattern>
+ <pattern id="p-tas" patternUnits="userSpaceOnUse" width="6" height="6"><path d="M0 0H6M0 0V6" stroke="#d3d7de" stroke-width="0.1"/></pattern>
+ <pattern id="p-parke" patternUnits="userSpaceOnUse" width="12" height="1.8"><path d="M0 0H12M0 0V1.8" stroke="#e6e1d6" stroke-width="0.08"/></pattern>
+ <pattern id="p-dis-tas" patternUnits="userSpaceOnUse" width="6" height="3"><path d="M0 0H6M0 0V3" stroke="#c9cdd3" stroke-width="0.1"/></pattern>
+ <pattern id="p-duvar" patternUnits="userSpaceOnUse" width="1.5" height="1.5" patternTransform="rotate(45)"><path d="M0 0V1.5" stroke="#3f444c" stroke-width="0.22"/></pattern>
+ <pattern id="p-yalitim" patternUnits="userSpaceOnUse" width="2.0" height="2.0"><rect width="2" height="2" fill="#f4f1e8"/><path d="M0 2L1 0L2 2" fill="none" stroke="#6b7280" stroke-width="0.08"/></pattern>
+ <pattern id="p-saft" patternUnits="userSpaceOnUse" width="1.6" height="1.6" patternTransform="rotate(45)"><path d="M0 0V1.6" stroke="#9ca3af" stroke-width="0.12"/></pattern>
+ <pattern id="p-toprak" patternUnits="userSpaceOnUse" width="4" height="4" patternTransform="rotate(45)"><path d="M0 0V4M2 0V1.2" stroke="#8b7355" stroke-width="0.15"/></pattern>
+ <pattern id="p-beton" patternUnits="userSpaceOnUse" width="2.4" height="2.4"><circle cx="0.6" cy="0.7" r="0.18" fill="#555"/><circle cx="1.7" cy="1.8" r="0.12" fill="#555"/><path d="M1.4 0.4l0.4 0.3l-0.5 0.1z" fill="#555"/></pattern>
+ <pattern id="p-cim" patternUnits="userSpaceOnUse" width="4" height="4"><path d="M0.5 1.2l0.3-0.8l0.3 0.8M2.6 3.2l0.3-0.8l0.3 0.8" fill="none" stroke="#86a877" stroke-width="0.12"/></pattern>
+ <pattern id="p-kiremit" patternUnits="userSpaceOnUse" width="2.5" height="2.5"><path d="M0 2.5H2.5" stroke="#9ca3af" stroke-width="0.1"/></pattern>
+ <pattern id="p-izgara" patternUnits="userSpaceOnUse" width="1.2" height="1.2"><path d="M0 0H1.2M0 0V1.2" stroke="#6b7280" stroke-width="0.1"/></pattern>
+ <pattern id="p-su" patternUnits="userSpaceOnUse" width="6" height="3"><path d="M0 1.5q1.5-0.8 3 0t3 0" fill="none" stroke="#93c5fd" stroke-width="0.15"/></pattern>
+ <pattern id="p-sille" patternUnits="userSpaceOnUse" width="9" height="3.0"><rect width="9" height="3" fill="#efe6d4"/><path d="M0 3H9M0 0V1.5M4.5 1.5V3M0 1.5H9" stroke="#b9ab8e" stroke-width="0.12"/></pattern>
+ <pattern id="p-siva" patternUnits="userSpaceOnUse" width="5" height="5"><rect width="5" height="5" fill="#fbfbf9"/></pattern>
+ <pattern id="p-ahsap" patternUnits="userSpaceOnUse" width="1.2" height="5"><rect width="1.2" height="5" fill="#c89b6d"/><path d="M0 0V5" stroke="#8a643f" stroke-width="0.12"/></pattern>
+ <pattern id="p-kiremit-g" patternUnits="userSpaceOnUse" width="3" height="2"><rect width="3" height="2" fill="#4b5058"/><path d="M0 2H3M1.5 0V2" stroke="#2f3338" stroke-width="0.12"/></pattern>
+ <marker id="ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+ <marker id="ok-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b45309"/></marker>
 </defs>
-<rect x="0" y="0" width="3280" height="4470" fill="#ffffff"/>
-<rect x="18" y="18" width="3244" height="4434" fill="none" stroke="#1f2937" stroke-width="3"/>
-<rect x="18" y="4302" width="3244" height="150" fill="#f8fafc" stroke="#1f2937" stroke-width="3"/>
-<text x="46" y="4354" class="baslik">VAZİYET PLANI</text>
-<text x="46" y="4390" class="altb">Parsel 1001 m² · TAKS 0.30 (300 m²) · KAKS 0.60 (601 m²) · Ayrık nizam, 2 kat (B+2+Ç)</text>
-<text x="46" y="4422" class="kucuk">Çekme mesafeleri: ön (yol tarafı) 5.0 m · yan 3.0 m · arka 3.0 m — imar durumu belgesiyle teyit edilecektir</text>
-<text x="3234" y="4354" class="altb" text-anchor="end">DURUNDAY VİLLA</text>
-<text x="3234" y="4386" class="kucuk" text-anchor="end">Konya / Meram / Durunday — Bodrumlu dubleks villa</text>
-<text x="3234" y="4418" class="kucuk" text-anchor="end">Ölçek 1:100 (A3) · Ön tasarım · 19.09.2026</text>
-<rect x="190.0" y="198.0" width="2600.0" height="72.0" fill="#e5e7eb" stroke="#4b5563" stroke-width="2"/>
-<text x="1490.0" y="242.0" class="kucuk" text-anchor="middle">İMAR YOLU</text>
-<rect x="190.0" y="270.0" width="2600.0" height="3850.0" fill="url(#cim)" stroke="#1f2937" stroke-width="3"/>
-<rect x="490.0" y="770.0" width="2000.0" height="3050.0" fill="none" stroke="#b45309" stroke-width="2" stroke-dasharray="12 8"/>
-<text x="500.0" y="796.0" class="kucuk" fill="#b45309">yapı yaklaşma sınırı</text>
-<rect x="490.0" y="770.0" width="2000.0" height="1500.0" fill="#dbe7f6" stroke="#1f2937" stroke-width="4"/>
-<text x="1490.0" y="1494.0" class="altb" text-anchor="middle">VİLLA</text>
-<text x="1490.0" y="1524.0" class="kucuk" text-anchor="middle">20,00 × 15,00 m = 300 m² oturum</text>
-<text x="1490.0" y="1550.0" class="kucuk" text-anchor="middle">Bodrum + Zemin + 1. Kat + çatı arası</text>
-<line x1="1520.0" y1="610.0" x2="1520.0" y2="755.0" stroke="#b45309" stroke-width="4" marker-end="url(#ok)"/>
-<text x="1520.0" y="595.0" class="kucuk" text-anchor="middle" fill="#b45309">GİRİŞ</text>
-<line x1="920.0" y1="610.0" x2="920.0" y2="755.0" stroke="#b45309" stroke-width="4" marker-end="url(#ok)"/>
-<text x="920.0" y="595.0" class="kucuk" text-anchor="middle" fill="#b45309">GARAJ</text>
-<rect x="1840.0" y="310.0" width="500.0" height="420.0" fill="#f1f5f9" stroke="#4b5563" stroke-width="2"/>
-<text x="2090.0" y="530.0" class="kucuk" text-anchor="middle">Açık otopark (2 araç)</text>
-<rect x="670.0" y="310.0" width="500.0" height="420.0" fill="#eceff3" stroke="#4b5563" stroke-width="2"/>
-<text x="920.0" y="530.0" class="kucuk" text-anchor="middle">Garaj rampası</text>
-<rect x="590.0" y="2490.0" width="900.0" height="400.0" rx="16" fill="#cfe9f5" stroke="#4b5563" stroke-width="2"/>
-<text x="1040.0" y="2710.0" class="kucuk" text-anchor="middle">Havuz 9,00 × 4,00 m (opsiyon)</text>
-<text x="1490.0" y="3110.0" class="kucuk" text-anchor="middle">Arka bahçe — peyzaj, oturma ve barbekü alanı</text>
-<line x1="190.0" y1="174.0" x2="2790.0" y2="174.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="190.0" y1="168.0" x2="190.0" y2="180.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="2790.0" y1="168.0" x2="2790.0" y2="180.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="1490.0" y="166.0" class="olcu" text-anchor="middle">26.00</text>
-<line x1="138.0" y1="270.0" x2="138.0" y2="4120.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="132.0" y1="270.0" x2="144.0" y2="270.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="132.0" y1="4120.0" x2="144.0" y2="4120.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="130.0" y="2195.0" class="olcu" text-anchor="middle" transform="rotate(-90 130.0 2195.0)">38.50</text>
-<line x1="190.0" y1="744.0" x2="490.0" y2="744.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="190.0" y1="738.0" x2="190.0" y2="750.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="490.0" y1="738.0" x2="490.0" y2="750.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="340.0" y="736.0" class="olcu" text-anchor="middle">3.00</text>
-<line x1="2490.0" y1="744.0" x2="2790.0" y2="744.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="2490.0" y1="738.0" x2="2490.0" y2="750.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="2790.0" y1="738.0" x2="2790.0" y2="750.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="2640.0" y="736.0" class="olcu" text-anchor="middle">3.00</text>
-<line x1="464.0" y1="270.0" x2="464.0" y2="770.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="458.0" y1="270.0" x2="470.0" y2="270.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="458.0" y1="770.0" x2="470.0" y2="770.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="456.0" y="520.0" class="olcu" text-anchor="middle" transform="rotate(-90 456.0 520.0)">5.00</text>
-<line x1="464.0" y1="2270.0" x2="464.0" y2="4120.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="458.0" y1="2270.0" x2="470.0" y2="2270.0" stroke="#4b5563" stroke-width="1.5"/>
-<line x1="458.0" y1="4120.0" x2="470.0" y2="4120.0" stroke="#4b5563" stroke-width="1.5"/>
-<text x="456.0" y="3195.0" class="olcu" text-anchor="middle" transform="rotate(-90 456.0 3195.0)">18.50</text>
-<circle cx="2940.0" cy="330.0" r="34" fill="none" stroke="#4b5563" stroke-width="2"/>
-<path d="M 2940.0 300.0 L 2929.0 346.0 L 2951.0 346.0 Z" fill="#1f2937"/>
-<text x="2940.0" y="382.0" class="kucuk" text-anchor="middle">K</text>
-<text x="2904.0" y="440.0" class="lej">Parsel: 1001 m²</text>
-<text x="2904.0" y="468.0" class="lej">Oturum: 300 m²</text>
-<text x="2904.0" y="496.0" class="lej">TAKS: 0.30</text>
-<text x="2904.0" y="524.0" class="lej">KAKS: 0.60</text>
-<text x="2904.0" y="552.0" class="lej">Otopark: 3 kapalı + 2 açık</text></svg>
+<rect x="0.00" y="0.00" width="420.00" height="297.00" fill="#ffffff" stroke="none" stroke-width="0.18" />
+<rect x="10.00" y="10.00" width="400.00" height="277.00" fill="none" stroke="#111" stroke-width="0.70" />
+<rect x="66.00" y="17.00" width="190.00" height="35.00" fill="#e5e7eb" stroke="none" stroke-width="0.18" />
+<rect x="66.00" y="52.00" width="190.00" height="10.00" fill="#f3f4f6" stroke="#9ca3af" stroke-width="0.15" />
+<line x1="66.00" y1="34.50" x2="256.00" y2="34.50" stroke="#fff" stroke-width="0.30" stroke-dasharray="3,2" stroke-linecap="butt"/>
+<text x="161.00" y="31.00" font-size="2.40" text-anchor="middle" font-weight="700" fill="#4b5563">İMAR YOLU (10,00 m)</text>
+<text x="161.00" y="58.50" font-size="1.60" text-anchor="middle" font-weight="400" fill="#6b7280">tretuvar</text>
+<rect x="66.00" y="62.00" width="30.00" height="192.50" fill="#fafafa" stroke="none" stroke-width="0.18" />
+<text x="81.00" y="158.25" font-size="1.80" text-anchor="middle" font-weight="400" fill="#6b7280" transform="rotate(-90.0 81.00 158.25)">KOMŞU PARSEL</text>
+<rect x="226.00" y="62.00" width="30.00" height="192.50" fill="#fafafa" stroke="none" stroke-width="0.18" />
+<text x="241.00" y="158.25" font-size="1.80" text-anchor="middle" font-weight="400" fill="#6b7280" transform="rotate(-90.0 241.00 158.25)">KOMŞU PARSEL</text>
+<rect x="96.00" y="62.00" width="130.00" height="192.50" fill="#f1f6ec"/>
+<rect x="96.00" y="62.00" width="130.00" height="192.50" fill="none" stroke="#111" stroke-width="0.90" />
+<line x1="96.00" y1="62.00" x2="226.00" y2="62.00" stroke="#fff" stroke-width="0.10" stroke-linecap="butt"/>
+<rect x="111.00" y="87.00" width="100.00" height="152.50" fill="none" stroke="#b45309" stroke-width="0.25" stroke-dasharray="2,1" />
+<text x="209.50" y="237.50" font-size="1.50" text-anchor="end" font-weight="400" fill="#b45309">yapı yaklaşma sınırı</text>
+<path d="M186.00 62.00V87.00M192.00 62.00V87.00M198.00 62.00V87.00M204.00 62.00V87.00M210.00 62.00V87.00M181.00 63.00H211.00M181.00 66.00H211.00M181.00 69.00H211.00M181.00 72.00H211.00M181.00 75.00H211.00M181.00 78.00H211.00M181.00 81.00H211.00M181.00 84.00H211.00" fill="none" stroke="#c9cdd3" stroke-width="0.10"/>
+<rect x="181.00" y="62.00" width="30.00" height="25.00" fill="none" stroke="#111" stroke-width="0.20" />
+<rect x="150.50" y="62.00" width="22.50" height="16.00" fill="none" stroke="none" stroke-width="0.18" />
+<path d="M156.00 62.00V74.80M152.25 63.00H160.75M152.25 66.00H160.75M152.25 69.00H160.75M152.25 72.00H160.75" fill="none" stroke="#c9cdd3" stroke-width="0.10"/>
+<rect x="152.25" y="62.00" width="8.50" height="12.80" fill="none" stroke="#111" stroke-width="0.20" />
+<line x1="181.00" y1="62.00" x2="211.00" y2="62.00" stroke="#374151" stroke-width="1.20" stroke-linecap="butt"/>
+<text x="196.00" y="49.00" font-size="1.50" text-anchor="middle" font-weight="400" fill="#374151">sürme bahçe kapısı 6,00 m</text>
+<line x1="152.25" y1="62.00" x2="160.75" y2="62.00" stroke="#374151" stroke-width="1.20" stroke-linecap="butt"/>
+<text x="156.50" y="49.00" font-size="1.50" text-anchor="middle" font-weight="400" fill="#374151">yaya kapısı</text>
+<text x="196.00" y="75.00" font-size="1.70" text-anchor="middle" font-weight="700" fill="#111">ARAÇ YOLU</text>
+<path d="M216.00 84.50V126.00M212.00 87.00H218.00M212.00 90.00H218.00M212.00 93.00H218.00M212.00 96.00H218.00M212.00 99.00H218.00M212.00 102.00H218.00M212.00 105.00H218.00M212.00 108.00H218.00M212.00 111.00H218.00M212.00 114.00H218.00M212.00 117.00H218.00M212.00 120.00H218.00M212.00 123.00H218.00" fill="none" stroke="#c9cdd3" stroke-width="0.10"/>
+<rect x="212.00" y="84.50" width="6.00" height="41.50" fill="none" stroke="#111" stroke-width="0.15" />
+<path d="M114.00 162.00V182.00M120.00 162.00V182.00M126.00 162.00V182.00M132.00 162.00V182.00M138.00 162.00V182.00M144.00 162.00V182.00M150.00 162.00V182.00M156.00 162.00V182.00M162.00 162.00V182.00M168.00 162.00V182.00M174.00 162.00V182.00M180.00 162.00V182.00M186.00 162.00V182.00M192.00 162.00V182.00M198.00 162.00V182.00M204.00 162.00V182.00M210.00 162.00V182.00M111.00 162.00H211.00M111.00 165.00H211.00M111.00 168.00H211.00M111.00 171.00H211.00M111.00 174.00H211.00M111.00 177.00H211.00M111.00 180.00H211.00" fill="none" stroke="#c9cdd3" stroke-width="0.10"/>
+<rect x="111.00" y="162.00" width="100.00" height="20.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="174.00" y="162.00" width="37.00" height="20.00" fill="none" stroke="#111" stroke-width="0.20" stroke-dasharray="1.2,0.7" />
+<path d="M138.00 196.00V228.00M144.00 196.00V228.00M150.00 196.00V228.00M156.00 196.00V228.00M162.00 196.00V228.00M168.00 196.00V228.00M174.00 196.00V228.00M180.00 196.00V228.00M186.00 196.00V228.00M192.00 196.00V228.00M135.00 198.00H197.00M135.00 201.00H197.00M135.00 204.00H197.00M135.00 207.00H197.00M135.00 210.00H197.00M135.00 213.00H197.00M135.00 216.00H197.00M135.00 219.00H197.00M135.00 222.00H197.00M135.00 225.00H197.00" fill="none" stroke="#c9cdd3" stroke-width="0.10"/>
+<rect x="135.00" y="196.00" width="62.00" height="32.00" fill="none" stroke="#111" stroke-width="0.20" />
+<rect x="141.00" y="202.00" width="50.00" height="20.00" fill="#dbeafe" stroke="#111" stroke-width="0.35" />
+<path d="M141.00 204.00H191.00M141.00 207.00H191.00M141.00 210.00H191.00M141.00 213.00H191.00M141.00 216.00H191.00M141.00 219.00H191.00" fill="none" stroke="#93c5fd" stroke-width="0.15"/>
+<text x="166.00" y="212.80" font-size="1.80" text-anchor="middle" font-weight="700" fill="#1e3a8a">HAVUZ 10,00 × 4,00 m · h=1,40</text>
+<path d="M168.00 182.00V196.00M163.00 183.00H169.00M163.00 186.00H169.00M163.00 189.00H169.00M163.00 192.00H169.00M163.00 195.00H169.00" fill="none" stroke="#c9cdd3" stroke-width="0.10"/>
+<rect x="163.00" y="182.00" width="6.00" height="14.00" fill="none" stroke="#111" stroke-width="0.15" />
+<path d="M104.40 115.00V135.00M105.60 115.00V135.00M106.80 115.00V135.00M108.00 115.00V135.00M109.20 115.00V135.00M110.40 115.00V135.00M104.00 115.20H111.00M104.00 116.40H111.00M104.00 117.60H111.00M104.00 118.80H111.00M104.00 120.00H111.00M104.00 121.20H111.00M104.00 122.40H111.00M104.00 123.60H111.00M104.00 124.80H111.00M104.00 126.00H111.00M104.00 127.20H111.00M104.00 128.40H111.00M104.00 129.60H111.00M104.00 130.80H111.00M104.00 132.00H111.00M104.00 133.20H111.00M104.00 134.40H111.00" fill="none" stroke="#6b7280" stroke-width="0.10"/>
+<rect x="104.00" y="115.00" width="7.00" height="20.00" fill="none" stroke="#111" stroke-width="0.25" />
+<path d="M104.40 140.00V160.00M105.60 140.00V160.00M106.80 140.00V160.00M108.00 140.00V160.00M109.20 140.00V160.00M110.40 140.00V160.00M104.00 140.40H111.00M104.00 141.60H111.00M104.00 142.80H111.00M104.00 144.00H111.00M104.00 145.20H111.00M104.00 146.40H111.00M104.00 147.60H111.00M104.00 148.80H111.00M104.00 150.00H111.00M104.00 151.20H111.00M104.00 152.40H111.00M104.00 153.60H111.00M104.00 154.80H111.00M104.00 156.00H111.00M104.00 157.20H111.00M104.00 158.40H111.00M104.00 159.60H111.00" fill="none" stroke="#6b7280" stroke-width="0.10"/>
+<rect x="104.00" y="140.00" width="7.00" height="20.00" fill="none" stroke="#111" stroke-width="0.25" />
+<path d="M211.20 139.00V160.00M212.40 139.00V160.00M213.60 139.00V160.00M214.80 139.00V160.00M216.00 139.00V160.00M217.20 139.00V160.00M211.00 139.20H218.00M211.00 140.40H218.00M211.00 141.60H218.00M211.00 142.80H218.00M211.00 144.00H218.00M211.00 145.20H218.00M211.00 146.40H218.00M211.00 147.60H218.00M211.00 148.80H218.00M211.00 150.00H218.00M211.00 151.20H218.00M211.00 152.40H218.00M211.00 153.60H218.00M211.00 154.80H218.00M211.00 156.00H218.00M211.00 157.20H218.00M211.00 158.40H218.00M211.00 159.60H218.00" fill="none" stroke="#6b7280" stroke-width="0.10"/>
+<rect x="211.00" y="139.00" width="7.00" height="21.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="107.00" y="83.00" width="108.00" height="83.00" fill="#fff" stroke="#111" stroke-width="0.20" stroke-dasharray="1.5,0.8" />
+<rect x="111.00" y="87.00" width="100.00" height="75.00" fill="#e5e7eb" stroke="#111" stroke-width="0.80" />
+<path d="M111.00 88.40L112.40 87.00M111.00 90.53L114.53 87.00M111.00 92.65L116.65 87.00M111.00 94.77L118.77 87.00M111.00 96.89L120.89 87.00M111.00 99.01L123.01 87.00M111.00 101.13L125.13 87.00M111.00 103.25L127.25 87.00M111.00 105.37L129.37 87.00M111.00 107.50L131.50 87.00M111.00 109.62L133.62 87.00M111.00 111.74L135.74 87.00M111.00 113.86L137.86 87.00M111.00 115.98L139.98 87.00M111.00 118.10L142.10 87.00M111.00 120.22L144.22 87.00M111.00 122.35L146.35 87.00M111.00 124.47L148.47 87.00M111.00 126.59L150.59 87.00M111.00 128.71L152.71 87.00M111.00 130.83L154.83 87.00M111.00 132.95L156.95 87.00M111.00 135.07L159.07 87.00M111.00 137.19L161.19 87.00M111.00 139.32L163.32 87.00M111.00 141.44L165.44 87.00M111.00 143.56L167.56 87.00M111.00 145.68L169.68 87.00M111.00 147.80L171.80 87.00M111.00 149.92L173.92 87.00M111.00 152.04L176.04 87.00M111.00 154.17L178.17 87.00M111.00 156.29L180.29 87.00M111.00 158.41L182.41 87.00M111.00 160.53L184.53 87.00M111.65 162.00L186.65 87.00M113.77 162.00L188.77 87.00M115.89 162.00L190.89 87.00M118.01 162.00L193.01 87.00M120.14 162.00L195.14 87.00M122.26 162.00L197.26 87.00M124.38 162.00L199.38 87.00M126.50 162.00L201.50 87.00M128.62 162.00L203.62 87.00M130.74 162.00L205.74 87.00M132.86 162.00L207.86 87.00M134.98 162.00L209.98 87.00M137.11 162.00L211.00 88.11M139.23 162.00L211.00 90.23M141.35 162.00L211.00 92.35M143.47 162.00L211.00 94.47M145.59 162.00L211.00 96.59M147.71 162.00L211.00 98.71M149.83 162.00L211.00 100.83M151.96 162.00L211.00 102.96M154.08 162.00L211.00 105.08M156.20 162.00L211.00 107.20M158.32 162.00L211.00 109.32M160.44 162.00L211.00 111.44M162.56 162.00L211.00 113.56M164.68 162.00L211.00 115.68M166.80 162.00L211.00 117.80M168.93 162.00L211.00 119.93M171.05 162.00L211.00 122.05M173.17 162.00L211.00 124.17M175.29 162.00L211.00 126.29M177.41 162.00L211.00 128.41M179.53 162.00L211.00 130.53M181.65 162.00L211.00 132.65M183.78 162.00L211.00 134.78M185.90 162.00L211.00 136.90M188.02 162.00L211.00 139.02M190.14 162.00L211.00 141.14M192.26 162.00L211.00 143.26M194.38 162.00L211.00 145.38M196.50 162.00L211.00 147.50M198.62 162.00L211.00 149.62M200.75 162.00L211.00 151.75M202.87 162.00L211.00 153.87M204.99 162.00L211.00 155.99M207.11 162.00L211.00 158.11M209.23 162.00L211.00 160.23" fill="none" stroke="#3f444c" stroke-width="0.22" opacity="0.25"/>
+<line x1="107.00" y1="83.00" x2="148.50" y2="124.50" stroke="#6b7280" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="215.00" y1="83.00" x2="173.50" y2="124.50" stroke="#6b7280" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="107.00" y1="166.00" x2="148.50" y2="124.50" stroke="#6b7280" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="215.00" y1="166.00" x2="173.50" y2="124.50" stroke="#6b7280" stroke-width="0.15" stroke-linecap="butt"/>
+<line x1="148.50" y1="124.50" x2="173.50" y2="124.50" stroke="#374151" stroke-width="0.30" stroke-linecap="butt"/>
+<rect x="108.00" y="135.00" width="3.00" height="5.00" fill="#9ca3af" stroke="#111" stroke-width="0.20" />
+<text x="161.00" y="110.00" font-size="3.20" text-anchor="middle" font-weight="700" fill="#111">VİLLA</text>
+<text x="161.00" y="114.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">Bodrum + Zemin + 1. Kat · kırma çatı</text>
+<text x="161.00" y="117.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">±0.00 = tabii zemin +0.30 · Hmax 6,50 m</text>
+<text x="161.00" y="120.00" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">oturum 20,00 × 15,00 = 300,00 m²</text>
+<line x1="156.50" y1="56.00" x2="156.50" y2="85.50" stroke="#b45309" stroke-width="0.35" stroke-linecap="butt"/>
+<polygon points="155.50,81.00 157.50,81.00 156.50,85.50" fill="#b45309" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<circle cx="104.00" cy="75.00" r="7.00" fill="#eef5ea" stroke="#6b8f5b" stroke-width="0.25"/>
+<circle cx="104.00" cy="75.00" r="1.25" fill="#6b8f5b" stroke="none" stroke-width="0.18"/>
+<circle cx="126.00" cy="75.00" r="7.50" fill="#eef5ea" stroke="#6b8f5b" stroke-width="0.25"/>
+<circle cx="126.00" cy="75.00" r="1.25" fill="#6b8f5b" stroke="none" stroke-width="0.18"/>
+<circle cx="119.00" cy="234.00" r="13.00" fill="#eef5ea" stroke="#6b8f5b" stroke-width="0.25"/>
+<circle cx="119.00" cy="234.00" r="1.25" fill="#6b8f5b" stroke="none" stroke-width="0.18"/>
+<circle cx="203.00" cy="235.00" r="13.00" fill="#eef5ea" stroke="#6b8f5b" stroke-width="0.25"/>
+<circle cx="203.00" cy="235.00" r="1.25" fill="#6b8f5b" stroke="none" stroke-width="0.18"/>
+<circle cx="114.00" cy="207.00" r="8.00" fill="#eef5ea" stroke="#6b8f5b" stroke-width="0.25"/>
+<circle cx="114.00" cy="207.00" r="1.25" fill="#6b8f5b" stroke="none" stroke-width="0.18"/>
+<circle cx="208.00" cy="207.00" r="8.00" fill="#eef5ea" stroke="#6b8f5b" stroke-width="0.25"/>
+<circle cx="208.00" cy="207.00" r="1.25" fill="#6b8f5b" stroke="none" stroke-width="0.18"/>
+<circle cx="99.50" cy="164.50" r="2.75" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20"/>
+<circle cx="222.50" cy="164.50" r="2.75" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20"/>
+<circle cx="99.50" cy="172.50" r="2.75" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20"/>
+<circle cx="222.50" cy="172.50" r="2.75" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20"/>
+<circle cx="99.50" cy="180.50" r="2.75" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20"/>
+<circle cx="222.50" cy="180.50" r="2.75" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20"/>
+<circle cx="99.50" cy="188.50" r="2.75" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20"/>
+<circle cx="222.50" cy="188.50" r="2.75" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20"/>
+<circle cx="99.50" cy="196.50" r="2.75" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20"/>
+<circle cx="222.50" cy="196.50" r="2.75" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20"/>
+<rect x="98.50" y="65.00" width="49.50" height="3.00" fill="#dfeadb" stroke="#6b8f5b" stroke-width="0.20" rx="1.00" />
+<rect x="148.50" y="223.00" width="3.50" height="9.50" fill="#fff" stroke="#6b7280" stroke-width="0.15" rx="0.30" />
+<rect x="155.00" y="223.00" width="3.50" height="9.50" fill="#fff" stroke="#6b7280" stroke-width="0.15" rx="0.30" />
+<rect x="161.50" y="223.00" width="3.50" height="9.50" fill="#fff" stroke="#6b7280" stroke-width="0.15" rx="0.30" />
+<polygon points="155.40,73.10 157.60,73.10 156.50,75.00" fill="#fff" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<polygon points="155.40,73.10 156.50,73.10 156.50,75.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="158.30" y="74.60" font-size="1.80" text-anchor="start" font-weight="700" fill="#111">−0.30</text>
+<polygon points="194.90,65.10 197.10,65.10 196.00,67.00" fill="#fff" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<polygon points="194.90,65.10 196.00,65.10 196.00,67.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="197.80" y="66.60" font-size="1.80" text-anchor="start" font-weight="700" fill="#111">−0.20</text>
+<polygon points="155.40,95.10 157.60,95.10 156.50,97.00" fill="#fff" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<polygon points="155.40,95.10 156.50,95.10 156.50,97.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="158.30" y="96.60" font-size="1.80" text-anchor="start" font-weight="700" fill="#111">±0.00</text>
+<polygon points="129.90,170.10 132.10,170.10 131.00,172.00" fill="#fff" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<polygon points="129.90,170.10 131.00,170.10 131.00,172.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="132.80" y="171.60" font-size="1.80" text-anchor="start" font-weight="700" fill="#111">−0.02</text>
+<polygon points="124.90,190.10 127.10,190.10 126.00,192.00" fill="#fff" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<polygon points="124.90,190.10 126.00,190.10 126.00,192.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="127.80" y="191.60" font-size="1.80" text-anchor="start" font-weight="700" fill="#111">−0.30</text>
+<polygon points="104.90,45.10 107.10,45.10 106.00,47.00" fill="#fff" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<polygon points="104.90,45.10 106.00,45.10 106.00,47.00" fill="#111" stroke="none" stroke-width="0.18" stroke-linejoin="miter"/>
+<text x="107.80" y="46.60" font-size="1.80" text-anchor="start" font-weight="700" fill="#111">−0.45</text>
+<line x1="94.50" y1="262.50" x2="227.50" y2="262.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="96.00" y1="261.30" x2="96.00" y2="263.70" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="95.20" y1="263.30" x2="96.80" y2="261.70" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="111.00" y1="261.30" x2="111.00" y2="263.70" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="110.20" y1="263.30" x2="111.80" y2="261.70" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="211.00" y1="261.30" x2="211.00" y2="263.70" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="210.20" y1="263.30" x2="211.80" y2="261.70" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="226.00" y1="261.30" x2="226.00" y2="263.70" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="225.20" y1="263.30" x2="226.80" y2="261.70" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="103.50" y="264.90" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">300</text>
+<text x="161.00" y="264.90" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">2000</text>
+<text x="218.50" y="264.90" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">300</text>
+<line x1="94.50" y1="268.50" x2="227.50" y2="268.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="96.00" y1="267.30" x2="96.00" y2="269.70" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="95.20" y1="269.30" x2="96.80" y2="267.70" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="226.00" y1="267.30" x2="226.00" y2="269.70" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="225.20" y1="269.30" x2="226.80" y2="267.70" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="161.00" y="270.90" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">2600</text>
+<line x1="60.00" y1="60.50" x2="60.00" y2="256.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="58.80" y1="62.00" x2="61.20" y2="62.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="59.20" y1="62.80" x2="60.80" y2="61.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="58.80" y1="87.00" x2="61.20" y2="87.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="59.20" y1="87.80" x2="60.80" y2="86.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="58.80" y1="162.00" x2="61.20" y2="162.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="59.20" y1="162.80" x2="60.80" y2="161.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="58.80" y1="254.50" x2="61.20" y2="254.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="59.20" y1="255.30" x2="60.80" y2="253.70" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="59.20" y="74.50" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 59.20 74.50)">500</text>
+<text x="59.20" y="124.50" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 59.20 124.50)">1500</text>
+<text x="59.20" y="208.25" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 59.20 208.25)">1850</text>
+<line x1="54.00" y1="60.50" x2="54.00" y2="256.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="52.80" y1="62.00" x2="55.20" y2="62.00" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="53.20" y1="62.80" x2="54.80" y2="61.20" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="52.80" y1="254.50" x2="55.20" y2="254.50" stroke="#111" stroke-width="0.13" stroke-linecap="butt"/>
+<line x1="53.20" y1="255.30" x2="54.80" y2="253.70" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="53.20" y="158.25" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111" transform="rotate(-90.0 53.20 158.25)">3850</text>
+<text x="103.00" y="75.20" font-size="1.50" text-anchor="start" font-weight="400" fill="#b45309">ön bahçe 5,00</text>
+<text x="103.00" y="169.00" font-size="1.50" text-anchor="start" font-weight="400" fill="#b45309">yan 3,00</text>
+<text x="161.00" y="247.50" font-size="1.50" text-anchor="middle" font-weight="400" fill="#b45309">arka bahçe 18,50</text>
+<text x="24.00" y="279.00" font-size="3.80" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">VAZİYET PLANI · Ö: 1/200</text>
+<text x="24.00" y="284.00" font-size="2.30" text-anchor="start" font-weight="400" fill="#6b7280">Parsel 26,00 × 38,50 = 1.001 m² · ön bahçe 5,00 · yan bahçeler 3,00 · arka bahçe 18,50</text>
+<rect x="318.00" y="10.00" width="92.00" height="277.00" fill="#ffffff" stroke="#111" stroke-width="0.50" />
+<text x="322.00" y="19.00" font-size="5.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.40">DURUNDAY VİLLA</text>
+<text x="322.00" y="24.50" font-size="2.60" text-anchor="start" font-weight="400" fill="#6b7280">Konya · Meram · Durunday</text>
+<text x="322.00" y="29.00" font-size="2.30" text-anchor="start" font-weight="400" fill="#6b7280">Bodrumlu dubleks müstakil konut · 300 m² oturum</text>
+<line x1="318.00" y1="33.00" x2="410.00" y2="33.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="38.50" font-size="2.80" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">MİMARİ ÖN PROJE (AVAN)</text>
+<text x="322.00" y="42.80" font-size="2.10" text-anchor="start" font-weight="400" fill="#6b7280" font-style="italic">Ruhsat ve uygulamaya esas değildir</text>
+<line x1="318.00" y1="46.00" x2="410.00" y2="46.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="51.00" font-size="2.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">LEJANT</text>
+<rect x="322.00" y="52.00" width="9.00" height="2.60" fill="#dbeafe" stroke="#475569" stroke-width="0.15" />
+<text x="333.00" y="54.20" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Havuz</text>
+<path d="M324.00 55.60V58.20M330.00 55.60V58.20" fill="none" stroke="#d3d7de" stroke-width="0.10"/>
+<rect x="322.00" y="55.60" width="9.00" height="2.60" fill="none" stroke="#999" stroke-width="0.15" />
+<text x="333.00" y="57.80" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Sert zemin / taş döşeme</text>
+<circle cx="326.50" cy="60.50" r="1.60" fill="none" stroke="#111" stroke-width="0.20"/>
+<text x="326.50" y="61.20" font-size="1.80" text-anchor="middle" font-weight="400" fill="#111">1</text>
+<text x="333.00" y="61.40" font-size="2.00" text-anchor="start" font-weight="400" fill="#111">Ağaç (mevcut/dikilecek)</text>
+<text x="322.00" y="66.50" font-size="2.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">NOTLAR</text>
+<text x="322.00" y="69.90" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">1. Araç girişi doğuda, garaja doğrudan (rampa yok); önünde 2</text>
+<text x="322.00" y="72.60" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    araçlık açık park yeri.</text>
+<text x="322.00" y="75.90" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">2. Yaya girişi ayrı kapıdan, giriş saçağına yürüyüş yolu ile.</text>
+<text x="322.00" y="79.20" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">3. Servis yolu doğu yan bahçeden arka mutfak kapısına ulaşır.</text>
+<text x="322.00" y="82.50" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">4. Bahçe duvarı: yol cephesinde 50 cm taş + 100 cm antrasit</text>
+<text x="322.00" y="85.20" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    metal çit; yan ve arka sınırlarda 180 cm.</text>
+<text x="322.00" y="88.50" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">5. Havuz arka bahçede; makine dairesi bodrumda (B-16).</text>
+<text x="322.00" y="91.80" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">6. Selvi dizileri yan komşulara görsel perde oluşturur.</text>
+<circle cx="398.00" cy="182.00" r="6.50" fill="none" stroke="#111" stroke-width="0.30"/>
+<polygon points="398.00,174.00 400.20,184.50 398.00,183.20 395.80,184.50" fill="#111" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<text x="398.00" y="172.70" font-size="3.00" text-anchor="middle" font-weight="700" fill="#111">K</text>
+<line x1="318.00" y1="195.00" x2="410.00" y2="195.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<text x="322.00" y="200.00" font-size="2.00" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">REVİZYONLAR</text>
+<text x="322.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">R0</text>
+<text x="328.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">19.09.2026</text>
+<text x="345.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">İlk yayın</text>
+<text x="322.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">R1</text>
+<text x="328.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">21.09.2026</text>
+<text x="345.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Plan kurgusu yeniden düzenlendi; kesit,</text>
+<text x="345.00" y="210.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">görünüş, detay ve doğrama listesi eklendi</text>
+<line x1="318.00" y1="221.00" x2="410.00" y2="221.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="226.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">İŞ SAHİBİ</text>
+<text x="322.00" y="230.50" font-size="2.40" text-anchor="start" font-weight="400" fill="#111">—</text>
+<text x="366.00" y="226.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">HAZIRLAYAN</text>
+<text x="366.00" y="230.50" font-size="2.40" text-anchor="start" font-weight="400" fill="#111">E. Ceran</text>
+<line x1="363.00" y1="221.00" x2="363.00" y2="235.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="318.00" y1="235.00" x2="410.00" y2="235.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="240.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">MÜELLİF MİMAR</text>
+<text x="322.00" y="245.00" font-size="2.00" text-anchor="start" font-weight="400" fill="#6b7280" font-style="italic">(ruhsat aşamasında atanacak)</text>
+<text x="366.00" y="240.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">İMZA</text>
+<line x1="363.00" y1="235.00" x2="363.00" y2="249.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="318.00" y1="249.00" x2="410.00" y2="249.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<text x="322.00" y="255.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">PAFTA ADI</text>
+<text x="322.00" y="262.00" font-size="5.00" text-anchor="start" font-weight="700" fill="#111">VAZİYET PLANI</text>
+<line x1="318.00" y1="273.00" x2="410.00" y2="273.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">ÖLÇEK</text>
+<text x="322.00" y="283.50" font-size="3.60" text-anchor="start" font-weight="700" fill="#111">1/200</text>
+<text x="350.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">TARİH</text>
+<text x="350.00" y="283.50" font-size="3.00" text-anchor="start" font-weight="400" fill="#111">21.09.2026</text>
+<text x="380.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">PAFTA NO</text>
+<text x="380.00" y="284.00" font-size="5.20" text-anchor="start" font-weight="700" fill="#111">A-01</text>
+<line x1="347.00" y1="273.00" x2="347.00" y2="287.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="377.00" y1="273.00" x2="377.00" y2="287.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+</svg>

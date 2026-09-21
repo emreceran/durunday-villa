@@ -63,7 +63,7 @@ def yaz(hedef):
     s = 4
     altbaslik(ws, "PROJE VE İMAR KÜNYESİ", s, 3); s += 1
     ozet = kat_ozeti()
-    kapali = sum(v[0] for v in ozet.values()); acik = sum(v[1] for v in ozet.values())
+    kapali = sum(v[0] for v in ozet.values()); dikey = sum(v[1] for v in ozet.values())
     for k, v in [
         ("Yeri", "Konya, Meram ilçesi, Durunday mahallesi"),
         ("Yapı türü", "Ayrık nizam, tek aileli müstakil villa (dubleks)"),
@@ -73,12 +73,12 @@ def yaz(hedef):
         ("Çekme mesafeleri", "ön %.1f m · yan %.1f m · arka %.1f m" % (
             PARSEL["cekme_on"], PARSEL["cekme_yan"], PARSEL["cekme_arka"])),
         ("Bina oturumu", "%.2f × %.2f m = %.0f m²" % (BINA["en"], BINA["boy"], BINA["en"]*BINA["boy"])),
-        ("Kat adedi", "Bodrum + Zemin + 1. Normal kat (dubleks) + çatı arası"),
+        ("Kat adedi", "Bodrum + Zemin + 1. kat (dubleks) + kullanılmayan çatı arası · Hmax 6,50 m"),
         ("Kat yükseklikleri", " · ".join("%s %.2f m (net %.2f m)" % (k2, KAT_YUKSEKLIK[k2], NET_TAVAN[k2]) for k2 in KAT_YUKSEKLIK)),
         ("Toplam brüt inşaat alanı", "900 m² (3 kat × 300 m²)"),
-        ("Toplam net alan", "%.1f m² kapalı + %.1f m² açık teras/balkon" % (kapali, acik)),
+        ("Toplam net kullanım alanı", "%.1f m² (merdiven, asansör, şaft ve galeri boşluğu hariç: %.1f m²) · teras 80 m², balkon 19 m²" % (kapali, dikey)),
         ("Kalite segmenti", "Üst segment / lüks konut"),
-        ("Belge tarihi / revizyon", "19.09.2026 · R01 (çizimlerle birlikte)"),
+        ("Belge tarihi / revizyon", "21.09.2026 · R1 (yeniden düzenlenen plan kurgusu ile)"),
     ]:
         ws.cell(row=s, column=1, value=k).font = Font(name=F, size=10, bold=True)
         ws.cell(row=s, column=1).fill = PatternFill("solid", fgColor=GRI)
@@ -128,13 +128,14 @@ def yaz(hedef):
         ilk = s
         for r in mahaller:
             a, dar, uzun = net_alan(r)
-            satir_yaz(ws, s, [r[0], r[1], a, dar, uzun, r[6],
-                              "Açık alan — kapalı alana dahil değil" if r[6] == "acik" else ""],
+            haric = r["tip"] in ("merdiven", "asansor", "saft", "bosluk")
+            satir_yaz(ws, s, [r["kod"], r["ad"], a, dar, uzun, r["tip"],
+                              "Düşey sirkülasyon / boşluk — net kullanım alanına dahil değil" if haric else ""],
                       boy=18, punto=10, orta=(1, 3, 4, 5, 6), kalin_sut=(1, 2))
             ws.cell(row=s, column=3).number_format = "#,##0.0"
             s += 1
         ws.cell(row=s, column=2, value="%s — TOPLAM" % kat)
-        ws.cell(row=s, column=3, value="=SUM(C%d:C%d)" % (ilk, s-1))
+        ws.cell(row=s, column=3, value='=SUMIF(G%d:G%d,"",C%d:C%d)' % (ilk, s-1, ilk, s-1))
         for col in range(1, 8):
             c = ws.cell(row=s, column=col)
             c.font = Font(name=F, size=10, bold=True, color=LACI)
@@ -143,7 +144,7 @@ def yaz(hedef):
         ws.cell(row=s, column=3).number_format = "#,##0.0"
         toplam_satir.append(s); s += 2
     altbaslik(ws, "GENEL TOPLAM", s, 7); s += 1
-    for ad, deg in [("Toplam net alan (kapalı + açık)", "=" + "+".join("C%d" % r for r in toplam_satir)),
+    for ad, deg in [("Toplam net kullanım alanı", "=" + "+".join("C%d" % r for r in toplam_satir)),
                     ("Toplam brüt inşaat alanı", 900.0),
                     ("Oturum (taban) alanı", float(BINA["en"] * BINA["boy"]))]:
         ws.cell(row=s, column=2, value=ad); ws.cell(row=s, column=3, value=deg)
@@ -233,6 +234,24 @@ def yaz(hedef):
         c = ws.cell(row=s, column=4)
         c.fill = PatternFill("solid", fgColor="C6EFCE" if durum == "UYGUN" else "FFEB9C")
         c.font = Font(name=F, size=10, bold=True, color="006100" if durum == "UYGUN" else "9C6500")
+        s += 1
+    ws.page_setup.paperSize = 9; ws.page_setup.orientation = "landscape"
+    ws.sheet_properties.pageSetUpPr.fitToPage = True
+    ws.page_setup.fitToWidth = 1; ws.page_setup.fitToHeight = 0; ws.print_title_rows = "3:3"
+
+    # ---------------------------------------------------------- Tasarım kontrolü
+    ws = wb.create_sheet("Tasarım Kontrolü"); ws.sheet_view.showGridLines = False
+    for i, w in enumerate([16, 62, 12, 90], 1):
+        ws.column_dimensions[get_column_letter(i)].width = w
+    baslik(ws, "TASARIM MANTIK KONTROLÜ (plan geometrisinden otomatik)", 1, 4)
+    s = 3
+    tbaslik(ws, ["Grup", "Kontrol", "Durum", "Ayrıntı"], s); s += 1
+    from kontrol import calistir
+    renk = {"UYGUN": ("C6EFCE", "006100"), "UYARI": ("FFEB9C", "9C6500"), "HATA": ("FFC7CE", "9C0006")}
+    for grup, ad, durum, ack in calistir():
+        satir_yaz(ws, s, [grup, ad, durum, ack], boy=max(22, 12 * (1 + len(ack) // 110)), punto=9, orta=(3,), kalin_sut=(1,))
+        c = ws.cell(row=s, column=3)
+        c.fill = PatternFill("solid", fgColor=renk[durum][0]); c.font = Font(name=F, size=9, bold=True, color=renk[durum][1])
         s += 1
     ws.page_setup.paperSize = 9; ws.page_setup.orientation = "landscape"
     ws.sheet_properties.pageSetUpPr.fitToPage = True

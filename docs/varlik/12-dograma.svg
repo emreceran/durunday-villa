@@ -1,0 +1,292 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 297" width="420mm" height="297mm" font-family="'Arial Narrow','Liberation Sans Narrow','Roboto Condensed',Arial,Helvetica,sans-serif">
+<defs>
+ <pattern id="p-fayans" patternUnits="userSpaceOnUse" width="3" height="3"><path d="M0 0H3M0 0V3" stroke="#c7ccd4" stroke-width="0.1"/></pattern>
+ <pattern id="p-tas" patternUnits="userSpaceOnUse" width="6" height="6"><path d="M0 0H6M0 0V6" stroke="#d3d7de" stroke-width="0.1"/></pattern>
+ <pattern id="p-parke" patternUnits="userSpaceOnUse" width="12" height="1.8"><path d="M0 0H12M0 0V1.8" stroke="#e6e1d6" stroke-width="0.08"/></pattern>
+ <pattern id="p-dis-tas" patternUnits="userSpaceOnUse" width="6" height="3"><path d="M0 0H6M0 0V3" stroke="#c9cdd3" stroke-width="0.1"/></pattern>
+ <pattern id="p-duvar" patternUnits="userSpaceOnUse" width="1.5" height="1.5" patternTransform="rotate(45)"><path d="M0 0V1.5" stroke="#3f444c" stroke-width="0.22"/></pattern>
+ <pattern id="p-yalitim" patternUnits="userSpaceOnUse" width="2.0" height="2.0"><rect width="2" height="2" fill="#f4f1e8"/><path d="M0 2L1 0L2 2" fill="none" stroke="#6b7280" stroke-width="0.08"/></pattern>
+ <pattern id="p-saft" patternUnits="userSpaceOnUse" width="1.6" height="1.6" patternTransform="rotate(45)"><path d="M0 0V1.6" stroke="#9ca3af" stroke-width="0.12"/></pattern>
+ <pattern id="p-toprak" patternUnits="userSpaceOnUse" width="4" height="4" patternTransform="rotate(45)"><path d="M0 0V4M2 0V1.2" stroke="#8b7355" stroke-width="0.15"/></pattern>
+ <pattern id="p-beton" patternUnits="userSpaceOnUse" width="2.4" height="2.4"><circle cx="0.6" cy="0.7" r="0.18" fill="#555"/><circle cx="1.7" cy="1.8" r="0.12" fill="#555"/><path d="M1.4 0.4l0.4 0.3l-0.5 0.1z" fill="#555"/></pattern>
+ <pattern id="p-cim" patternUnits="userSpaceOnUse" width="4" height="4"><path d="M0.5 1.2l0.3-0.8l0.3 0.8M2.6 3.2l0.3-0.8l0.3 0.8" fill="none" stroke="#86a877" stroke-width="0.12"/></pattern>
+ <pattern id="p-kiremit" patternUnits="userSpaceOnUse" width="2.5" height="2.5"><path d="M0 2.5H2.5" stroke="#9ca3af" stroke-width="0.1"/></pattern>
+ <pattern id="p-izgara" patternUnits="userSpaceOnUse" width="1.2" height="1.2"><path d="M0 0H1.2M0 0V1.2" stroke="#6b7280" stroke-width="0.1"/></pattern>
+ <pattern id="p-su" patternUnits="userSpaceOnUse" width="6" height="3"><path d="M0 1.5q1.5-0.8 3 0t3 0" fill="none" stroke="#93c5fd" stroke-width="0.15"/></pattern>
+ <pattern id="p-sille" patternUnits="userSpaceOnUse" width="9" height="3.0"><rect width="9" height="3" fill="#efe6d4"/><path d="M0 3H9M0 0V1.5M4.5 1.5V3M0 1.5H9" stroke="#b9ab8e" stroke-width="0.12"/></pattern>
+ <pattern id="p-siva" patternUnits="userSpaceOnUse" width="5" height="5"><rect width="5" height="5" fill="#fbfbf9"/></pattern>
+ <pattern id="p-ahsap" patternUnits="userSpaceOnUse" width="1.2" height="5"><rect width="1.2" height="5" fill="#c89b6d"/><path d="M0 0V5" stroke="#8a643f" stroke-width="0.12"/></pattern>
+ <pattern id="p-kiremit-g" patternUnits="userSpaceOnUse" width="3" height="2"><rect width="3" height="2" fill="#4b5058"/><path d="M0 2H3M1.5 0V2" stroke="#2f3338" stroke-width="0.12"/></pattern>
+ <marker id="ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#111"/></marker>
+ <marker id="ok-k" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#b45309"/></marker>
+</defs>
+<rect x="0.00" y="0.00" width="420.00" height="297.00" fill="#ffffff" stroke="none" stroke-width="0.18" />
+<rect x="10.00" y="10.00" width="400.00" height="277.00" fill="none" stroke="#111" stroke-width="0.70" />
+<text x="22.00" y="22.00" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">PENCERE VE CAM KAPILAR (alüminyum, ısı yalıtımlı, antrasit RAL 7016, 4+16Ar+4 Low-E ısıcam)</text>
+<rect x="22.00" y="26.00" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="22.00" y="26.00" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="24.00" y="29.70" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">S01</text>
+<text x="78.00" y="29.70" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">2 adet</text>
+<line x1="26.00" y1="60.00" x2="76.00" y2="60.00" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="37.50" y="47.00" width="27.00" height="13.00" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<line x1="46.50" y1="47.00" x2="46.50" y2="60.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="55.50" y1="47.00" x2="55.50" y2="60.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="39.75" y1="53.50" x2="44.25" y2="53.50" stroke="#111" stroke-width="0.2" marker-end="url(#ok)"/>
+<line x1="48.75" y1="53.50" x2="53.25" y2="53.50" stroke="#111" stroke-width="0.2" marker-end="url(#ok)"/>
+<line x1="57.75" y1="53.50" x2="62.25" y2="53.50" stroke="#111" stroke-width="0.2" marker-end="url(#ok)"/>
+<text x="24.00" y="64.30" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Kaldır-sür cam kapı · 540 × 260</text>
+<text x="24.00" y="67.50" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 0 · Z G</text>
+<rect x="81.50" y="26.00" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="81.50" y="26.00" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="83.50" y="29.70" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">S02</text>
+<text x="137.50" y="29.70" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">1 adet</text>
+<line x1="85.50" y1="60.00" x2="135.50" y2="60.00" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="97.00" y="48.50" width="27.00" height="11.50" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<line x1="106.00" y1="48.50" x2="106.00" y2="60.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="115.00" y1="48.50" x2="115.00" y2="60.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="99.25" y1="54.25" x2="103.75" y2="54.25" stroke="#111" stroke-width="0.2" marker-end="url(#ok)"/>
+<line x1="108.25" y1="54.25" x2="112.75" y2="54.25" stroke="#111" stroke-width="0.2" marker-end="url(#ok)"/>
+<line x1="117.25" y1="54.25" x2="121.75" y2="54.25" stroke="#111" stroke-width="0.2" marker-end="url(#ok)"/>
+<text x="83.50" y="64.30" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Kaldır-sür cam kapı · 540 × 230</text>
+<text x="83.50" y="67.50" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 0 · 1K G</text>
+<rect x="141.00" y="26.00" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="141.00" y="26.00" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="143.00" y="29.70" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">S03</text>
+<text x="197.00" y="29.70" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">1 adet</text>
+<line x1="145.00" y1="60.00" x2="195.00" y2="60.00" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="159.50" y="48.50" width="21.00" height="11.50" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<line x1="170.00" y1="48.50" x2="170.00" y2="60.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="162.12" y1="54.25" x2="167.38" y2="54.25" stroke="#111" stroke-width="0.2" marker-end="url(#ok)"/>
+<line x1="172.62" y1="54.25" x2="177.88" y2="54.25" stroke="#111" stroke-width="0.2" marker-end="url(#ok)"/>
+<text x="143.00" y="64.30" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Kaldır-sür cam kapı · 420 × 230</text>
+<text x="143.00" y="67.50" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 0 · 1K G</text>
+<rect x="200.50" y="26.00" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="200.50" y="26.00" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="202.50" y="29.70" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">S04</text>
+<text x="256.50" y="29.70" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">1 adet</text>
+<line x1="204.50" y1="60.00" x2="254.50" y2="60.00" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="220.50" y="47.00" width="18.00" height="13.00" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<line x1="229.50" y1="47.00" x2="229.50" y2="60.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="222.75" y1="53.50" x2="227.25" y2="53.50" stroke="#111" stroke-width="0.2" marker-end="url(#ok)"/>
+<line x1="231.75" y1="53.50" x2="236.25" y2="53.50" stroke="#111" stroke-width="0.2" marker-end="url(#ok)"/>
+<text x="202.50" y="64.30" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Kaldır-sür cam kapı · 360 × 260</text>
+<text x="202.50" y="67.50" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 0 · Z G</text>
+<rect x="260.00" y="26.00" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="260.00" y="26.00" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="262.00" y="29.70" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">P05</text>
+<text x="316.00" y="29.70" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">4 adet</text>
+<line x1="264.00" y1="60.00" x2="314.00" y2="60.00" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="281.00" y="48.50" width="16.00" height="7.00" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<line x1="286.33" y1="48.50" x2="286.33" y2="55.50" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<line x1="291.67" y1="48.50" x2="291.67" y2="55.50" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<polyline points="281.00,48.50 286.33,52.00 281.00,55.50" fill="none" stroke="#6b7280" stroke-width="0.12" stroke-dasharray="0.8,0.5" stroke-linejoin="miter"/>
+<text x="262.00" y="64.30" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Pencere (çift açılım) · 320 × 140</text>
+<text x="262.00" y="67.50" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 100/90 · 1K D, 1K G, 1K K, Z D</text>
+<rect x="22.00" y="71.50" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="22.00" y="71.50" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="24.00" y="75.20" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">P06</text>
+<text x="78.00" y="75.20" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">6 adet</text>
+<line x1="26.00" y1="105.50" x2="76.00" y2="105.50" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="44.50" y="94.00" width="13.00" height="7.00" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<line x1="51.00" y1="94.00" x2="51.00" y2="101.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<polyline points="44.50,94.00 51.00,97.50 44.50,101.00" fill="none" stroke="#6b7280" stroke-width="0.12" stroke-dasharray="0.8,0.5" stroke-linejoin="miter"/>
+<text x="24.00" y="109.80" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Pencere (çift açılım) · 260 × 140</text>
+<text x="24.00" y="113.00" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 100/90 · 1K B, 1K D, 1K K, Z B, Z K</text>
+<rect x="81.50" y="71.50" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="81.50" y="71.50" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="83.50" y="75.20" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">P07</text>
+<text x="137.50" y="75.20" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">2 adet</text>
+<line x1="85.50" y1="105.50" x2="135.50" y2="105.50" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="104.00" y="93.50" width="13.00" height="9.75" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<line x1="110.50" y1="93.50" x2="110.50" y2="103.25" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<polyline points="104.00,93.50 110.50,98.38 104.00,103.25" fill="none" stroke="#6b7280" stroke-width="0.12" stroke-dasharray="0.8,0.5" stroke-linejoin="miter"/>
+<text x="83.50" y="109.80" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Pencere (çift açılım) · 260 × 195</text>
+<text x="83.50" y="113.00" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 45 · Z B</text>
+<rect x="141.00" y="71.50" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="141.00" y="71.50" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="143.00" y="75.20" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">P08</text>
+<text x="197.00" y="75.20" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">2 adet</text>
+<line x1="145.00" y1="105.50" x2="195.00" y2="105.50" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="165.50" y="94.00" width="9.00" height="7.00" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<line x1="170.00" y1="94.00" x2="170.00" y2="101.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<polyline points="165.50,94.00 170.00,97.50 165.50,101.00" fill="none" stroke="#6b7280" stroke-width="0.12" stroke-dasharray="0.8,0.5" stroke-linejoin="miter"/>
+<text x="143.00" y="109.80" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Pencere (çift açılım) · 180 × 140</text>
+<text x="143.00" y="113.00" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 100/90 · 1K K, Z D</text>
+<rect x="200.50" y="71.50" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="200.50" y="71.50" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="202.50" y="75.20" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">P09</text>
+<text x="256.50" y="75.20" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">1 adet</text>
+<line x1="204.50" y1="105.50" x2="254.50" y2="105.50" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="225.00" y="93.50" width="9.00" height="12.00" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<line x1="229.50" y1="93.50" x2="229.50" y2="105.50" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="202.50" y="109.80" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Sabit cam · 180 × 240</text>
+<text x="202.50" y="113.00" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 0 · Z K</text>
+<rect x="260.00" y="71.50" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="260.00" y="71.50" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="262.00" y="75.20" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">P10</text>
+<text x="316.00" y="75.20" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">1 adet</text>
+<line x1="264.00" y1="105.50" x2="314.00" y2="105.50" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="285.50" y="94.00" width="7.00" height="11.50" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<text x="262.00" y="109.80" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Sabit cam · 140 × 230</text>
+<text x="262.00" y="113.00" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 0 · 1K K</text>
+<rect x="22.00" y="117.00" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="22.00" y="117.00" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="24.00" y="120.70" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">P11</text>
+<text x="78.00" y="120.70" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">1 adet</text>
+<line x1="26.00" y1="151.00" x2="76.00" y2="151.00" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="45.00" y="139.50" width="12.00" height="5.50" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<polyline points="45.00,139.50 57.00,142.25 45.00,145.00" fill="none" stroke="#6b7280" stroke-width="0.12" stroke-dasharray="0.8,0.5" stroke-linejoin="miter"/>
+<text x="24.00" y="155.30" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Yüksek pencere (buzlu) · 240 × 110</text>
+<text x="24.00" y="158.50" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 120 · 1K B</text>
+<rect x="81.50" y="117.00" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="81.50" y="117.00" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="83.50" y="120.70" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">P12</text>
+<text x="137.50" y="120.70" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">5 adet</text>
+<line x1="85.50" y1="151.00" x2="135.50" y2="151.00" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="108.00" y="139.50" width="5.00" height="4.00" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<polyline points="108.00,139.50 113.00,141.50 108.00,143.50" fill="none" stroke="#6b7280" stroke-width="0.12" stroke-dasharray="0.8,0.5" stroke-linejoin="miter"/>
+<text x="83.50" y="155.30" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Yüksek pencere (buzlu) · 100 × 80</text>
+<text x="83.50" y="158.50" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 150/160 · 1K D, 1K K, Z D, Z K</text>
+<rect x="141.00" y="117.00" width="58.00" height="44.00" fill="none" stroke="#111" stroke-width="0.25" />
+<rect x="141.00" y="117.00" width="58.00" height="5.00" fill="#f3f4f6" stroke="#111" stroke-width="0.25" />
+<text x="143.00" y="120.70" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">P13</text>
+<text x="197.00" y="120.70" font-size="2.10" text-anchor="end" font-weight="700" fill="#111">3 adet</text>
+<line x1="145.00" y1="151.00" x2="195.00" y2="151.00" stroke="#9ca3af" stroke-width="0.15" stroke-dasharray="0.8,0.5" stroke-linecap="butt"/>
+<rect x="161.50" y="139.50" width="17.00" height="7.00" fill="#dbeafe" stroke="#111" stroke-width="0.40" />
+<text x="143.00" y="155.30" font-size="1.85" text-anchor="start" font-weight="700" fill="#111">Işıklık penceresi · 340 × 140</text>
+<text x="143.00" y="158.50" font-size="1.60" text-anchor="start" font-weight="400" fill="#6b7280">denizlik 90 · B B, B D</text>
+<text x="22.00" y="168.50" font-size="2.60" text-anchor="start" font-weight="700" fill="#111">KAPILAR</text>
+<rect x="21.00" y="170.50" width="300.00" height="5.00" fill="#f3f4f6" stroke="none" stroke-width="0.18" />
+<text x="22.00" y="174.10" font-size="2.00" text-anchor="start" font-weight="700" fill="#111">Kod</text>
+<text x="36.00" y="174.10" font-size="2.00" text-anchor="start" font-weight="700" fill="#111">Tür</text>
+<text x="92.00" y="174.10" font-size="2.00" text-anchor="start" font-weight="700" fill="#111">Genişlik × yükseklik</text>
+<text x="118.00" y="174.10" font-size="2.00" text-anchor="start" font-weight="700" fill="#111">Adet</text>
+<text x="138.00" y="174.10" font-size="2.00" text-anchor="start" font-weight="700" fill="#111">Katlar</text>
+<text x="158.00" y="174.10" font-size="2.00" text-anchor="start" font-weight="700" fill="#111">Açıklama</text>
+<text x="22.00" y="179.00" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K01</text>
+<text x="36.00" y="179.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Villa giriş kapısı (çelik, ahşap kaplama)</text>
+<text x="92.00" y="179.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">110 × 240</text>
+<text x="118.00" y="179.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">1</text>
+<text x="138.00" y="179.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Zemin</text>
+<text x="158.00" y="179.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Çelik iskelet, ahşap kompozit kaplama, akıllı kilit, üst eşik fitili</text>
+<line x1="21.00" y1="180.40" x2="321.00" y2="180.40" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="22.00" y="183.20" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K02</text>
+<text x="36.00" y="183.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Servis dış kapısı (ısı yalıtımlı)</text>
+<text x="92.00" y="183.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">90 × 210</text>
+<text x="118.00" y="183.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">1</text>
+<text x="138.00" y="183.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Zemin</text>
+<text x="158.00" y="183.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Isı yalıtımlı alüminyum, antrasit, yarım cam</text>
+<line x1="21.00" y1="184.60" x2="321.00" y2="184.60" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="22.00" y="187.40" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K03</text>
+<text x="36.00" y="187.40" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Seksiyonel garaj kapısı (motorlu)</text>
+<text x="92.00" y="187.40" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">480 × 240</text>
+<text x="118.00" y="187.40" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">1</text>
+<text x="138.00" y="187.40" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Zemin</text>
+<text x="158.00" y="187.40" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Yalıtımlı panel 42 mm, motorlu, fotosel</text>
+<line x1="21.00" y1="188.80" x2="321.00" y2="188.80" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="22.00" y="191.60" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K04</text>
+<text x="36.00" y="191.60" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Çift kanatlı cam panelli kapı</text>
+<text x="92.00" y="191.60" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">160 × 240</text>
+<text x="118.00" y="191.60" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">2</text>
+<text x="138.00" y="191.60" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Bodrum, Zemin</text>
+<text x="158.00" y="191.60" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Alüminyum çerçeve, temperli buzlu cam panel</text>
+<line x1="21.00" y1="193.00" x2="321.00" y2="193.00" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="22.00" y="195.80" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K05</text>
+<text x="36.00" y="195.80" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Lake iç kapı (kanatlı)</text>
+<text x="92.00" y="195.80" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">90 × 210</text>
+<text x="118.00" y="195.80" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">25</text>
+<text x="138.00" y="195.80" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Bodrum, Zemin, 1. Kat</text>
+<text x="158.00" y="195.80" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Amerikan panel gövde, akrilik lake, gizli menteşe, manyetik kilit</text>
+<line x1="21.00" y1="197.20" x2="321.00" y2="197.20" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="22.00" y="200.00" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K06</text>
+<text x="36.00" y="200.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Lake iç kapı (kanatlı)</text>
+<text x="92.00" y="200.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">80 × 210</text>
+<text x="118.00" y="200.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">8</text>
+<text x="138.00" y="200.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Bodrum, Zemin, 1. Kat</text>
+<text x="158.00" y="200.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Amerikan panel gövde, akrilik lake, gizli menteşe, manyetik kilit</text>
+<line x1="21.00" y1="201.40" x2="321.00" y2="201.40" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="22.00" y="204.20" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K07</text>
+<text x="36.00" y="204.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Yangın kapısı EI30, kendiliğinden kapanır</text>
+<text x="92.00" y="204.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">90 × 210</text>
+<text x="118.00" y="204.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">2</text>
+<text x="138.00" y="204.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Bodrum, Zemin</text>
+<text x="158.00" y="204.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">EI30 sertifikalı çelik, kapı kapatıcı, duman contası</text>
+<line x1="21.00" y1="205.60" x2="321.00" y2="205.60" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="22.00" y="208.40" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K08</text>
+<text x="36.00" y="208.40" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Duvar içi sürme kapı</text>
+<text x="92.00" y="208.40" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">90 × 240</text>
+<text x="118.00" y="208.40" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">1</text>
+<text x="138.00" y="208.40" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Zemin</text>
+<text x="158.00" y="208.40" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Gizli kasalı sürme (Eclisse) / sauna: temperli cam</text>
+<line x1="21.00" y1="209.80" x2="321.00" y2="209.80" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="22.00" y="212.60" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K09</text>
+<text x="36.00" y="212.60" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Duvar içi sürme kapı</text>
+<text x="92.00" y="212.60" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">80 × 240</text>
+<text x="118.00" y="212.60" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">1</text>
+<text x="138.00" y="212.60" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Bodrum</text>
+<text x="158.00" y="212.60" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Gizli kasalı sürme (Eclisse) / sauna: temperli cam</text>
+<line x1="21.00" y1="214.00" x2="321.00" y2="214.00" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="22.00" y="216.80" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K10</text>
+<text x="36.00" y="216.80" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Asansör kat kapısı (teleskopik)</text>
+<text x="92.00" y="216.80" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">100 × 210</text>
+<text x="118.00" y="216.80" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">3</text>
+<text x="138.00" y="216.80" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Bodrum, Zemin, 1. Kat</text>
+<text x="158.00" y="216.80" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Asansör firması tedariki, paslanmaz</text>
+<line x1="21.00" y1="218.20" x2="321.00" y2="218.20" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<text x="22.00" y="221.00" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">K11</text>
+<text x="36.00" y="221.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Şaft servis kapağı</text>
+<text x="92.00" y="221.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">60 × 60</text>
+<text x="118.00" y="221.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">3</text>
+<text x="138.00" y="221.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Bodrum, Zemin, 1. Kat</text>
+<text x="158.00" y="221.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Menteşeli servis kapağı, kilitli</text>
+<line x1="21.00" y1="222.40" x2="321.00" y2="222.40" stroke="#d1d5db" stroke-width="0.08" stroke-linecap="butt"/>
+<rect x="318.00" y="10.00" width="92.00" height="277.00" fill="#ffffff" stroke="#111" stroke-width="0.50" />
+<text x="322.00" y="19.00" font-size="5.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.40">DURUNDAY VİLLA</text>
+<text x="322.00" y="24.50" font-size="2.60" text-anchor="start" font-weight="400" fill="#6b7280">Konya · Meram · Durunday</text>
+<text x="322.00" y="29.00" font-size="2.30" text-anchor="start" font-weight="400" fill="#6b7280">Bodrumlu dubleks müstakil konut · 300 m² oturum</text>
+<line x1="318.00" y1="33.00" x2="410.00" y2="33.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="38.50" font-size="2.80" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">MİMARİ ÖN PROJE (AVAN)</text>
+<text x="322.00" y="42.80" font-size="2.10" text-anchor="start" font-weight="400" fill="#6b7280" font-style="italic">Ruhsat ve uygulamaya esas değildir</text>
+<line x1="318.00" y1="46.00" x2="410.00" y2="46.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="51.00" font-size="2.20" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">NOTLAR</text>
+<text x="322.00" y="54.40" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">1. Ölçüler kaba inşaat boşluğudur (cm); imalat öncesi yerinde</text>
+<text x="322.00" y="57.10" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    alınacaktır.</text>
+<text x="322.00" y="60.40" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">2. Tüm dış doğramalar Uw ≤ 1,4 W/m²K; yatak odalarında</text>
+<text x="322.00" y="63.10" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">    sineklik ve motorlu jaluzi.</text>
+<text x="322.00" y="66.40" font-size="1.95" text-anchor="start" font-weight="400" fill="#1f2937">3. Kapı kodları plan paftalarındaki kapı yerleriyle eşleşir.</text>
+<circle cx="398.00" cy="182.00" r="6.50" fill="none" stroke="#111" stroke-width="0.30"/>
+<polygon points="398.00,174.00 400.20,184.50 398.00,183.20 395.80,184.50" fill="#111" stroke="#111" stroke-width="0.20" stroke-linejoin="miter"/>
+<text x="398.00" y="172.70" font-size="3.00" text-anchor="middle" font-weight="700" fill="#111">K</text>
+<line x1="318.00" y1="195.00" x2="410.00" y2="195.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<text x="322.00" y="200.00" font-size="2.00" text-anchor="start" font-weight="700" fill="#111" letter-spacing="0.30">REVİZYONLAR</text>
+<text x="322.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">R0</text>
+<text x="328.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">19.09.2026</text>
+<text x="345.00" y="204.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">İlk yayın</text>
+<text x="322.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="700" fill="#111">R1</text>
+<text x="328.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">21.09.2026</text>
+<text x="345.00" y="207.70" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">Plan kurgusu yeniden düzenlendi; kesit,</text>
+<text x="345.00" y="210.20" font-size="1.90" text-anchor="start" font-weight="400" fill="#111">görünüş, detay ve doğrama listesi eklendi</text>
+<line x1="318.00" y1="221.00" x2="410.00" y2="221.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="226.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">İŞ SAHİBİ</text>
+<text x="322.00" y="230.50" font-size="2.40" text-anchor="start" font-weight="400" fill="#111">—</text>
+<text x="366.00" y="226.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">HAZIRLAYAN</text>
+<text x="366.00" y="230.50" font-size="2.40" text-anchor="start" font-weight="400" fill="#111">E. Ceran</text>
+<line x1="363.00" y1="221.00" x2="363.00" y2="235.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="318.00" y1="235.00" x2="410.00" y2="235.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="240.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">MÜELLİF MİMAR</text>
+<text x="322.00" y="245.00" font-size="2.00" text-anchor="start" font-weight="400" fill="#6b7280" font-style="italic">(ruhsat aşamasında atanacak)</text>
+<text x="366.00" y="240.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">İMZA</text>
+<line x1="363.00" y1="235.00" x2="363.00" y2="249.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="318.00" y1="249.00" x2="410.00" y2="249.00" stroke="#111" stroke-width="0.40" stroke-linecap="butt"/>
+<text x="322.00" y="255.00" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">PAFTA ADI</text>
+<text x="322.00" y="262.00" font-size="5.00" text-anchor="start" font-weight="700" fill="#111">DOĞRAMA LİSTESİ</text>
+<line x1="318.00" y1="273.00" x2="410.00" y2="273.00" stroke="#111" stroke-width="0.30" stroke-linecap="butt"/>
+<text x="322.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">ÖLÇEK</text>
+<text x="322.00" y="283.50" font-size="3.60" text-anchor="start" font-weight="700" fill="#111">—</text>
+<text x="350.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">TARİH</text>
+<text x="350.00" y="283.50" font-size="3.00" text-anchor="start" font-weight="400" fill="#111">21.09.2026</text>
+<text x="380.00" y="277.50" font-size="1.90" text-anchor="start" font-weight="400" fill="#6b7280">PAFTA NO</text>
+<text x="380.00" y="284.00" font-size="5.20" text-anchor="start" font-weight="700" fill="#111">A-12</text>
+<line x1="347.00" y1="273.00" x2="347.00" y2="287.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+<line x1="377.00" y1="273.00" x2="377.00" y2="287.00" stroke="#111" stroke-width="0.20" stroke-linecap="butt"/>
+</svg>
