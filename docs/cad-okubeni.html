@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="tr"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CAD teslim notu — Durunday Villa</title>
+<meta name="description" content="DWG/DXF setinin çizim düzeni ve katman şeması.">
+<link rel="stylesheet" href="varlik/stil.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+</head><body>
+<header class="ust">
+  <div class="sarmal ust-ic">
+    <a class="marka" href="index.html"><span class="nokta"></span> Durunday Villa</a>
+    <nav><a href="index.html">Proje</a>
+<a href="cizimler.html">Çizimler</a>
+<a href="render.html">Görseller</a>
+<a href="mahal-listesi.html">Mahal Listesi</a>
+<a href="imalat.html">İmalat ve Markalar</a>
+<a href="yonetmelik.html">Yönetmelik Uygunluk</a>
+<a href="kontrol.html">Tasarım Kontrolü</a>
+<a href="dosyalar.html" class="aktif">Dosyalar</a></nav>
+    <button class="tema" onclick="temaDegistir()" title="Açık / koyu tema">◐</button>
+  </div>
+</header>
+<main class="sarmal">
+<h1>Durunday Villa — CAD teslim dosyaları (DXF + DWG)</h1>
+<p>Avan proje çizim setinin (13 pafta) AutoCAD dosyaları. PDF setiyle birebir aynı içerik, aynı geometriden üretildi.</p>
+<h2>Klasörler</h2>
+<div class="kaydir"><table>
+<thead>
+<tr>
+<th>Klasör</th>
+<th>İçerik</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dwg/</code></td>
+<td>AutoCAD 2018 DWG — pafta başına bir dosya (<code>DV-A-00</code> … <code>DV-A-12</code>) + tümü tek dosyada <code>DV-TUM-PAFTALAR.dwg</code> (13 layout)</td>
+</tr>
+<tr>
+<td><code>dxf/</code></td>
+<td>Aynı dosyaların DXF (R2018) karşılığı</td>
+</tr>
+<tr>
+<td><code>KATMAN-LISTESI.csv</code></td>
+<td>Kullanılan 78 katman: renk, çizgi tipi, kalınlık, içerik, dayanak, öğe sayısı</td>
+</tr>
+</tbody>
+</table></div>
+<h2>Çizim düzeni</h2>
+<ul>
+<li><strong>Model alanı 1:1 gerçek ölçü, birim cm</strong> (<code>INSUNITS = cm</code>). Planlarda bina köşesi (0,0)–(2000,1500); kesit ve görünüşlerde y = kot × 100 (±0.00 = 0).</li>
+<li><strong>Her pafta bir layout'ta:</strong> A3 yatay, çerçeve + antet kâğıt alanında, çizimler ölçekli viewport'larda (1/100, vaziyet 1/200, detaylar 1/50). Viewport çerçeveleri yazdırılmayan <code>M-GOST-VPORT</code> katmanında.</li>
+<li><strong>Ölçüler gerçek DIMENSION nesnesidir</strong> (dış ölçüler <code>M-GOST-DISOLCU</code>, iç ölçüler <code>M-GOST-ICOLCU</code>); değerler cm.</li>
+<li><strong>Taramalar gerçek HATCH nesnesidir</strong> ve ayrı <code>-T</code> katmanlarındadır. Örnek: <code>M-DUVA-GAZBETON-T</code>, <code>M-TASI-BETONARME-T</code>.</li>
+<li><code>0</code> katmanında çizim yoktur.</li>
+</ul>
+<h2>Katman şeması</h2>
+<p>Çevre ve Şehircilik Bakanlığı <strong>CADD Bilgisayar Destekli Tasarım ve Çizim Düzenleme Usul ve Esasları</strong> (Yapı İşleri GM, 2016 / rev. 2020) mimari katmanları kullanıldı.
+- <strong>Ad biçimi:</strong> <code>M-ÖĞE-MALZEME</code>.
+- <strong>Renk (ACI), çizgi tipi ve 1/100 kalınlık:</strong> Tablo 3.8 ve 3.9'dan alındı.
+- <strong>Görünüşte görünen elemanlar:</strong> derinliğe göre <code>-1</code> ya da <code>-2</code> sonekli katmanda. Örnek: <code>M-DUVK-DOGALTAS-1</code> cephe taşı, <code>M-PNKS-ALUMINYUM-2</code> kesitte arkada görünen doğrama.</p>
+<p>Başlıca katmanlar:</p>
+<div class="kaydir"><table>
+<thead>
+<tr>
+<th>Eleman</th>
+<th>Katman</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kolon, perde, kiriş, döşeme, temel</td>
+<td><code>M-TASI-BETONARME</code> (+ <code>-T</code> dolu tarama)</td>
+</tr>
+<tr>
+<td>Duvar (gazbeton)</td>
+<td><code>M-DUVA-GAZBETON</code> (+ <code>-T</code>)</td>
+</tr>
+<tr>
+<td>Isı / su yalıtımı</td>
+<td><code>M-ISYA-TASYUNU</code></td>
+</tr>
+<tr>
+<td>Pencere / doğrama</td>
+<td><code>M-PNKS-ALUMINYUM</code></td>
+</tr>
+<tr>
+<td>Kapı kanadı · kasası · açılım yayı</td>
+<td><code>M-KPKN-AHSAP</code> · <code>M-KPKS-AHSAP</code> · <code>M-GOST-ACYONU</code></td>
+</tr>
+<tr>
+<td>Merdiven</td>
+<td><code>M-MERD-BETONARME</code></td>
+</tr>
+<tr>
+<td>Korkuluk</td>
+<td><code>M-KORK-CAM</code></td>
+</tr>
+<tr>
+<td>Mobilya · vitrifiye/mutfak</td>
+<td><code>M-TEFR-MIMARI</code> · <code>M-TEFR-MEKANIK</code></td>
+</tr>
+<tr>
+<td>Akslar · aks balonları</td>
+<td><code>M-GOST-AKS</code> · <code>M-GOST-AKSPOZ</code></td>
+</tr>
+<tr>
+<td>Mahal adları · kotlar</td>
+<td><code>M-GOST-MAHALPOZ</code> · <code>M-GOST-PLANKOT</code> / <code>M-GOST-KESITKOT</code></td>
+</tr>
+<tr>
+<td>Kapı / pencere pozları</td>
+<td><code>M-GOST-KAPIPOZ</code> · <code>M-GOST-PENCEREPOZ</code></td>
+</tr>
+<tr>
+<td>Kesit hattı · üstte kalan (saçak, pergola)</td>
+<td><code>M-GOST-KESITHATTI</code> · <code>M-GOST-IZDUSUM</code></td>
+</tr>
+<tr>
+<td>Parsel · çekme mesafeleri</td>
+<td><code>M-GOST-PARSELSINR</code> · <code>M-GOST-YAPIYAKLAS</code></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Türetilmiş katmanlar:</strong> listede karşılığı olmayan birkaç eleman aynı formülle adlandırıldı: şaft, ışıklık, havuz, toprak, cephe ahşap kaplaması, aks balonu. Bunlar CSV'de "TÜRETİLMİŞ" diye işaretli.</li>
+<li><strong>2028 değişikliği:</strong> 1 Eylül 2028'de yürürlüğe girecek <em>Mimarlık ve Mühendislik Projelerinin Dijital Olarak Hazırlanması Hakkında Yönetmelik</em> mimari önekini <code>MM-</code> yapıyor. Gerekirse tek ayarla üretilebilir.</li>
+</ul>
+<h2>Bilinen sınırlar (avan)</h2>
+<ul>
+<li>Kapı, pencere ve mobilya sembolleri <strong>blok değil</strong>, ayrı çizgiler olarak duruyor. Uygulama projesinde bloklaştırılması önerilir.</li>
+<li>Yazı stili Arial Narrow (<code>arialn.ttf</code>). Yoksa AutoCAD benzer bir yazıtipiyle gösterir.</li>
+<li>Parsel ve imar verileri varsayımdır; Meram Belediyesi imar durumu ile teyit edilmelidir.</li>
+</ul><p><a href="dosyalar.html#cad">← CAD dosyalarına dön</a></p>
+</main>
+<footer class="alt"><div class="sarmal">
+  <p><strong>Durunday Villa</strong> — Konya / Meram / Durunday · 300 m² oturumlu bodrumlu dubleks villa</p>
+  <p class="kucuk">Ön tasarım (avan) dokümanı · 22.09.2026 · Uygulama ve ruhsat için yetkili proje müellifi onayı gerekir.</p>
+</div></footer>
+<script>
+function temaDegistir(){const k=document.documentElement;const y=k.getAttribute('data-tema')==='koyu'?'acik':'koyu';
+ k.setAttribute('data-tema',y);try{localStorage.setItem('tema',y)}catch(e){}}
+(function(){try{const t=localStorage.getItem('tema');if(t)document.documentElement.setAttribute('data-tema',t)}catch(e){}})();
+function tabloAra(girdi, tabloId){const s=girdi.value.toLocaleLowerCase('tr');
+ document.querySelectorAll('#'+tabloId+' tbody tr').forEach(function(tr){
+   tr.style.display = tr.textContent.toLocaleLowerCase('tr').indexOf(s)>-1 ? '' : 'none';});}
+function katFiltre(btn, kat, tabloId){
+ document.querySelectorAll('#'+tabloId+'-sekme .cip').forEach(b=>b.classList.remove('secili'));
+ btn.classList.add('secili');
+ document.querySelectorAll('#'+tabloId+' tbody tr').forEach(function(tr){
+   tr.style.display = (kat==='*'||tr.dataset.kat===kat) ? '' : 'none';});}
+</script>
+</body></html>

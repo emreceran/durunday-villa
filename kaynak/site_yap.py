@@ -119,6 +119,9 @@ td.kod,th.kod{white-space:nowrap;font-weight:700;color:var(--vurgu)}
 td.sayi{text-align:right;white-space:nowrap}
 .kaydir{overflow-x:auto;border:1px solid var(--cerceve);border-radius:12px}
 .kaydir table{border:0}
+.kaydir thead th{top:0}
+td a{color:var(--vurgu);font-weight:600;text-decoration:none}
+td a:hover{text-decoration:underline}
 .araclar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
 input[type=search]{flex:1;min-width:220px;padding:9px 12px;border:1px solid var(--cerceve);
   border-radius:9px;background:var(--ze2);color:var(--yz);font-size:15px}
@@ -208,7 +211,7 @@ def cizimler_sayfa():
          'sistem kesiti ve merdiven 1/50. Ölçüler cm, kotlar m. Planlarda aks sistemi, üç sıralı dış ölçü '
          'zinciri, iç ölçüler, kotlar, kesit işaretleri, kapı/pencere kodları ve mobilya yerleşimi vardır. '
          'Her pafta SVG’dir; büyütmek için üzerine tıklayın. Tüm set tek PDF olarak '
-         '<a href="dosyalar.html">Dosyalar</a> sayfasında.</p>']
+         '<a href="dosyalar.html">Dosyalar</a> sayfasında; AutoCAD için katmanlı <a href="dosyalar.html#cad">DWG / DXF seti</a> de orada.</p>']
     for dosya, ad, _ in CIZIMLER:
         g.append('<figure id="%s"><a href="varlik/%s.svg" target="_blank" rel="noopener">'
                  '<img src="varlik/%s.svg" alt="%s" loading="lazy"></a>'
@@ -328,10 +331,40 @@ def kontrol_sayfa():
     return kabuk("kontrol.html", "Tasarım Kontrolü", "\n".join(g),
                  "Plan geometrisinin otomatik mantık denetimi: erişim, mahremiyet, gün ışığı, kapı açılımları, merdiven.")
 
-def dosyalar_sayfa(dosyalar):
+def cad_bolumu(cad):
+    """cad: {'zip': (yol, boyut), 'paftalar': [(no, ad, dwg, dxf)], 'toplu': (dwg, dxf), 'csv': yol, 'not': yol}"""
+    if not cad:
+        return ""
+    z, zb = cad["zip"]
+    g = ['<h2 id="cad">CAD dosyaları (DWG / DXF)</h2>',
+         '<p class="giris">Çizim setinin AutoCAD dosyaları. Model alanı <strong>1:1 gerçek ölçü, birim cm</strong>; '
+         'her pafta A3 layout’ta, antet ve ölçekli viewport’larla. Katmanlar Çevre ve Şehircilik Bakanlığı '
+         '<em>CADD Usul ve Esasları</em> mimari şemasına göre ayrılmıştır (ör. <code>M-TASI-BETONARME</code> kolon/perde, '
+         '<code>M-DUVA-GAZBETON</code> duvar, <code>M-PNKS-ALUMINYUM</code> pencere; taramalar <code>-T</code> katmanlarında). '
+         'Ölçüler ve taramalar düzenlenebilir AutoCAD nesneleridir.</p>',
+         '<ul class="liste"><li><span><span class="ad">Tüm CAD seti (ZIP)</span><br><span class="kucuk">'
+         '13 pafta DWG + DXF, tümü tek dosyada, katman listesi ve açıklama notu · %s</span></span>'
+         '<a href="%s" download>İndir ↓</a></li>' % (E(zb), z)]
+    td, tx = cad["toplu"]
+    g.append('<li><span><span class="ad">Tüm paftalar tek dosyada</span><br><span class="kucuk">'
+             '13 layout, AutoCAD 2018</span></span><a href="%s" download>DWG ↓</a>'
+             '<a href="%s" download style="margin-left:14px">DXF ↓</a></li>' % (td, tx))
+    g.append('<li><span><span class="ad">Katman listesi (CSV)</span><br><span class="kucuk">Katman adı, renk, çizgi tipi, '
+             'kalınlık, içerik ve dayanak — Excel ile açılır</span></span><a href="%s" download>İndir ↓</a></li>' % cad["csv"])
+    g.append('<li><span><span class="ad">Mimar için not</span><br><span class="kucuk">Çizim düzeni, birimler, '
+             'katman şeması, bilinen sınırlar</span></span><a href="%s" target="_blank" rel="noopener">Aç ↗</a></li></ul>'
+             % cad["not"])
+    g.append('<div class="kaydir"><table><thead><tr><th>Pafta</th><th>Ad</th><th>DWG</th><th>DXF</th></tr></thead><tbody>')
+    for no, ad, dwg, dxf in cad["paftalar"]:
+        g.append('<tr><td>%s</td><td>%s</td><td><a href="%s" download>DWG ↓</a></td>'
+                 '<td><a href="%s" download>DXF ↓</a></td></tr>' % (E(no), E(ad), dwg, dxf))
+    g.append('</tbody></table></div>')
+    return "\n".join(g)
+
+def dosyalar_sayfa(dosyalar, cad=None):
     g = ['<h1>Dosyalar</h1>',
          '<p class="giris">Tasarım ve doküman dosyalarının tamamı. Çizimler vektörel (SVG) olduğundan '
-         'kalite kaybı olmadan büyütülebilir ve CAD ortamına aktarılabilir.</p>', '<ul class="liste">']
+         'kalite kaybı olmadan büyütülebilir.</p>', cad_bolumu(cad), '<h2>PDF, Excel, SVG ve görseller</h2>', '<ul class="liste">']
     for ad, yol, ack in dosyalar:
         g.append('<li><span><span class="ad">%s</span><br><span class="kucuk">%s</span></span>'
                  '<a href="%s" download>İndir ↓</a></li>' % (E(ad), E(ack), yol))
@@ -342,7 +375,36 @@ def dosyalar_sayfa(dosyalar):
              '<code>yonetmelik.py</code> (uygunluk kuralları), <code>ciz.py</code> (çizimler), '
              '<code>excel_yap.py</code> ve <code>site_yap.py</code>. '
              'Bir mahalin ölçüsü değiştiğinde çizim, Excel ve site birlikte güncellenir.</p>')
-    return kabuk("dosyalar.html", "Dosyalar", "\n".join(g), "Excel, PDF ve SVG çizim dosyaları.")
+    return kabuk("dosyalar.html", "Dosyalar", "\n".join(g), "Excel, PDF, SVG ve DWG/DXF çizim dosyaları.")
+
+def cad_kopyala():
+    """../cad → docs/dosyalar/cad (+ zip). CAD seti yoksa None."""
+    import zipfile
+    kaynak = os.path.join(KOK, "cad")
+    if not os.path.isdir(os.path.join(kaynak, "dwg")):
+        return None
+    hedef = os.path.join(SITE, "dosyalar", "cad")
+    if os.path.isdir(hedef):
+        shutil.rmtree(hedef)
+    for alt in ("dwg", "dxf"):
+        shutil.copytree(os.path.join(kaynak, alt), os.path.join(hedef, alt))
+    for f in ("KATMAN-LISTESI.csv", "OKUBENI.md"):
+        shutil.copy(os.path.join(kaynak, f), os.path.join(hedef, f))
+    zyol = os.path.join(SITE, "dosyalar", "durunday-villa-cad.zip")
+    with zipfile.ZipFile(zyol, "w", zipfile.ZIP_DEFLATED) as z:
+        for kok, _d, fs in os.walk(hedef):
+            for f in sorted(fs):
+                tam = os.path.join(kok, f)
+                z.write(tam, os.path.join("durunday-villa-cad", os.path.relpath(tam, hedef)))
+    boyut = "%.1f MB" % (os.path.getsize(zyol) / 1e6)
+    pl = []
+    for dosya, ad, no, _o, _f in PAFTALAR:
+        taban = "DV-%s-%s" % (no, dosya[3:])
+        if os.path.exists(os.path.join(hedef, "dwg", taban + ".dwg")):
+            pl.append((no, ad, "dosyalar/cad/dwg/%s.dwg" % taban, "dosyalar/cad/dxf/%s.dxf" % taban))
+    return {"zip": ("dosyalar/durunday-villa-cad.zip", boyut), "paftalar": pl,
+            "toplu": ("dosyalar/cad/dwg/DV-TUM-PAFTALAR.dwg", "dosyalar/cad/dxf/DV-TUM-PAFTALAR.dxf"),
+            "csv": "dosyalar/cad/KATMAN-LISTESI.csv", "not": "cad-okubeni.html"}
 
 def uret():
     os.makedirs(os.path.join(SITE, "varlik"), exist_ok=True)
@@ -380,11 +442,20 @@ def uret():
     for ad, baslik, _a in RENDERLAR:
         if ad in mevcut:
             dosyalar.append((baslik + " (JPG)", "varlik/render/%s.jpg" % ad, "3B render, 1920 × 1080"))
+    cad = cad_kopyala()
+    if cad:
+        import markdown
+        with open(os.path.join(KOK, "cad", "OKUBENI.md"), encoding="utf-8") as f:
+            md = f.read()
+        govde = markdown.markdown(md, extensions=["tables"]).replace("<table>", '<div class="kaydir"><table>').replace("</table>", "</table></div>")
+        govde += '<p><a href="dosyalar.html#cad">← CAD dosyalarına dön</a></p>'
+        with open(os.path.join(SITE, "cad-okubeni.html"), "w", encoding="utf-8") as f:
+            f.write(kabuk("dosyalar.html", "CAD teslim notu", govde, "DWG/DXF setinin çizim düzeni ve katman şeması."))
     sayfalar = {"index.html": index(), "cizimler.html": cizimler_sayfa(),
                 "render.html": render_sayfa(mevcut),
                 "mahal-listesi.html": mahal_sayfa(), "imalat.html": imalat_sayfa(),
                 "yonetmelik.html": yonetmelik_sayfa(), "kontrol.html": kontrol_sayfa(),
-                "dosyalar.html": dosyalar_sayfa(dosyalar)}
+                "dosyalar.html": dosyalar_sayfa(dosyalar, cad)}
     for ad, icerik in sayfalar.items():
         with open(os.path.join(SITE, ad), "w", encoding="utf-8") as f:
             f.write(icerik)

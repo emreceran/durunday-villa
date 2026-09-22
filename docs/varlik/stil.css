@@ -46,6 +46,9 @@ td.kod,th.kod{white-space:nowrap;font-weight:700;color:var(--vurgu)}
 td.sayi{text-align:right;white-space:nowrap}
 .kaydir{overflow-x:auto;border:1px solid var(--cerceve);border-radius:12px}
 .kaydir table{border:0}
+.kaydir thead th{top:0}
+td a{color:var(--vurgu);font-weight:600;text-decoration:none}
+td a:hover{text-decoration:underline}
 .araclar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
 input[type=search]{flex:1;min-width:220px;padding:9px 12px;border:1px solid var(--cerceve);
   border-radius:9px;background:var(--ze2);color:var(--yz);font-size:15px}
