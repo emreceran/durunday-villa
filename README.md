@@ -16,6 +16,7 @@ için hazırlanmış mimari ön tasarım (avan), mahal listesi, imalat tarifi ve
 | `Durunday Villa - Mahal Listesi.xlsx` | 6 sekme: künye, mahal programı, mahal listesi, imalat + markalar, yönetmelik, tasarım kontrolü |
 | `Durunday Villa - Mahal Listesi.pdf` | Excel’in baskıya hazır çıktısı |
 | `Durunday Villa - Cizimler.pdf` | 13 paftalık A3 yatay çizim seti |
+| `cad/` | **DWG + DXF** çizim seti (mimara teslim): 1:1 cm model, pafta başına layout, ÇŞB CADD katman şeması — `cad/OKUBENI.md` |
 
 ## Tasarım dosyaları (`kaynak/`)
 
@@ -33,6 +34,7 @@ Her şey tek bir veri kaynağından üretilir; bir mahalin, kapının veya pence
 | `paftalar.py` | Kapak, vaziyet, çatı, kesitler, görünüşler, sistem kesiti, merdiven detayı, doğrama listesi; tam seti yazar |
 | `dograma.py`, `mobilya.py` | Kapı/pencere tip kodları; mobilya ölçüleri ve plan sembolleri |
 | `excel_yap.py` · `pdf_yap.py` · `site_yap.py` | Excel, PDF (çizim seti + mahal listesi) ve `docs/` sitesi |
+| `kayit.py` · `katmanlar.py` · `dxf_yap.py` | Çizim kaydı (katman + görünüş), ÇŞB katman şeması, DXF/DWG üretimi (ezdxf + ODA File Converter) |
 | `render_3b.py` | Blender 4.2 betiği — 3B modeli `veri.py` geometrisinden kurar ve Cycles ile render alır |
 
 ```bash
@@ -43,6 +45,7 @@ python3 paftalar.py    # 13 paftayı üret (../cizimler)
 python3 excel_yap.py   # Excel
 python3 pdf_yap.py     # PDF'ler (Chrome + LibreOffice)
 python3 site_yap.py    # site
+python3 dxf_yap.py     # DXF + DWG seti (../cad) — ezdxf<1.2 ve ~/opt/oda (ODA File Converter) gerekir
 
 # 3B render (Blender 4.2 gerekir; proje kökünden çalıştırın)
 ~/opt/blender-4.2.23-linux-x64/blender -b -P kaynak/render_3b.py -- \

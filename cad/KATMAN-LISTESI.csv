@@ -1,0 +1,79 @@
+﻿Katman;Renk (ACI);Çizgi tipi;Kalınlık 1/100 (mm);Yazdırılır;İçerik;Dayanak;Öğe sayısı (tüm set)
+M-BACA-TUGLA;116;Continuous;0,09;evet;Baca ve şömine;ÇŞB;9
+M-BACA-TUGLA-1;116;Continuous;0,09;evet;Baca ve şömine — görünüşte görünen (derinlik 1);ÇŞB;3
+M-BACA-TUGLA-1-T;8;Continuous;0,05;evet;Baca ve şömine — görünüşte görünen (derinlik 1) — tarama;ÇŞB (-T kuralı);6
+M-BACA-TUGLA-T;8;Continuous;0,05;evet;Baca ve şömine — tarama;ÇŞB (-T kuralı);4
+M-BITK-AGAC;70;Continuous;0,09;evet;Ağaçlar, selviler;ÇŞB;17
+M-BITK-AGAC-1;70;Continuous;0,09;evet;Ağaçlar, selviler — görünüşte görünen (derinlik 1);ÇŞB;16
+M-CKAP-KIREMIT;66;Continuous;0,09;evet;Çatı kaplama (kil kiremit), mahya, dere;ÇŞB;145
+M-CKAP-KIREMIT-1;66;Continuous;0,09;evet;Çatı kaplama (kil kiremit), mahya, dere — görünüşte görünen (derinlik 1);ÇŞB;9
+M-CKAP-KIREMIT-1-T;8;Continuous;0,05;evet;Çatı kaplama (kil kiremit), mahya, dere — görünüşte görünen (derinlik 1) — tarama;ÇŞB (-T kuralı);14
+M-CKAP-KIREMIT-2;66;Continuous;0,09;evet;Çatı kaplama (kil kiremit), mahya, dere — görünüşte görünen (derinlik 2);ÇŞB;5
+M-CKAP-KIREMIT-2-T;8;Continuous;0,05;evet;Çatı kaplama (kil kiremit), mahya, dere — görünüşte görünen (derinlik 2) — tarama;ÇŞB (-T kuralı);1
+M-CKAP-KIREMIT-T;8;Continuous;0,05;evet;Çatı kaplama (kil kiremit), mahya, dere — tarama;ÇŞB (-T kuralı);5
+M-CTAS-AHSAP;234;Continuous;0,20;evet;Çatı taşıyıcı (ahşap dikme, mahya kirişi);ÇŞB;6
+M-CVRE-ZEMIN;45;Continuous;0,18;evet;Doğal zemin / toprak (kesit ve görünüş);TÜRETİLMİŞ;8
+M-CVRE-ZEMIN-T;8;Continuous;0,05;evet;Doğal zemin / toprak (kesit ve görünüş) — tarama;TÜRETİLMİŞ (-T kuralı);11
+M-DUVA-GAZBETON;64;Continuous;0,20;evet;Gazbeton duvar (dış 25 cm, iç 13,5 cm);ÇŞB;168
+M-DUVA-GAZBETON-T;8;Continuous;0,05;evet;Gazbeton duvar (dış 25 cm, iç 13,5 cm) — tarama;ÇŞB (-T kuralı);158
+M-DUVK-AHSAP-1;126;Continuous;0,05;evet;Cephe ahşap kompozit kaplama — görünüşte görünen (derinlik 1);TÜRETİLMİŞ;1
+M-DUVK-AHSAP-1-T;8;Continuous;0,05;evet;Cephe ahşap kompozit kaplama — görünüşte görünen (derinlik 1) — tarama;TÜRETİLMİŞ (-T kuralı);2
+M-DUVK-DOGALTAS-1;139;Continuous;0,05;evet;Duvar/cephe kaplama: Sille taşı, subasman yontma taş — görünüşte görünen (derinlik 1);ÇŞB;8
+M-DUVK-DOGALTAS-1-T;8;Continuous;0,05;evet;Duvar/cephe kaplama: Sille taşı, subasman yontma taş — görünüşte görünen (derinlik 1) — tarama;ÇŞB (-T kuralı);91
+M-DUVK-PREKAST-1;127;Continuous;0,05;evet;Kat silmesi (prekast / GRC) — görünüşte görünen (derinlik 1);TÜRETİLMİŞ;4
+M-GOST-ACYONU;248;ACAD_ISO07W100;0,09;evet;Kapı açılım yayı;ÇŞB;44
+M-GOST-AKS;1;ACAD_ISO04W100;0,09;evet;Aks çizgileri;ÇŞB;24
+M-GOST-AKSPOZ;1;Continuous;0,09;evet;Aks balonları;TÜRETİLMİŞ;104
+M-GOST-ANTET;176;Continuous;0,25;evet;Pafta çerçevesi ve antet (layout);ÇŞB;188
+M-GOST-ANTETYAZI;177;Continuous;0,09;evet;Antet yazıları, notlar, pafta başlıkları (layout);ÇŞB;627
+M-GOST-BINAOTURUM;7;Continuous;0,30;evet;Vaziyette bina oturumu ve çatı izi;TÜRETİLMİŞ;11
+M-GOST-DISOLCU;40;Continuous;0,09;evet;Dış ölçüler (ölçü nesneleri);ÇŞB;185
+M-GOST-ICOLCU;44;Continuous;0,09;evet;İç ölçüler (ölçü nesneleri);ÇŞB;50
+M-GOST-IZDUSUM;80;ACAD_ISO07W100;0,18;evet;Üstte kalan / görünmeyen izdüşüm (saçak, pergola, üst kol);ÇŞB;67
+M-GOST-KAPIPOZ;95;Continuous;0,09;evet;Kapı poz etiketleri;ÇŞB;99
+M-GOST-KESITHATTI;240;ACAD_ISO04W100;0,18;evet;Kesit hattı ve okları;ÇŞB;42
+M-GOST-KESITKOT;46;Continuous;0,09;evet;Kesit ve görünüş kotları;ÇŞB;205
+M-GOST-KUZEYOKU;1;Continuous;0,09;evet;Kuzey oku;ÇŞB;36
+M-GOST-LEJANT;173;Continuous;0,09;evet;Lejant sembolleri;ÇŞB;87
+M-GOST-MAHALPOZ;7;Continuous;0,09;evet;Mahal adı, numarası, alanı, kaplaması;ÇŞB;183
+M-GOST-MERDIVEPOZ;145;Continuous;0,09;evet;Merdiven çıkış oku, basamak numaraları;ÇŞB;26
+M-GOST-PARSELSINR;21;ACAD_ISO03W100;0,18;evet;Parsel sınırı / bahçe duvarı;ÇŞB;1
+M-GOST-PENCEREPOZ;62;Continuous;0,09;evet;Pencere poz etiketleri;ÇŞB;60
+M-GOST-PLANKOT;46;Continuous;0,09;evet;Plan kotları;ÇŞB;42
+M-GOST-TABLO;1;Continuous;0,09;evet;Doğrama listesi, pafta listesi, alan tabloları;ÇŞB;307
+M-GOST-YAPIYAKLAS;35;ACAD_ISO02W100;0,15;evet;Yapı yaklaşma sınırı (çekme mesafeleri);ÇŞB;2
+M-GOST-YAZI;2;Continuous;0,09;evet;Genel yazılar, başlıklar, malzeme notları;ÇŞB;196
+M-HAVU-BETONARME;4;Continuous;0,18;evet;Havuz;TÜRETİLMİŞ;2
+M-HAVU-BETONARME-T;8;Continuous;0,05;evet;Havuz — tarama;TÜRETİLMİŞ (-T kuralı);2
+M-ISIK-GALVANIZ;150;Continuous;0,09;evet;Bodrum ışıklıkları ve galvaniz ızgara;TÜRETİLMİŞ;14
+M-ISIK-GALVANIZ-T;8;Continuous;0,05;evet;Bodrum ışıklıkları ve galvaniz ızgara — tarama;TÜRETİLMİŞ (-T kuralı);20
+M-ISYA-TASYUNU;251;Continuous;0,09;evet;Isı yalıtımı (taşyünü / XPS) ve su yalıtımı;ÇŞB (ISYA);45
+M-ISYA-TASYUNU-T;8;Continuous;0,05;evet;Isı yalıtımı (taşyünü / XPS) ve su yalıtımı — tarama;ÇŞB (ISYA) (-T kuralı);23
+M-KALD-TAS;45;Continuous;0,09;evet;Dış zemin: teras, giriş sahanlığı, basamaklar;ÇŞB;20
+M-KALD-TAS-T;8;Continuous;0,05;evet;Dış zemin: teras, giriş sahanlığı, basamaklar — tarama;ÇŞB (-T kuralı);9
+M-KORK-CAM;100;Continuous;0,09;evet;Cam korkuluk ve küpeşte;ÇŞB;22
+M-KPKN-AHSAP;93;Continuous;0,09;evet;Kapı kanadı;ÇŞB;55
+M-KPKN-AHSAP-1;93;Continuous;0,09;evet;Kapı kanadı — görünüşte görünen (derinlik 1);ÇŞB;10
+M-KPKS-AHSAP;160;Continuous;0,09;evet;Kapı kasası;ÇŞB;88
+M-MERD-BETONARME;6;Continuous;0,18;evet;Merdiven kolları, basamaklar, sahanlık;ÇŞB;111
+M-MERD-BETONARME-2;6;Continuous;0,09;evet;Merdiven kolları, basamaklar, sahanlık — görünüşte görünen (derinlik 2);ÇŞB;10
+M-MERD-BETONARME-T;8;Continuous;0,05;evet;Merdiven kolları, basamaklar, sahanlık — tarama;ÇŞB (-T kuralı);6
+M-OLUK-SAC;194;Continuous;0,09;evet;Oluk ve alın;ÇŞB;2
+M-PNKS-ALUMINYUM;171;Continuous;0,09;evet;Pencere / doğrama kasası ve kanadı (alüminyum);ÇŞB;244
+M-PNKS-ALUMINYUM-1;171;Continuous;0,09;evet;Pencere / doğrama kasası ve kanadı (alüminyum) — görünüşte görünen (derinlik 1);ÇŞB;133
+M-PNKS-ALUMINYUM-2;171;Continuous;0,09;evet;Pencere / doğrama kasası ve kanadı (alüminyum) — görünüşte görünen (derinlik 2);ÇŞB;23
+M-SAFT-TESISAT-T;8;Continuous;0,05;evet;Tesisat şaftı — tarama;TÜRETİLMİŞ (-T kuralı);3
+M-SIVA-1;52;Continuous;0,05;evet;Sıva (cephe: ince silikon sıva) — görünüşte görünen (derinlik 1);ÇŞB;4
+M-TASI-BETONARME;5;Continuous;0,35;evet;Betonarme kolon, perde, kiriş, döşeme, temel (kesilen);ÇŞB;106
+M-TASI-BETONARME-1;5;Continuous;0,35;evet;Betonarme kolon, perde, kiriş, döşeme, temel (kesilen) — görünüşte görünen (derinlik 1);ÇŞB;46
+M-TASI-BETONARME-1-T;250;Continuous;0,05;evet;Betonarme kolon, perde, kiriş, döşeme, temel (kesilen) — görünüşte görünen (derinlik 1) — tarama;ÇŞB (-T kuralı);7
+M-TASI-BETONARME-T;250;Continuous;0,05;evet;Betonarme kolon, perde, kiriş, döşeme, temel (kesilen) — tarama;ÇŞB (-T kuralı);120
+M-TEFR-MEKANIK;238;Continuous;0,09;evet;Vitrifiye, mutfak ve mekanik ekipman, asansör;ÇŞB;118
+M-TEFR-MIMARI;29;Continuous;0,09;evet;Mobilya / tefriş;ÇŞB;395
+M-YIBO-SAC;12;Continuous;0,09;evet;Yağmur iniş borusu;ÇŞB;12
+M-YIBO-SAC-1;12;Continuous;0,09;evet;Yağmur iniş borusu — görünüşte görünen (derinlik 1);ÇŞB;8
+M-YOLL-ASFALT;54;Continuous;0,09;evet;İmar yolu;ÇŞB;1
+M-YOLL-TAS;54;Continuous;0,09;evet;Araç yolu, bahçe yolları (granit küp taş);ÇŞB;6
+M-YOLL-TAS-T;8;Continuous;0,05;evet;Araç yolu, bahçe yolları (granit küp taş) — tarama;ÇŞB (-T kuralı);4
+M-ZMNK-DOGALTAS-T;8;Continuous;0,05;evet;Zemin kaplama: traverten / doğal taş — tarama;ÇŞB (-T kuralı);18
+M-ZMNK-SERAMIK-T;8;Continuous;0,05;evet;Zemin kaplama: porselen / seramik — tarama;ÇŞB (-T kuralı);13

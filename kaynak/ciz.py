@@ -2,7 +2,8 @@
 """Durunday Villa — mimari çizim seti (A3 yatay SVG paftalar).
 
 Her pafta veri.py'den üretilir. Ölçüler cm, kotlar m. `python3 ciz.py` → ../cizimler/*.svg"""
-import os, math, html, base64, datetime
+import os, math, html, base64, datetime, re
+import kayit
 from veri import (KATLAR, KATLAR_SIRA, KAPILAR, PENCERELER, MOBILYA, ACIK, MERDIVEN_KORKULUK, BINA,
                   BINA_KONUM, PARSEL, DIS_DUVAR, IC_DUVAR, YALITIM, KOT, TABII_ZEMIN, KAT_YUKSEKLIK,
                   NET_TAVAN, DOSEME, GARAJ_KOT, CATI, AKS_X, AKS_Y, KOLON, kolonlar, MERDIVEN,
@@ -103,12 +104,116 @@ def desen_yolu(tur, par, x0, y0, x1, y1):
             k += st
     return "".join(d)
 
+def _kaydet_sekil(q, fill, stroke, sw, dash, kapali, op=None, yol=False):
+    """Bir şekli kayda yazar: desenli dolgu → tarama, düz dolgu → dolgu, kontur → çizgi."""
+    if op is not None and float(op) < 0.5:
+        fill = "none"
+    if fill and fill != "none":
+        if fill.startswith("url(#p-"):
+            kayit.kaydet("tarama", pts=q, desen=fill[5:-1])
+        else:
+            kayit.kaydet("dolgu", pts=q, renk=fill)
+    if stroke and stroke != "none" and sw and sw > 0:
+        kayit.kaydet("cizgi", pts=q + ([q[0]] if kapali else []), sw=sw, dash=dash, renk=stroke, yol=yol)
+
+_YOL = re.compile(r"[MmLlHhVvCcSsQqTtAaZz]|-?(?:\d+\.?\d*|\.\d+)(?:[eE][-+]?\d+)?")
+
+def yol_noktalari(d, adim=12):
+    """SVG path verisini alt yollara (nokta listesi, kapalı mı) çevirir; eğriler ve yaylar düzleştirilir."""
+    tok = _YOL.findall(d)
+    out, cur, x, y, sx, sy, i, cmd = [], [], 0.0, 0.0, 0.0, 0.0, 0, None
+    def sayi():
+        nonlocal i
+        v = float(tok[i]); i += 1; return v
+    while i < len(tok):
+        if tok[i].isalpha():
+            cmd = tok[i]; i += 1
+            if cmd in "Zz":
+                if cur:
+                    out.append((cur, True)); cur = []
+                x, y = sx, sy
+                continue
+        r = cmd.islower()
+        C = cmd.upper()
+        if C == "M":
+            if cur:
+                out.append((cur, False))
+            nx, ny = sayi(), sayi()
+            x, y = (x + nx, y + ny) if r else (nx, ny)
+            sx, sy = x, y; cur = [(x, y)]
+            cmd = "l" if r else "L"
+        elif C == "L":
+            nx, ny = sayi(), sayi(); x, y = (x + nx, y + ny) if r else (nx, ny); cur.append((x, y))
+        elif C == "H":
+            nx = sayi(); x = x + nx if r else nx; cur.append((x, y))
+        elif C == "V":
+            ny = sayi(); y = y + ny if r else ny; cur.append((x, y))
+        elif C in "QC":
+            n = 2 if C == "Q" else 3
+            p = [sayi() for _ in range(2 * n)]
+            if r:
+                p = [v + (x if k % 2 == 0 else y) for k, v in enumerate(p)]
+            ks = [(x, y)] + [(p[2 * k], p[2 * k + 1]) for k in range(n)]
+            for j in range(1, adim + 1):
+                t = j / adim
+                pts = ks[:]
+                while len(pts) > 1:
+                    pts = [(a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t) for a, b in zip(pts, pts[1:])]
+                cur.append(pts[0])
+            x, y = ks[-1]
+        elif C == "A":
+            rx, ry, rot, buyuk, yon, nx, ny = [sayi() for _ in range(7)]
+            if r:
+                nx, ny = x + nx, y + ny
+            cur += _yay(x, y, rx, ry, rot, int(buyuk), int(yon), nx, ny, adim * 2)
+            x, y = nx, ny
+        else:
+            i += 1
+    if cur:
+        out.append((cur, False))
+    return [(q, k) for q, k in out if len(q) > 1]
+
+def _yay(x1, y1, rx, ry, phi, fa, fs, x2, y2, n):
+    """SVG eliptik yay → nokta listesi (W3C uç nokta → merkez dönüşümü)."""
+    if rx == 0 or ry == 0:
+        return [(x2, y2)]
+    ph = math.radians(phi); c, s_ = math.cos(ph), math.sin(ph)
+    dx, dy = (x1 - x2) / 2, (y1 - y2) / 2
+    x1p, y1p = c * dx + s_ * dy, -s_ * dx + c * dy
+    rx, ry = abs(rx), abs(ry)
+    lam = x1p ** 2 / rx ** 2 + y1p ** 2 / ry ** 2
+    if lam > 1:
+        rx, ry = rx * math.sqrt(lam), ry * math.sqrt(lam)
+    num = rx ** 2 * ry ** 2 - rx ** 2 * y1p ** 2 - ry ** 2 * x1p ** 2
+    den = rx ** 2 * y1p ** 2 + ry ** 2 * x1p ** 2
+    k = math.sqrt(max(0, num / den)) * (-1 if fa == fs else 1)
+    cxp, cyp = k * rx * y1p / ry, -k * ry * x1p / rx
+    cx, cy = c * cxp - s_ * cyp + (x1 + x2) / 2, s_ * cxp + c * cyp + (y1 + y2) / 2
+    def ang(ux, uy, vx, vy):
+        a = math.atan2(ux * vy - uy * vx, ux * vx + uy * vy); return a
+    t1 = ang(1, 0, (x1p - cxp) / rx, (y1p - cyp) / ry)
+    dt = ang((x1p - cxp) / rx, (y1p - cyp) / ry, (-x1p - cxp) / rx, (-y1p - cyp) / ry)
+    if not fs and dt > 0:
+        dt -= 2 * math.pi
+    elif fs and dt < 0:
+        dt += 2 * math.pi
+    out = []
+    for j in range(1, n + 1):
+        t = t1 + dt * j / n
+        out.append((cx + rx * math.cos(t) * c - ry * math.sin(t) * s_, cy + rx * math.cos(t) * s_ + ry * math.sin(t) * c))
+    return out
+
 class Cizim:
     _sayac = [0]
     def __init__(self):
         self.p = []
     def add(self, s):
         self.p.append(s)
+        if kayit.AKTIF and s.startswith("<line "):
+            a = dict(re.findall(r'([\w-]+)="([^"]*)"', s))
+            kayit.kaydet("cizgi", pts=[(float(a["x1"]), float(a["y1"])), (float(a["x2"]), float(a["y2"]))],
+                         sw=float(a.get("stroke-width", INCE)), dash=a.get("stroke-dasharray"), renk=a.get("stroke"),
+                         ok="marker-end" in a)
     def _desen(self, fill, x, y, w, h, op=None, clip=None):
         ad = fill[5:-1]
         tur, par, renk, kal, zemin = DESEN[ad]
@@ -124,11 +229,16 @@ class Cizim:
             if dd:
                 self.p.append('<path d="%s" fill="none" stroke="%s" stroke-width="%.2f"%s%s/>' % (dd, renk, kal, o, cl))
     def line(self, x1, y1, x2, y2, w=INCE, c="#111", dash=None, cap="butt", op=None):
+        if kayit.AKTIF:
+            kayit.kaydet("cizgi", pts=[(x1, y1), (x2, y2)], sw=w, dash=dash, renk=c)
         d = ' stroke-dasharray="%s"' % dash if dash else ""
         o = ' opacity="%s"' % op if op else ""
         self.p.append('<line x1="%.2f" y1="%.2f" x2="%.2f" y2="%.2f" stroke="%s" stroke-width="%.2f"%s stroke-linecap="%s"%s/>'
                       % (x1, y1, x2, y2, c, w, d, cap, o))
     def rect(self, x, y, w, h, fill="none", stroke="none", sw=INCE, dash=None, rx=0, op=None, extra=""):
+        if kayit.AKTIF:
+            q = [(x, y), (x + max(w, 0), y), (x + max(w, 0), y + max(h, 0)), (x, y + max(h, 0))]
+            _kaydet_sekil(q, fill, stroke, sw, dash, True, op)
         if fill.startswith("url(#p-") and fill[5:-1] in DESEN:
             self._desen(fill, x, y, max(w, 0), max(h, 0), op)
             fill = "none"
@@ -140,6 +250,8 @@ class Cizim:
         self.p.append('<rect x="%.2f" y="%.2f" width="%.2f" height="%.2f" fill="%s" stroke="%s" stroke-width="%.2f"%s%s%s %s/>'
                       % (x, y, max(w, 0), max(h, 0), fill, stroke, sw, d, r, o, extra))
     def poly(self, pts, fill="none", stroke="#111", sw=INCE, kapali=True, dash=None, op=None, join="miter"):
+        if kayit.AKTIF:
+            _kaydet_sekil(list(pts), fill, stroke, sw, dash, kapali, op)
         if fill.startswith("url(#p-") and fill[5:-1] in DESEN:
             Cizim._sayac[0] += 1
             cid = "kl%d" % Cizim._sayac[0]
@@ -153,14 +265,21 @@ class Cizim:
         self.p.append('<%s points="%s" fill="%s" stroke="%s" stroke-width="%.2f"%s%s stroke-linejoin="%s"/>'
                       % (tag, " ".join("%.2f,%.2f" % q for q in pts), fill, stroke, sw, d, o, join))
     def path(self, d, fill="none", stroke="#111", sw=INCE, dash=None, op=None):
+        if kayit.AKTIF:
+            for q, kap in yol_noktalari(d):
+                _kaydet_sekil(q, fill if kap else "none", stroke, sw, dash, kap, op, yol=True)
         da = ' stroke-dasharray="%s"' % dash if dash else ""
         o = ' opacity="%s"' % op if op else ""
         self.p.append('<path d="%s" fill="%s" stroke="%s" stroke-width="%.2f"%s%s/>' % (d, fill, stroke, sw, da, o))
     def circle(self, x, y, r, fill="none", stroke="#111", sw=INCE, dash=None):
+        if kayit.AKTIF:
+            kayit.kaydet("daire", xy=(x, y), r=r, fill=fill, renk=stroke, sw=sw, dash=dash)
         d = ' stroke-dasharray="%s"' % dash if dash else ""
         self.p.append('<circle cx="%.2f" cy="%.2f" r="%.2f" fill="%s" stroke="%s" stroke-width="%.2f"%s/>'
                       % (x, y, r, fill, stroke, sw, d))
     def text(self, x, y, t, size=2.2, anchor="start", weight=400, fill="#111", rot=0, italic=False, ls=0):
+        if kayit.AKTIF:
+            kayit.kaydet("yazi", xy=(x, y), t=str(t), size=size, anchor=anchor, kalin=weight >= 600, rot=rot, italik=italic)
         tr = ' transform="rotate(%.1f %.2f %.2f)"' % (rot, x, y) if rot else ""
         st = ' font-style="italic"' if italic else ""
         l = ' letter-spacing="%.2f"' % ls if ls else ""
@@ -395,32 +514,33 @@ def plan_icerik(kat, ox, oy, s=10.0, baslik=True, olculer=True, mobilya=True, ke
     soz = mahal_sozluk(kat)
     # ---------------- bina dışı elemanlar (altta)
     _plan_dis_elemanlar(c, kat, tx, ty, s)
-    # ---------------- döşeme dokusu
-    for m in KATLAR[kat]:
-        desen = TIP_DOSEME.get(m["tip"])
-        if m["kod"] in ("Z-09", "Z-10"):
-            desen = "p-tas"
-        if m["tip"] == "garaj" or m["tip"] == "teknik":
-            desen = None
-        for r in m["r"]:
-            nx0, ny0, nx1, ny1 = ic_sinir(r)
-            if m["tip"] == "saft":
-                c.rect(tx(nx0), ty(ny0), (nx1 - nx0) * s, (ny1 - ny0) * s, fill="url(#p-saft)")
-            elif desen:
-                c.rect(tx(nx0), ty(ny0), (nx1 - nx0) * s, (ny1 - ny0) * s, fill="url(#%s)" % desen)
-    # çok parçalı mahallerde parçalar arası şerit
-    for m in KATLAR[kat]:
-        if len(m["r"]) > 1 and TIP_DOSEME.get(m["tip"]):
-            for a in m["r"]:
-                for b in m["r"]:
-                    if a is b:
-                        continue
-                    if abs(a[3] - b[1]) < 1e-6:
-                        x0, x1 = max(a[0], b[0]), min(a[2], b[2])
-                        x0 = x0 + (DIS_DUVAR if x0 < 1e-6 else IC_DUVAR / 2)
-                        x1 = x1 - (DIS_DUVAR if x1 > W - 1e-6 else IC_DUVAR / 2)
-                        c.rect(tx(x0), ty(a[3] - IC_DUVAR / 2), (x1 - x0) * s, IC_DUVAR * s,
-                               fill="url(#%s)" % TIP_DOSEME[m["tip"]])
+    with kayit.katman("DOSEME-KAPLAMA"):
+        # ---------------- döşeme dokusu
+        for m in KATLAR[kat]:
+            desen = TIP_DOSEME.get(m["tip"])
+            if m["kod"] in ("Z-09", "Z-10"):
+                desen = "p-tas"
+            if m["tip"] == "garaj" or m["tip"] == "teknik":
+                desen = None
+            for r in m["r"]:
+                nx0, ny0, nx1, ny1 = ic_sinir(r)
+                if m["tip"] == "saft":
+                    c.rect(tx(nx0), ty(ny0), (nx1 - nx0) * s, (ny1 - ny0) * s, fill="url(#p-saft)")
+                elif desen:
+                    c.rect(tx(nx0), ty(ny0), (nx1 - nx0) * s, (ny1 - ny0) * s, fill="url(#%s)" % desen)
+        # çok parçalı mahallerde parçalar arası şerit
+        for m in KATLAR[kat]:
+            if len(m["r"]) > 1 and TIP_DOSEME.get(m["tip"]):
+                for a in m["r"]:
+                    for b in m["r"]:
+                        if a is b:
+                            continue
+                        if abs(a[3] - b[1]) < 1e-6:
+                            x0, x1 = max(a[0], b[0]), min(a[2], b[2])
+                            x0 = x0 + (DIS_DUVAR if x0 < 1e-6 else IC_DUVAR / 2)
+                            x1 = x1 - (DIS_DUVAR if x1 > W - 1e-6 else IC_DUVAR / 2)
+                            c.rect(tx(x0), ty(a[3] - IC_DUVAR / 2), (x1 - x0) * s, IC_DUVAR * s,
+                                   fill="url(#%s)" % TIP_DOSEME[m["tip"]])
     # ---------------- mobilya
     if mobilya:
         for o in MOBILYA.get(kat, []):
@@ -450,29 +570,40 @@ def plan_icerik(kat, ox, oy, s=10.0, baslik=True, olculer=True, mobilya=True, ke
     kolon_kutulari = [(x - KOLON / 2, y - KOLON / 2, x + KOLON / 2, y + KOLON / 2) for x, y in kolonlar()]
     def ciz_rect(r, fill, stroke, sw):
         c.rect(tx(r[0]), ty(r[1]), (r[2] - r[0]) * s, (r[3] - r[1]) * s, fill=fill, stroke=stroke, sw=sw)
-    for r in duvar:
-        ciz_rect(r, "none", "#111", KALIN)
-    for r in beton + kolon_kutulari:
-        ciz_rect(r, "none", "#111", KALIN)
-    for r in duvar:
-        ciz_rect(r, "#e5e7eb", "none", 0)
-        ciz_rect(r, "url(#p-duvar)", "none", 0)
-    for r in beton + kolon_kutulari:
-        ciz_rect(r, "#111", "none", 0)
-    # dış duvar ısı yalıtımı bandı (bodrum hariç: perde dışında su yalıtımı + XPS)
-    for p in parcalar:
-        if p[4] != "dis":
-            continue
-        e, cc, a, b = p[0], p[1], p[2], p[3]
-        t = YALITIM
-        if e == "x":
-            x0 = cc if cc < 1e-6 else cc - t
-            c.rect(tx(x0), ty(a), t * s, (b - a) * s, fill="#f4f1e8")
-            c.line(tx(x0 + (t if cc < 1e-6 else 0)), ty(a), tx(x0 + (t if cc < 1e-6 else 0)), ty(b), 0.15)
-        else:
-            y0 = cc if cc < 1e-6 else cc - t
-            c.rect(tx(a), ty(y0), (b - a) * s, t * s, fill="#f4f1e8")
-            c.line(tx(a), ty(y0 + (t if cc < 1e-6 else 0)), tx(b), ty(y0 + (t if cc < 1e-6 else 0)), 0.15)
+    with kayit.katman("DUVAR"):
+        for r in duvar:
+            ciz_rect(r, "none", "#111", KALIN)
+    with kayit.katman("PERDE"):
+        for r in beton:
+            ciz_rect(r, "none", "#111", KALIN)
+    with kayit.katman("KOLON"):
+        for r in kolon_kutulari:
+            ciz_rect(r, "none", "#111", KALIN)
+    with kayit.katman("DUVAR-TARAMA"):
+        for r in duvar:
+            ciz_rect(r, "#e5e7eb", "none", 0)
+            ciz_rect(r, "url(#p-duvar)", "none", 0)
+    with kayit.katman("PERDE-TARAMA"):
+        for r in beton:
+            ciz_rect(r, "#111", "none", 0)
+    with kayit.katman("KOLON-TARAMA"):
+        for r in kolon_kutulari:
+            ciz_rect(r, "#111", "none", 0)
+    with kayit.katman("YALITIM"):
+        # dış duvar ısı yalıtımı bandı (bodrum hariç: perde dışında su yalıtımı + XPS)
+        for p in parcalar:
+            if p[4] != "dis":
+                continue
+            e, cc, a, b = p[0], p[1], p[2], p[3]
+            t = YALITIM
+            if e == "x":
+                x0 = cc if cc < 1e-6 else cc - t
+                c.rect(tx(x0), ty(a), t * s, (b - a) * s, fill="#f4f1e8")
+                c.line(tx(x0 + (t if cc < 1e-6 else 0)), ty(a), tx(x0 + (t if cc < 1e-6 else 0)), ty(b), 0.15)
+            else:
+                y0 = cc if cc < 1e-6 else cc - t
+                c.rect(tx(a), ty(y0), (b - a) * s, t * s, fill="#f4f1e8")
+                c.line(tx(a), ty(y0 + (t if cc < 1e-6 else 0)), tx(b), ty(y0 + (t if cc < 1e-6 else 0)), 0.15)
     # korkuluklar
     for p in kork:
         _korkuluk(c, p[0], p[1], p[2], p[3], tx, ty)
@@ -507,23 +638,25 @@ def plan_icerik(kat, ox, oy, s=10.0, baslik=True, olculer=True, mobilya=True, ke
         d = 0.32 + (DIS_DUVAR / 2 if k[4] in ("giris", "servis", "garaj") else IC_DUVAR / 2)
         x, y = (cc + yon * d, m) if e == "x" else (m, cc + yon * d)
         _etiket_kutu(c, tx(x), ty(y), kod, kapi=True)
-    # ---------------- şömine
-    if kat == "Zemin":
-        a, b = BACA["a"], BACA["b"]
-        c.rect(tx(DIS_DUVAR), ty(a + 0.05), 0.45 * s, (b - a - 0.1) * s, fill="#fff", stroke="#111", sw=0.3)
-        c.rect(tx(DIS_DUVAR), ty(a + 0.25), 0.25 * s, (b - a - 0.5) * s, fill="#374151")
-        c.rect(tx(DIS_DUVAR + 0.45), ty(a - 0.35), 0.40 * s, (b - a + 0.7) * s, fill="none", stroke="#111", sw=0.18)
-        c.text(tx(DIS_DUVAR + 1.1), ty((a + b) / 2) + 0.8, "şömine", 1.6, fill=GRI)
-    if kat in ("Zemin", "1. Kat"):
-        a, b, d = BACA["a"], BACA["b"], BACA["derinlik"]
-        c.rect(tx(-d), ty(a), d * s, (b - a) * s, fill="url(#p-duvar)", stroke="#111", sw=KALIN)
-        c.rect(tx(-d + 0.15), ty(a + 0.2), 0.3 * s, (b - a - 0.4) * s, fill="#fff", stroke="#111", sw=0.15)
-    # ---------------- çatı arası kapağı
-    if kat == KAT_BOSLUGU_KAPAK[0]:
-        _, kx, ky = KAT_BOSLUGU_KAPAK
-        c.rect(tx(kx - 0.35), ty(ky - 0.6), 0.7 * s, 1.2 * s, fill="none", stroke="#111", sw=0.15, dash="0.8,0.5")
-        c.line(tx(kx - 0.35), ty(ky - 0.6), tx(kx + 0.35), ty(ky + 0.6), 0.1, dash="0.8,0.5")
-        c.text(tx(kx), ty(ky + 0.6) + 2.2, "çatı kapağı", 1.4, "middle", fill=GRI)
+    with kayit.katman("BACA"):
+        # ---------------- şömine
+        if kat == "Zemin":
+            a, b = BACA["a"], BACA["b"]
+            c.rect(tx(DIS_DUVAR), ty(a + 0.05), 0.45 * s, (b - a - 0.1) * s, fill="#fff", stroke="#111", sw=0.3)
+            c.rect(tx(DIS_DUVAR), ty(a + 0.25), 0.25 * s, (b - a - 0.5) * s, fill="#374151")
+            c.rect(tx(DIS_DUVAR + 0.45), ty(a - 0.35), 0.40 * s, (b - a + 0.7) * s, fill="none", stroke="#111", sw=0.18)
+            c.text(tx(DIS_DUVAR + 1.1), ty((a + b) / 2) + 0.8, "şömine", 1.6, fill=GRI)
+        if kat in ("Zemin", "1. Kat"):
+            a, b, d = BACA["a"], BACA["b"], BACA["derinlik"]
+            c.rect(tx(-d), ty(a), d * s, (b - a) * s, fill="url(#p-duvar)", stroke="#111", sw=KALIN)
+            c.rect(tx(-d + 0.15), ty(a + 0.2), 0.3 * s, (b - a - 0.4) * s, fill="#fff", stroke="#111", sw=0.15)
+    with kayit.katman("USTTE"):
+        # ---------------- çatı arası kapağı
+        if kat == KAT_BOSLUGU_KAPAK[0]:
+            _, kx, ky = KAT_BOSLUGU_KAPAK
+            c.rect(tx(kx - 0.35), ty(ky - 0.6), 0.7 * s, 1.2 * s, fill="none", stroke="#111", sw=0.15, dash="0.8,0.5")
+            c.line(tx(kx - 0.35), ty(ky - 0.6), tx(kx + 0.35), ty(ky + 0.6), 0.1, dash="0.8,0.5")
+            c.text(tx(kx), ty(ky + 0.6) + 2.2, "çatı kapağı", 1.4, "middle", fill=GRI)
     # ---------------- etiketler
     for m in KATLAR[kat]:
         mahal_etiketi(c, kat, m, tx, ty)
@@ -864,6 +997,11 @@ def asansor_plan(c, kat, tx, ty, s):
 
 # ---------------------------------------------------------------- mobilya sembolleri
 def mobilya_svg(c, o, tx, ty, s):
+    tip, cx, cy, rot, p = o
+    with kayit.donusum(tx(cx), ty(cy), rot):
+        _mobilya_ciz(c, o, tx, ty, s)
+
+def _mobilya_ciz(c, o, tx, ty, s):
     tip, cx, cy, rot, p = o
     w, d = olcu(tip, p)
     g = Cizim()
